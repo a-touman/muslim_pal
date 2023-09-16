@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:muslim_pal/routes/app_pages.dart';
 import 'package:muslim_pal/translations/translation.dart';
+import 'app/style/style.dart';
 import 'app/utils/storage_utility.dart';
 
 void main() async {
@@ -24,6 +25,7 @@ void main() async {
       return GetMaterialApp(
         title: 'Muslim Pal',
         debugShowCheckedModeBanner: false,
+        theme: AppTheme.appTheme,
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
         translations: Translation(),

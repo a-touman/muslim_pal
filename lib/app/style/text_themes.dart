@@ -35,7 +35,7 @@ extension HeadingText on Heading {
     return TextStyle(
         fontFamily: FontsFamily.effraTrialSemiBold,
         fontWeight: FontWeight.w600,
-        color: AppColors.black,
+        color: AppTextColors.headlines,
         fontSize: fontSize);
   }
 
@@ -43,7 +43,7 @@ extension HeadingText on Heading {
     return TextStyle(
         fontFamily: FontsFamily.effraTrialBold,
         fontWeight: FontWeight.w700,
-        color: AppColors.black,
+        color: AppTextColors.headlines,
         fontSize: fontSize);
   }
 
@@ -51,26 +51,26 @@ extension HeadingText on Heading {
     return TextStyle(
         fontFamily: FontsFamily.effraTrialXBold,
         fontWeight: FontWeight.w800,
-        color: AppColors.black,
+        color: AppTextColors.headlines,
         fontSize: fontSize);
   }
 }
 
 extension BodyText on Body {
-  TextStyle get body_18R => getBodyRegular(18.sp);
-  TextStyle get body_16R => getBodyRegular(16.sp);
-  TextStyle get body_14R => getBodyRegular(14.sp);
-  TextStyle get body_12R => getBodyRegular(12.sp);
+  TextStyle get b_18R => getBodyRegular(18.sp);
+  TextStyle get b_16R => getBodyRegular(16.sp);
+  TextStyle get b_14R => getBodyRegular(14.sp);
+  TextStyle get b_12R => getBodyRegular(12.sp);
 
-  TextStyle get body_18B => getBodyBold(18.sp);
-  TextStyle get body_16B => getBodyBold(16.sp);
-  TextStyle get body_14B => getBodyBold(14.sp);
-  TextStyle get body_12B => getBodyBold(12.sp);
+  TextStyle get b_18B => getBodyBold(18.sp);
+  TextStyle get b_16B => getBodyBold(16.sp);
+  TextStyle get b_14B => getBodyBold(14.sp);
+  TextStyle get b_12B => getBodyBold(12.sp);
 
-  TextStyle get body_18UL => getBodyUnderlined(18.sp);
-  TextStyle get body_16UL => getBodyUnderlined(16.sp);
-  TextStyle get body_14UL => getBodyUnderlined(14.sp);
-  TextStyle get body_12UL => getBodyUnderlined(12.sp);
+  TextStyle get b_18UL => getBodyUnderlined(18.sp);
+  TextStyle get b_16UL => getBodyUnderlined(16.sp);
+  TextStyle get b_14UL => getBodyUnderlined(14.sp);
+  TextStyle get b_12UL => getBodyUnderlined(12.sp);
 
   TextStyle getBodyRegular(double fontSize) {
     return TextStyle(
@@ -96,6 +96,11 @@ extension BodyText on Body {
         color: AppColors.black,
         fontSize: fontSize);
   }
+}
+
+extension TextBodyColor on TextStyle {
+  TextStyle get textColor => copyWith(color: AppTextColors.text);
+  TextStyle get subTextColor => copyWith(color: AppTextColors.subText);
 }
 
 class Heading {

@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
 
+import 'app_colors.dart';
+
 const double spacing0 = 0;
 const double spacing1 = 4;
 const double spacing2 = 8;
@@ -95,4 +97,15 @@ class Width {
   double get spacingLg11 => spacing11.w;
   double get spacingLg12 => spacing12.w;
   double get spacingLg13 => spacing13.w;
+}
+
+class AppTheme {
+  AppTheme._();
+
+  static final appTheme = ThemeData.light().copyWith(
+    colorScheme: ColorScheme.fromSwatch(accentColor: AppColors.secondary),
+    textSelectionTheme: const TextSelectionThemeData(
+      cursorColor: AppColors.primary,
+    ),
+  );
 }

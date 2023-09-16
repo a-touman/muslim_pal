@@ -31,7 +31,8 @@ class LaunchPage extends GetView<LaunchPageController> {
                   children: [
                     Text(
                       "Launch Page",
-                      style: TextStyles.heading.h1_36SB,
+                      // style: TextStyles.heading.h1_36SB,
+                      style: TextStyles.body.b_12B.subTextColor,
                     ),
                     SizedBox(
                       height: AppStyle.spacing.H.spacingMd,
