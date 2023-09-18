@@ -8,4 +8,6 @@ class IconPaths {
   static const String _iconsPath = "assets/vectors/";
 
   static const String prayerHands = "${_iconsPath}ic_prayer_hands.svg";
+
+  static const String daily = "${_iconsPath}ic_daily.svg";
 }

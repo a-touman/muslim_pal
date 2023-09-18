@@ -43,7 +43,7 @@ class LaunchPage extends GetView<LaunchPageController> {
                       height: AppStyle.spacing.H.spacingMd,
                     ),
                     SvgPicture.asset(
-                      IconPaths.prayerHands,
+                      IconPaths.daily,
                       height: AppStyle.spacing.H.spacingXxxxlg,
                     )
                   ],
@@ -58,7 +58,9 @@ class LaunchPage extends GetView<LaunchPageController> {
               bottom: 30,
               child: GestureDetector(
                 onTap: () {
+                  AppLogger.log.i("HELOOOOOOOOOOOOO");
                   AppLogger.log.e("Hello World");
+                  Toast.defaultToast(context, "Hello World");
                 },
                 child: Container(
                   height: AppStyle.spacing.H.spacingXxxxlg,
