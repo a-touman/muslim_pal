@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
@@ -24,15 +25,19 @@ class LaunchPage extends GetView<LaunchPageController> {
               fit: StackFit.expand,
               children: [
                 Container(
-                    decoration:
-                        const BoxDecoration(gradient: AppGradients.gradiant)),
+                    decoration: BoxDecoration(
+                        gradient: AppGradients.gradiant,
+                        borderRadius: AppStyle.corners.lgBorder)),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Launch Page",
-                      // style: TextStyles.heading.h1_36SB,
-                      style: TextStyles.body.b_12B.subTextColor,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: AppStyle.spacing.H.spacingXlg,
+                          horizontal: AppStyle.spacing.W.spacingXlg),
+                      child: Text("Quran".tr,
+                          // style: TextStyles.heading.h1_36SB,
+                          style: TextStyles.body.b_16B.subTextColor),
                     ),
                     SizedBox(
                       height: AppStyle.spacing.H.spacingMd,

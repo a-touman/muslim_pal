@@ -8,4 +8,5 @@ abstract class Routes {
 class Paths {
   static const LAUNCH = "/";
   static const HOME = "/home";
+  static const CALENDAR = "/calendar";
 }

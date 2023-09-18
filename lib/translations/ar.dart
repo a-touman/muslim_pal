@@ -1,3 +1,1 @@
-const Map<String, String> ar = {
-  'Language': 'اللغة',
-};
+const Map<String, String> ar = {'Language': 'اللغة', 'Quran': 'قران'};
