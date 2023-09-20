@@ -1,0 +1,6 @@
+<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="group">
+<path id="primary" d="M25 13C25 19.6275 19.6275 25 13 25M25 13C25 6.37262 19.6275 1 13 1M25 13H22.3334M13 25C6.37262 25 1 19.6275 1 13M13 25V22.3334M13 1C6.37262 1 1 6.37262 1 13M13 1V3.66663M1 13H3.66663" stroke="#EE7532" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="secondary" d="M13 7.66663V13L15.6666 14.3334" stroke="#EE7532" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

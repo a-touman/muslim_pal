@@ -3,6 +3,8 @@ import 'package:muslim_pal/app/pages/calendar/view/calendar_view.dart';
 import 'package:muslim_pal/app/pages/launch/binding/launch_binding.dart';
 
 import '../app/pages/calendar/binding/calendar_binding.dart';
+import '../app/pages/home/binding/home_binding.dart';
+import '../app/pages/home/view/home_view.dart';
 import '../app/pages/launch/view/launch_view.dart';
 
 part 'app_routes.dart';
@@ -21,5 +23,9 @@ class AppPages {
         name: Paths.CALENDAR,
         page: () => const CalendarView(),
         binding: CalendarPageBinding()),
+    GetPage(
+        name: Paths.HOME,
+        page: () => const HomeView(),
+        binding: HomePageBinding()),
   ];
 }

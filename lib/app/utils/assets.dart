@@ -9,5 +9,12 @@ class IconPaths {
 
   static const String prayerHands = "${_iconsPath}ic_prayer_hands.svg";
 
+  static const String clock = "${_iconsPath}clock.svg";
+  static const String dua = "${_iconsPath}dua.svg";
+  static const String rewind = "${_iconsPath}rewind.svg";
+  static const String settings = "${_iconsPath}settings.svg";
+
+
   static const String daily = "${_iconsPath}ic_daily.svg";
+
 }
