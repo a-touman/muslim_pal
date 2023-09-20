@@ -13,11 +13,8 @@ import '../../../style/text_themes.dart';
 import 'package:http/http.dart';
 
 import '../../calendar/model/model.dart';
-
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
-
-
   @override
   Widget build(BuildContext context) {
     HomeController homeController=Get.put(HomeController());
