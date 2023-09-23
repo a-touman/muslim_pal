@@ -230,7 +230,7 @@ class PrayerList extends StatelessWidget {
             SizedBox(height: AppStyle.spacing.H.spacingLg),
             PrayerTimings(
                 prayerIcon: IconPaths.fajr,
-                prayer: "Fajr",
+                prayer: "Fajr.",
                 prayerTime: "4:58 AM",
                 bellActivity: IconPaths.bell_off),
             HorizontalLine(),
