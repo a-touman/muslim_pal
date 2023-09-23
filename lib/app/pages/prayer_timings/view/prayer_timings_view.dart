@@ -7,7 +7,6 @@ import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
 import '../../../utils/constants.dart';
 import '../controller/prayer_timings_controller.dart';
-import '../widgets/custom_row.dart';
 import '../widgets/horizontal_line.dart';
 import '../widgets/icon_button.dart';
 import '../widgets/location_info.dart';
@@ -132,14 +131,9 @@ class PrayerTimingsContainer extends StatelessWidget {
           prayer: "Duhur",
           startTime: "12:27",
           texts: "Now time is",
-          addRow: Row(
-            children: [
-              Text("bhyfe"),
-            ],
-          ),
-          endTime: '03:54',
-          am_or_pm: false,
           smallText: 'End time - ',
+          endTime: "03:45",
+          am_or_pm: false,
         ),
         SizedBox(width: AppStyle.spacing.W.spacingMd),
         ReusableContainer(
@@ -147,16 +141,9 @@ class PrayerTimingsContainer extends StatelessWidget {
           prayer: "Asr",
           startTime: "03:54",
           texts: "Next prayer is",
-          addRow: Row(
-            children: [
-            endTime: '04:54',
-            am_or_pm: false,
-            smallText: 'Azan - ',
-            ],
-          ),
-          endTime: '04:54',
-          am_or_pm: false,
           smallText: 'Azan - ',
+          endTime: "05:15",
+          am_or_pm: false,
         ),
       ],
     );

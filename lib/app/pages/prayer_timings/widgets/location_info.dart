@@ -18,7 +18,6 @@ class LocationInfo extends StatelessWidget {
           ),
           SizedBox(width: AppStyle.spacing.W.spacingXs),
           Container(
-            alignment: Alignment.centerLeft,
             child: Column(
               children: <Widget>[
                 Container(

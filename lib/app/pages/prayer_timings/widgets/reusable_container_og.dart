@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:muslim_pal/app/pages/prayer_timings/widgets/custom_row.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/translations/en.dart';
 
@@ -15,17 +14,16 @@ class ReusableContainer extends StatelessWidget {
   final String smallText;
   final String endTime;
   final bool am_or_pm;
-  final Row addRow;
 
-  ReusableContainer(
-      {required this.bgColor,
-      required this.prayer,
-      required this.startTime,
-      required this.texts,
-      required this.endTime,
-      required this.am_or_pm,
-      required this.smallText,
-      required this.addRow});
+  ReusableContainer({
+    required this.bgColor,
+    required this.prayer,
+    required this.startTime,
+    required this.texts,
+    required this.smallText,
+    required this.endTime,
+    required this.am_or_pm,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -101,12 +99,22 @@ class ReusableContainer extends StatelessWidget {
                         ),
                       ],
                     ),
-                    TimeRow(
-                      smallText: smallText,
-                      endTime: endTime,
-                      am_or_pm: am_or_pm,
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          smallText,
+                          style: TextStyles.body.b_12B.subTextColor,
+                        ),
+                        Text(
+                          endTime,
+                          style: TextStyles.body.b_12B,
+                        ),
+                        Text(
+                          am_or_pm ? "am" : "pm",
+                          style: TextStyles.body.b_12B,
+                        ),
+                      ],
                     ),
-                    addRow
                   ],
                 ),
               ],
@@ -114,39 +122,6 @@ class ReusableContainer extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class TimeRow extends StatelessWidget {
-  const TimeRow({
-    super.key,
-    required this.smallText,
-    required this.endTime,
-    required this.am_or_pm,
-  });
-
-  final String smallText;
-  final String endTime;
-  final bool am_or_pm;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Text(
-          smallText,
-          style: TextStyles.body.b_12B.subTextColor,
-        ),
-        Text(
-          endTime,
-          style: TextStyles.body.b_12B,
-        ),
-        Text(
-          am_or_pm ? "am" : "pm",
-          style: TextStyles.body.b_12B,
-        ),
-      ],
     );
   }
 }
