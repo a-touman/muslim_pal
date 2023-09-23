@@ -12,7 +12,8 @@ import '../controller/launch_controller.dart';
 import '../widgets/launch_page_widgets.dart';
 
 class LaunchPage extends GetView<LaunchPageController> {
-  const LaunchPage({Key? key}) : super(key: key);
+  //const LaunchPage({Key? key}) : super(key: key);
+  LaunchPageController launchPageController=Get.find<LaunchPageController>();
 
   @override
   Widget build(BuildContext context) {

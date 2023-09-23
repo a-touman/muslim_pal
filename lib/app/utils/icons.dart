@@ -10,4 +10,5 @@ class MyFlutterApp {
   static const IconData rewind = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData dua = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData settings = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+
 }

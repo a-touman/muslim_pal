@@ -1,11 +1,11 @@
-class quranModel {
+class QuranModel {
   int? code;
   String? status;
   Data? data;
 
-  quranModel({this.code, this.status, this.data});
+  QuranModel({this.code, this.status, this.data});
 
-  quranModel.fromJson(Map<String, dynamic> json) {
+  QuranModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     status = json['status'];
     data = json['data'] != null ? new Data.fromJson(json['data']) : null;

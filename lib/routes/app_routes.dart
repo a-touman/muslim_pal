@@ -9,5 +9,6 @@ class Paths {
   static const LAUNCH = "/";
   static const HOME = "/home";
   static const CALENDAR = "/calendar";
+  static const AYAHDETAIL="/ayahdetail";
 
 }

@@ -13,6 +13,7 @@ class IconPaths {
   static const String dua = "${_iconsPath}dua.svg";
   static const String rewind = "${_iconsPath}rewind.svg";
   static const String settings = "${_iconsPath}settings.svg";
+  static const String xcircle="${_iconsPath}ic_xcircle.svg";
 
 
   static const String daily = "${_iconsPath}ic_daily.svg";
