@@ -12,7 +12,8 @@ import '../controller/launch_controller.dart';
 import '../widgets/launch_page_widgets.dart';
 
 class LaunchPage extends GetView<LaunchPageController> {
-  const LaunchPage({Key? key}) : super(key: key);
+  //const LaunchPage({Key? key}) : super(key: key);
+  LaunchPageController launchPageController=Get.find<LaunchPageController>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class LaunchPage extends GetView<LaunchPageController> {
                 Container(
                     decoration: BoxDecoration(
                         gradient: AppGradients.gradiant,
+                        color: Colors.red,
                         borderRadius: AppStyle.corners.lgBorder)),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -58,9 +60,6 @@ class LaunchPage extends GetView<LaunchPageController> {
               bottom: 30,
               child: GestureDetector(
                 onTap: () {
-                  AppLogger.log.i("HELOOOOOOOOOOOOO");
-                  AppLogger.log.e("Hello World");
-                  Toast.defaultToast(context, "Hello World");
                 },
                 child: Container(
                   height: AppStyle.spacing.H.spacingXxxxlg,
