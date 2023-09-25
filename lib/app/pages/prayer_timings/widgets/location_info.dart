@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
@@ -18,12 +19,13 @@ class LocationInfo extends StatelessWidget {
           ),
           SizedBox(width: AppStyle.spacing.W.spacingXs),
           Container(
+            width: 300,
             child: Column(
               children: <Widget>[
                 Container(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "Al Masjid an Nabawi",
+                    "Al Masjid an Nabawi".tr,
                     textAlign: TextAlign.start,
                     style: TextStyles.heading.h5_22B,
                   ),
@@ -32,7 +34,7 @@ class LocationInfo extends StatelessWidget {
                 Container(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "Medina, Saudi Arabia",
+                    "Medina, Saudi Arabia".tr,
                     textAlign: TextAlign.start,
                     style: TextStyles.body.b_16B.subTextColor,
                   ),

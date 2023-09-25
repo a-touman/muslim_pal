@@ -11,12 +11,14 @@ class PrayerTimings extends StatelessWidget {
   final String prayer;
   final String prayerTime;
   final String bellActivity;
+  late final String amOrPm;
 
   PrayerTimings({
     required this.prayerIcon,
     required this.prayer,
     required this.prayerTime,
     required this.bellActivity,
+    required this.amOrPm,
   });
 
   @override
@@ -58,6 +60,15 @@ class PrayerTimings extends StatelessWidget {
                   children: [
                     Text(
                       prayerTime,
+                      style: TextStyle(
+                        fontFamily: FontsFamily.effraTrialRegular,
+                        fontWeight: FontWeight.w500,
+                        color: AppTextColors.headlines,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Text(
+                      amOrPm,
                       style: TextStyle(
                         fontFamily: FontsFamily.effraTrialRegular,
                         fontWeight: FontWeight.w500,

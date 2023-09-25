@@ -5,11 +5,13 @@ class NotificationItem extends StatelessWidget {
   late final CrossAxisAlignment alignments;
   late final String texts;
   late final String time;
+  late final String amOrPm;
 
   NotificationItem({
     required this.alignments,
     required this.texts,
     required this.time,
+    required this.amOrPm,
   });
 
   @override
@@ -26,6 +28,10 @@ class NotificationItem extends StatelessWidget {
             ),
             Text(
               time,
+              style: TextStyles.body.b_16B,
+            ),
+            Text(
+              amOrPm,
               style: TextStyles.body.b_16B,
             ),
           ],

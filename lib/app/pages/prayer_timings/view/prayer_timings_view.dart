@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
 import '../../../utils/constants.dart';
 import '../controller/prayer_timings_controller.dart';
-import '../widgets/horizontal_line.dart';
-import '../widgets/icon_button.dart';
+import '../../../widgets/horizontal_line.dart';
+import '../../../widgets/icon_button.dart';
 import '../widgets/location_info.dart';
 import '../widgets/notification_item.dart';
 import '../widgets/prayer_timings_icons.dart';
-import '../widgets/reusable_container_og.dart';
+import '../widgets/reusable_container.dart';
 
 class PrayerTimingsPage extends GetView<PrayerTimingsController> {
   const PrayerTimingsPage({Key? key}) : super(key: key);
@@ -60,7 +61,9 @@ class Header extends StatelessWidget {
       children: <Widget>[
         Container(
           child: GestureDetector(
-            // onTap:
+            onTap: () {
+              Get.back();
+            },
             child: SvgPicture.asset(IconPaths.back_arrow),
           ),
           height: 42.0,
@@ -68,7 +71,7 @@ class Header extends StatelessWidget {
         ),
         SizedBox(width: AppStyle.spacing.W.spacingXs),
         Text(
-          "Prayer Times",
+          "Prayer Times".tr,
           style: TextStyles.heading.h3_28SB,
         )
       ],
@@ -91,22 +94,21 @@ class DateNavigation extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: Container(
-            child: Column(
-              children: <Widget>[
-                Text(
-                  "Safar 12, 1445",
-                  style: TextStyles.heading.h5_22B,
-                ),
-                SizedBox(height: AppStyle.spacing.H.spacingXxs),
-                Text(
-                  "Mon, 28 August 2023",
-                  style: TextStyles.body.b_14B.subTextColor,
-                ),
-              ],
-            ),
+            child: Container(
+          child: Column(
+            children: <Widget>[
+              Text(
+                "Safar 12, 1445".tr,
+                style: TextStyles.heading.h5_22B,
+              ),
+              SizedBox(height: AppStyle.spacing.H.spacingXxs),
+              Text(
+                "Mon, 28 August 2023".tr,
+                style: TextStyles.body.b_14B.subTextColor,
+              ),
+            ],
           ),
-        ),
+        )),
         IconButton(
           onPressed: () {},
           icon: SvgPicture.asset(
@@ -128,22 +130,26 @@ class PrayerTimingsContainer extends StatelessWidget {
       children: <Widget>[
         ReusableContainer(
           bgColor: kDarkGradient,
-          prayer: "Duhur",
-          startTime: "12:27",
-          texts: "Now time is",
-          smallText: 'End time - ',
-          endTime: "03:45",
-          am_or_pm: false,
+          prayer: "Duhur".tr,
+          startTime: "12:27".tr,
+          texts: "Now time is".tr,
+          smallText: 'End time - '.tr,
+          endTime: "03:45".tr,
+          amOrPm: false,
+          mosqueColor: IconPaths.background_mosque,
+          subtractColor: IconPaths.subtract,
         ),
         SizedBox(width: AppStyle.spacing.W.spacingMd),
         ReusableContainer(
           bgColor: kLightGradient,
-          prayer: "Asr",
-          startTime: "03:54",
-          texts: "Next prayer is",
-          smallText: 'Azan - ',
-          endTime: "05:15",
-          am_or_pm: false,
+          prayer: "Asr".tr,
+          startTime: "03:54".tr,
+          texts: "Next prayer is".tr,
+          smallText: 'Azan - '.tr,
+          endTime: "05:15".tr,
+          amOrPm: false,
+          mosqueColor: IconPaths.background_mosque_light,
+          subtractColor: IconPaths.subtract_light,
         ),
       ],
     );
@@ -176,8 +182,9 @@ class NotificationSection extends StatelessWidget {
                   children: [
                     NotificationItem(
                       alignments: CrossAxisAlignment.end,
-                      texts: 'Suhoor',
-                      time: '04:57 AM',
+                      texts: 'Suhoor'.tr,
+                      time: '04:57'.tr,
+                      amOrPm: 'AM'.tr,
                     ),
                     SizedBox(width: AppStyle.spacing.W.spacingSm),
                     VerticalDivider(
@@ -189,8 +196,9 @@ class NotificationSection extends StatelessWidget {
                     SizedBox(width: AppStyle.spacing.W.spacingSm),
                     NotificationItem(
                       alignments: CrossAxisAlignment.start,
-                      texts: 'Iftar',
-                      time: '06:37 PM',
+                      texts: 'Iftar'.tr,
+                      time: '06:37'.tr,
+                      amOrPm: 'PM'.tr,
                     ),
                     SizedBox(width: 20.0),
                     IconContent(
@@ -229,34 +237,44 @@ class PrayerList extends StatelessWidget {
             LocationInfo(),
             SizedBox(height: AppStyle.spacing.H.spacingLg),
             PrayerTimings(
-                prayerIcon: IconPaths.fajr,
-                prayer: "Fajr",
-                prayerTime: "4:58 AM",
-                bellActivity: IconPaths.bell_off),
+              prayerIcon: IconPaths.fajr,
+              prayer: "Fajr".tr,
+              prayerTime: "4:58".tr,
+              bellActivity: IconPaths.bell_off,
+              amOrPm: 'AM'.tr,
+            ),
             HorizontalLine(),
             PrayerTimings(
-                prayerIcon: IconPaths.duhur,
-                prayer: "Duhur",
-                prayerTime: "12:27 PM",
-                bellActivity: IconPaths.bell_off),
+              prayerIcon: IconPaths.duhur,
+              prayer: "Duhur".tr,
+              prayerTime: "12:27".tr,
+              bellActivity: IconPaths.bell_off,
+              amOrPm: 'PM'.tr,
+            ),
             HorizontalLine(),
             PrayerTimings(
-                prayerIcon: IconPaths.asr,
-                prayer: "Asr",
-                prayerTime: "3:54 PM",
-                bellActivity: IconPaths.bell_on),
+              prayerIcon: IconPaths.asr,
+              prayer: "Asr".tr,
+              prayerTime: "3:54".tr,
+              bellActivity: IconPaths.bell_on,
+              amOrPm: 'PM'.tr,
+            ),
             HorizontalLine(),
             PrayerTimings(
-                prayerIcon: IconPaths.maghrib,
-                prayer: "Maghrib",
-                prayerTime: "6:36 PM",
-                bellActivity: IconPaths.bell_on),
+              prayerIcon: IconPaths.maghrib,
+              prayer: "Maghrib".tr,
+              prayerTime: "6:36".tr,
+              bellActivity: IconPaths.bell_on,
+              amOrPm: 'PM'.tr,
+            ),
             HorizontalLine(),
             PrayerTimings(
-                prayerIcon: IconPaths.isha,
-                prayer: "Isha",
-                prayerTime: "8:36 PM",
-                bellActivity: IconPaths.bell_on),
+              prayerIcon: IconPaths.isha,
+              prayer: "Isha".tr,
+              prayerTime: "8:36".tr,
+              bellActivity: IconPaths.bell_on,
+              amOrPm: 'PM'.tr,
+            ),
           ],
         ),
       ),

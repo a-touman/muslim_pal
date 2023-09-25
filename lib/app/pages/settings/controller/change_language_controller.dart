@@ -41,33 +41,3 @@ class ChangeLanguageController extends GetxController {
     return currentLanguage;
   }
 }
-
-// for the view
-//List<Widget> languagesList(BuildContext ctx) {
-//
-//   return Controller.languages.keys.map((e) {
-//     return Theme(
-//       data: Theme.of(ctx).copyWith(
-//         unselectedWidgetColor: AppColors.dullBlackColor.withOpacity(0.15),
-//       ),
-//       child: RadioListTile<String>(
-//         value: e,
-//         groupValue: _controller.selected.value,
-//         title: Text(e),
-//         activeColor: AppColors.lightGreenColor,
-//         onChanged: (value) {
-//           _controller.selected.value = value ?? "English";
-//           String languageKey = _controller.selected.value;
-//           String langCode = Controller.languages[languageKey] ?? 'en';
-//           _controller.changeLang(langCode);
-//         },
-//       ),
-//     );
-//   }).toList();
-// }
-// -----------------------------------------
-// Expanded(
-// child: ListView(
-// children: languagesList(context),
-// ),
-// ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../style/app_colors.dart';
+import '../style/app_colors.dart';
 
 class HorizontalLine extends StatelessWidget {
   @override

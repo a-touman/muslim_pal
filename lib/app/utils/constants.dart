@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_pal/app/style/app_colors.dart';
+import 'package:muslim_pal/app/style/text_themes.dart';
 
 const kDarkGradient = LinearGradient(
-  begin: Alignment.topLeft,
-  end: Alignment.bottomRight,
+  begin: Alignment(0, 0),
+  end: Alignment.topLeft,
   colors: [
-    Color.fromARGB(100, 248, 217, 200),
-    Color.fromARGB(255, 212, 191, 135),
+    Color(0xFFF7D0B5),
+    Color(0x00FAD4BF), // Transparent color
   ],
+  stops: [0.4346, 1.3569],
 );
 
 const kLightGradient = LinearGradient(
@@ -16,4 +19,11 @@ const kLightGradient = LinearGradient(
     Color.fromARGB(255, 250, 243, 238),
     Color.fromARGB(255, 250, 243, 238),
   ],
+);
+
+const kSettingsTextStyle = TextStyle(
+  fontStyle: FontStyle.normal,
+  fontWeight: FontWeight.w400,
+  fontSize: 22.0,
+  color: AppTextColors.headlines,
 );
