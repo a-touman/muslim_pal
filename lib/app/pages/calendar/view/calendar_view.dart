@@ -5,6 +5,7 @@ import 'package:muslim_pal/app/pages/home/view/home_view.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/style/style.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
+import '../../../widgets/back_arrow_ar.dart';
 import '../../home/repository/remote services.dart';
 import '../../settings/controller/change_language_controller.dart';
 import '../controller/calendar_controller.dart';
@@ -33,7 +34,8 @@ class CalendarView extends GetView<CalendarController> {
                                 onTap: () {
                                   Get.to(HomeView());
                                 },
-                                child: SvgPicture.asset(IconPaths.back_arrow)),
+                                child: BackArrowAr(),
+                            ),
                             SizedBox(width: AppStyle.spacing.W.spacingXs),
                             Text('Calendar Converter'.tr,
                                 style: TextStyles.heading.h3_28SB),

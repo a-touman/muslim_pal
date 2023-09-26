@@ -61,7 +61,7 @@ class Seemore extends StatelessWidget {
               Get.to(AyahDetailView(ayahText: ayahText,SurahNum: Surahnum,VerseNum: Versenum,));
             },
             child: Text(
-              '...see more',
+              '...see more'.tr,
               style: TextStyles.body.b_16B.textColor,
               textAlign: TextAlign.left,
             ),

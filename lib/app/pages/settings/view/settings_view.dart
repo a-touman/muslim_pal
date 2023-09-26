@@ -5,6 +5,7 @@ import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
+import 'package:muslim_pal/app/widgets/back_arrow_ar.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/constants.dart';
@@ -41,10 +42,7 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                             onTap: () {
                               Get.back();
                             },
-                            child: SvgPicture.asset(
-                              IconPaths.back_arrow,
-                              height: 45,
-                            ),
+                            child: BackArrowAr()
                           ),
                           SizedBox(
                             width: AppStyle.spacing.W.spacingXs,

@@ -95,6 +95,7 @@ const Map<String, String> ar = {
   "Dhu al-Qidah": "ذو القعدة",
   "Dhu al-Hijjah": "ذو الحجة",
   "1410":"١٤٢٠",
-  "2020":"٢٠٢٠"
+  "2020":"٢٠٢٠",
+  "...see more":"...شاهد المزيد"
 };
 

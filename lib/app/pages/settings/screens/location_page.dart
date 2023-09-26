@@ -8,6 +8,7 @@ import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
+import '../../../widgets/back_arrow_ar.dart';
 import 'manual_location_page.dart';
 
 class LocationPage extends GetView<ChangeLanguageController> {
@@ -37,10 +38,7 @@ class LocationPage extends GetView<ChangeLanguageController> {
                           onTap: () {
                             Get.back();
                           },
-                          child: SvgPicture.asset(
-                            IconPaths.back_arrow,
-                            height: 45,
-                          ),
+                          child:BackArrowAr(),
                         ),
                         SizedBox(
                           width: AppStyle.spacing.W.spacingXs,

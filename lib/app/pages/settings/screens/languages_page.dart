@@ -38,10 +38,7 @@ class LanguagesPage extends GetView<ChangeLanguageController> {
                             onTap: () {
                               Get.back();
                             },
-                            child: SvgPicture.asset(
-                              IconPaths.back_arrow,
-                              height: 45,
-                            ),
+                            child: BackArrowAr()
                           ),
                           SizedBox(
                             width: AppStyle.spacing.W.spacingXs,
