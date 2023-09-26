@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../../../style/app_colors.dart';
+import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../AyahDetail/view/ayahdetail_view.dart';
 import '../controller/home_controller.dart';
@@ -77,26 +78,28 @@ class IconContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16.0, 20.0, 16.0, 20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-              child: FloatingActionButton(
-                  heroTag: null,
-                  elevation: 0,
-                  backgroundColor: AppColors.buttonIconBackground,
-                  onPressed: null,
-                  child: icon)),
-          SizedBox(
-            height: AppStyle.spacing.H.spacingXxs,
-          ),
-          Container(
-            child: Text(
-              label,
-              style: TextStyles.heading.h5_22B,
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+                child: FloatingActionButton(
+                    heroTag: null,
+                    elevation: 0,
+                    backgroundColor: AppColors.buttonIconBackground,
+                    onPressed: null,
+                    child: icon)),
+            SizedBox(
+              height: AppStyle.spacing.H.spacingXxs,
             ),
-          )
-        ],
+            Container(
+              child: Text(
+                label,
+                style: TextStyles.heading.h5_22B,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
