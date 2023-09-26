@@ -20,6 +20,7 @@ class IconContent extends StatelessWidget {
             height: 46.0,
             width: 46.0,
             child: FloatingActionButton(
+                heroTag: null,
                 elevation: 0,
                 backgroundColor: AppColors.buttonIconBackground,
                 onPressed: null,

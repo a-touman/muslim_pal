@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
@@ -14,32 +15,36 @@ class LocationInfo extends StatelessWidget {
         children: <Widget>[
           SvgPicture.asset(
             IconPaths.location,
-            width: 35,
-            height: 35,
+            height: 45,
           ),
           SizedBox(width: AppStyle.spacing.W.spacingXs),
-          Container(
-            width: 300,
-            child: Column(
-              children: <Widget>[
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Al Masjid an Nabawi".tr,
-                    textAlign: TextAlign.start,
-                    style: TextStyles.heading.h5_22B,
+          Expanded(
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    alignment: ChangeLanguageController().getSelected()
+                        ? Alignment.centerLeft
+                        : Alignment.centerRight,
+                    child: Text(
+                      "Al Masjid an Nabawi".tr,
+                      textAlign: TextAlign.start,
+                      style: TextStyles.heading.h5_22B,
+                    ),
                   ),
-                ),
-                SizedBox(height: AppStyle.spacing.H.spacingXxs),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Medina, Saudi Arabia".tr,
-                    textAlign: TextAlign.start,
-                    style: TextStyles.body.b_16B.subTextColor,
+                  SizedBox(height: AppStyle.spacing.H.spacingXxs),
+                  Container(
+                    alignment: ChangeLanguageController().getSelected()
+                        ? Alignment.centerLeft
+                        : Alignment.centerRight,
+                    child: Text(
+                      "Medina, Saudi Arabia".tr,
+                      textAlign: TextAlign.start,
+                      style: TextStyles.body.b_16B.subTextColor,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],

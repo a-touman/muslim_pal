@@ -40,7 +40,7 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                             onTap: () {
                               Get.back();
                             },
-                            child: BackArrowAr()),
+                            child: BackArrow()),
                         SizedBox(
                           width: AppStyle.spacing.W.spacingXs,
                         ),

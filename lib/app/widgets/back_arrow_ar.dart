@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import '../pages/settings/controller/change_language_controller.dart';
 import '../utils/assets.dart';
 
-class BackArrowAr extends StatelessWidget {
+class BackArrow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (ChangeLanguageController().getCurrentLanguageCode() == 'ar') {

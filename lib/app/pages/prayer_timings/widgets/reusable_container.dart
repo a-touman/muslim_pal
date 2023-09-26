@@ -42,7 +42,6 @@ class ReusableContainer extends StatelessWidget {
           alignment: Alignment.bottomRight,
           children: [
             Positioned(
-              bottom: 0.0,
               right: 65.0,
               child: SvgPicture.asset(
                 subtractColor,
@@ -54,7 +53,6 @@ class ReusableContainer extends StatelessWidget {
               alignment: Alignment.bottomRight,
               children: <Widget>[
                 Positioned(
-                  bottom: 0.0,
                   right: 0.0,
                   child: ClipRRect(
                     borderRadius:
@@ -67,21 +65,29 @@ class ReusableContainer extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(
-                    left: 20.0,
-                    top: 28.0,
-                    right: 20.0,
-                    bottom: 65.0,
-                  ),
+                  padding: ChangeLanguageController().getSelected()
+                      ? EdgeInsets.only(
+                          left: 20.0,
+                          top: 20.0,
+                          right: 20.0,
+                          bottom: 65,
+                        )
+                      : EdgeInsets.only(
+                          left: 20.0,
+                          top: 20.0,
+                          right: 20.0,
+                          bottom: 45,
+                        ),
                   child: Column(
                     children: <Widget>[
                       Container(
-                        alignment: Alignment.centerRight,
+                        alignment: ChangeLanguageController().getSelected()
+                            ? Alignment.centerLeft
+                            : Alignment.centerRight,
                         child: Column(
                           children: <Widget>[
                             Text(
                               texts,
-                              textDirection: TextDirection.rtl,
                               style: TextStyles.body.b_14R.textColor,
                             ),
                           ],
@@ -89,7 +95,9 @@ class ReusableContainer extends StatelessWidget {
                       ),
                       SizedBox(height: 8.0),
                       Container(
-                        alignment: Alignment.centerRight,
+                        alignment: ChangeLanguageController().getSelected()
+                            ? Alignment.centerLeft
+                            : Alignment.centerRight,
                         child: Text(
                           prayer,
                           style: TextStyle(

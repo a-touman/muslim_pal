@@ -24,5 +24,7 @@ const Map<String, String> ar = {
   'End time - ': 'وقت النهاية - ',
   'Azan - ': "الأذان - ",
   "Safar 12, 1445": '١٢ صفر، ١٤٤٥',
-  "Mon, 28 August 2023": "الاثنين، ٢٨ أغسطس ٢٠٢٣"
+  "Mon, 28 August 2023": "الاثنين، ٢٨ أغسطس ٢٠٢٣",
+  "Al Masjid an Nabawi": "المسجد النبوي",
+  "Medina, Saudi Arabia": "المدينة المنورة، المملكة العربية السعودية",
 };
