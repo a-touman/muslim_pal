@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
-import '../../../utils/assets.dart';
 
 class PrayerTimings extends StatelessWidget {
   final String prayerIcon;

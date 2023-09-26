@@ -5,8 +5,6 @@ import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
-import 'package:muslim_pal/app/utils/utils.dart';
-
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/constants.dart';
@@ -18,10 +16,10 @@ class SettingsPage extends GetView<ChangeLanguageController> {
 
   @override
   Widget build(BuildContext context) {
-    ChangeLanguageController changeLanguageController =
-        Get.put(ChangeLanguageController());
+    Get.put(ChangeLanguageController());
 
     return Scaffold(
+      backgroundColor: AppColors.secondary,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -60,64 +58,53 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                   SizedBox(
                     height: AppStyle.spacing.H.spacingXxxxlg,
                   ),
-                  Container(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                          child: SvgPicture.asset(
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => LanguagesPage());
+                    },
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
                             IconPaths.group,
                             height: 30,
                           ),
-                          onTap: () {
-                            Get.to(() => LanguagesPage());
-                          },
-                        ),
-                        SizedBox(
-                          width: AppStyle.spacing.W.spacingMd,
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            Get.to(() => LanguagesPage());
-                          },
-                          child: Text(
+                          SizedBox(
+                            width: AppStyle.spacing.W.spacingMd,
+                          ),
+                          Text(
                             "Languages".tr,
                             style: kSettingsTextStyle,
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: AppStyle.spacing.H.spacingXlg,
                   ),
-                  Container(
-                    padding: EdgeInsets.only(left: 5),
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                          child: SvgPicture.asset(
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => LocationPage());
+                    },
+                    child: Container(
+                      padding: EdgeInsets.only(left: 5),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
                             IconPaths.location_filled,
                             height: 40,
                           ),
-                          onTap: () {
-                            Get.to(() => LocationPage());
-                          },
-                        ),
-                        SizedBox(
-                          width: AppStyle.spacing.W.spacingSm,
-                        ),
-                        TextButton(
-                          // onPressed: Get.to(LocationPage),
-                          onPressed: () {
-                            Get.to(() => LocationPage());
-                          },
-                          child: Text(
+                          SizedBox(
+                            width: AppStyle.spacing.W.spacingSm,
+                          ),
+                          Text(
                             "Location".tr,
                             style: kSettingsTextStyle,
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],

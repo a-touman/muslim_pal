@@ -27,11 +27,7 @@ class NotificationItem extends StatelessWidget {
               style: TextStyles.body.b_16B.textColor,
             ),
             Text(
-              time,
-              style: TextStyles.body.b_16B,
-            ),
-            Text(
-              amOrPm,
+              "$time $amOrPm",
               style: TextStyles.body.b_16B,
             ),
           ],

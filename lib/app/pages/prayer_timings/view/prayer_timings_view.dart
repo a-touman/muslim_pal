@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
@@ -12,7 +11,7 @@ import '../../../widgets/horizontal_line.dart';
 import '../../../widgets/icon_button.dart';
 import '../widgets/location_info.dart';
 import '../widgets/notification_item.dart';
-import '../widgets/prayer_timings_icons.dart';
+import '../widgets/prayer_timings_icon.dart';
 import '../widgets/reusable_container.dart';
 
 class PrayerTimingsPage extends GetView<PrayerTimingsController> {

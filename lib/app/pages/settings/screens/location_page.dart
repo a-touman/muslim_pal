@@ -6,8 +6,6 @@ import 'package:muslim_pal/app/pages/settings/controller/change_language_control
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
-import 'package:muslim_pal/app/utils/utils.dart';
-
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import 'manual_location_page.dart';
@@ -18,6 +16,7 @@ class LocationPage extends GetView<ChangeLanguageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.secondary,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -56,56 +55,51 @@ class LocationPage extends GetView<ChangeLanguageController> {
                   SizedBox(
                     height: AppStyle.spacing.H.spacingXxxxlg,
                   ),
-                  Container(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                          child: SvgPicture.asset(
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => ManualLocationPage());
+                    },
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
                             IconPaths.manual_select,
                             height: 35,
                           ),
-                          onTap: () {
-                            Get.to(() => ManualLocationPage());
-                          },
-                        ),
-                        SizedBox(
-                          width: AppStyle.spacing.W.spacingMd,
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            Get.to(() => ManualLocationPage());
-                          },
-                          child: Text(
+                          SizedBox(
+                            width: AppStyle.spacing.W.spacingMd,
+                          ),
+                          Text(
                             "Select Location Manually".tr,
                             style: kSettingsTextStyle,
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: AppStyle.spacing.H.spacingXlg,
                   ),
-                  Container(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                          child: SvgPicture.asset(
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
                             IconPaths.gps,
                             height: 35,
                           ),
-                          onTap: () {},
-                        ),
-                        SizedBox(
-                          width: AppStyle.spacing.W.spacingXlg,
-                        ),
-                        Text(
-                          "Allow GPS".tr,
-                          style: kSettingsTextStyle,
-                        ),
-                      ],
+                          SizedBox(
+                            width: AppStyle.spacing.W.spacingXlg,
+                          ),
+                          Text(
+                            "Allow GPS".tr,
+                            style: kSettingsTextStyle,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

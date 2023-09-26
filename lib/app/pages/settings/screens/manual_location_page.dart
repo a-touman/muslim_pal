@@ -3,12 +3,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
-import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
-import 'package:muslim_pal/app/utils/utils.dart';
-
+import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
+import 'package:country_picker_plus/country_picker_plus.dart';
 
 class ManualLocationPage extends GetView<ChangeLanguageController> {
   const ManualLocationPage({Key? key}) : super(key: key);
@@ -16,42 +15,77 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.secondary,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(
-                top: 72.0,
-                right: 24.0,
-                bottom: 602.0,
-                left: 24.0,
-              ),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Get.back();
-                          },
-                          child: SvgPicture.asset(
-                            IconPaths.back_arrow,
-                            height: 45,
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.only(
+                  top: 72.0,
+                  right: 24.0,
+                  left: 24.0,
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: SvgPicture.asset(
+                              IconPaths.back_arrow,
+                              height: 45,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          width: AppStyle.spacing.W.spacingXs,
-                        ),
-                        Text(
-                          "Location".tr,
-                          style: TextStyles.heading.h3_28SB,
-                        ),
-                      ],
+                          SizedBox(
+                            width: AppStyle.spacing.W.spacingXs,
+                          ),
+                          Text(
+                            "Location".tr,
+                            style: TextStyles.heading.h3_28SB,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: AppStyle.spacing.H.spacingXxxxlg,
+                    ),
+                    Expanded(
+                      child: CountryPickerPlus(
+                        isRequired: true,
+                        countryLabel: "Country",
+                        countrySearchHintText: "Search Country",
+                        countryHintText: "Tap to Select Country",
+                        stateLabel: "State",
+                        stateHintText: "Tap to Select State",
+                        cityLabel: "City",
+                        cityHintText: "Tap to Select City",
+                        bottomSheetDecoration: CPPBSHDecoration(
+                            itemsSpace: EdgeInsets.symmetric(vertical: 5),
+                            itemTextStyle: TextStyles.body.b_16R),
+                        decoration: CPPFDecoration(
+                          margin: EdgeInsets.symmetric(
+                            horizontal: 5,
+                            vertical: 5,
+                          ),
+                          height: 60,
+                        ),
+                        searchDecoration: CPPSFDecoration(
+                          textStyle: TextStyles.body.b_16R,
+                          hintStyle: TextStyles.body.b_16R,
+                        ),
+                        onCountrySaved: (value) {},
+                        onCountrySelected: (value) {},
+                        onStateSelected: (value) {},
+                        onCitySelected: (value) {},
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

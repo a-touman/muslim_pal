@@ -2,12 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:muslim_pal/app/pages/calendar/view/calendar_view.dart';
 import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
+import 'package:muslim_pal/app/pages/prayer_timings/view/prayer_timings_view.dart';
+import 'package:muslim_pal/app/pages/settings/view/settings_view.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
 import '../../../style/text_themes.dart';
 import '../widgets/home_page_widget.dart';
+
 class HomeView extends StatelessWidget {
   HomeController homeController = Get.find<HomeController>();
   @override
@@ -40,8 +42,8 @@ class HomeView extends StatelessWidget {
                         const SizedBox(height: 8.0),
                         Obx(() {
                           final ayahText = homeController.getAyahText();
-                          final Surahnum=homeController.getSurahno();
-                          final Versenum=homeController.getVerseNo();
+                          final Surahnum = homeController.getSurahno();
+                          final Versenum = homeController.getVerseNo();
                           final lineCount = homeController.countLines(
                             ayahText,
                             TextStyles.body.b_16R,
@@ -49,17 +51,24 @@ class HomeView extends StatelessWidget {
                           );
                           return Expanded(
                             child: Container(
-                              child: Seemore(ayahText: ayahText, lineCount: lineCount, homeController: homeController, Surahnum: Surahnum, Versenum: Versenum),
+                              child: Seemore(
+                                  ayahText: ayahText,
+                                  lineCount: lineCount,
+                                  homeController: homeController,
+                                  Surahnum: Surahnum,
+                                  Versenum: Versenum),
                             ),
                           );
                         }),
                         const SizedBox(height: 8.0),
-                      Obx(() {
-                        return Text('Surah ${homeController.getSurahno()}, Verse ${homeController.getVerseNo()}',style: TextStyles.body.b_12B.subTextColor,);
-                      })
+                        Obx(() {
+                          return Text(
+                            'Surah ${homeController.getSurahno()}, Verse ${homeController.getVerseNo()}',
+                            style: TextStyles.body.b_12B.subTextColor,
+                          );
+                        })
                       ],
                     ),
-
                   ),
                 ),
               ),
@@ -72,7 +81,9 @@ class HomeView extends StatelessWidget {
                 children: [
                   Expanded(
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => PrayerTimingsPage());
+                      },
                       child: ReusableContainer(
                         content: IconContent(
                           icon: SvgPicture.asset(IconPaths.clock),
@@ -83,10 +94,10 @@ class HomeView extends StatelessWidget {
                   ),
                   Expanded(
                     child: GestureDetector(
-                      onTap: () {
-                        print('get to calendar');
-                        Get.to(CalendarView());
-                      },
+                      // onTap: () {
+                      //   print('get to calendar');
+                      //   Get.to(CalendarView());
+                      // },
                       child: ReusableContainer(
                         content: IconContent(
                           label: 'Calendar Converter',
@@ -114,7 +125,9 @@ class HomeView extends StatelessWidget {
                   ),
                   Expanded(
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => SettingsPage());
+                      },
                       child: ReusableContainer(
                         content: IconContent(
                           icon: SvgPicture.asset(IconPaths.settings),
@@ -132,8 +145,3 @@ class HomeView extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
