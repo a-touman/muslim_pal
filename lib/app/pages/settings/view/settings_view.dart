@@ -21,100 +21,98 @@ class SettingsPage extends GetView<ChangeLanguageController> {
     return Scaffold(
       backgroundColor: AppColors.secondary,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-           // crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(
-                  top: 72.0,
-                  right: 24.0,
-                  bottom: 602.0,
-                  left: 24.0,
-                ),
-                child: Expanded(
-                  child: Column(
-                    children: <Widget>[
-                      Container(
+        child: Column(
+         // crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(
+                top: 72.0,
+                right: 24.0,
+                bottom: 0,
+                left: 24.0,
+              ),
+              child: Expanded(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: SvgPicture.asset(
+                              IconPaths.back_arrow,
+                              height: 45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: AppStyle.spacing.W.spacingXs,
+                          ),
+                          Text(
+                            "Settings".tr,
+                            style: TextStyles.heading.h3_28SB,
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: AppStyle.spacing.H.spacingXxxxlg,
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: GestureDetector(
+                        onTap: (){
+                          Get.to(LanguagesPage());
+                        },
                         child: Row(
                           children: [
-                            GestureDetector(
-                              onTap: () {
-                                Get.back();
-                              },
-                              child: SvgPicture.asset(
-                                IconPaths.back_arrow,
-                                height: 45,
-                              ),
+                            SvgPicture.asset(
+                              IconPaths.group,
+                              height: 30,
                             ),
                             SizedBox(
-                              width: AppStyle.spacing.W.spacingXs,
+                              width: AppStyle.spacing.W.spacingMd,
                             ),
                             Text(
-                              "Settings".tr,
-                              style: TextStyles.heading.h3_28SB,
-                            ),
+                              "Languages".tr,
+                              style: kSettingsTextStyle,
+                            )
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: AppStyle.spacing.H.spacingXxxxlg,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Get.to(() => LanguagesPage());
-                        },
-                        child: Container(
-                          padding: EdgeInsets.only(left: 10),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                IconPaths.group,
-                                height: 30,
-                              ),
-                              SizedBox(
-                                width: AppStyle.spacing.W.spacingMd,
-                              ),
-                              Text(
-                                "Languages".tr,
-                                style: kSettingsTextStyle,
-                              )
-                            ],
-                          ),
+                    ),
+                    SizedBox(
+                      height: AppStyle.spacing.H.spacingXlg,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => LocationPage());
+                      },
+                      child: Container(
+                        padding: EdgeInsets.only(left: 5),
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              IconPaths.location_filled,
+                              height: 40,
+                            ),
+                            SizedBox(
+                              width: AppStyle.spacing.W.spacingSm,
+                            ),
+                            Text(
+                              "Location".tr,
+                              style: kSettingsTextStyle,
+                            )
+                          ],
                         ),
                       ),
-                      SizedBox(
-                        height: AppStyle.spacing.H.spacingXlg,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Get.to(() => LocationPage());
-                        },
-                        child: Container(
-                          padding: EdgeInsets.only(left: 5),
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                IconPaths.location_filled,
-                                height: 40,
-                              ),
-                              SizedBox(
-                                width: AppStyle.spacing.W.spacingSm,
-                              ),
-                              Text(
-                                "Location".tr,
-                                style: kSettingsTextStyle,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

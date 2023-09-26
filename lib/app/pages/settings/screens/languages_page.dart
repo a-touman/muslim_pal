@@ -25,7 +25,7 @@ class LanguagesPage extends GetView<ChangeLanguageController> {
                     padding: EdgeInsets.only(
                       top: 72.0,
                       right: 24.0,
-                      bottom: 602.0,
+                      bottom: 0.0,
                       left: 24.0,
                     ),
                     child: Column(
