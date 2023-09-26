@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:muslim_pal/app/pages/calendar/controller/calendar_controller.dart';
+import 'package:muslim_pal/app/pages/calendar/view/calendar_view.dart';
 import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/view/prayer_timings_view.dart';
 import 'package:muslim_pal/app/pages/settings/view/settings_view.dart';
@@ -12,6 +14,7 @@ import '../widgets/home_page_widget.dart';
 
 class HomeView extends StatelessWidget {
   HomeController homeController = Get.find<HomeController>();
+  CalendarController calendarController=Get.put(CalendarController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,10 +97,10 @@ class HomeView extends StatelessWidget {
                   ),
                   Expanded(
                     child: GestureDetector(
-                      // onTap: () {
-                      //   print('get to calendar');
-                      //   Get.to(CalendarView());
-                      // },
+                      onTap: () {
+
+                        Get.to(CalendarView());
+                      },
                       child: ReusableContainer(
                         content: IconContent(
                           label: 'Calendar Converter',

@@ -21,6 +21,8 @@ const kLightGradient = LinearGradient(
     Color.fromARGB(255, 250, 243, 238),
   ],
 );
+BoxDecoration kCombobox=BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12),
+    border: Border.all(width:1,color: AppColors.primary));
 
 BoxDecoration kDetailDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(24.0),
