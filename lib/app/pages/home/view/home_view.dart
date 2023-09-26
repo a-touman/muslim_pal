@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
               'Muslim Pal',
               style: TextStyles.heading.h3_28SB,
             ),
-            SizedBox(height: 24.0),
+            const SizedBox(height: 24.0),
             Expanded(
               child: GestureDetector(
                 onTap: () {},
@@ -54,14 +54,12 @@ class HomeView extends StatelessWidget {
                             MediaQuery.of(context).size.width,
                           );
                           return Expanded(
-                            child: Container(
-                              child: Seemore(
-                                  ayahText: ayahText,
-                                  lineCount: lineCount,
-                                  homeController: homeController,
-                                  Surahnum: Surahnum,
-                                  Versenum: Versenum),
-                            ),
+                            child: Seemore(
+                                ayahText: ayahText,
+                                lineCount: lineCount,
+                                homeController: homeController,
+                                Surahnum: Surahnum,
+                                Versenum: Versenum),
                           );
                         }),
                         const SizedBox(height: 8.0),
@@ -86,7 +84,7 @@ class HomeView extends StatelessWidget {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        Get.to(() => PrayerTimingsPage());
+                        Get.to(() => const PrayerTimingsPage());
                       },
                       child: ReusableContainer(
                         content: IconContent(
@@ -133,7 +131,7 @@ class HomeView extends StatelessWidget {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        Get.to(() => SettingsPage());
+                        Get.to(() => const SettingsPage());
                       },
                       child: ReusableContainer(
                         content: IconContent(

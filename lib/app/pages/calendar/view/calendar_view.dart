@@ -122,7 +122,7 @@ class CalendarView extends GetView<CalendarController> {
                                             width: AppStyle.spacing.W.spacingSm),
                                         // Month container
                                         Expanded(
-                                          flex: 3,
+                                          flex: 4,
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.stretch,
                                             children: [
@@ -212,7 +212,7 @@ class CalendarView extends GetView<CalendarController> {
                               height: AppStyle.spacing.H.spacingMd,
                             ),
                             Container(
-                              decoration: kDetailDecoration,
+                              decoration: kHDetailDecoration,
                               child: Padding(
                                 padding: const EdgeInsets.all(24),
                                 child: Column(
@@ -279,14 +279,14 @@ class CalendarView extends GetView<CalendarController> {
                                             width: AppStyle.spacing.W.spacingSm),
                                         // Month container
                                         Expanded(
-                                          flex: 3,
+                                          flex: 4,
                                           child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
                                             const Text('Month'),
                                             SizedBox(
                                                 height: AppStyle.spacing.H.spacingXxs),
                                             Container(
                                               decoration: kCombobox,
-                                              width: 150,
+
                                               child: Center(
                                                 child: Obx(
                                                       () => DropdownButton<
@@ -308,7 +308,6 @@ class CalendarView extends GetView<CalendarController> {
                                         ),
                                         SizedBox(
                                             width: AppStyle.spacing.W.spacingMd),
-
                                         Expanded(
                                           flex: 2,
                                           child: Column(

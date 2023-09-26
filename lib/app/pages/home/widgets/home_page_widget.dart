@@ -17,13 +17,11 @@ class ReusableContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        child: content,
-        decoration: BoxDecoration(
-            color: AppColors.secondary,
-            borderRadius: BorderRadius.circular(24.0)),
-      ),
+    return Container(
+      child: content,
+      decoration: BoxDecoration(
+          color: AppColors.secondary,
+          borderRadius: BorderRadius.circular(24.0)),
     );
   }
 }

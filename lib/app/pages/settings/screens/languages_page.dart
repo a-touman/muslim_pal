@@ -15,56 +15,56 @@ class LanguagesPage extends GetView<ChangeLanguageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.secondary,
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.only(
-                  top: 72.0,
-                  right: 24.0,
-                  bottom: 602.0,
-                  left: 24.0,
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      child: Row(
-                        children: <Widget>[
-                          GestureDetector(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: SvgPicture.asset(
-                              IconPaths.back_arrow,
-                              height: 45,
-                            ),
-                          ),
-                          SizedBox(
-                            width: AppStyle.spacing.W.spacingXs,
-                          ),
-                          Text(
-                            "Languages".tr,
-                            style: TextStyles.heading.h3_28SB,
-                          ),
-                        ],
-                      ),
+        backgroundColor: AppColors.secondary,
+        body: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      top: 72.0,
+                      right: 24.0,
+                      bottom: 602.0,
+                      left: 24.0,
                     ),
-                    Expanded(
-                      child: ListView(
-                        padding: EdgeInsets.only(top: 50),
-                        children: languagesList(context),
-                      ),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          child: Row(
+                            children: <Widget>[
+                              GestureDetector(
+                                onTap: () {
+                                  Get.back();
+                                },
+                                child: SvgPicture.asset(
+                                  IconPaths.back_arrow,
+                                  height: 45,
+                                ),
+                              ),
+                              SizedBox(
+                                width: AppStyle.spacing.W.spacingXs,
+                              ),
+                              Text(
+                                "Languages".tr,
+                                style: TextStyles.heading.h3_28SB,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          child: ListView(
+                            padding: EdgeInsets.only(top: 50),
+                            children: languagesList(context),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
-        ),
-      ),
-    );
-  }
+            ),
+        );
+    }
 }

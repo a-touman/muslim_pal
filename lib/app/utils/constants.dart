@@ -28,6 +28,10 @@ BoxDecoration kDetailDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(24.0),
   gradient: kDarkGradient,
 );
+BoxDecoration kHDetailDecoration = BoxDecoration(
+  borderRadius: BorderRadius.circular(24.0),
+  gradient: kLightGradient,
+);
 
 const kSettingsTextStyle = TextStyle(
   fontStyle: FontStyle.normal,
