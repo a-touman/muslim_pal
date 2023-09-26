@@ -8,17 +8,17 @@ import '../../../utils/assets.dart';
 class LocationInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          SvgPicture.asset(
-            IconPaths.location,
-            width: 35,
-            height: 35,
-          ),
-          SizedBox(width: AppStyle.spacing.W.spacingXs),
-          Container(
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SvgPicture.asset(
+          IconPaths.location,
+          width: 35,
+          height: 35,
+        ),
+        SizedBox(width: AppStyle.spacing.W.spacingXs),
+        Expanded(
+          child: Container(
             width: 300,
             child: Column(
               children: <Widget>[
@@ -42,8 +42,8 @@ class LocationInfo extends StatelessWidget {
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

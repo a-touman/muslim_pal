@@ -17,12 +17,21 @@ class ReusableContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: content,
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-          color: AppColors.secondary,
-          borderRadius: BorderRadius.circular(24.0)),
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+            color: AppColors.secondary,
+            borderRadius: BorderRadius.circular(AppStyle.corners.lg)),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+                 content,
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
@@ -45,24 +54,23 @@ class Seemore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Flexible(
-          child: Text(
-            ayahText,
-            style: TextStyles.body.b_14R.textColor,
-            maxLines: lineCount >= 6 ? (homeController.showSeeMoreButton.value ? null : 6) : null,
-            overflow:TextOverflow.visible ,
-          ),
+        Text(
+          ayahText,
+          style: TextStyles.body.b_14R.textColor,
+          maxLines: lineCount >= 5? (homeController.showSeeMoreButton.value ? null : 5) : null,
+          overflow:TextOverflow.visible ,
         ),
         if (lineCount >= 5 && !homeController.showSeeMoreButton.value)
           InkWell(
             onTap: () {
-              Get.to(AyahDetailView(ayahText: ayahText,SurahNum: Surahnum,VerseNum: Versenum,));
+              Get.to(
+                  AyahDetailView(ayahText: ayahText,SurahNum: Surahnum,VerseNum: Versenum,));
             },
             child: Text(
               '...see more'.tr,
-              style: TextStyles.body.b_16B.textColor,
+              style: TextStyles.body.b_12B.textColor,
               textAlign: TextAlign.left,
             ),
           ),
@@ -78,28 +86,23 @@ class IconContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16.0, 20.0, 16.0, 20.0),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-                child: FloatingActionButton(
-                    heroTag: null,
-                    elevation: 0,
-                    backgroundColor: AppColors.buttonIconBackground,
-                    onPressed: null,
-                    child: icon)),
-            SizedBox(
-              height: AppStyle.spacing.H.spacingXxs,
-            ),
-            Container(
-              child: Text(
-                label,
-                style: TextStyles.heading.h5_22B,
-              ),
-            )
-          ],
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          FloatingActionButton(
+              heroTag: null,
+              elevation: 0,
+              backgroundColor: AppColors.buttonIconBackground,
+              onPressed: null,
+              child: icon),
+          SizedBox(
+            height: AppStyle.spacing.H.spacingXxs,
+          ),
+          Text(
+            label,
+            style: TextStyles.heading.h5_22B,
+          )
+        ],
       ),
     );
   }
