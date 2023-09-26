@@ -5,6 +5,8 @@ import 'package:muslim_pal/app/pages/home/view/home_view.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/style/style.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
+import '../../home/repository/remote services.dart';
+import '../../settings/controller/change_language_controller.dart';
 import '../controller/calendar_controller.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
@@ -12,6 +14,7 @@ class CalendarView extends GetView<CalendarController> {
   CalendarController calendarController = Get.find<CalendarController>();
   final TextEditingController _controller = TextEditingController();
   final TextEditingController _controller1 = TextEditingController();
+  ChangeLanguageController changeLanguageController=Get.find<ChangeLanguageController>();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class CalendarView extends GetView<CalendarController> {
                                 },
                                 child: SvgPicture.asset(IconPaths.back_arrow)),
                             SizedBox(width: AppStyle.spacing.W.spacingXs),
-                            Text('Calendar Converter',
+                            Text('Calendar Converter'.tr,
                                 style: TextStyles.heading.h3_28SB),
                           ],
                         ),
@@ -41,7 +44,7 @@ class CalendarView extends GetView<CalendarController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Gregorian Calendar',
+                              'Gregorian Calendar'.tr,
                               style: TextStyles.heading.h5_22B,
                             ),
                             SizedBox(
@@ -58,15 +61,24 @@ class CalendarView extends GetView<CalendarController> {
                                     Obx(() {
                                       final day = calendarController
                                           .GselectedDay.value;
+                                      final dayDisplayed=calendarController
+                                          .GselectedDay.value.toString().tr;
                                       final month = calendarController
-                                          .GselectedMonth.value;
-                                      final year = calendarController
-                                          .GselectedYear.value;
+                                          .GselectedMonth.value.tr;
+                                      int year=calendarController.Year;
+                                      String displayedYear="";
+                                      year = calendarController.GselectedYear.value;
+                                      if(changeLanguageController.getCurrentLanguageCode()=="ar"){
+                                        displayedYear=calendarController.translateAndSplit(year);
+                                      }
+                                      else{
+                                        displayedYear=year.toString();
+                                      }
                                       final formattedDay = day < 10
-                                          ? '0$day'
-                                          : day.toString();
+                                          ? '${"0".tr}$dayDisplayed'
+                                          : dayDisplayed;
                                       final formattedDate =
-                                          "$formattedDay, $month $year";
+                                          "$formattedDay, $month ${displayedYear}";
                                       return Text(
                                         formattedDate,
                                         style: TextStyles
@@ -89,7 +101,7 @@ class CalendarView extends GetView<CalendarController> {
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.stretch,
                                             children: [
-                                              const Text('Day'),
+                                               Text('Day'.tr),
                                               SizedBox(
                                                   height: AppStyle.spacing.H.spacingXxs),
                                               Container(
@@ -103,7 +115,7 @@ class CalendarView extends GetView<CalendarController> {
                                                           int>>.generate(31, (index) =>
                                                           DropdownMenuItem<int>(
                                                             value: index + 1,
-                                                            child: Text('${index + 1}'),
+                                                            child: Text('${index + 1}'.tr),
                                                           ),
                                                       ),
                                                       onChanged:
@@ -126,7 +138,7 @@ class CalendarView extends GetView<CalendarController> {
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.stretch,
                                             children: [
-                                              const Text('Month'),
+                                               Text('Month'.tr),
                                               SizedBox(
                                                   height: AppStyle.spacing.H.spacingXxs),
                                               Container(
@@ -139,7 +151,7 @@ class CalendarView extends GetView<CalendarController> {
                                                       items:
                                                       calendarController.monthList.map((month) {
                                                         return DropdownMenuItem<String>(value: month,
-                                                          child: Text(month),
+                                                          child: Text(month.tr),
                                                         );
                                                       }).toList(),
                                                       onChanged: (newValue) {calendarController.GsetSelectedMonth(newValue ??'January');
@@ -160,7 +172,7 @@ class CalendarView extends GetView<CalendarController> {
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              const Text('Year'),
+                                               Text('Year'.tr),
                                               SizedBox(
                                                   height: AppStyle.spacing.H.spacingXxs),
                                               Container(
@@ -176,10 +188,11 @@ class CalendarView extends GetView<CalendarController> {
                                                       calendarController.lastClickedGregorian=true;
                                                       int? parsedValue = int.tryParse(newValue);
                                                       if (parsedValue != null) {
+                                                        print(parsedValue);
                                                         calendarController.GsetSelectedYear(parsedValue);
                                                       }
                                                     },
-                                                    decoration: const InputDecoration(border: InputBorder.none,hintText:'2020',
+                                                    decoration:  InputDecoration(border: InputBorder.none,hintText:'2020'.tr,
                                                     ),
                                                   ),
                                                 ),
@@ -205,7 +218,7 @@ class CalendarView extends GetView<CalendarController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Hijri Calendar',
+                              'Hijri Calendar'.tr,
                               style: TextStyles.heading.h5_22B,
                             ),
                             SizedBox(
@@ -222,18 +235,28 @@ class CalendarView extends GetView<CalendarController> {
                                     Obx(() {
                                       final day = calendarController
                                           .HselectedDay.value;
+                                      final dayDisplayed=calendarController
+                                          .HselectedDay.value.toString().tr;
                                       final month = calendarController
-                                          .HselectedMonth.value;
-                                      final year = calendarController
-                                          .HselectedYear.value;
+                                          .HselectedMonth.value.tr;
+                                      int year=calendarController.Year;
+                                      String displayedYear="";
+                                      year = calendarController.HselectedYear.value;
+                                      if(changeLanguageController.getCurrentLanguageCode()=="ar"){
+                                        displayedYear=calendarController.translateAndSplit(year);
+                                      }
+                                      else{
+                                        displayedYear=year.toString();
+                                      }
                                       final formattedDay = day < 10
-                                          ? '0$day'
-                                          : day.toString();
+                                          ? '${"0".tr}$dayDisplayed'
+                                          : dayDisplayed;
                                       final formattedDate =
-                                          "$formattedDay, $month $year";
+                                          "$formattedDay, $month ${displayedYear}";
                                       return Text(
                                         formattedDate,
-                                        style: TextStyles.heading.h6_20B.textColor,
+                                        style: TextStyles
+                                            .heading.h6_20B.textColor,
                                       );
                                     }),
                                     SizedBox(
@@ -251,7 +274,7 @@ class CalendarView extends GetView<CalendarController> {
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.stretch,
                                             children: [
-                                              const Text('Day'),
+                                               Text('Day'.tr),
                                               SizedBox(
                                                   height: AppStyle.spacing.H.spacingXxs),
                                               Container(
@@ -262,7 +285,8 @@ class CalendarView extends GetView<CalendarController> {
                                                         () => DropdownButton<int>(
                                                       value: calendarController.HselectedDay.value,
                                                       items: List<DropdownMenuItem<int>>.generate(31,
-                                                            (index) => DropdownMenuItem<int>(value: index + 1, child: Text('${index + 1}'),
+                                                            (index) => DropdownMenuItem<int>
+                                                              (value: index + 1, child: Text('${index + 1}'.tr),
                                                         ),
                                                       ),
                                                       onChanged: (newValue) {calendarController.HsetSelectedDay(newValue ?? 1);
@@ -281,7 +305,7 @@ class CalendarView extends GetView<CalendarController> {
                                         Expanded(
                                           flex: 4,
                                           child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-                                            const Text('Month'),
+                                             Text('Month'.tr),
                                             SizedBox(
                                                 height: AppStyle.spacing.H.spacingXxs),
                                             Container(
@@ -291,11 +315,13 @@ class CalendarView extends GetView<CalendarController> {
                                                 child: Obx(
                                                       () => DropdownButton<
                                                       String>(value: calendarController.HselectedMonth.value, items: calendarController.hijrimonthList.map((month) {
-                                                    return DropdownMenuItem<String>(value: month, child: Text(month),
+                                                    return DropdownMenuItem<String>(value: month, child:
+                                                    Text(month.tr),
                                                     );
                                                   }).toList(),
                                                     onChanged:
-                                                        (newValue) {calendarController.HselectedMonth(newValue ?? 'MUHARAM');
+                                                        (newValue) {calendarController.HselectedMonth(
+                                                            newValue ?? 'MUHARAM');
                                                     },
                                                     underline:
                                                     Container(),
@@ -313,7 +339,7 @@ class CalendarView extends GetView<CalendarController> {
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.stretch,
                                             children: [
-                                              const Text('Year'),
+                                               Text('Year'.tr),
                                               SizedBox(
                                                   height: AppStyle.spacing.H.spacingXxs),
                                               Container(
@@ -330,7 +356,7 @@ class CalendarView extends GetView<CalendarController> {
                                                       int? parsedValue = int.tryParse(newValue);
                                                       if (parsedValue != null) {calendarController.HsetSelectedYear(parsedValue);
                                                       }},
-                                                    decoration: const InputDecoration(border: InputBorder.none,hintText: '1410'
+                                                    decoration:  InputDecoration(border: InputBorder.none,hintText:('1410'.tr)
                                                     ),
                                                   ),
                                                 ),
@@ -370,7 +396,7 @@ class CalendarView extends GetView<CalendarController> {
                                 backgroundColor: AppColors.buttonIconBackground, side: const BorderSide(width: 2, color: AppColors.primary),
                               ),
                               child: Text(
-                                'Convert Date',
+                                'Convert Date'.tr,
                                 style: TextStyles.body.b_16B,
                               ),
                             ),

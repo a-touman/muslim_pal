@@ -6,6 +6,7 @@ import 'package:muslim_pal/app/pages/calendar/controller/calendar_controller.dar
 import 'package:muslim_pal/app/pages/calendar/view/calendar_view.dart';
 import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/view/prayer_timings_view.dart';
+import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/pages/settings/view/settings_view.dart';
 import 'package:muslim_pal/app/style/style.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
@@ -16,6 +17,7 @@ import '../widgets/home_page_widget.dart';
 class HomeView extends StatelessWidget {
   HomeController homeController = Get.find<HomeController>();
   CalendarController calendarController=Get.put(CalendarController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +28,7 @@ class HomeView extends StatelessWidget {
           children: [
             Text(
               'Muslim Pal',
+              textDirection: TextDirection.ltr,
               style: TextStyles.heading.h3_28SB,
             ),
             const SizedBox(height: 24.0),
@@ -40,7 +43,7 @@ class HomeView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Verse of the day',
+                          'Verse of the day'.tr,
                           style: TextStyles.heading.h5_22B,
                         ),
                         const SizedBox(height: 8.0),
@@ -65,7 +68,7 @@ class HomeView extends StatelessWidget {
                         const SizedBox(height: 8.0),
                         Obx(() {
                           return Text(
-                            'Surah ${homeController.getSurahno()}, Verse ${homeController.getVerseNo()}',
+                            '${"Surah".tr} ${homeController.getSurahno()}, ${"Verse".tr} ${homeController.getVerseNo()}',
                             style: TextStyles.body.b_12B.subTextColor,
                           );
                         })
@@ -89,7 +92,7 @@ class HomeView extends StatelessWidget {
                       child: ReusableContainer(
                         content: IconContent(
                           icon: SvgPicture.asset(IconPaths.clock),
-                          label: 'Prayer\nTimes',
+                          label: "Prayer\nTimes".tr,
                         ),
                       ),
                     ),
@@ -103,7 +106,7 @@ class HomeView extends StatelessWidget {
                       },
                       child: ReusableContainer(
                         content: IconContent(
-                          label: 'Calendar Converter',
+                          label: 'Calendar\nConverter'.tr,
                           icon: SvgPicture.asset(IconPaths.rewind),
                         ),
                       ),
@@ -122,7 +125,7 @@ class HomeView extends StatelessWidget {
                       child: ReusableContainer(
                         content: IconContent(
                           icon: SvgPicture.asset(IconPaths.dua),
-                          label: 'Duaa',
+                          label: 'Duaa'.tr,
                         ),
                       ),
                     ),
@@ -136,7 +139,7 @@ class HomeView extends StatelessWidget {
                       child: ReusableContainer(
                         content: IconContent(
                           icon: SvgPicture.asset(IconPaths.settings),
-                          label: 'Settings',
+                          label: 'Settings'.tr,
                         ),
                       ),
                     ),

@@ -1,13 +1,19 @@
 import 'package:get/get.dart';
 import 'package:hijri/hijri_calendar.dart';
+
+import '../../settings/controller/change_language_controller.dart';
 class CalendarController extends GetxController {
+  ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
+
   final GselectedDay = 1.obs;
   final GselectedMonth = "January".obs;
   final GselectedYear = 2000.obs;
   final HselectedDay = 1.obs;
   final HselectedMonth = "Muharram".obs;
-  final HselectedYear = 2000.obs;
+  final HselectedYear = 1410.obs;
   final formattedDate=''.obs;
+  int Year=0;
+  String gHintText="";
   bool lastClickedGregorian=false;
   List<String> monthList = [
     "January",
@@ -38,9 +44,28 @@ class CalendarController extends GetxController {
     "Dhu al-Qidah",
     "Dhu al-Hijjah",
   ];
+
   int getMonthIndex(String monthName, List<String> monthList) {
     return monthList.indexOf(monthName);
   }
+  void gHintTextChange(){
+    if(changeLanguageController.getCurrentLanguageCode()=='ar'){
+      gHintText='١٤١٠';
+    }
+    else{
+      gHintText='1410';
+    }
+  }
+  String translateAndSplit(int number) {
+    final numberString = number.toString();
+    final translatedDigits = numberString.split('').map((digit) {
+      final translatedDigit = digit.tr;
+      return translatedDigit;
+    }).join();
+
+    return translatedDigits;
+  }
+
 
   void toHijri(){
     var hDate=
@@ -91,8 +116,6 @@ class CalendarController extends GetxController {
   void HsetSelectedYear(int value) {
     HselectedYear.value = value;
   }
-
-
 
   @override
   void onInit() {
