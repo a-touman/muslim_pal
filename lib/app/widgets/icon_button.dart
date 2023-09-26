@@ -14,7 +14,7 @@ class IconContent extends StatelessWidget {
     return Column(
       children: <Widget>[
         FloatingActionButton.small(
-          heroTag: null,
+            heroTag: null,
             elevation: 0,
             backgroundColor: AppColors.buttonIconBackground,
             onPressed: null,

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
+import '../../settings/controller/change_language_controller.dart';
 
 class LocationInfo extends StatelessWidget {
   @override

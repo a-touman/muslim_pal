@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -16,13 +15,13 @@ import '../widgets/home_page_widget.dart';
 
 class HomeView extends StatelessWidget {
   HomeController homeController = Get.find<HomeController>();
-  CalendarController calendarController=Get.put(CalendarController());
+  CalendarController calendarController = Get.put(CalendarController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0,149),
+        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0, 149),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -96,11 +95,12 @@ class HomeView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: AppStyle.spacing.W.spacingMd,),
+                  SizedBox(
+                    width: AppStyle.spacing.W.spacingMd,
+                  ),
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-
                         Get.to(CalendarView());
                       },
                       child: ReusableContainer(
@@ -114,7 +114,9 @@ class HomeView extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: AppStyle.spacing.H.spacingMd,),
+            SizedBox(
+              height: AppStyle.spacing.H.spacingMd,
+            ),
             Expanded(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -130,7 +132,9 @@ class HomeView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: AppStyle.spacing.W.spacingMd,),
+                  SizedBox(
+                    width: AppStyle.spacing.W.spacingMd,
+                  ),
                   Expanded(
                     child: GestureDetector(
                       onTap: () {

@@ -11,11 +11,13 @@ import '../../settings/controller/change_language_controller.dart';
 import '../controller/calendar_controller.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
+
 class CalendarView extends GetView<CalendarController> {
   CalendarController calendarController = Get.find<CalendarController>();
   final TextEditingController _controller = TextEditingController();
   final TextEditingController _controller1 = TextEditingController();
-  ChangeLanguageController changeLanguageController=Get.find<ChangeLanguageController>();
+  ChangeLanguageController changeLanguageController =
+      Get.find<ChangeLanguageController>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +33,10 @@ class CalendarView extends GetView<CalendarController> {
                           children: [
                             GestureDetector(
                               key: null,
-                                onTap: () {
-                                  Get.to(HomeView());
-                                },
-                                child: BackArrowAr(),
+                              onTap: () {
+                                Get.to(HomeView());
+                              },
+                              child: BackArrow(),
                             ),
                             SizedBox(width: AppStyle.spacing.W.spacingXs),
                             Text('Calendar Converter'.tr,
@@ -57,24 +59,28 @@ class CalendarView extends GetView<CalendarController> {
                               child: Padding(
                                 padding: const EdgeInsets.all(24),
                                 child: Column(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Obx(() {
-                                      final day = calendarController
-                                          .GselectedDay.value;
-                                      final dayDisplayed=calendarController
-                                          .GselectedDay.value.toString().tr;
+                                      final day =
+                                          calendarController.GselectedDay.value;
+                                      final dayDisplayed = calendarController
+                                          .GselectedDay.value
+                                          .toString()
+                                          .tr;
                                       final month = calendarController
                                           .GselectedMonth.value.tr;
-                                      int year=calendarController.Year;
-                                      String displayedYear="";
-                                      year = calendarController.GselectedYear.value;
-                                      if(changeLanguageController.getCurrentLanguageCode()=="ar"){
-                                        displayedYear=calendarController.translateAndSplit(year);
-                                      }
-                                      else{
-                                        displayedYear=year.toString();
+                                      int year = calendarController.Year;
+                                      String displayedYear = "";
+                                      year = calendarController
+                                          .GselectedYear.value;
+                                      if (changeLanguageController
+                                              .getCurrentLanguageCode() ==
+                                          "ar") {
+                                        displayedYear = calendarController
+                                            .translateAndSplit(year);
+                                      } else {
+                                        displayedYear = year.toString();
                                       }
                                       final formattedDay = day < 10
                                           ? '${"0".tr}$dayDisplayed'
@@ -83,8 +89,8 @@ class CalendarView extends GetView<CalendarController> {
                                           "$formattedDay, $month ${displayedYear}";
                                       return Text(
                                         formattedDate,
-                                        style: TextStyles
-                                            .heading.h6_20B.textColor,
+                                        style:
+                                            TextStyles.heading.h6_20B.textColor,
                                       );
                                     }),
                                     SizedBox(
@@ -101,28 +107,38 @@ class CalendarView extends GetView<CalendarController> {
                                         Expanded(
                                           flex: 2,
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
                                             children: [
-                                               Text('Day'.tr),
+                                              Text('Day'.tr),
                                               SizedBox(
-                                                  height: AppStyle.spacing.H.spacingXxs),
+                                                  height: AppStyle
+                                                      .spacing.H.spacingXxs),
                                               Container(
                                                 decoration: kCombobox,
                                                 width: 100,
                                                 child: Center(
                                                   child: Obx(
-                                                        () => DropdownButton<int>(
-                                                      value: calendarController.GselectedDay.value,
-                                                      items: List<DropdownMenuItem<
-                                                          int>>.generate(31, (index) =>
-                                                          DropdownMenuItem<int>(
-                                                            value: index + 1,
-                                                            child: Text('${index + 1}'.tr),
-                                                          ),
+                                                    () => DropdownButton<int>(
+                                                      value: calendarController
+                                                          .GselectedDay.value,
+                                                      items: List<
+                                                          DropdownMenuItem<
+                                                              int>>.generate(
+                                                        31,
+                                                        (index) =>
+                                                            DropdownMenuItem<
+                                                                int>(
+                                                          value: index + 1,
+                                                          child: Text(
+                                                              '${index + 1}'
+                                                                  .tr),
+                                                        ),
                                                       ),
-                                                      onChanged:
-                                                          (newValue) {
-                                                        calendarController.GsetSelectedDay(newValue ?? 1);
+                                                      onChanged: (newValue) {
+                                                        calendarController
+                                                            .GsetSelectedDay(
+                                                                newValue ?? 1);
                                                       },
                                                       underline: Container(),
                                                     ),
@@ -133,30 +149,42 @@ class CalendarView extends GetView<CalendarController> {
                                           ),
                                         ),
                                         SizedBox(
-                                            width: AppStyle.spacing.W.spacingSm),
+                                            width:
+                                                AppStyle.spacing.W.spacingSm),
                                         // Month container
                                         Expanded(
                                           flex: 4,
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
                                             children: [
-                                               Text('Month'.tr),
+                                              Text('Month'.tr),
                                               SizedBox(
-                                                  height: AppStyle.spacing.H.spacingXxs),
+                                                  height: AppStyle
+                                                      .spacing.H.spacingXxs),
                                               Container(
                                                 decoration: kCombobox,
                                                 width: 150,
                                                 child: Center(
                                                   child: Obx(
-                                                        () => DropdownButton<String>(
-                                                      value: calendarController.GselectedMonth.value,
-                                                      items:
-                                                      calendarController.monthList.map((month) {
-                                                        return DropdownMenuItem<String>(value: month,
+                                                    () =>
+                                                        DropdownButton<String>(
+                                                      value: calendarController
+                                                          .GselectedMonth.value,
+                                                      items: calendarController
+                                                          .monthList
+                                                          .map((month) {
+                                                        return DropdownMenuItem<
+                                                            String>(
+                                                          value: month,
                                                           child: Text(month.tr),
                                                         );
                                                       }).toList(),
-                                                      onChanged: (newValue) {calendarController.GsetSelectedMonth(newValue ??'January');
+                                                      onChanged: (newValue) {
+                                                        calendarController
+                                                            .GsetSelectedMonth(
+                                                                newValue ??
+                                                                    'January');
                                                       },
                                                       underline: Container(),
                                                     ),
@@ -167,16 +195,19 @@ class CalendarView extends GetView<CalendarController> {
                                           ),
                                         ),
                                         SizedBox(
-                                            width: AppStyle.spacing.W.spacingMd),
+                                            width:
+                                                AppStyle.spacing.W.spacingMd),
                                         //year
                                         Expanded(
                                           flex: 2,
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                               Text('Year'.tr),
+                                              Text('Year'.tr),
                                               SizedBox(
-                                                  height: AppStyle.spacing.H.spacingXxs),
+                                                  height: AppStyle
+                                                      .spacing.H.spacingXxs),
                                               Container(
                                                 decoration: kCombobox,
                                                 width: 100,
@@ -184,17 +215,25 @@ class CalendarView extends GetView<CalendarController> {
                                                   child: TextFormField(
                                                     controller: _controller1,
                                                     textAlign: TextAlign.center,
-                                                    keyboardType: TextInputType.number,
-                                                    onChanged:
-                                                        (newValue) {
-                                                      calendarController.lastClickedGregorian=true;
-                                                      int? parsedValue = int.tryParse(newValue);
+                                                    keyboardType:
+                                                        TextInputType.number,
+                                                    onChanged: (newValue) {
+                                                      calendarController
+                                                              .lastClickedGregorian =
+                                                          true;
+                                                      int? parsedValue =
+                                                          int.tryParse(
+                                                              newValue);
                                                       if (parsedValue != null) {
                                                         print(parsedValue);
-                                                        calendarController.GsetSelectedYear(parsedValue);
+                                                        calendarController
+                                                            .GsetSelectedYear(
+                                                                parsedValue);
                                                       }
                                                     },
-                                                    decoration:  InputDecoration(border: InputBorder.none,hintText:'2020'.tr,
+                                                    decoration: InputDecoration(
+                                                      border: InputBorder.none,
+                                                      hintText: '2020'.tr,
                                                     ),
                                                   ),
                                                 ),
@@ -231,24 +270,28 @@ class CalendarView extends GetView<CalendarController> {
                               child: Padding(
                                 padding: const EdgeInsets.all(24),
                                 child: Column(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Obx(() {
-                                      final day = calendarController
-                                          .HselectedDay.value;
-                                      final dayDisplayed=calendarController
-                                          .HselectedDay.value.toString().tr;
+                                      final day =
+                                          calendarController.HselectedDay.value;
+                                      final dayDisplayed = calendarController
+                                          .HselectedDay.value
+                                          .toString()
+                                          .tr;
                                       final month = calendarController
                                           .HselectedMonth.value.tr;
-                                      int year=calendarController.Year;
-                                      String displayedYear="";
-                                      year = calendarController.HselectedYear.value;
-                                      if(changeLanguageController.getCurrentLanguageCode()=="ar"){
-                                        displayedYear=calendarController.translateAndSplit(year);
-                                      }
-                                      else{
-                                        displayedYear=year.toString();
+                                      int year = calendarController.Year;
+                                      String displayedYear = "";
+                                      year = calendarController
+                                          .HselectedYear.value;
+                                      if (changeLanguageController
+                                              .getCurrentLanguageCode() ==
+                                          "ar") {
+                                        displayedYear = calendarController
+                                            .translateAndSplit(year);
+                                      } else {
+                                        displayedYear = year.toString();
                                       }
                                       final formattedDay = day < 10
                                           ? '${"0".tr}$dayDisplayed'
@@ -257,8 +300,8 @@ class CalendarView extends GetView<CalendarController> {
                                           "$formattedDay, $month ${displayedYear}";
                                       return Text(
                                         formattedDate,
-                                        style: TextStyles
-                                            .heading.h6_20B.textColor,
+                                        style:
+                                            TextStyles.heading.h6_20B.textColor,
                                       );
                                     }),
                                     SizedBox(
@@ -274,24 +317,38 @@ class CalendarView extends GetView<CalendarController> {
                                         Expanded(
                                           flex: 2,
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
                                             children: [
-                                               Text('Day'.tr),
+                                              Text('Day'.tr),
                                               SizedBox(
-                                                  height: AppStyle.spacing.H.spacingXxs),
+                                                  height: AppStyle
+                                                      .spacing.H.spacingXxs),
                                               Container(
                                                 decoration: kCombobox,
                                                 width: 100,
                                                 child: Center(
                                                   child: Obx(
-                                                        () => DropdownButton<int>(
-                                                      value: calendarController.HselectedDay.value,
-                                                      items: List<DropdownMenuItem<int>>.generate(31,
-                                                            (index) => DropdownMenuItem<int>
-                                                              (value: index + 1, child: Text('${index + 1}'.tr),
+                                                    () => DropdownButton<int>(
+                                                      value: calendarController
+                                                          .HselectedDay.value,
+                                                      items: List<
+                                                          DropdownMenuItem<
+                                                              int>>.generate(
+                                                        31,
+                                                        (index) =>
+                                                            DropdownMenuItem<
+                                                                int>(
+                                                          value: index + 1,
+                                                          child: Text(
+                                                              '${index + 1}'
+                                                                  .tr),
                                                         ),
                                                       ),
-                                                      onChanged: (newValue) {calendarController.HsetSelectedDay(newValue ?? 1);
+                                                      onChanged: (newValue) {
+                                                        calendarController
+                                                            .HsetSelectedDay(
+                                                                newValue ?? 1);
                                                       },
                                                       underline: Container(),
                                                     ),
@@ -302,64 +359,89 @@ class CalendarView extends GetView<CalendarController> {
                                           ),
                                         ),
                                         SizedBox(
-                                            width: AppStyle.spacing.W.spacingSm),
+                                            width:
+                                                AppStyle.spacing.W.spacingSm),
                                         // Month container
                                         Expanded(
                                           flex: 4,
-                                          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-                                             Text('Month'.tr),
-                                            SizedBox(
-                                                height: AppStyle.spacing.H.spacingXxs),
-                                            Container(
-                                              decoration: kCombobox,
-
-                                              child: Center(
-                                                child: Obx(
-                                                      () => DropdownButton<
-                                                      String>(value: calendarController.HselectedMonth.value, items: calendarController.hijrimonthList.map((month) {
-                                                    return DropdownMenuItem<String>(value: month, child:
-                                                    Text(month.tr),
-                                                    );
-                                                  }).toList(),
-                                                    onChanged:
-                                                        (newValue) {calendarController.HselectedMonth(
-                                                            newValue ?? 'MUHARAM');
-                                                    },
-                                                    underline:
-                                                    Container(),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
+                                            children: [
+                                              Text('Month'.tr),
+                                              SizedBox(
+                                                  height: AppStyle
+                                                      .spacing.H.spacingXxs),
+                                              Container(
+                                                decoration: kCombobox,
+                                                child: Center(
+                                                  child: Obx(
+                                                    () =>
+                                                        DropdownButton<String>(
+                                                      value: calendarController
+                                                          .HselectedMonth.value,
+                                                      items: calendarController
+                                                          .hijrimonthList
+                                                          .map((month) {
+                                                        return DropdownMenuItem<
+                                                            String>(
+                                                          value: month,
+                                                          child: Text(month.tr),
+                                                        );
+                                                      }).toList(),
+                                                      onChanged: (newValue) {
+                                                        calendarController
+                                                            .HselectedMonth(
+                                                                newValue ??
+                                                                    'MUHARAM');
+                                                      },
+                                                      underline: Container(),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
                                           ),
                                         ),
                                         SizedBox(
-                                            width: AppStyle.spacing.W.spacingMd),
+                                            width:
+                                                AppStyle.spacing.W.spacingMd),
                                         Expanded(
                                           flex: 2,
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
                                             children: [
-                                               Text('Year'.tr),
+                                              Text('Year'.tr),
                                               SizedBox(
-                                                  height: AppStyle.spacing.H.spacingXxs),
+                                                  height: AppStyle
+                                                      .spacing.H.spacingXxs),
                                               Container(
                                                 decoration: kCombobox,
                                                 width: 100,
                                                 child: Center(
                                                   child: TextFormField(
-                                                    controller:_controller,
+                                                    controller: _controller,
                                                     textAlign: TextAlign.center,
-                                                    keyboardType: TextInputType.number,
-                                                    onChanged:
-                                                        (newValue) {
-                                                      calendarController.lastClickedGregorian=false;
-                                                      int? parsedValue = int.tryParse(newValue);
-                                                      if (parsedValue != null) {calendarController.HsetSelectedYear(parsedValue);
-                                                      }},
-                                                    decoration:  InputDecoration(border: InputBorder.none,hintText:('1410'.tr)
-                                                    ),
+                                                    keyboardType:
+                                                        TextInputType.number,
+                                                    onChanged: (newValue) {
+                                                      calendarController
+                                                              .lastClickedGregorian =
+                                                          false;
+                                                      int? parsedValue =
+                                                          int.tryParse(
+                                                              newValue);
+                                                      if (parsedValue != null) {
+                                                        calendarController
+                                                            .HsetSelectedYear(
+                                                                parsedValue);
+                                                      }
+                                                    },
+                                                    decoration: InputDecoration(
+                                                        border:
+                                                            InputBorder.none,
+                                                        hintText: ('1410'.tr)),
                                                   ),
                                                 ),
                                               ),
@@ -384,18 +466,22 @@ class CalendarView extends GetView<CalendarController> {
                             child: ElevatedButton(
                               key: null,
                               onPressed: () {
-                                if(calendarController.lastClickedGregorian==true){
+                                if (calendarController.lastClickedGregorian ==
+                                    true) {
                                   calendarController.toHijri();
-                                  _controller.text = calendarController.HselectedYear.toString();
-                                }
-                                else{
+                                  _controller.text = calendarController
+                                      .HselectedYear.toString();
+                                } else {
                                   controller.toGregorian();
-                                  _controller1.text = calendarController.GselectedYear.toString();
+                                  _controller1.text = calendarController
+                                      .GselectedYear.toString();
                                 }
                               },
                               style: ElevatedButton.styleFrom(
                                 shape: const StadiumBorder(),
-                                backgroundColor: AppColors.buttonIconBackground, side: const BorderSide(width: 2, color: AppColors.primary),
+                                backgroundColor: AppColors.buttonIconBackground,
+                                side: const BorderSide(
+                                    width: 2, color: AppColors.primary),
                               ),
                               child: Text(
                                 'Convert Date'.tr,

@@ -10,7 +10,6 @@ import '../../../style/text_themes.dart';
 import '../../AyahDetail/view/ayahdetail_view.dart';
 import '../controller/home_controller.dart';
 
-
 class ReusableContainer extends StatelessWidget {
   final Widget content;
   ReusableContainer({required this.content});
@@ -27,7 +26,7 @@ class ReusableContainer extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-                 content,
+              content,
             ],
           ),
         ),
@@ -35,6 +34,7 @@ class ReusableContainer extends StatelessWidget {
     );
   }
 }
+
 class Seemore extends StatelessWidget {
   const Seemore({
     super.key,
@@ -59,14 +59,19 @@ class Seemore extends StatelessWidget {
         Text(
           ayahText,
           style: TextStyles.body.b_14R.textColor,
-          maxLines: lineCount >= 5? (homeController.showSeeMoreButton.value ? null : 5) : null,
-          overflow:TextOverflow.visible ,
+          maxLines: lineCount >= 5
+              ? (homeController.showSeeMoreButton.value ? null : 5)
+              : null,
+          overflow: TextOverflow.visible,
         ),
         if (lineCount >= 5 && !homeController.showSeeMoreButton.value)
           InkWell(
             onTap: () {
-              Get.to(
-                  AyahDetailView(ayahText: ayahText,SurahNum: Surahnum,VerseNum: Versenum,));
+              Get.to(AyahDetailView(
+                ayahText: ayahText,
+                SurahNum: Surahnum,
+                VerseNum: Versenum,
+              ));
             },
             child: Text(
               '...see more'.tr,
@@ -78,6 +83,7 @@ class Seemore extends StatelessWidget {
     );
   }
 }
+
 class IconContent extends StatelessWidget {
   final SvgPicture icon;
   final String label;

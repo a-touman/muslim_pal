@@ -8,6 +8,7 @@ import 'package:muslim_pal/app/utils/assets.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/constants.dart';
+import '../../../widgets/back_arrow_ar.dart';
 import '../screens/languages_page.dart';
 import '../screens/location_page.dart';
 
@@ -38,73 +39,74 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                       child: Row(
                         children: [
                           GestureDetector(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: BackArrow()),
-                        SizedBox(
-                          width: AppStyle.spacing.W.spacingXs,
-                        ),
-                        Text(
-                          "Settings".tr,
-                          style: TextStyles.heading.h3_28SB,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: AppStyle.spacing.H.spacingXxxxlg,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Get.to(() => LanguagesPage());
-                    },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            IconPaths.group,
-                            height: 30,
-                          ),
+                              onTap: () {
+                                Get.back();
+                              },
+                              child: BackArrow()),
                           SizedBox(
-                            width: AppStyle.spacing.W.spacingMd,
+                            width: AppStyle.spacing.W.spacingXs,
                           ),
                           Text(
-                            "Languages".tr,
-                            style: kSettingsTextStyle,
-                          )
+                            "Settings".tr,
+                            style: TextStyles.heading.h3_28SB,
+                          ),
                         ],
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: AppStyle.spacing.H.spacingXlg,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Get.to(() => LocationPage());
-                    },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 5),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            IconPaths.location_filled,
-                            height: 40,
-                          ),
-                          SizedBox(
-                            width: AppStyle.spacing.W.spacingSm,
-                          ),
-                          Text(
-                            "Location".tr,
-                            style: kSettingsTextStyle,
-                          )
-                        ],
+                    SizedBox(
+                      height: AppStyle.spacing.H.spacingXxxxlg,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => LanguagesPage());
+                      },
+                      child: Container(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              IconPaths.group,
+                              height: 30,
+                            ),
+                            SizedBox(
+                              width: AppStyle.spacing.W.spacingMd,
+                            ),
+                            Text(
+                              "Languages".tr,
+                              style: kSettingsTextStyle,
+                            )
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: AppStyle.spacing.H.spacingXlg,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => LocationPage());
+                      },
+                      child: Container(
+                        padding: EdgeInsets.only(left: 5),
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              IconPaths.location_filled,
+                              height: 40,
+                            ),
+                            SizedBox(
+                              width: AppStyle.spacing.W.spacingSm,
+                            ),
+                            Text(
+                              "Location".tr,
+                              style: kSettingsTextStyle,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

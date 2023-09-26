@@ -15,6 +15,7 @@ import '../widgets/location_info.dart';
 import '../widgets/notification_item.dart';
 import '../widgets/prayer_timings_icon.dart';
 import '../widgets/reusable_container.dart';
+
 class PrayerTimingsPage extends GetView<PrayerTimingsController> {
   const PrayerTimingsPage({Key? key}) : super(key: key);
 
@@ -175,55 +176,60 @@ class NotificationSection extends StatelessWidget {
         borderRadius: AppStyle.corners.lgBorder,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
         child: Row(
-        children: [
-        IconContent(
-        icon: SvgPicture.asset(
-          IconPaths.bell_on,
-          width: 32.0,
-          height: 32.0,
-        ),
-    ),
-        SizedBox(width: 20.0),
-        Expanded(
-          child: IntrinsicHeight(
-            child: Row(
-              children: [
-                NotificationItem(
-                  alignments: CrossAxisAlignment.end,
-                  texts: 'Suhoor'.tr,
-                  time: '04:57'.tr,
-                  amOrPm: 'AM'.tr,
-                ),
-                SizedBox(width: AppStyle.spacing.W.spacingSm),
-                const VerticalDivider(
-                  indent: 22,
-                  endIndent: 22,
-                  thickness: 2,
-                  color: AppColors.dividers,
-                ),
-                SizedBox(width: AppStyle.spacing.W.spacingSm),
-                NotificationItem(
-                  alignments: CrossAxisAlignment.start,
-                  texts: 'Iftar'.tr,
-                  time: '06:37'.tr,
-                  amOrPm: 'PM'.tr,
-                ),
-                SizedBox(width: 20.0),
-
-              ],
+          children: [
+            IconContent(
+              icon: ChangeLanguageController().getSelected()
+                  ? SvgPicture.asset(
+                      IconPaths.bell_on,
+                      height: 28,
+                    )
+                  : SvgPicture.asset(
+                      IconPaths.bell_off,
+                      height: 28,
+                    ),
             ),
-          ),
-        ),
-          IconContent(
-            icon: SvgPicture.asset(
-              IconPaths.bell_off,
-              width: 32.0,
-              height: 32.0,
+            SizedBox(width: 20.0),
+            Expanded(
+              child: IntrinsicHeight(
+                child: Row(
+                  children: [
+                    NotificationItem(
+                      alignments: CrossAxisAlignment.end,
+                      texts: 'Suhoor'.tr,
+                      time: '04:57'.tr,
+                      amOrPm: 'AM'.tr,
+                    ),
+                    SizedBox(width: AppStyle.spacing.W.spacingSm),
+                    const VerticalDivider(
+                      thickness: 2,
+                      color: AppColors.dividers,
+                    ),
+                    SizedBox(width: AppStyle.spacing.W.spacingSm),
+                    NotificationItem(
+                      alignments: CrossAxisAlignment.start,
+                      texts: 'Iftar'.tr,
+                      time: '06:37'.tr,
+                      amOrPm: 'PM'.tr,
+                    ),
+                    SizedBox(width: 20.0),
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
+            IconContent(
+              icon: ChangeLanguageController().getSelected()
+                  ? SvgPicture.asset(
+                      IconPaths.bell_off,
+                      height: 28,
+                    )
+                  : SvgPicture.asset(
+                      IconPaths.bell_on,
+                      height: 28,
+                    ),
+            ),
+          ],
         ),
       ),
     );

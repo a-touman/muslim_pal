@@ -8,7 +8,9 @@ import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
+import '../../../widgets/back_arrow_ar.dart';
 import 'manual_location_page.dart';
+import 'package:muslim_pal/app/pages/settings/services/location.dart';
 
 class LocationPage extends GetView<ChangeLanguageController> {
   const LocationPage({Key? key}) : super(key: key);
