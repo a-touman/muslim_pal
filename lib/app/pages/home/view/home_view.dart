@@ -7,6 +7,7 @@ import 'package:muslim_pal/app/pages/calendar/view/calendar_view.dart';
 import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/view/prayer_timings_view.dart';
 import 'package:muslim_pal/app/pages/settings/view/settings_view.dart';
+import 'package:muslim_pal/app/style/style.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
 import '../../../style/text_themes.dart';
@@ -19,7 +20,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0, 24.0),
+        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0,130),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -95,6 +96,7 @@ class HomeView extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(width: AppStyle.spacing.W.spacingMd,),
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
@@ -112,6 +114,7 @@ class HomeView extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: AppStyle.spacing.H.spacingMd,),
             Expanded(
               child: Row(
                 children: [
@@ -126,6 +129,7 @@ class HomeView extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(width: AppStyle.spacing.W.spacingMd,),
                   Expanded(
                     child: GestureDetector(
                       onTap: () {

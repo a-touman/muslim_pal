@@ -26,6 +26,7 @@ class CalendarView extends GetView<CalendarController> {
                         Row(
                           children: [
                             GestureDetector(
+                              key: null,
                                 onTap: () {
                                   Get.to(HomeView());
                                 },
@@ -354,6 +355,7 @@ class CalendarView extends GetView<CalendarController> {
                           child: SizedBox(
                             height: AppStyle.spacing.H.spacingXxxxlg,
                             child: ElevatedButton(
+                              key: null,
                               onPressed: () {
                                 if(calendarController.lastClickedGregorian==true){
                                   calendarController.toHijri();
