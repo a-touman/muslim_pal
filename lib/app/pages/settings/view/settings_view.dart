@@ -8,6 +8,7 @@ import 'package:muslim_pal/app/utils/assets.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/constants.dart';
+import '../../../widgets/back_arrow_ar.dart';
 import '../screens/languages_page.dart';
 import '../screens/location_page.dart';
 
@@ -26,9 +27,8 @@ class SettingsPage extends GetView<ChangeLanguageController> {
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(
-                top: 72.0,
+                top: 30.0,
                 right: 24.0,
-                bottom: 602.0,
                 left: 24.0,
               ),
               child: Column(
@@ -37,14 +37,10 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                     child: Row(
                       children: [
                         GestureDetector(
-                          onTap: () {
-                            Get.back();
-                          },
-                          child: SvgPicture.asset(
-                            IconPaths.back_arrow,
-                            height: 45,
-                          ),
-                        ),
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: BackArrowAr()),
                         SizedBox(
                           width: AppStyle.spacing.W.spacingXs,
                         ),

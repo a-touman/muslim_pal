@@ -7,6 +7,7 @@ import 'package:muslim_pal/app/utils/assets.dart';
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
+import '../../../widgets/back_arrow_ar.dart';
 import '../widgets/languages_list.dart';
 
 class LanguagesPage extends GetView<ChangeLanguageController> {
@@ -23,9 +24,8 @@ class LanguagesPage extends GetView<ChangeLanguageController> {
             Expanded(
               child: Container(
                 padding: EdgeInsets.only(
-                  top: 72.0,
+                  top: 30.0,
                   right: 24.0,
-                  bottom: 602.0,
                   left: 24.0,
                 ),
                 child: Column(
@@ -37,10 +37,7 @@ class LanguagesPage extends GetView<ChangeLanguageController> {
                             onTap: () {
                               Get.back();
                             },
-                            child: SvgPicture.asset(
-                              IconPaths.back_arrow,
-                              height: 45,
-                            ),
+                            child: BackArrowAr(),
                           ),
                           SizedBox(
                             width: AppStyle.spacing.W.spacingXs,

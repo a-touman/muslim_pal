@@ -8,7 +8,9 @@ import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
+import '../../../widgets/back_arrow_ar.dart';
 import 'manual_location_page.dart';
+import 'package:muslim_pal/app/pages/settings/services/location.dart';
 
 class LocationPage extends GetView<ChangeLanguageController> {
   const LocationPage({Key? key}) : super(key: key);
@@ -23,9 +25,8 @@ class LocationPage extends GetView<ChangeLanguageController> {
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(
-                top: 72.0,
+                top: 30.0,
                 right: 24.0,
-                bottom: 602.0,
                 left: 24.0,
               ),
               child: Column(
@@ -34,14 +35,10 @@ class LocationPage extends GetView<ChangeLanguageController> {
                     child: Row(
                       children: [
                         GestureDetector(
-                          onTap: () {
-                            Get.back();
-                          },
-                          child: SvgPicture.asset(
-                            IconPaths.back_arrow,
-                            height: 45,
-                          ),
-                        ),
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: BackArrowAr()),
                         SizedBox(
                           width: AppStyle.spacing.W.spacingXs,
                         ),
@@ -82,7 +79,9 @@ class LocationPage extends GetView<ChangeLanguageController> {
                     height: AppStyle.spacing.H.spacingXlg,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Location().getCurrentLocation();
+                    },
                     child: Container(
                       padding: EdgeInsets.only(left: 10),
                       child: Row(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
@@ -19,6 +20,8 @@ class PrayerTimingsPage extends GetView<PrayerTimingsController> {
 
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(() => ChangeLanguageController());
+
     return Scaffold(
       body: SafeArea(
         child: Content(),
@@ -31,9 +34,11 @@ class Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 24.0,
-        vertical: 74.5,
+      padding: const EdgeInsets.only(
+        top: 40,
+        right: 25,
+        left: 25,
+        bottom: 15,
       ),
       child: Column(
         children: <Widget>[
@@ -81,13 +86,16 @@ class Header extends StatelessWidget {
 class DateNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ChangeLanguageController controller = Get.find<ChangeLanguageController>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         IconButton(
           onPressed: () {},
           icon: SvgPicture.asset(
-            IconPaths.left_arrow,
+            controller.getSelected()
+                ? IconPaths.arrow_left
+                : IconPaths.arrow_right,
             width: 50,
             height: 50,
           ),
@@ -111,7 +119,9 @@ class DateNavigation extends StatelessWidget {
         IconButton(
           onPressed: () {},
           icon: SvgPicture.asset(
-            IconPaths.right_arrow,
+            controller.getSelected()
+                ? IconPaths.arrow_right
+                : IconPaths.arrow_left,
             width: 50,
             height: 50,
           ),
@@ -133,7 +143,7 @@ class PrayerTimingsContainer extends StatelessWidget {
           startTime: "12:27".tr,
           texts: "Now time is".tr,
           smallText: 'End time - '.tr,
-          endTime: "03:45".tr,
+          endTime: "03:45 ".tr,
           amOrPm: false,
           mosqueColor: IconPaths.background_mosque,
           subtractColor: IconPaths.subtract,
@@ -145,7 +155,7 @@ class PrayerTimingsContainer extends StatelessWidget {
           startTime: "03:54".tr,
           texts: "Next prayer is".tr,
           smallText: 'Azan - '.tr,
-          endTime: "05:15".tr,
+          endTime: "05:15 ".tr,
           amOrPm: false,
           mosqueColor: IconPaths.background_mosque_light,
           subtractColor: IconPaths.subtract_light,
