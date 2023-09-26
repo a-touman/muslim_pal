@@ -22,8 +22,9 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0,130),
+        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0,149),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
@@ -40,7 +41,7 @@ class HomeView extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
                           'Verse of the day'.tr,
@@ -56,16 +57,13 @@ class HomeView extends StatelessWidget {
                             TextStyles.body.b_16R,
                             MediaQuery.of(context).size.width,
                           );
-                          return Expanded(
-                            child: Seemore(
-                                ayahText: ayahText,
-                                lineCount: lineCount,
-                                homeController: homeController,
-                                Surahnum: Surahnum,
-                                Versenum: Versenum),
-                          );
+                          return Seemore(
+                              ayahText: ayahText,
+                              lineCount: lineCount,
+                              homeController: homeController,
+                              Surahnum: Surahnum,
+                              Versenum: Versenum);
                         }),
-                        const SizedBox(height: 8.0),
                         Obx(() {
                           return Text(
                             '${"Surah".tr} ${homeController.getSurahno()}, ${"Verse".tr} ${homeController.getVerseNo()}',
@@ -83,6 +81,7 @@ class HomeView extends StatelessWidget {
             ),
             Expanded(
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
                     child: GestureDetector(
@@ -118,6 +117,7 @@ class HomeView extends StatelessWidget {
             SizedBox(height: AppStyle.spacing.H.spacingMd,),
             Expanded(
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
                     child: GestureDetector(

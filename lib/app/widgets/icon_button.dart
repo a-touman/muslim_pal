@@ -11,23 +11,15 @@ class IconContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 20.0, 16.0, 20.0),
-      child: Column(
-        children: <Widget>[
-          Container(
-              child: SizedBox(
-            height: 46.0,
-            width: 46.0,
-            child: FloatingActionButton(
-                heroTag: null,
-                elevation: 0,
-                backgroundColor: AppColors.buttonIconBackground,
-                onPressed: null,
-                child: icon),
-          )),
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        FloatingActionButton.small(
+          heroTag: null,
+            elevation: 0,
+            backgroundColor: AppColors.buttonIconBackground,
+            onPressed: null,
+            child: icon),
+      ],
     );
   }
 }

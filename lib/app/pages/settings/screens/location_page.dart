@@ -8,9 +8,7 @@ import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
-import '../../../widgets/back_arrow_ar.dart';
 import 'manual_location_page.dart';
-import 'package:muslim_pal/app/pages/settings/services/location.dart';
 
 class LocationPage extends GetView<ChangeLanguageController> {
   const LocationPage({Key? key}) : super(key: key);
@@ -25,8 +23,9 @@ class LocationPage extends GetView<ChangeLanguageController> {
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(
-                top: 30.0,
+                top: 72.0,
                 right: 24.0,
+                bottom: 602.0,
                 left: 24.0,
               ),
               child: Column(
