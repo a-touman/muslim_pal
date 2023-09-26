@@ -23,9 +23,9 @@ class IconPaths {
 
   static const String back_arrow = "${_iconsPath}ic_back_arrow.svg";
 
-  static const String left_arrow = "${_iconsPath}ic_arrow_left.svg";
+  static const String arrow_left = "${_iconsPath}ic_arrow_left.svg";
 
-  static const String right_arrow = "${_iconsPath}ic_arrow_right.svg";
+  static const String arrow_right = "${_iconsPath}ic_arrow_right.svg";
 
   static const String background_mosque =
       "${_iconsPath}ic_background_mosque.svg";
@@ -50,6 +50,8 @@ class IconPaths {
   static const String duhur = "${_iconsPath}ic_duhur.svg";
 
   static const String asr = "${_iconsPath}ic_asr.svg";
+
+  static const String right_arrow = "${_iconsPath}ic_ar_back_arrow.svg";
 
   static const String maghrib = "${_iconsPath}ic_maghrib.svg";
 

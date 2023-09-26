@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:muslim_pal/app/style/style.dart';
 
 import '../../../style/app_colors.dart';
 import '../../../style/text_themes.dart';
@@ -19,6 +18,7 @@ class ReusableContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: content,
+      margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
           color: AppColors.secondary,
           borderRadius: BorderRadius.circular(24.0)),
@@ -50,7 +50,7 @@ class Seemore extends StatelessWidget {
           child: Text(
             ayahText,
             style: TextStyles.body.b_14R.textColor,
-            maxLines: lineCount >= 5 ? (homeController.showSeeMoreButton.value ? null : 5) : null,
+            maxLines: lineCount >= 6 ? (homeController.showSeeMoreButton.value ? null : 6) : null,
             overflow:TextOverflow.visible ,
           ),
         ),
@@ -82,7 +82,7 @@ class IconContent extends StatelessWidget {
         children: [
           Container(
               child: FloatingActionButton(
-                heroTag: null,
+                  heroTag: null,
                   elevation: 0,
                   backgroundColor: AppColors.buttonIconBackground,
                   onPressed: null,

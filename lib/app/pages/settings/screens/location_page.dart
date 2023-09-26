@@ -18,96 +18,94 @@ class LocationPage extends GetView<ChangeLanguageController> {
     return Scaffold(
       backgroundColor: AppColors.secondary,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(
-                  top: 72.0,
-                  right: 24.0,
-                  bottom: 602.0,
-                  left: 24.0,
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(
+                top: 72.0,
+                right: 24.0,
+                bottom: 602.0,
+                left: 24.0,
+              ),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: SvgPicture.asset(
+                            IconPaths.back_arrow,
+                            height: 45,
+                          ),
+                        ),
+                        SizedBox(
+                          width: AppStyle.spacing.W.spacingXs,
+                        ),
+                        Text(
+                          "Location".tr,
+                          style: TextStyles.heading.h3_28SB,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: AppStyle.spacing.H.spacingXxxxlg,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => ManualLocationPage());
+                    },
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10),
                       child: Row(
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: SvgPicture.asset(
-                              IconPaths.back_arrow,
-                              height: 45,
-                            ),
+                          SvgPicture.asset(
+                            IconPaths.manual_select,
+                            height: 35,
                           ),
                           SizedBox(
-                            width: AppStyle.spacing.W.spacingXs,
+                            width: AppStyle.spacing.W.spacingMd,
                           ),
                           Text(
-                            "Location".tr,
-                            style: TextStyles.heading.h3_28SB,
+                            "Select Location Manually".tr,
+                            style: kSettingsTextStyle,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: AppStyle.spacing.H.spacingXlg,
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                            IconPaths.gps,
+                            height: 35,
+                          ),
+                          SizedBox(
+                            width: AppStyle.spacing.W.spacingXlg,
+                          ),
+                          Text(
+                            "Allow GPS".tr,
+                            style: kSettingsTextStyle,
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(
-                      height: AppStyle.spacing.H.spacingXxxxlg,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Get.to(() => ManualLocationPage());
-                      },
-                      child: Container(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(
-                              IconPaths.manual_select,
-                              height: 35,
-                            ),
-                            SizedBox(
-                              width: AppStyle.spacing.W.spacingMd,
-                            ),
-                            Text(
-                              "Select Location Manually".tr,
-                              style: kSettingsTextStyle,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: AppStyle.spacing.H.spacingXlg,
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(
-                              IconPaths.gps,
-                              height: 35,
-                            ),
-                            SizedBox(
-                              width: AppStyle.spacing.W.spacingXlg,
-                            ),
-                            Text(
-                              "Allow GPS".tr,
-                              style: kSettingsTextStyle,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -22,7 +22,7 @@ class SettingsPage extends GetView<ChangeLanguageController> {
       backgroundColor: AppColors.secondary,
       body: SafeArea(
         child: Column(
-         // crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(

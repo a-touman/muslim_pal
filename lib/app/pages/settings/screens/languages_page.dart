@@ -7,6 +7,7 @@ import 'package:muslim_pal/app/utils/assets.dart';
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
+import '../../../widgets/back_arrow_ar.dart';
 import '../widgets/languages_list.dart';
 
 class LanguagesPage extends GetView<ChangeLanguageController> {
@@ -15,56 +16,56 @@ class LanguagesPage extends GetView<ChangeLanguageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.secondary,
-        body: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.only(
-                      top: 72.0,
-                      right: 24.0,
-                      bottom: 0.0,
-                      left: 24.0,
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          child: Row(
-                            children: <Widget>[
-                              GestureDetector(
-                                onTap: () {
-                                  Get.back();
-                                },
-                                child: SvgPicture.asset(
-                                  IconPaths.back_arrow,
-                                  height: 45,
-                                ),
-                              ),
-                              SizedBox(
-                                width: AppStyle.spacing.W.spacingXs,
-                              ),
-                              Text(
-                                "Languages".tr,
-                                style: TextStyles.heading.h3_28SB,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Expanded(
-                          child: ListView(
-                            padding: EdgeInsets.only(top: 50),
-                            children: languagesList(context),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+      backgroundColor: AppColors.secondary,
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.only(
+                  top: 72.0,
+                  right: 24.0,
+                  bottom: 0.0,
+                  left: 24.0,
                 ),
-              ],
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      child: Row(
+                        children: <Widget>[
+                          GestureDetector(
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: SvgPicture.asset(
+                              IconPaths.back_arrow,
+                              height: 45,
+                            ),
+                          ),
+                          SizedBox(
+                            width: AppStyle.spacing.W.spacingXs,
+                          ),
+                          Text(
+                            "Languages".tr,
+                            style: TextStyles.heading.h3_28SB,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: ListView(
+                        padding: EdgeInsets.only(top: 50),
+                        children: languagesList(context),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            ),
-        );
-    }
+          ],
+        ),
+      ),
+    );
+  }
 }

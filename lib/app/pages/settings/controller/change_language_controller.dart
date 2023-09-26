@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:muslim_pal/translations/en.dart';
+import '../../../../translations/ar.dart';
 import '../../../utils/storage_utility.dart';
 
 class ChangeLanguageController extends GetxController {
@@ -39,5 +41,13 @@ class ChangeLanguageController extends GetxController {
         : StorageUtility.readKey('lang')!;
 
     return currentLanguage;
+  }
+
+  bool getSelected() {
+    if (getCurrentLanguageCode() == 'en') {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

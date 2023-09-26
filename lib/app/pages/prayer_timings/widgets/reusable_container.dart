@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
-import 'package:muslim_pal/translations/en.dart';
 
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
-import '../../../utils/assets.dart';
 
 class ReusableContainer extends StatelessWidget {
   final String texts;
@@ -71,17 +70,18 @@ class ReusableContainer extends StatelessWidget {
                   padding: EdgeInsets.only(
                     left: 20.0,
                     top: 28.0,
-                    right: 43.0,
+                    right: 20.0,
                     bottom: 65.0,
                   ),
                   child: Column(
                     children: <Widget>[
                       Container(
-                        alignment: Alignment.centerLeft,
+                        alignment: Alignment.centerRight,
                         child: Column(
                           children: <Widget>[
                             Text(
                               texts,
+                              textDirection: TextDirection.rtl,
                               style: TextStyles.body.b_14R.textColor,
                             ),
                           ],
@@ -89,7 +89,7 @@ class ReusableContainer extends StatelessWidget {
                       ),
                       SizedBox(height: 8.0),
                       Container(
-                        alignment: Alignment.centerLeft,
+                        alignment: Alignment.centerRight,
                         child: Text(
                           prayer,
                           style: TextStyle(
