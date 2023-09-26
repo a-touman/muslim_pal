@@ -35,7 +35,7 @@ class LanguagesPage extends GetView<ChangeLanguageController> {
                         children: <Widget>[
                           GestureDetector(
                             onTap: () {
-                              Get.back();
+    Tap: () {                              Get.back();
                             },
                             child: BackArrow(),
                           ),

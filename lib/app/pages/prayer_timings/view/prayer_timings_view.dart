@@ -15,7 +15,6 @@ import '../widgets/location_info.dart';
 import '../widgets/notification_item.dart';
 import '../widgets/prayer_timings_icon.dart';
 import '../widgets/reusable_container.dart';
-
 class PrayerTimingsPage extends GetView<PrayerTimingsController> {
   const PrayerTimingsPage({Key? key}) : super(key: key);
 

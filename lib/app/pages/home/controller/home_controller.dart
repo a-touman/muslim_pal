@@ -1,10 +1,6 @@
-import 'dart:convert';
-import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart'as http;
-import 'dart:math';
-import 'dart:ui' as ui;
 import 'package:muslim_pal/app/pages/home/model/quran_model.dart';
 
 import '../repository/remote services.dart';
@@ -26,22 +22,21 @@ class HomeController extends GetxController {
       mod.value = quranModel;
       ayahText.value = mod.value.data?.text ?? 'loading';
     } catch (e) {
-      print('Error while getting data: $e');
+
     } finally {
       isLoading(false);
     }
   }
   String getAyahText() {
     if (mod.value != null && mod.value.data != null) {
-      print("called");
-      print(mod.value.data?.text);
+
+
       return mod.value.data?.text ?? 'loading';
     } else {
       return 'Ayah data not available';
     }
   }
   RxString retA() {
-    print(ayahText);
     return ayahText;
   }
   int? getVerseNo() {
@@ -62,7 +57,8 @@ class HomeController extends GetxController {
   }
   bool hasSixOrMoreLines(String text) {
     final lines = text.split('\n');
-    print(lines);
+
+
     return lines.length >= 6;
   }
   int countLines(String text, TextStyle style, double maxWidth) {

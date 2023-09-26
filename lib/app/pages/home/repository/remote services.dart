@@ -1,12 +1,14 @@
 import 'dart:convert';
 import 'dart:math';
-
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:http/http.dart' as http;
- import 'package:muslim_pal/app/pages/calendar/model/model.dart';
+import '../../settings/controller/change_language_controller.dart';
 import '../model/quran_model.dart';
+ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
   class RemoteServices {
   final Random random = Random();
+  String lang='';
 
   int randomInt() {
   int min = 1;
@@ -17,7 +19,16 @@ import '../model/quran_model.dart';
 
   Future<QuranModel> fetchData() async {
   try {
-  var url = Uri.parse('http://api.alquran.cloud/v1/ayah/${randomInt()}/en.asad');
+    print(changeLanguageController.selected);
+
+    if(changeLanguageController.getCurrentLanguageCode()=="ar"){
+      lang='ar';
+    }
+    else{
+      lang='en';
+    }
+    print(lang);
+   var url = Uri.parse('http://api.alquran.cloud/v1/ayah/${randomInt()}/$lang.asad');
   final response = await http.get(url);
 
   if (response.statusCode == 200) {
