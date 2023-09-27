@@ -25,14 +25,14 @@ class SettingsPage extends GetView<ChangeLanguageController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(
-                top: 72.0,
-                right: 24.0,
-                bottom: 0,
-                left: 24.0,
-              ),
-              child: Expanded(
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.only(
+                  top: 30.0,
+                  right: 24.0,
+                  bottom: 24.0,
+                  left: 24.0,
+                ),
                 child: Column(
                   children: <Widget>[
                     Container(
@@ -61,7 +61,7 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                         Get.to(() => LanguagesPage());
                       },
                       child: Container(
-                        padding: EdgeInsets.only(left: 10),
+                        padding: EdgeInsets.only(left: 10, right: 5),
                         child: Row(
                           children: [
                             SvgPicture.asset(
@@ -73,7 +73,9 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                             ),
                             Text(
                               "Languages".tr,
-                              style: kSettingsTextStyle,
+                              style: ChangeLanguageController().getSelected()
+                                  ? kSettingsTextStyleEn
+                                  : kSettingsTextStyleAr,
                             )
                           ],
                         ),
@@ -99,7 +101,9 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                             ),
                             Text(
                               "Location".tr,
-                              style: kSettingsTextStyle,
+                              style: ChangeLanguageController().getSelected()
+                                  ? kSettingsTextStyleEn
+                                  : kSettingsTextStyleAr,
                             )
                           ],
                         ),

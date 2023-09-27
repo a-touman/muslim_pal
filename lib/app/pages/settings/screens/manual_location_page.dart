@@ -23,9 +23,10 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
           children: <Widget>[
             Expanded(
               child: Container(
-                padding: const EdgeInsets.only(
-                  top: 72.0,
+                padding: EdgeInsets.only(
+                  top: 30.0,
                   right: 24.0,
+                  bottom: 24.0,
                   left: 24.0,
                 ),
                 child: Column(

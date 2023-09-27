@@ -23,86 +23,92 @@ class LocationPage extends GetView<ChangeLanguageController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(
-                top: 72.0,
-                right: 24.0,
-                bottom: 602.0,
-                left: 24.0,
-              ),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    child: Row(
-                      children: [
-                        GestureDetector(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: BackArrow()),
-                        SizedBox(
-                          width: AppStyle.spacing.W.spacingXs,
-                        ),
-                        Text(
-                          "Location".tr,
-                          style: TextStyles.heading.h3_28SB,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: AppStyle.spacing.H.spacingXxxxlg,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Get.to(() => ManualLocationPage());
-                    },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 10),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.only(
+                  top: 30.0,
+                  right: 24.0,
+                  bottom: 24.0,
+                  left: 24.0,
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Container(
                       child: Row(
                         children: [
-                          SvgPicture.asset(
-                            IconPaths.manual_select,
-                            height: 35,
-                          ),
+                          GestureDetector(
+                              onTap: () {
+                                Get.back();
+                              },
+                              child: BackArrow()),
                           SizedBox(
-                            width: AppStyle.spacing.W.spacingMd,
+                            width: AppStyle.spacing.W.spacingXs,
                           ),
                           Text(
-                            "Select Location Manually".tr,
-                            style: kSettingsTextStyle,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: AppStyle.spacing.H.spacingXlg,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Location().getCurrentLocation();
-                    },
-                    child: Container(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            IconPaths.gps,
-                            height: 35,
-                          ),
-                          SizedBox(
-                            width: AppStyle.spacing.W.spacingXlg,
-                          ),
-                          Text(
-                            "Allow GPS".tr,
-                            style: kSettingsTextStyle,
+                            "Location".tr,
+                            style: TextStyles.heading.h3_28SB,
                           ),
                         ],
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: AppStyle.spacing.H.spacingXxxxlg,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => ManualLocationPage());
+                      },
+                      child: Container(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              IconPaths.manual_select,
+                              height: 35,
+                            ),
+                            SizedBox(
+                              width: AppStyle.spacing.W.spacingMd,
+                            ),
+                            Text(
+                              "Select Location Manually".tr,
+                              style: ChangeLanguageController().getSelected()
+                                  ? kSettingsTextStyleEn
+                                  : kSettingsTextStyleAr,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: AppStyle.spacing.H.spacingXlg,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Location().getCurrentLocation();
+                      },
+                      child: Container(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              IconPaths.gps,
+                              height: 35,
+                            ),
+                            SizedBox(
+                              width: AppStyle.spacing.W.spacingMd,
+                            ),
+                            Text(
+                              "Allow GPS".tr,
+                              style: ChangeLanguageController().getSelected()
+                                  ? kSettingsTextStyleEn
+                                  : kSettingsTextStyleAr,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

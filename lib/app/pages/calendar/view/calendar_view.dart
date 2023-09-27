@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/home/view/home_view.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/style/style.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
 import '../../../widgets/back_arrow_ar.dart';
-import '../../home/repository/remote services.dart';
 import '../../settings/controller/change_language_controller.dart';
 import '../controller/calendar_controller.dart';
 import '../../../style/text_themes.dart';
-import '../../../utils/assets.dart';
 
 class CalendarView extends GetView<CalendarController> {
-  CalendarController calendarController = Get.find<CalendarController>();
+  CalendarController calendarController = Get.put(CalendarController());
   final TextEditingController _controller = TextEditingController();
   final TextEditingController _controller1 = TextEditingController();
   ChangeLanguageController changeLanguageController =
@@ -24,7 +21,7 @@ class CalendarView extends GetView<CalendarController> {
     return Scaffold(
         body: SafeArea(
             child: Padding(
-                padding: const EdgeInsets.fromLTRB(24, 28, 24, 100),
+                padding: const EdgeInsets.fromLTRB(24, 30, 24, 100),
                 child: SingleChildScrollView(
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,

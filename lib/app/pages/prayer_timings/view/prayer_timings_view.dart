@@ -36,7 +36,7 @@ class Content extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(
-        top: 40,
+        top: 30,
         right: 25,
         left: 25,
         bottom: 15,
@@ -69,10 +69,7 @@ class Header extends StatelessWidget {
             onTap: () {
               Get.back();
             },
-            child: Padding(
-              padding: const EdgeInsets.only(top: 7.0),
-              child: BackArrow(),
-            ),
+            child: BackArrow(),
           ),
         ),
         SizedBox(width: AppStyle.spacing.W.spacingXs),
@@ -180,15 +177,10 @@ class NotificationSection extends StatelessWidget {
         child: Row(
           children: [
             IconContent(
-              icon: ChangeLanguageController().getSelected()
-                  ? SvgPicture.asset(
-                      IconPaths.bell_on,
-                      height: 28,
-                    )
-                  : SvgPicture.asset(
-                      IconPaths.bell_off,
-                      height: 28,
-                    ),
+              icon: SvgPicture.asset(
+                IconPaths.bell_on,
+                height: 28,
+              ),
             ),
             SizedBox(width: 20.0),
             Expanded(
@@ -219,15 +211,10 @@ class NotificationSection extends StatelessWidget {
               ),
             ),
             IconContent(
-              icon: ChangeLanguageController().getSelected()
-                  ? SvgPicture.asset(
-                      IconPaths.bell_off,
-                      height: 28,
-                    )
-                  : SvgPicture.asset(
-                      IconPaths.bell_on,
-                      height: 28,
-                    ),
+              icon: SvgPicture.asset(
+                IconPaths.bell_off,
+                height: 28,
+              ),
             ),
           ],
         ),
