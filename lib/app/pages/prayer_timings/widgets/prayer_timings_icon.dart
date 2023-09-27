@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
@@ -32,7 +33,7 @@ class PrayerTimings extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SvgPicture.asset(
-                      prayerIcon,
+                      prayerIcon.tr,
                       width: 35.0,
                       height: 35.0,
                     ),
@@ -40,7 +41,7 @@ class PrayerTimings extends StatelessWidget {
                       width: AppStyle.spacing.W.spacingXs,
                     ),
                     Text(
-                      prayer,
+                      prayer.tr,
                       style: TextStyle(
                         fontFamily: FontsFamily.effraTrialRegular,
                         fontWeight: FontWeight.w500,
@@ -58,7 +59,7 @@ class PrayerTimings extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      prayerTime,
+                      prayerTime.tr,
                       style: TextStyle(
                         fontFamily: FontsFamily.effraTrialRegular,
                         fontWeight: FontWeight.w500,
@@ -70,7 +71,7 @@ class PrayerTimings extends StatelessWidget {
                       width: AppStyle.spacing.W.spacingXs,
                     ),
                     Text(
-                      amOrPm,
+                      amOrPm.tr,
                       style: TextStyle(
                         fontFamily: FontsFamily.effraTrialRegular,
                         fontWeight: FontWeight.w500,

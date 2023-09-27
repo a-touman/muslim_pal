@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../style/text_themes.dart';
 
 class NotificationItem extends StatelessWidget {
@@ -23,11 +24,11 @@ class NotificationItem extends StatelessWidget {
           crossAxisAlignment: alignments,
           children: <Widget>[
             Text(
-              texts,
+              texts.tr,
               style: TextStyles.body.b_16B.textColor,
             ),
             Text(
-              "$time $amOrPm",
+              "$time $amOrPm".tr,
               style: TextStyles.body.b_16B,
             ),
           ],
