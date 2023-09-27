@@ -27,7 +27,7 @@ class DuaaRow extends StatelessWidget {
           DuaaContainer(
             iconPicture: containerIconLeft,
             iconName: containerNameLeft,
-            page: duaaPageLeft,
+            duaPage: duaaPageLeft,
           ),
           SizedBox(
             width: AppStyle.spacing.W.spacingMd,
@@ -35,7 +35,7 @@ class DuaaRow extends StatelessWidget {
           DuaaContainer(
             iconPicture: containerIconRight,
             iconName: containerNameRight,
-            page: duaaPageRight,
+            duaPage: duaaPageRight,
           ),
         ],
       ),

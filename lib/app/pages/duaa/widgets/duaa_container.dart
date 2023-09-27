@@ -10,17 +10,19 @@ import '../../../style/text_themes.dart';
 class DuaaContainer extends StatelessWidget {
   late final String iconPicture;
   late final String iconName;
-  late final Widget page;
+  late final Widget duaPage;
 
   DuaaContainer(
-      {required this.iconPicture, required this.iconName, required this.page});
+      {required this.iconPicture,
+      required this.iconName,
+      required this.duaPage});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
         onTap: () {
-          Get.to(() => page);
+          Get.to(() => duaPage);
         },
         child: Container(
           decoration: BoxDecoration(
