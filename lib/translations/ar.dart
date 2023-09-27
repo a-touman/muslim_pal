@@ -38,7 +38,7 @@ const Map<String, String> ar = {
   "Year": "سنة",
   "Convert Date": "تاريخ التحويل",
   "Hijri Calendar": "التقويم الهجري",
-  "0":"٠",
+  "0": "٠",
   "1": "١",
   "2": "٢",
   "3": "٣",
@@ -94,8 +94,9 @@ const Map<String, String> ar = {
   "Shawwal": "شوال",
   "Dhu al-Qidah": "ذو القعدة",
   "Dhu al-Hijjah": "ذو الحجة",
-  "1410":"١٤٢٠",
-  "2020":"٢٠٢٠",
-  "...see more":"...شاهد المزيد"
+  "1410": "١٤٢٠",
+  "2020": "٢٠٢٠",
+  "Al Masjid an Nabawi": "المسجد النبوي",
+  "Medina, Saudi Arabia": "المدينة المنورة، المملكة العربية السعودية",
+  "...see more": "...شاهد المزيد",
 };
-

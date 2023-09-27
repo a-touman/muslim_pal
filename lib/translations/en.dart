@@ -25,4 +25,6 @@ const Map<String, String> en = {
   'Azan - ': 'Azan - ',
   "Safar 12, 1445": "Safar 12, 1445",
   "Mon, 28 August 2023": "Mon, 28 August 2023",
+  "Al Masjid an Nabawi": "Al Masjid an Nabawi",
+  "Medina, Saudi Arabia": "Medina, Saudi Arabia",
 };

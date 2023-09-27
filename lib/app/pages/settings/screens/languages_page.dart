@@ -24,9 +24,9 @@ class LanguagesPage extends GetView<ChangeLanguageController> {
             Expanded(
               child: Container(
                 padding: EdgeInsets.only(
-                  top: 72.0,
+                  top: 30.0,
                   right: 24.0,
-                  bottom: 0.0,
+                  bottom: 24.0,
                   left: 24.0,
                 ),
                 child: Column(
@@ -38,7 +38,7 @@ class LanguagesPage extends GetView<ChangeLanguageController> {
                             onTap: () {
                               Get.back();
                             },
-                            child: BackArrowAr()
+                            child: BackArrow(),
                           ),
                           SizedBox(
                             width: AppStyle.spacing.W.spacingXs,

@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
+import 'package:muslim_pal/app/widgets/back_arrow_ar.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
@@ -14,6 +15,7 @@ import '../widgets/location_info.dart';
 import '../widgets/notification_item.dart';
 import '../widgets/prayer_timings_icon.dart';
 import '../widgets/reusable_container.dart';
+
 class PrayerTimingsPage extends GetView<PrayerTimingsController> {
   const PrayerTimingsPage({Key? key}) : super(key: key);
 
@@ -34,7 +36,7 @@ class Content extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(
-        top: 40,
+        top: 30,
         right: 25,
         left: 25,
         bottom: 15,
@@ -67,10 +69,8 @@ class Header extends StatelessWidget {
             onTap: () {
               Get.back();
             },
-            child: SvgPicture.asset(IconPaths.back_arrow),
+            child: BackArrow(),
           ),
-          height: 42.0,
-          width: 42.0,
         ),
         SizedBox(width: AppStyle.spacing.W.spacingXs),
         Text(
@@ -173,55 +173,50 @@ class NotificationSection extends StatelessWidget {
         borderRadius: AppStyle.corners.lgBorder,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
         child: Row(
-        children: [
-        IconContent(
-        icon: SvgPicture.asset(
-          IconPaths.bell_on,
-          width: 32.0,
-          height: 32.0,
-        ),
-    ),
-        SizedBox(width: 20.0),
-        Expanded(
-          child: IntrinsicHeight(
-            child: Row(
-              children: [
-                NotificationItem(
-                  alignments: CrossAxisAlignment.end,
-                  texts: 'Suhoor'.tr,
-                  time: '04:57'.tr,
-                  amOrPm: 'AM'.tr,
-                ),
-                SizedBox(width: AppStyle.spacing.W.spacingSm),
-                const VerticalDivider(
-                  indent: 22,
-                  endIndent: 22,
-                  thickness: 2,
-                  color: AppColors.dividers,
-                ),
-                SizedBox(width: AppStyle.spacing.W.spacingSm),
-                NotificationItem(
-                  alignments: CrossAxisAlignment.start,
-                  texts: 'Iftar'.tr,
-                  time: '06:37'.tr,
-                  amOrPm: 'PM'.tr,
-                ),
-                SizedBox(width: 20.0),
-
-              ],
+          children: [
+            IconContent(
+              icon: SvgPicture.asset(
+                IconPaths.bell_on,
+                height: 28,
+              ),
             ),
-          ),
-        ),
-          IconContent(
-            icon: SvgPicture.asset(
-              IconPaths.bell_off,
-              width: 32.0,
-              height: 32.0,
+            SizedBox(width: 20.0),
+            Expanded(
+              child: IntrinsicHeight(
+                child: Row(
+                  children: [
+                    NotificationItem(
+                      alignments: CrossAxisAlignment.end,
+                      texts: 'Suhoor'.tr,
+                      time: '04:57'.tr,
+                      amOrPm: 'AM'.tr,
+                    ),
+                    SizedBox(width: AppStyle.spacing.W.spacingSm),
+                    const VerticalDivider(
+                      thickness: 2,
+                      color: AppColors.dividers,
+                    ),
+                    SizedBox(width: AppStyle.spacing.W.spacingSm),
+                    NotificationItem(
+                      alignments: CrossAxisAlignment.start,
+                      texts: 'Iftar'.tr,
+                      time: '06:37'.tr,
+                      amOrPm: 'PM'.tr,
+                    ),
+                    SizedBox(width: 20.0),
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
+            IconContent(
+              icon: SvgPicture.asset(
+                IconPaths.bell_off,
+                height: 28,
+              ),
+            ),
+          ],
         ),
       ),
     );

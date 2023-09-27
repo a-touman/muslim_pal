@@ -5,10 +5,10 @@ import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
-import 'package:muslim_pal/app/widgets/back_arrow_ar.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/constants.dart';
+import '../../../widgets/back_arrow_ar.dart';
 import '../screens/languages_page.dart';
 import '../screens/location_page.dart';
 
@@ -25,25 +25,24 @@ class SettingsPage extends GetView<ChangeLanguageController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(
-                top: 72.0,
-                right: 24.0,
-                bottom: 0,
-                left: 24.0,
-              ),
-              child: Expanded(
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.only(
+                  top: 30.0,
+                  right: 24.0,
+                  bottom: 24.0,
+                  left: 24.0,
+                ),
                 child: Column(
                   children: <Widget>[
                     Container(
                       child: Row(
                         children: [
                           GestureDetector(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: BackArrowAr()
-                          ),
+                              onTap: () {
+                                Get.back();
+                              },
+                              child: BackArrow()),
                           SizedBox(
                             width: AppStyle.spacing.W.spacingXs,
                           ),
@@ -57,12 +56,12 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                     SizedBox(
                       height: AppStyle.spacing.H.spacingXxxxlg,
                     ),
-                    Container(
-                      padding: EdgeInsets.only(left: 10),
-                      child: GestureDetector(
-                        onTap: (){
-                          Get.to(LanguagesPage());
-                        },
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => LanguagesPage());
+                      },
+                      child: Container(
+                        padding: EdgeInsets.only(left: 10, right: 5),
                         child: Row(
                           children: [
                             SvgPicture.asset(
@@ -74,7 +73,9 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                             ),
                             Text(
                               "Languages".tr,
-                              style: kSettingsTextStyle,
+                              style: ChangeLanguageController().getSelected()
+                                  ? kSettingsTextStyleEn
+                                  : kSettingsTextStyleAr,
                             )
                           ],
                         ),
@@ -100,7 +101,9 @@ class SettingsPage extends GetView<ChangeLanguageController> {
                             ),
                             Text(
                               "Location".tr,
-                              style: kSettingsTextStyle,
+                              style: ChangeLanguageController().getSelected()
+                                  ? kSettingsTextStyleEn
+                                  : kSettingsTextStyleAr,
                             )
                           ],
                         ),

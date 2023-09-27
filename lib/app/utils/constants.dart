@@ -21,8 +21,10 @@ const kLightGradient = LinearGradient(
     Color.fromARGB(255, 250, 243, 238),
   ],
 );
-BoxDecoration kCombobox=BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(12),
-    border: Border.all(width:1,color: AppColors.primary));
+BoxDecoration kCombobox = BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.circular(12),
+    border: Border.all(width: 1, color: AppColors.primary));
 
 BoxDecoration kDetailDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(24.0),
@@ -33,9 +35,16 @@ BoxDecoration kHDetailDecoration = BoxDecoration(
   gradient: kLightGradient,
 );
 
-const kSettingsTextStyle = TextStyle(
+const kSettingsTextStyleEn = TextStyle(
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.w400,
   fontSize: 22.0,
+  color: AppTextColors.headlines,
+);
+
+const kSettingsTextStyleAr = TextStyle(
+  fontStyle: FontStyle.normal,
+  fontWeight: FontWeight.w400,
+  fontSize: 27.0,
   color: AppTextColors.headlines,
 );

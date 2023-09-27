@@ -66,6 +66,9 @@ class PrayerTimings extends StatelessWidget {
                         fontSize: 20,
                       ),
                     ),
+                    SizedBox(
+                      width: AppStyle.spacing.W.spacingXs,
+                    ),
                     Text(
                       amOrPm,
                       style: TextStyle(
