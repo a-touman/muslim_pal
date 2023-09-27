@@ -34,50 +34,47 @@ class HomeView extends StatelessWidget {
             ),
             const SizedBox(height: 24.0),
             Expanded(
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
-                  decoration: kDetailDecoration,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          'Verse of the day'.tr,
-                          style: TextStyles.heading.h5_22B,
-                        ),
-                        const SizedBox(height: 8.0),
-                        Obx(() {
-                          final ayahText = homeController.getAyahText();
-                          final Surahnum = homeController.getSurahno();
-                          final Versenum = homeController.getVerseNo();
-                          final lineCount = homeController.countLines(
-                            ayahText,
-                            TextStyles.body.b_16R,
-                            MediaQuery.of(context).size.width,
-                          );
-                          return Seemore(
-                              ayahText: ayahText,
-                              lineCount: lineCount,
-                              homeController: homeController,
-                              Surahnum: Surahnum,
-                              Versenum: Versenum);
-                        }),
-                        Obx(() {
-                          return Text(
-                            '${"Surah".tr} ${homeController.getSurahno()}, ${"Verse".tr} ${homeController.getVerseNo()}',
-                            style: TextStyles.body.b_12B.subTextColor,
-                          );
-                        })
-                      ],
-                    ),
+              child: Container(
+                decoration: kDetailDecoration,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        'Verse of the day'.tr,
+                        style: TextStyles.heading.h5_22B,
+                      ),
+                      const SizedBox(height: 8.0),
+                      Obx(() {
+                        final ayahText = homeController.getAyahText();
+                        final Surahnum = homeController.getSurahno();
+                        final Versenum = homeController.getVerseNo();
+                        final lineCount = homeController.countLines(
+                          ayahText,
+                          TextStyles.body.b_16R,
+                          MediaQuery.of(context).size.width,
+                        );
+                        return Seemore(
+                            ayahText: ayahText,
+                            lineCount: lineCount,
+                            homeController: homeController,
+                            Surahnum: Surahnum,
+                            Versenum: Versenum);
+                      }),
+                      Obx(() {
+                        return Text(
+                          '${"Surah".tr} ${homeController.getSurahno()}, ${"Verse".tr} ${homeController.getVerseNo()}',
+                          style: TextStyles.body.b_12B.subTextColor,
+                        );
+                      })
+                    ],
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 24.0,
+             SizedBox(
+              height:AppStyle.spacing.H.spacingXlg,
             ),
             Expanded(
               child: Row(
