@@ -17,20 +17,15 @@ class ReusableContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-            color: AppColors.secondary,
-            borderRadius: BorderRadius.circular(AppStyle.corners.lg)),
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-                 content,
-            ],
-          ),
-        ),
+    return Container(
+      decoration: BoxDecoration(
+          color: AppColors.secondary,
+          borderRadius: BorderRadius.circular(AppStyle.corners.lg)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+             content,
+        ],
       ),
     );
   }
