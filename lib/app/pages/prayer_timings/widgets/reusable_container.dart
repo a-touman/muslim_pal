@@ -87,7 +87,7 @@ class ReusableContainer extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             Text(
-                              texts,
+                              texts.tr,
                               style: TextStyles.body.b_14R.textColor,
                             ),
                           ],
@@ -99,7 +99,7 @@ class ReusableContainer extends StatelessWidget {
                             ? Alignment.centerLeft
                             : Alignment.centerRight,
                         child: Text(
-                          prayer,
+                          prayer.tr,
                           style: TextStyle(
                             color: AppColors.primary,
                             fontSize: 20.0,
@@ -115,7 +115,7 @@ class ReusableContainer extends StatelessWidget {
                             textBaseline: TextBaseline.alphabetic,
                             children: [
                               Text(
-                                startTime,
+                                startTime.tr,
                                 style: TextStyles.heading.h3_28B,
                               ),
                               Text(
@@ -134,11 +134,11 @@ class ReusableContainer extends StatelessWidget {
                           Row(
                             children: <Widget>[
                               Text(
-                                smallText,
+                                smallText.tr,
                                 style: TextStyles.body.b_12B.subTextColor,
                               ),
                               Text(
-                                endTime,
+                                endTime.tr,
                                 style: TextStyles.body.b_12B,
                               ),
                               Text(

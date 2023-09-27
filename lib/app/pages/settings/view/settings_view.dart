@@ -12,8 +12,8 @@ import '../../../widgets/back_arrow_ar.dart';
 import '../screens/languages_page.dart';
 import '../screens/location_page.dart';
 
-class SettingsPage extends GetView<ChangeLanguageController> {
-  const SettingsPage({Key? key}) : super(key: key);
+class SettingsView extends GetView<ChangeLanguageController> {
+  const SettingsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

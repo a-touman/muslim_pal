@@ -99,4 +99,17 @@ const Map<String, String> ar = {
   "Al Masjid an Nabawi": "المسجد النبوي",
   "Medina, Saudi Arabia": "المدينة المنورة، المملكة العربية السعودية",
   "...see more": "...شاهد المزيد",
+  'Select Duaa Catgeory': "اختر فئة الدعاء",
+  'Daily': 'يوميًا',
+  'Morning': 'صباح',
+  'Evening': 'مساء',
+  'Night': 'ليلة',
+  'Studying': 'دراسة',
+  'Travelling': 'سفر',
+  "Daily Duaa": "الدعاء اليومي",
+  "Evening Duaa": "دعاء المساء",
+  "Travelling Duaa": "دعاء السفر",
+  "Studying Duaa": "دعاء الدراسة",
+  "Night Duaa": "دعاء الليل",
+  "Morning Duaa": "دعاء الصباح"
 };

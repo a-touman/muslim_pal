@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/calendar/controller/calendar_controller.dart';
 import 'package:muslim_pal/app/pages/calendar/view/calendar_view.dart';
+import 'package:muslim_pal/app/pages/duaa/view/duaa_view.dart';
 import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/view/prayer_timings_view.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
@@ -85,7 +86,7 @@ class HomeView extends StatelessWidget {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        Get.to(() => const PrayerTimingsPage());
+                        Get.to(() => const PrayerTimingsView());
                       },
                       child: ReusableContainer(
                         content: IconContent(
@@ -123,7 +124,9 @@ class HomeView extends StatelessWidget {
                 children: [
                   Expanded(
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => DuaaView());
+                      },
                       child: ReusableContainer(
                         content: IconContent(
                           icon: SvgPicture.asset(IconPaths.dua),
@@ -138,7 +141,7 @@ class HomeView extends StatelessWidget {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        Get.to(() => const SettingsPage());
+                        Get.to(() => const SettingsView());
                       },
                       child: ReusableContainer(
                         content: IconContent(

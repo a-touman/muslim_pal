@@ -63,6 +63,16 @@ class IconPaths {
 
   static const String gps = "${_iconsPath}ic_gps.svg";
 
+  static const String night = "${_iconsPath}ic_night.svg";
+
+  static const String morning = "${_iconsPath}ic_morning.svg";
+
+  static const String evening = "${_iconsPath}ic_evening.svg";
+
+  static const String travelling = "${_iconsPath}ic_travel.svg";
+
+  static const String studying = "${_iconsPath}ic_studying.svg";
+
   static const String manual_select = "${_iconsPath}ic_manual_select.svg";
 
   static const String selected_language =

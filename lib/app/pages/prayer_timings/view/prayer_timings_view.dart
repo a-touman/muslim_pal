@@ -16,8 +16,8 @@ import '../widgets/notification_item.dart';
 import '../widgets/prayer_timings_icon.dart';
 import '../widgets/reusable_container.dart';
 
-class PrayerTimingsPage extends GetView<PrayerTimingsController> {
-  const PrayerTimingsPage({Key? key}) : super(key: key);
+class PrayerTimingsView extends GetView<PrayerTimingsController> {
+  const PrayerTimingsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
