@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
+import '../../home/repository/remote services.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import '../widgets/row_scroll_view.dart';
 import 'daily_page.dart';
 
 class TravellingPage extends GetView<DuaaController> {
-  const TravellingPage({Key? key}) : super(key: key);
+  TravellingPage({Key? key}) : super(key: key);
+
+  final RxString selectedSection = 'Before Travel'.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +34,11 @@ class TravellingPage extends GetView<DuaaController> {
                     Row(
                       children: [
                         GestureDetector(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: BackArrow()),
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: BackArrow(),
+                        ),
                         SizedBox(
                           width: AppStyle.spacing.W.spacingXs,
                         ),
@@ -53,26 +56,59 @@ class TravellingPage extends GetView<DuaaController> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          RowScrollView(
-                            section: 'Before Travel',
-                            length: 125,
-                            styles: TextStyles.body.b_16B,
+                          GestureDetector(
+                            onTap: () {
+                              selectedSection.value = 'Before Travel';
+                            },
+                            child: Obx(() {
+                              return RowScrollView(
+                                section: 'Before Travel',
+                                length: changeLanguageController.getSelected()
+                                    ? 120
+                                    : 90,
+                                styles: selectedSection.value == 'Before Travel'
+                                    ? TextStyles.body.b_16B
+                                    : TextStyles.body.b_16B.subTextColor,
+                              );
+                            }),
                           ),
                           SizedBox(
                             width: AppStyle.spacing.W.spacingXxxlg,
                           ),
-                          RowScrollView(
-                            section: 'During Travel',
-                            length: 125,
-                            styles: TextStyles.body.b_16B.subTextColor,
+                          GestureDetector(
+                            onTap: () {
+                              selectedSection.value = 'During Travel';
+                            },
+                            child: Obx(() {
+                              return RowScrollView(
+                                section: 'During Travel',
+                                length: changeLanguageController.getSelected()
+                                    ? 120
+                                    : 100,
+                                styles: selectedSection.value == 'During Travel'
+                                    ? TextStyles.body.b_16B
+                                    : TextStyles.body.b_16B.subTextColor,
+                              );
+                            }),
                           ),
                           SizedBox(
                             width: AppStyle.spacing.W.spacingXxxlg,
                           ),
-                          RowScrollView(
-                            section: 'After Travel',
-                            length: 115,
-                            styles: TextStyles.body.b_16B.subTextColor,
+                          GestureDetector(
+                            onTap: () {
+                              selectedSection.value = 'After Travel';
+                            },
+                            child: Obx(() {
+                              return RowScrollView(
+                                section: 'After Travel',
+                                length: changeLanguageController.getSelected()
+                                    ? 120
+                                    : 90,
+                                styles: selectedSection.value == 'After Travel'
+                                    ? TextStyles.body.b_16B
+                                    : TextStyles.body.b_16B.subTextColor,
+                              );
+                            }),
                           ),
                         ],
                       ),
@@ -81,27 +117,35 @@ class TravellingPage extends GetView<DuaaController> {
                       height: AppStyle.spacing.H.spacingXlg,
                     ),
                     Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            for (int i = 0;
-                                i < duaas.beforeTravellingDuaas.length;
-                                i++)
-                              Column(
-                                children: [
-                                  DuaaBox(
-                                    counter: '5',
-                                    duaaText: duaas.beforeTravellingDuaas[i],
-                                  ),
-                                  SizedBox(
-                                    height: AppStyle.spacing.H.spacingMd,
-                                  ),
-                                ],
-                              ),
-                          ],
-                        ),
-                      ),
-                    ),
+                      child: Obx(() {
+                        List<String> selectedDuaas = [];
+
+                        if (selectedSection.value == 'Before Travel') {
+                          selectedDuaas = duaas.beforeTravellingDuaas;
+                        } else if (selectedSection.value == 'During Travel') {
+                          selectedDuaas = duaas.duringTravellingDuaas;
+                        } else if (selectedSection.value == 'After Travel') {
+                          selectedDuaas = duaas.afterTravellingDuaas;
+                        }
+
+                        return ListView.builder(
+                          itemCount: selectedDuaas.length,
+                          itemBuilder: (context, index) {
+                            return Column(
+                              children: [
+                                DuaaBox(
+                                  counter: '5',
+                                  duaaText: selectedDuaas[index],
+                                ),
+                                SizedBox(
+                                  height: AppStyle.spacing.H.spacingMd,
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      }),
+                    )
                   ],
                 ),
               ),

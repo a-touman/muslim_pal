@@ -5,7 +5,7 @@ class DuaaBank {
       'O Allah, I ask You for Paradise and seek Your protection from the Fire.',
       'Glory is to Allah, praise is to Allah, Allah is the Most Great!',
       'Our Lord! Grant us the good of this world and the Hereafter, and protect us from the torment of the Fire.',
-      'My Lord! Make me and those [believers] of my descendants keep up prayer. Our Lord!',
+      'My Lord! Make me and those [believers] of my descendants keep up prayer.',
       "In the name of Allah. O Allah I seek refuge in You from the male female evil and Jinn’s.",
       "O Allah, I seek forgiveness and pardon from You, All Praise be to Allah, who removed the difficulty from me and gave me ease (relief).",
       "I testify that there is no one worthy of worship besides Allah. He is all by Himself and has no partner and I testify that Muhammad is Allah's messenger (Rasool).",
@@ -65,33 +65,33 @@ class DuaaBank {
     ];
   }
 
-  List<String> get AfterStudyingDuaas {
+  List<String> get afterStudyingDuaas {
     return [
       'Oh Allah! I entrust you with what I have read and I have studied. Oh Allah! Bring it back to me when I am in need of it. Oh Allah! You do whatever you wish, you are my availer and protector and the best of aid',
       'Oh Allah! Nothing is easy except what You have made easy. If You wish, You can make the difficult easy.',
       'Blessings of God be upon Muhammad and his progeny. O God, I ask you, the one who mentions goodness and actualizes it and commands it, remind me of that which the shaytan makes me forget.',
-      'Oh the chief of all chiefs! Oh the acceptor of prayers! Oh the elevator of ranks! Oh the master of virtues! Ohthe forgiver of sins! Oh the granter of requests! Oh the excerptor of penance! Oh the hearer of all voices! Oh the one who knows all mysteries! Oh the remover of calamities!',
+      'Oh the chief of all chiefs! Oh the acceptor of prayers! Oh the elevator of ranks! Oh the master of virtues! Oh the forgiver of sins! Oh the granter of requests! Oh the excerptor of penance! Oh the hearer of all voices! Oh the one who knows all mysteries! Oh the remover of calamities!',
     ];
   }
 
   List<String> get beforeTravellingDuaas {
     return [
       'Glory unto Him Who created this transportation, for us, though we were unable to create it on our own. And unto our Lord we shall return.',
-      'My Lord! Let my entry be good, and likewise my exit be good. And grant me from You an authority to help me (or a firm sign or a proof).'
+      'My Lord! Let my entry be good, and likewise my exit be good. And grant me from You an authority to help me (or a firm sign or a proof).',
     ];
   }
 
-  List<String> get DuringTravellingDuaas {
+  List<String> get duringTravellingDuaas {
     return [
       'Glory be to Him Who has subjugated this to us, for we could not have accomplished it, and truly to our Lord we are returning. O Allah, we ask You for piety and fear of Allah and deeds with which You will be pleased on this journey of ours. O Allah make this journey easy for us and fold up for us its distance. O Allah You are the Companion on the journey and the Deputy among the family. O Allah I seek Your protection from discomfort on the journey and from a gloomy outlook, and from any evil befalling my wealth or family.',
       'O Allah, You are the Companion on the journey and the Deputy among the family. O Allah I seek Your protection from difficulties on the journey, sadness on returning, infidelity after faith, beseeching You as an oppressed person, and from evil befalling my wealth or family.',
-      'In the name of Allah be its movement and rest. Truly my Lord is Most Forgiving, Most Merciful.'
+      'In the name of Allah be its movement and rest. Truly my Lord is Most Forgiving, Most Merciful.',
     ];
   }
 
-  List<String> get AfterTravellingDuaas {
+  List<String> get afterTravellingDuaas {
     return [
-      'O Allah, I seek refuge with Thee from hardships of the journey, the gloominess of the sights, and finding of evil changes in property and family on return. ',
+      'O Allah, I seek refuge with Thee from hardships of the journey, the gloominess of the sights, and finding of evil changes in property and family on return.',
       'O Allah, I seek refuge with You from the difficulties of travel, and from having a change of hearts and being in a bad predicament, and I take refuge with You from an ill fated outcome with wealth and family. We return, repent, worship and praise our Lord.',
       'Turning turning, to our Lord returning, not leaving behind any sin [unforgiven].',
     ];

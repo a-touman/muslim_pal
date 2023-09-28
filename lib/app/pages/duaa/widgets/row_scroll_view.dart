@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import '../../../style/app_colors.dart';
 
 class RowScrollView extends StatelessWidget {
-  late final String section;
-  late final TextStyle styles;
-  late final double length;
+  final String section;
+  final TextStyle styles;
+  final double length;
 
   RowScrollView({
     required this.section,

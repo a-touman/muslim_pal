@@ -71,6 +71,10 @@ class IconPaths {
 
   static const String travelling = "${_iconsPath}ic_travel.svg";
 
+  static const String sign_minus = "${_iconsPath}ic_sign_minus.svg";
+
+  static const String sign_plus = "${_iconsPath}ic_sign_plus.svg";
+
   static const String studying = "${_iconsPath}ic_studying.svg";
 
   static const String manual_select = "${_iconsPath}ic_manual_select.svg";
