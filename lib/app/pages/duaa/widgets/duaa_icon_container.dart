@@ -7,12 +7,12 @@ import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 
-class DuaaContainer extends StatelessWidget {
+class DuaaIconContainer extends StatelessWidget {
   late final String iconPicture;
   late final String iconName;
   late final Widget duaPage;
 
-  DuaaContainer(
+  DuaaIconContainer(
       {required this.iconPicture,
       required this.iconName,
       required this.duaPage});

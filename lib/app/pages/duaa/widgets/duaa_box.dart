@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:muslim_pal/app/pages/duaa/screens/duaa_info.dart';
 
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 
-class DailyDuaaContainer extends StatelessWidget {
+class DuaaBox extends StatelessWidget {
   late final String counter;
-  late final String duaText;
-  late final Widget duaInfo;
+  late final String duaaText;
 
-  DailyDuaaContainer(
-      {required this.counter, required this.duaText, required this.duaInfo});
+  DuaaBox({
+    required this.counter,
+    required this.duaaText,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => duaInfo);
-        print('pressed');
+        Get.to(DuaaInfo());
       },
       child: Container(
         padding: EdgeInsets.symmetric(
@@ -57,7 +58,7 @@ class DailyDuaaContainer extends StatelessWidget {
               height: AppStyle.spacing.H.spacingXs,
             ),
             Text(
-              duaText.tr,
+              duaaText.tr,
               style: TextStyles.body.b_16R.textColor,
             ),
           ],

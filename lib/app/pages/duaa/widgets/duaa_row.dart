@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../style/style.dart';
-import 'duaa_container.dart';
+import 'duaa_icon_container.dart';
 
 class DuaaRow extends StatelessWidget {
   late final String containerIconLeft;
@@ -24,7 +24,7 @@ class DuaaRow extends StatelessWidget {
     return Expanded(
       child: Row(
         children: [
-          DuaaContainer(
+          DuaaIconContainer(
             iconPicture: containerIconLeft,
             iconName: containerNameLeft,
             duaPage: duaaPageLeft,
@@ -32,7 +32,7 @@ class DuaaRow extends StatelessWidget {
           SizedBox(
             width: AppStyle.spacing.W.spacingMd,
           ),
-          DuaaContainer(
+          DuaaIconContainer(
             iconPicture: containerIconRight,
             iconName: containerNameRight,
             duaPage: duaaPageRight,

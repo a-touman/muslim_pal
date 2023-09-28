@@ -73,8 +73,8 @@ class HomeView extends StatelessWidget {
                 ),
               ),
             ),
-             SizedBox(
-              height:AppStyle.spacing.H.spacingXlg,
+            SizedBox(
+              height: AppStyle.spacing.H.spacingXlg,
             ),
             Expanded(
               child: Row(
