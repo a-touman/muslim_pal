@@ -1,5 +1,3 @@
-// FILE 6 (duaa_box.dart)
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/duaa_info.dart';
@@ -12,11 +10,13 @@ class DuaaBox extends StatelessWidget {
   final String counter;
   final String duaaText;
   final String category;
+  final int index;
 
   DuaaBox({
     required this.counter,
     required this.duaaText,
     required this.category,
+    required this.index,
   });
 
   @override
@@ -26,7 +26,8 @@ class DuaaBox extends StatelessWidget {
         Get.to(
           DuaaInfo(
             duaaText: duaaText,
-            category: category, // Pass the category to DuaaInfo
+            category: category,
+            index: index,
           ),
         );
       },

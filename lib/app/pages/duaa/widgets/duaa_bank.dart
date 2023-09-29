@@ -1,21 +1,68 @@
+import 'package:muslim_pal/app/pages/duaa/widgets/duaas_list.dart';
+
 class DuaaBank {
-  List<String> get dailyDuaas {
+  List<DuaasList> get dailyDuaas {
     return [
-      'O Allah, I ask You for knowledge that is of benefit, a good provision, and deeds that will be accepted.',
-      'O Allah, I ask You for Paradise and seek Your protection from the Fire.',
-      'Glory is to Allah, praise is to Allah, Allah is the Most Great!',
-      'Our Lord! Grant us the good of this world and the Hereafter, and protect us from the torment of the Fire.',
-      'My Lord! Make me and those [believers] of my descendants keep up prayer.',
-      "In the name of Allah. O Allah I seek refuge in You from the male female evil and Jinn’s.",
-      "O Allah, I seek forgiveness and pardon from You, All Praise be to Allah, who removed the difficulty from me and gave me ease (relief).",
-      "I testify that there is no one worthy of worship besides Allah. He is all by Himself and has no partner and I testify that Muhammad is Allah's messenger (Rasool).",
-      "Praise is to Allah Who has given me this food, and sustained me with it though I was unable to do it and powerless.",
-      "Oh Allah! Lord of this perfect call and this prayer to be established, grant Muhammad Al-wasilah (a high and special place in Jannah) and Al fadheelah (a rank above the rest of creation) and raise him to a praised platform which you have promised him.",
-      "In the Name of Allah, and peace and blessings be upon the Messenger of Allah, O Allah, open the doors of mercy.",
-      "In the Name of Allah, and peace and blessings be upon the Messenger of Allah. O Allah, I ask for Your favour, O Allah, verily I seek from You, Your bounty.",
-      "I depart with Allah's name, relying on Him. It is Allah who saves us from sins with His guidance (the ability to do so).",
-      "In the Name of Allah we enter, in the Name of Allah we leave and upon our Lord we depend.",
-      "O Allah You are The One Who pardons greatly, and loves to pardon, so pardon me",
+      DuaasList(
+        t: 'O Allah, I ask You for knowledge that is of benefit, a good provision, and deeds that will be accepted.',
+        tr: "اللهم إني أسألك علماً نافعاً، ورزقاً طيباً، وعملاً متقبلاً                                       ",
+      ),
+      DuaasList(
+        t: 'O Allah, I ask You for Paradise and seek Your protection from the Fire.',
+        tr: "اللهم إني أسألك الجنة وأعوذ بك من النار                                    ",
+      ),
+      DuaasList(
+        t: 'Glory is to Allah, praise is to Allah, Allah is the Most Great!',
+        tr: 'سبحان الله، والحمد لله، والله أكبر!                                    ',
+      ),
+      DuaasList(
+        t: 'Our Lord! Grant us the good of this world and the Hereafter, and protect us from the torment of the Fire.',
+        tr: 'ربنا! آتنا في الدنيا حسنة والآخرة وقنا عذاب النار.                                       ',
+      ),
+      DuaasList(
+        t: 'My Lord! Make me and those [believers] of my descendants keep up prayer.',
+        tr: 'ربي! اجعلني والذين [المؤمنين] من ذريتي يقيمون الصلاة.',
+      ),
+      DuaasList(
+        t: "In the name of Allah. O Allah I seek refuge in You from the male female evil and Jinn’s.",
+        tr: "بسم الله. اللهم إني أعوذ بك من شر الذكر والأنثى والجن.",
+      ),
+      DuaasList(
+        t: "O Allah, I seek forgiveness and pardon from You, All Praise be to Allah, who removed the difficulty from me and gave me ease (relief).",
+        tr: "اللهم إني أستغفرك و عفوك، الحمد لله الذي أذهب عني الحرج و خفف عني.",
+      ),
+      DuaasList(
+        t: "I testify that there is no one worthy of worship besides Allah. He is all by Himself and has no partner and I testify that Muhammad is Allah's messenger (Rasool).",
+        tr: "أشهد أن لا إله إلا الله وحده لا شريك له، وأشهد أن محمداً رسول الله",
+      ),
+      DuaasList(
+        t: "Praise is to Allah Who has given me this food, and sustained me with it though I was unable to do it and powerless.",
+        tr: "الحمد لله الذي أطعمني هذا، ورزقني به وأنا لا أستطيع ولا أستطيع",
+      ),
+      DuaasList(
+        t: "Oh Allah! Lord of this perfect call and this prayer to be established, grant Muhammad Al-wasilah (a high and special place in Jannah) and Al fadheelah (a rank above the rest of creation) and raise him to a praised platform which you have promised him.",
+        tr: "اللهم رب هذه الدعوة التامة وهذه الصلاة القائمة آت محمد الوسيلة منزلة عالية خاصة في الجنة والفضيلة درجة فوق سائر الخلق وارفعه مقاما محمودا لقد وعدته.",
+      ),
+      DuaasList(
+        t: "In the Name of Allah, and peace and blessings be upon the Messenger of Allah, O Allah, open the doors of mercy.",
+        tr: "بسم الله والصلاة والسلام على رسول الله،اللهم افتح أبواب الرحمة",
+      ),
+      DuaasList(
+        t: "In the Name of Allah, and peace and blessings be upon the Messenger of Allah. O Allah, I ask for Your favour, O Allah, verily I seek from You, Your bounty.",
+        tr: "بسم الله، والصلاة والسلام على رسول الله، اللهم إني أسألك من فضلك، اللهم إني أسألك من فضلك.",
+      ),
+      DuaasList(
+        t: "I depart with Allah's name, relying on Him. It is Allah who saves us from sins with His guidance (the ability to do so).",
+        tr: "أنطلق باسم الله متوكلاً عليه، والله هو الذي ينجينا من الذنوب بهدايته",
+      ),
+      DuaasList(
+        t: "In the Name of Allah we enter, in the Name of Allah we leave and upon our Lord we depend.",
+        tr: "بسم الله دخلنا، وبسم الله خرجنا، وعلى ربنا توكلنا                                     ",
+      ),
+      DuaasList(
+        t: "O Allah You are The One Who pardons greatly, and loves to pardon, so pardon me",
+        tr: "اللهم إنك عفو كريم تحب العفو فاعف عني                                      ",
+      ),
     ];
   }
 

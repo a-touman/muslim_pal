@@ -108,6 +108,7 @@ class StudyingPage extends GetView<DuaaController> {
                                       counter: '5',
                                       duaaText: selectedDuaas[i],
                                       category: 'study',
+                                      index: i,
                                     ),
                                     SizedBox(
                                       height: AppStyle.spacing.H.spacingMd,

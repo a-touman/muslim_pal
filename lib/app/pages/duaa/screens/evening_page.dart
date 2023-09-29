@@ -58,6 +58,7 @@ class EveningPage extends GetView<DuaaController> {
                                     counter: '5',
                                     duaaText: duaas.eveningDuaas[i],
                                     category: 'evening',
+                                    index: i,
                                   ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,

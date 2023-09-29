@@ -59,8 +59,9 @@ class DailyPage extends GetView<DuaaController> {
                                 children: [
                                   DuaaBox(
                                     counter: '5',
-                                    duaaText: duaas.dailyDuaas[i],
+                                    duaaText: duaas.dailyDuaas[i].duaasText,
                                     category: 'daily',
+                                    index: i,
                                   ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,
