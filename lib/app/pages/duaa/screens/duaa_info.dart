@@ -148,8 +148,8 @@ class DuaaInfo extends GetView<DuaaController> {
                                                     .spacing.H.spacingLg,
                                               ),
                                               Text(
-                                                'Ibn As-Sunni, no. 54, Ibn Majah no. 925. Its chain of transmission is good (Hasan), Ibn Al-Qayyim 2/375.\n\nHisn al-Muslim 95'
-                                                    .tr,
+                                                duaas.dailyDuaas[index]
+                                                    .duaasReference.tr,
                                                 style: TextStyles
                                                     .body.b_16R.subTextColor,
                                               ),
