@@ -19,7 +19,6 @@ ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageControll
 
   Future<QuranModel> fetchData() async {
   try {
-    print(changeLanguageController.selected);
 
     if(changeLanguageController.getCurrentLanguageCode()=="ar"){
       lang='ar';
@@ -27,7 +26,6 @@ ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageControll
     else{
       lang='en';
     }
-    print(lang);
    var url = Uri.parse('http://api.alquran.cloud/v1/ayah/${randomInt()}/$lang.asad');
   final response = await http.get(url);
 

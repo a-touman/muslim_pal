@@ -3,17 +3,17 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:muslim_pal/app/pages/duaa/widgets/row_scroll_view.dart';
 import 'package:muslim_pal/app/pages/home/repository/remote%20services.dart';
+import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import 'daily_page.dart';
-
 class StudyingPage extends GetView<DuaaController> {
   StudyingPage({Key? key}) : super(key: key);
-
   final RxBool beforeStudyingSelected = true.obs;
+  DuaaController duaaController=Get.put(DuaaController());
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +58,9 @@ class StudyingPage extends GetView<DuaaController> {
                         GestureDetector(
                           onTap: () {
                             beforeStudyingSelected.value = true;
+                            duaaController.selectedTime=studying.Before;
+
+
                           },
                           child: Obx(() {
                             return RowScrollView(
@@ -68,11 +71,14 @@ class StudyingPage extends GetView<DuaaController> {
                               styles: beforeStudyingSelected.value
                                   ? TextStyles.body.b_16B
                                   : TextStyles.body.b_16B.subTextColor,
+                              colour: duaaController.selectedTime==studying.Before?
+                              AppColors.primary:Colors.transparent
                             );
                           }),
                         ),
                         GestureDetector(
                           onTap: () {
+                            duaaController.selectedTime=studying.After;
                             beforeStudyingSelected.value = false;
                           },
                           child: Obx(() {
@@ -84,6 +90,8 @@ class StudyingPage extends GetView<DuaaController> {
                               styles: beforeStudyingSelected.value
                                   ? TextStyles.body.b_16B.subTextColor
                                   : TextStyles.body.b_16B,
+                              colour: duaaController.selectedTime==studying.After?
+                              AppColors.primary:Colors.transparent,
                             );
                           }),
                         ),
@@ -95,10 +103,10 @@ class StudyingPage extends GetView<DuaaController> {
                     Expanded(
                       child: SingleChildScrollView(
                         child: Obx(() {
+                          // selected =true
                           final selectedDuaas = beforeStudyingSelected.value
                               ? duaas.beforeStudyingDuaas
                               : duaas.afterStudyingDuaas;
-
                           return Column(
                             children: [
                               for (int i = 0; i < selectedDuaas.length; i++)
@@ -117,7 +125,8 @@ class StudyingPage extends GetView<DuaaController> {
                                 ),
                             ],
                           );
-                        }),
+                        }
+                        ),
                       ),
                     )
                   ],

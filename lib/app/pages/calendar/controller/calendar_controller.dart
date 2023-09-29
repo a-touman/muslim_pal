@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:hijri/hijri_calendar.dart';
+import 'package:muslim_pal/app/pages/duaa/widgets/duaa_bank.dart';
 
+import '../../duaa/widgets/duaas_list.dart';
 import '../../settings/controller/change_language_controller.dart';
 class CalendarController extends GetxController {
   ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
@@ -97,7 +99,6 @@ class CalendarController extends GetxController {
 
     GselectedMonth.value = value;
   }
-
 
 
   void GsetSelectedYear(int value) {

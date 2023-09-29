@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
 import '../../../utils/storage_utility.dart';
 
 class ChangeLanguageController extends GetxController {
+
   RxString selected = languages.keys.first.obs;
 
   @override
@@ -24,12 +26,13 @@ class ChangeLanguageController extends GetxController {
   void onRadioChange(String value) {
     selected.value = value;
   }
-
   /// change the language of the app and store it in local storage for subsequent retrieval
   void changeLang(String langCode) {
     Locale locale = Locale(langCode);
     StorageUtility.saveInStorage('lang', langCode);
     Get.updateLocale(locale);
+    HomeController homeController=Get.find<HomeController>();
+    homeController.fetchData();
   }
 
   /// find the current language code that the app is using whether it is from storage or deviceLocale

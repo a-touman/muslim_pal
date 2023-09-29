@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
@@ -8,9 +9,14 @@ import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import '../widgets/row_scroll_view.dart';
 import 'daily_page.dart';
-
+enum travelling{
+  Before,
+  During,
+  After
+}
 class TravellingPage extends GetView<DuaaController> {
   TravellingPage({Key? key}) : super(key: key);
+  travelling? travellingTime;
 
   final RxString selectedSection = 'Before Travel'.obs;
 
@@ -59,6 +65,7 @@ class TravellingPage extends GetView<DuaaController> {
                           GestureDetector(
                             onTap: () {
                               selectedSection.value = 'Before Travel';
+                              travellingTime=travelling.Before;
                             },
                             child: Obx(() {
                               return RowScrollView(
@@ -69,6 +76,9 @@ class TravellingPage extends GetView<DuaaController> {
                                 styles: selectedSection.value == 'Before Travel'
                                     ? TextStyles.body.b_16B
                                     : TextStyles.body.b_16B.subTextColor,
+                                colour: travellingTime==travelling.Before?
+                                AppColors.primary:Colors.transparent,
+
                               );
                             }),
                           ),
@@ -78,6 +88,7 @@ class TravellingPage extends GetView<DuaaController> {
                           GestureDetector(
                             onTap: () {
                               selectedSection.value = 'During Travel';
+                              travellingTime=travelling.During;
                             },
                             child: Obx(() {
                               return RowScrollView(
@@ -88,6 +99,8 @@ class TravellingPage extends GetView<DuaaController> {
                                 styles: selectedSection.value == 'During Travel'
                                     ? TextStyles.body.b_16B
                                     : TextStyles.body.b_16B.subTextColor,
+                                colour: travellingTime==travelling.During?
+                                AppColors.primary:Colors.transparent, //isDividerVisible: false,
                               );
                             }),
                           ),
@@ -96,6 +109,7 @@ class TravellingPage extends GetView<DuaaController> {
                           ),
                           GestureDetector(
                             onTap: () {
+                              travellingTime=travelling.After;
                               selectedSection.value = 'After Travel';
                             },
                             child: Obx(() {
@@ -107,6 +121,9 @@ class TravellingPage extends GetView<DuaaController> {
                                 styles: selectedSection.value == 'After Travel'
                                     ? TextStyles.body.b_16B
                                     : TextStyles.body.b_16B.subTextColor,
+                                colour: travellingTime==travelling.After?
+                                AppColors.primary:Colors.transparent,
+                               // isDividerVisible: false,
                               );
                             }),
                           ),

@@ -90,8 +90,9 @@ class DuaaInfo extends GetView<DuaaController> {
                                 children: [
                                   DuaaBoxSimple(
                                     content:
-                                        duaas.dailyDuaas[index].duaasText.tr,
+                                    duaas.dailyDuaas[index].duaasText.tr,
                                   ),
+
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,
                                   ),

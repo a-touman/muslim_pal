@@ -29,8 +29,6 @@ class HomeController extends GetxController {
   }
   String getAyahText() {
     if (mod.value != null && mod.value.data != null) {
-
-
       return mod.value.data?.text ?? 'loading';
     } else {
       return 'Ayah data not available';

@@ -34,7 +34,7 @@ class DuaaIconContainer extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                    vertical: 42,
+                    vertical: 40,
                   ),
                   child: Container(
                     child: Column(

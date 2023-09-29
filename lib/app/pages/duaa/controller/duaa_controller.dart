@@ -1,7 +1,32 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:muslim_pal/app/style/app_colors.dart';
+
+import '../widgets/duaa_bank.dart';
+enum studying{
+  Before,
+  After
+}
+enum travelling{
+  Before,
+  During,
+  After
+}
 
 class DuaaController extends GetxController {
+  studying? selectedTime;
+
+  bool dailyClicked=false;
+  bool morningClicked=false;
+  bool eveningClicked=false;
+  bool nightClicked=false;
+  bool studyingClicked=false;
+  Color? colour;
+  bool travellingClicked=false;
+
   RxInt _counter = 0.obs;
 
   RxInt get counter => _counter;
@@ -9,6 +34,17 @@ class DuaaController extends GetxController {
   void increaseCounter() {
     _counter++;
     update();
+  }
+
+  DuaaBank duaas = DuaaBank();
+
+  String returnIDK(int index, List<String> duaList) {
+    if (duaList.length > index && index >= 0) {
+      return duaList[index];
+    } else {
+      // Handle the case when the index is out of bounds.
+      return 'Invalid index';
+    }
   }
 
   void increaseCounterBy5() {

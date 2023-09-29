@@ -1,6 +1,32 @@
 import 'package:muslim_pal/app/pages/duaa/widgets/duaas_list.dart';
-
+import 'enum].dart';
 class DuaaBank {
+
+  // List<String> getDuaaList(DuaaListType type) {
+  //   switch (type) {
+  //     case DuaaListType.daily:
+  //       return dailyDuaas.map((dua) => dua.tr).toList();
+  //     case DuaaListType.morning:
+  //       return morningDuaas;
+  //     case DuaaListType.evening:
+  //       return eveningDuaas;
+  //     case DuaaListType.night:
+  //       return nightDuaas;
+  //     case DuaaListType.beforeStudying:
+  //       return beforeStudyingDuaas;
+  //     case DuaaListType.afterStudying:
+  //       return afterStudyingDuaas;
+  //     case DuaaListType.beforeTravelling:
+  //       return beforeTravellingDuaas;
+  //     case DuaaListType.duringTravelling:
+  //       return duringTravellingDuaas;
+  //     case DuaaListType.afterTravelling:
+  //       return afterTravellingDuaas;
+  //     default:
+  //       return [];
+  //   }
+  // }
+
   List<DuaasList> get dailyDuaas {
     return [
       DuaasList(
