@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../style/app_colors.dart';
+import 'package:muslim_pal/app/pages/duaa/screens/studying_page.dart';
 
 class RowScrollView extends StatelessWidget {
   final String section;

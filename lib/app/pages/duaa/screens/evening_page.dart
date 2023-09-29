@@ -56,7 +56,7 @@ class EveningPage extends GetView<DuaaController> {
                                 children: [
                                   DuaaBox(
                                     counter: '5',
-                                    duaaText: duaas.eveningDuaas[i],
+                                    duaaText: duaas.eveningDuaas[i].duaasText,
                                     category: 'evening',
                                     index: i,
                                   ),
