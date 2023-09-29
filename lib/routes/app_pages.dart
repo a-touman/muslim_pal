@@ -4,6 +4,8 @@ import 'package:muslim_pal/app/pages/calendar/binding/calendar_binding.dart';
 import 'package:muslim_pal/app/pages/calendar/view/calendar_view.dart';
 import 'package:muslim_pal/app/pages/launch/binding/launch_binding.dart';
 import 'package:muslim_pal/app/pages/AyahDetail/binding/ayahdetail_binding.dart';
+import '../app/pages/duaa/binding/duaa_binding.dart';
+import '../app/pages/duaa/view/duaa_view.dart';
 import '../app/pages/home/binding/home_binding.dart';
 import '../app/pages/home/view/home_view.dart';
 import '../app/pages/launch/view/launch_view.dart';
@@ -39,18 +41,23 @@ class AppPages {
     ),
     GetPage(
       name: Paths.SETTINGS,
-      page: () => const SettingsPage(),
+      page: () => const SettingsView(),
       binding: SettingsPageBinding(),
     ),
     GetPage(
       name: Paths.PRAYER_TIMINGS,
-      page: () => const PrayerTimingsPage(),
+      page: () => const PrayerTimingsView(),
       binding: PrayerTimingsPageBinding(),
     ),
     GetPage(
       name: Paths.CALENDAR,
       page: () => CalendarView(),
       binding: CalendarPageBinding(),
+    ),
+    GetPage(
+      name: Paths.DUAA,
+      page: () => DuaaView(),
+      binding: DuaaPageBinding(),
     ),
   ];
 }

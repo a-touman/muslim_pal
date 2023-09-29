@@ -1,7 +1,5 @@
 class ImagePaths {
   static const String _basePath = "assets/img/";
-
-  static const String kinderTrackTitleOrange = "${_basePath}image.png";
 }
 
 class IconPaths {
@@ -62,6 +60,20 @@ class IconPaths {
   static const String location_filled = "${_iconsPath}ic_location_filled.svg";
 
   static const String gps = "${_iconsPath}ic_gps.svg";
+
+  static const String night = "${_iconsPath}ic_night.svg";
+
+  static const String morning = "${_iconsPath}ic_morning.svg";
+
+  static const String evening = "${_iconsPath}ic_evening.svg";
+
+  static const String travelling = "${_iconsPath}ic_travel.svg";
+
+  static const String sign_minus = "${_iconsPath}ic_sign_minus.svg";
+
+  static const String sign_plus = "${_iconsPath}ic_sign_plus.svg";
+
+  static const String studying = "${_iconsPath}ic_studying.svg";
 
   static const String manual_select = "${_iconsPath}ic_manual_select.svg";
 

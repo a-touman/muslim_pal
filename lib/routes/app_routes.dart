@@ -12,4 +12,5 @@ class Paths {
   static const AYAHDETAIL = "/ayahdetail";
   static const PRAYER_TIMINGS = "/prayer_timings";
   static const SETTINGS = "/settings";
+  static const DUAA = "/duaa";
 }
