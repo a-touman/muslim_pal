@@ -114,7 +114,7 @@ class StudyingPage extends GetView<DuaaController> {
                                   children: [
                                     DuaaBox(
                                       counter: '5',
-                                      duaaText: selectedDuaas[i],
+                                      duaaText: selectedDuaas[i].duaasText,
                                       category: 'study',
                                       index: i,
                                     ),
