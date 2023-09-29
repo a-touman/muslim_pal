@@ -11,10 +11,10 @@ import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
 import '../widgets/duaa_box_simple.dart';
+import '../widgets/duaas_list.dart';
 
 class DuaaInfo extends GetView<DuaaController> {
   final duaaController = Get.put(DuaaController());
-
   final String duaaText;
   final String category;
   final int index;

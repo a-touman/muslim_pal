@@ -1,33 +1,43 @@
 import 'package:muslim_pal/app/pages/duaa/widgets/duaas_list.dart';
-import 'enum].dart';
+
+enum DuaaListType {
+  daily,
+  morning,
+  evening,
+  night,
+  beforeStudying,
+  afterStudying,
+  beforeTravelling,
+  duringTravelling,
+  afterTravelling,
+}
+
 class DuaaBank {
+//duaa.
+  List<DuaasList> getDuaaList(DuaaListType listType) {
+    switch (listType) {
+      case DuaaListType.daily:
+        return dailyDuaas;
+      case DuaaListType.morning:
+        return morningDuaas;
+      case DuaaListType.evening:
+        return eveningDuaas;
+      case DuaaListType.night:
+        return nightDuaas;
+      case DuaaListType.beforeStudying:
+        return beforeStudyingDuaas;
+      case DuaaListType.afterStudying:
+        return afterStudyingDuaas;
+      case DuaaListType.beforeTravelling:
+        return beforeTravellingDuaas;
+      case DuaaListType.duringTravelling:
+        return duringTravellingDuaas;
+      case DuaaListType.afterTravelling:
+        return afterTravellingDuaas;
+    }
+  }
 
-  // List<String> getDuaaList(DuaaListType type) {
-  //   switch (type) {
-  //     case DuaaListType.daily:
-  //       return dailyDuaas.map((dua) => dua.tr).toList();
-  //     case DuaaListType.morning:
-  //       return morningDuaas;
-  //     case DuaaListType.evening:
-  //       return eveningDuaas;
-  //     case DuaaListType.night:
-  //       return nightDuaas;
-  //     case DuaaListType.beforeStudying:
-  //       return beforeStudyingDuaas;
-  //     case DuaaListType.afterStudying:
-  //       return afterStudyingDuaas;
-  //     case DuaaListType.beforeTravelling:
-  //       return beforeTravellingDuaas;
-  //     case DuaaListType.duringTravelling:
-  //       return duringTravellingDuaas;
-  //     case DuaaListType.afterTravelling:
-  //       return afterTravellingDuaas;
-  //     default:
-  //       return [];
-  //   }
-  // }
-
-  List<DuaasList> get dailyDuaas {
+  List<DuaasList> get dailyDuaas{
     return [
       DuaasList(
         t: 'O Allah, I ask You for knowledge that is of benefit, a good provision, and deeds that will be accepted.',
@@ -281,11 +291,11 @@ class DuaaBank {
       DuaasList(
           t: 'Glory unto Him Who created this transportation, for us, though we were unable to create it on our own. And unto our Lord we shall return.',
           tr: 'سبحان الذي خلق لنا هذا النقل ولم نقدر أن نخلقه بأنفسنا." وإنا إلى ربنا راجعون',
-          r: 'h'),
+          r: 'Surah Az-Zukhruf \n\n43:13-14'),
       DuaasList(
           t: 'My Lord! Let my entry be good, and likewise my exit be good. And grant me from You an authority to help me (or a firm sign or a proof).',
           tr: 'ربي! فليكن دخولي خيراً، وكذلك يكون خروجي خيراً. واجعل لي من عندك سلطانا ينصرني (أو علامة ثابتة أو برهان)',
-          r: 'n'),
+          r: 'SURAH AL-ISRA \n\n17 VERSE 80'),
     ];
   }
 
@@ -294,15 +304,15 @@ class DuaaBank {
       DuaasList(
           t: 'Glory be to Him Who has subjugated this to us, for we could not have accomplished it, and truly to our Lord we are returning. O Allah, we ask You for piety and fear of Allah and deeds with which You will be pleased on this journey of ours. O Allah make this journey easy for us and fold up for us its distance. O Allah You are the Companion on the journey and the Deputy among the family. O Allah I seek Your protection from discomfort on the journey and from a gloomy outlook, and from any evil befalling my wealth or family.',
           tr: 'سبحان الذي سخر لنا هذا وما كنا لنقدر عليه وإنا إلى ربنا لراجعون. اللهم إنا نسألك التقوى وتقوى الله والعمل الذي ترضاه في رحلتنا هذه. اللهم هون علينا سفرنا هذا واطو لنا بعده. اللهم أنت الصاحب في السفر والوكيل في الأهل. اللهم إني أعوذ بك من ضيق السفر وسوء المنظر ومن كل شر يصيب مالي أو أهلي.',
-          r: 'g'),
+          r: 'ibn Umar '),
       DuaasList(
           t: 'O Allah, You are the Companion on the journey and the Deputy among the family. O Allah I seek Your protection from difficulties on the journey, sadness on returning, infidelity after faith, beseeching You as an oppressed person, and from evil befalling my wealth or family.',
           tr: 'اللهم أنت الصاحب في السفر والوكيل في الأهل. اللهم إني أعوذ بك من عسر السفر، وحزن العودة، والكفر بعد الإيمان، وأسألك مظلوماً، ومن شر مالي أو أهلي',
-          r: 'f'),
+          r: 'Abdullah ibn Sarjis'),
       DuaasList(
           t: 'In the name of Allah be its movement and rest. Truly my Lord is Most Forgiving, Most Merciful.',
           tr: 'بسم الله حركتها وسكونها. إن ربي غفور رحيم',
-          r: 'd'),
+          r: 'Husayn ibn Ali'),
     ];
   }
 
@@ -311,15 +321,16 @@ class DuaaBank {
       DuaasList(
           t: 'O Allah, I seek refuge with Thee from hardships of the journey, the gloominess of the sights, and finding of evil changes in property and family on return.',
           tr: "اللهم إني أعوذ بك من وعثاء السفر، وكآبة المناظر، وسوء التغير في المال والأهل في الرجوع",
-          r: 's'),
+          r: 'Sahih Muslim 1342\n\nBook 15, Hadith 479'),
       DuaasList(
           t: 'O Allah, I seek refuge with You from the difficulties of travel, and from having a change of hearts and being in a bad predicament, and I take refuge with You from an ill fated outcome with wealth and family. We return, repent, worship and praise our Lord.',
           tr: 'اللهم إني أعوذ بك من وعثاء السفر، وتقلب القلوب، وسوء الكربة، وأعوذ بك من سوء العاقبة في المال والأهل. نعود ونتوب ونعبد ونحمد ربنا',
-          r: 'y'),
+          r: 'Sahih Muslim 1342\n\nBook 15, Hadith 479'),
       DuaasList(
           t: 'Turning turning, to our Lord returning, not leaving behind any sin [unforgiven].',
-          tr: "منقلبون، إلى ربنا منيبون، لا يتركون خلفهم خطيئة [غير مغفورة]",
-          r: 'u'),
+          tr: "بِسْمِ اللَّهِ مَجْرَاهَا وَمُرْسَاهَا إِنَّ رَبِّي لَغَفُورٌ رَّحِيمٌ.",
+          r: 'Riyad as-Salihin 422\n\nHadith 422 '),
     ];
   }
 }
+//"Sahihul-Jami' As-Saghir 4/201\n\nHisn al-Muslim 218",

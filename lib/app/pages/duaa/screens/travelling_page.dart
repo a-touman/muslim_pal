@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:muslim_pal/app/pages/duaa/widgets/duaas_list.dart';
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
@@ -135,8 +136,7 @@ class TravellingPage extends GetView<DuaaController> {
                     ),
                     Expanded(
                       child: Obx(() {
-                        List<String> selectedDuaas = [];
-
+                        List<DuaasList> selectedDuaas = [];
                         if (selectedSection.value == 'Before Travel') {
                           selectedDuaas = duaas.beforeTravellingDuaas;
                         } else if (selectedSection.value == 'During Travel') {
@@ -152,7 +152,7 @@ class TravellingPage extends GetView<DuaaController> {
                               children: [
                                 DuaaBox(
                                   counter: '5',
-                                  duaaText: selectedDuaas[index],
+                                  duaaText: selectedDuaas[index].duaasText,
                                   category: 'travel',
                                   index: index,
                                 ),
