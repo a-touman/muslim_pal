@@ -6,7 +6,6 @@ import 'package:muslim_pal/app/pages/calendar/view/calendar_view.dart';
 import 'package:muslim_pal/app/pages/duaa/view/duaa_view.dart';
 import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/view/prayer_timings_view.dart';
-import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/pages/settings/view/settings_view.dart';
 import 'package:muslim_pal/app/style/style.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
@@ -17,7 +16,6 @@ import '../widgets/home_page_widget.dart';
 class HomeView extends StatelessWidget {
   HomeController homeController = Get.find<HomeController>();
   CalendarController calendarController = Get.put(CalendarController());
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
