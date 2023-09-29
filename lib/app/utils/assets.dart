@@ -1,7 +1,5 @@
 class ImagePaths {
   static const String _basePath = "assets/img/";
-
-  static const String kinderTrackTitleOrange = "${_basePath}image.png";
 }
 
 class IconPaths {
