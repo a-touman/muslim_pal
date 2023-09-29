@@ -39,7 +39,7 @@ class EveningPage extends GetView<DuaaController> {
                           width: AppStyle.spacing.W.spacingXs,
                         ),
                         Text(
-                          "Evening Duaa".tr,
+                          "Evening Duaas".tr,
                           style: TextStyles.heading.h3_28SB,
                         ),
                       ],
@@ -57,6 +57,7 @@ class EveningPage extends GetView<DuaaController> {
                                   DuaaBox(
                                     counter: '5',
                                     duaaText: duaas.eveningDuaas[i],
+                                    category: 'evening',
                                   ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,

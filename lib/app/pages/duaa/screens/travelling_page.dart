@@ -43,7 +43,7 @@ class TravellingPage extends GetView<DuaaController> {
                           width: AppStyle.spacing.W.spacingXs,
                         ),
                         Text(
-                          "Travelling Duaa".tr,
+                          "Travelling Duaas".tr,
                           style: TextStyles.heading.h3_28SB,
                         ),
                       ],
@@ -136,6 +136,7 @@ class TravellingPage extends GetView<DuaaController> {
                                 DuaaBox(
                                   counter: '5',
                                   duaaText: selectedDuaas[index],
+                                  category: 'travel',
                                 ),
                                 SizedBox(
                                   height: AppStyle.spacing.H.spacingMd,

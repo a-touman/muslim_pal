@@ -33,15 +33,16 @@ class DailyPage extends GetView<DuaaController> {
                     Row(
                       children: [
                         GestureDetector(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: BackArrow()),
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: BackArrow(),
+                        ),
                         SizedBox(
                           width: AppStyle.spacing.W.spacingXs,
                         ),
                         Text(
-                          "Daily Duaa".tr,
+                          'Daily Duaas'.tr,
                           style: TextStyles.heading.h3_28SB,
                         ),
                       ],
@@ -59,6 +60,7 @@ class DailyPage extends GetView<DuaaController> {
                                   DuaaBox(
                                     counter: '5',
                                     duaaText: duaas.dailyDuaas[i],
+                                    category: 'daily',
                                   ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,
@@ -68,7 +70,7 @@ class DailyPage extends GetView<DuaaController> {
                           ],
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

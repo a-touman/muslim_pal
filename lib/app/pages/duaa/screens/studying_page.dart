@@ -44,7 +44,7 @@ class StudyingPage extends GetView<DuaaController> {
                           width: AppStyle.spacing.W.spacingXs,
                         ),
                         Text(
-                          "Studying Duaa".tr,
+                          "Studying Duaas".tr,
                           style: TextStyles.heading.h3_28SB,
                         ),
                       ],
@@ -107,6 +107,7 @@ class StudyingPage extends GetView<DuaaController> {
                                     DuaaBox(
                                       counter: '5',
                                       duaaText: selectedDuaas[i],
+                                      category: 'study',
                                     ),
                                     SizedBox(
                                       height: AppStyle.spacing.H.spacingMd,
