@@ -9,6 +9,7 @@ import '../widgets/duaa_bank.dart';
 import '../widgets/duaa_box.dart';
 
 DuaaBank duaas = DuaaBank();
+
 class DailyPage extends GetView<DuaaController> {
   const DailyPage({Key? key}) : super(key: key);
   @override

@@ -10,11 +10,9 @@ import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import '../widgets/row_scroll_view.dart';
 import 'daily_page.dart';
-enum travelling{
-  Before,
-  During,
-  After
-}
+
+enum travelling { Before, During, After }
+
 class TravellingPage extends GetView<DuaaController> {
   TravellingPage({Key? key}) : super(key: key);
   travelling? travellingTime;
@@ -66,7 +64,7 @@ class TravellingPage extends GetView<DuaaController> {
                           GestureDetector(
                             onTap: () {
                               selectedSection.value = 'Before Travel';
-                              travellingTime=travelling.Before;
+                              travellingTime = travelling.Before;
                             },
                             child: Obx(() {
                               return RowScrollView(
@@ -77,9 +75,9 @@ class TravellingPage extends GetView<DuaaController> {
                                 styles: selectedSection.value == 'Before Travel'
                                     ? TextStyles.body.b_16B
                                     : TextStyles.body.b_16B.subTextColor,
-                                colour: travellingTime==travelling.Before?
-                                AppColors.primary:Colors.transparent,
-
+                                colour: travellingTime == travelling.Before
+                                    ? AppColors.primary
+                                    : Colors.transparent,
                               );
                             }),
                           ),
@@ -89,7 +87,7 @@ class TravellingPage extends GetView<DuaaController> {
                           GestureDetector(
                             onTap: () {
                               selectedSection.value = 'During Travel';
-                              travellingTime=travelling.During;
+                              travellingTime = travelling.During;
                             },
                             child: Obx(() {
                               return RowScrollView(
@@ -100,8 +98,10 @@ class TravellingPage extends GetView<DuaaController> {
                                 styles: selectedSection.value == 'During Travel'
                                     ? TextStyles.body.b_16B
                                     : TextStyles.body.b_16B.subTextColor,
-                                colour: travellingTime==travelling.During?
-                                AppColors.primary:Colors.transparent, //isDividerVisible: false,
+                                colour: travellingTime == travelling.During
+                                    ? AppColors.primary
+                                    : Colors
+                                        .transparent, //isDividerVisible: false,
                               );
                             }),
                           ),
@@ -110,7 +110,7 @@ class TravellingPage extends GetView<DuaaController> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              travellingTime=travelling.After;
+                              travellingTime = travelling.After;
                               selectedSection.value = 'After Travel';
                             },
                             child: Obx(() {
@@ -122,9 +122,10 @@ class TravellingPage extends GetView<DuaaController> {
                                 styles: selectedSection.value == 'After Travel'
                                     ? TextStyles.body.b_16B
                                     : TextStyles.body.b_16B.subTextColor,
-                                colour: travellingTime==travelling.After?
-                                AppColors.primary:Colors.transparent,
-                               // isDividerVisible: false,
+                                colour: travellingTime == travelling.After
+                                    ? AppColors.primary
+                                    : Colors.transparent,
+                                // isDividerVisible: false,
                               );
                             }),
                           ),
@@ -137,6 +138,9 @@ class TravellingPage extends GetView<DuaaController> {
                     Expanded(
                       child: Obx(() {
                         List<DuaasList> selectedDuaas = [];
+                        String category =
+                            selectedSection.value; // Initialize category
+
                         if (selectedSection.value == 'Before Travel') {
                           selectedDuaas = duaas.beforeTravellingDuaas;
                         } else if (selectedSection.value == 'During Travel') {
@@ -148,13 +152,23 @@ class TravellingPage extends GetView<DuaaController> {
                         return ListView.builder(
                           itemCount: selectedDuaas.length,
                           itemBuilder: (context, index) {
+                            if (selectedSection.value == 'Before Travel') {
+                              category = 'Before Travel';
+                            } else if (selectedSection.value ==
+                                'During Travel') {
+                              category = 'During Travel';
+                            } else if (selectedSection.value ==
+                                'After Travel') {
+                              category = 'After Travel';
+                            }
+
                             return Column(
                               children: [
                                 DuaaBox(
                                   counter: '5',
                                   duaaText: selectedDuaas[index].duaasText,
-                                  category: 'travel',
-                                  index: index,
+                                  category: category,
+                                  index: index, // Use the assigned category
                                 ),
                                 SizedBox(
                                   height: AppStyle.spacing.H.spacingMd,

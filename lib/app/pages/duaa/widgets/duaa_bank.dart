@@ -1,41 +1,6 @@
 import 'package:muslim_pal/app/pages/duaa/widgets/duaas_list.dart';
 
-enum DuaaListType {
-  daily,
-  morning,
-  evening,
-  night,
-  beforeStudying,
-  afterStudying,
-  beforeTravelling,
-  duringTravelling,
-  afterTravelling,
-}
-
 class DuaaBank {
-  List<DuaasList> getDuaaList(DuaaListType listType) {
-    switch (listType) {
-      case DuaaListType.daily:
-        return dailyDuaas;
-      case DuaaListType.morning:
-        return morningDuaas;
-      case DuaaListType.evening:
-        return eveningDuaas;
-      case DuaaListType.night:
-        return nightDuaas;
-      case DuaaListType.beforeStudying:
-        return beforeStudyingDuaas;
-      case DuaaListType.afterStudying:
-        return afterStudyingDuaas;
-      case DuaaListType.beforeTravelling:
-        return beforeTravellingDuaas;
-      case DuaaListType.duringTravelling:
-        return duringTravellingDuaas;
-      case DuaaListType.afterTravelling:
-        return afterTravellingDuaas;
-    }
-  }
-
   List<DuaasList> get dailyDuaas {
     return [
       DuaasList(
@@ -185,7 +150,7 @@ class DuaaBank {
       DuaasList(
         t: 'O Allah, protect me from Your punishment on the day Your servants are resurrected.',
         tr: 'اللهم قني عذابك يوم تبعث عبادك                                                 ',
-        r: 'al-Hafiz Ibn Hajar in Fath al-Bari (11/119)\n\nHisn al-Muslim 23                                                                                      ',
+        r: 'Al-Hafiz Ibn Hajar in Fath al-Bari (11/119)\n\nHisn al-Muslim 23                                                                                      ',
       ),
       DuaasList(
         t: 'In Your name O Allah, I live and die.               ',
@@ -235,31 +200,31 @@ class DuaaBank {
       DuaasList(
         t: 'Oh Allah! Make useful for me what you have taught me and teach me knowledge that will be useful to me.',
         tr: 'يا الله! انفعني بما علمتني وعلمني علماً ينفعني                        ',
-        r: 'Sunan Ibn Majah 3833\n\nBook 34, Hadith 7',
+        r: 'Sunan Ibn Majah 3833\n\nBook 34, Hadith 7                                                               ',
       ),
       DuaasList(
           t: 'Oh Allah! I ask you for the understanding of the prophets and the memory of the messengers, and those nearest to you.',
           tr: 'يا الله! أسألك فهم الأنبياء وحفظ المرسلين والأقربين منك                          ',
-          r: 'Al-Minnaawi said in Fayd al-Qadeer (2/162)\n\nHisn al-Muslim 202'),
+          r: 'Al-Minnaawi said in Fayd al-Qadeer (2/162)\n\nHisn al-Muslim 202                                                             '),
       DuaasList(
         t: 'Oh Allah! Make my tongue full of your remembrance and my heart with awe of you.',
         tr: 'يا الله! اجعل لساني مليئا بذكرك وقلبي من خشيتك                              ',
-        r: 'At-Tirmidhi 5/473\n\nHisn al-Muslim 3',
+        r: 'At-Tirmidhi 5/473\n\nHisn al-Muslim 3                                                             ',
       ),
       DuaasList(
         t: 'Oh Allah! You do whatever you wish, and you are my availer and protector and best of aid.',
         tr: 'يا الله! افعل ما شئت، وأنت وليي وحافظي ونعم النصير                  ',
-        r: 'Muslim 1/209.\n\nHisn al-Muslim 13',
+        r: 'Muslim 1/209.\n\nHisn al-Muslim 13                                                             ',
       ),
       DuaasList(
         t: 'O Allah, honor me by the light of understanding and take me out from the darknesses of doubt and open upon us the doors of Your knowledge and open upon us the treasure of Your recognition, O the best of the Merciful ones.',
         tr: 'اللهم أكرمني بنور الفهم، وأخرجني من ظلمات الشك، وافتح علينا أبواب علمك، وافتح علينا كنز معرفتك يا أرحم الراحمين',
-        r: 'Al-Bukhari 7/162.\n\nHisn al-Muslim 74',
+        r: 'Al-Bukhari 7/162.\n\nHisn al-Muslim 74                                                             ',
       ),
       DuaasList(
         t: 'O Allah, and give me Tawfeeq to the study and solving all the difficult problems through books. By Your mercy, O the best of the merciful ones.',
         tr: 'اللهم وفقني للدراسة وحل جميع المسائل الصعبة بالكتب. برحمتك يا خير الراحمين',
-        r: 'At-Tirmidhi 3/187\n\nHisn al-Muslim 97',
+        r: 'At-Tirmidhi 3/187\n\nHisn al-Muslim 97                                                             ',
       ),
     ];
   }
@@ -267,68 +232,79 @@ class DuaaBank {
   List<DuaasList> get afterStudyingDuaas {
     return [
       DuaasList(
-          t: 'Oh Allah! I entrust you with what I have read and I have studied. Oh Allah! Bring it back to me when I am in need of it. Oh Allah! You do whatever you wish, you are my availer and protector and the best of aid',
-          tr: 'يا الله! أستودعك ما قرأت ودرست. يا الله! ارجعها لي عندما أكون في حاجة إليها. يا الله! افعل ما شئت، أنت وليي وموالي ونعم الناص',
-          r: 'Al-Bukhari4/119\n\nHisn al-Muslim 146'),
+        t: 'Oh Allah! I entrust you with what I have read and I have studied. Oh Allah! Bring it back to me when I am in need of it. Oh Allah! You do whatever you wish, you are my availer and protector and the best of aid',
+        tr: 'يا الله! أستودعك ما قرأت ودرست. يا الله! ارجعها لي عندما أكون في حاجة إليها. يا الله! افعل ما شئت، أنت وليي وموالي ونعم الناص',
+        r: 'Al-Bukhari4/119\n\nHisn al-Muslim 146                                                             ',
+      ),
       DuaasList(
           t: 'Oh Allah! Nothing is easy except what You have made easy. If You wish, You can make the difficult easy.',
           tr: 'يا الله! ولا سهل إلا ما جعلته سهلا. إذا شئت جعلت الصعب سهل',
           r: 'Ibn Hibban in his Sahih (no. 2427)\n\nHisn al-Muslim 139'),
       DuaasList(
-          t: 'Blessings of God be upon Muhammad and his progeny. O God, I ask you, the one who mentions goodness and actualizes it and commands it, remind me of that which the shaytan makes me forget.',
-          tr: 'صلى الله على محمد وآل محمد. اللهم إني أسألك يا من ذكر الخير وفعله وأمر به، أن تذكرني بما أنسيني الشيطان',
-          r: 'Abu Dawud 4/324\n\nHisn al-Muslim 82'),
+        t: 'Blessings of God be upon Muhammad and his progeny. O God, I ask you, the one who mentions goodness and actualizes it and commands it, remind me of that which the shaytan makes me forget.',
+        tr: 'صلى الله على محمد وآل محمد. اللهم إني أسألك يا من ذكر الخير وفعله وأمر به، أن تذكرني بما أنسيني الشيطان',
+        r: 'Abu Dawud 4/324\n\nHisn al-Muslim 82                                                             ',
+      ),
       DuaasList(
-          t: 'Oh the chief of all chiefs! Oh the acceptor of prayers! Oh the elevator of ranks! Oh the master of virtues! Oh the forgiver of sins! Oh the granter of requests! Oh the excerptor of penance! Oh the hearer of all voices! Oh the one who knows all mysteries! Oh the remover of calamities!',
-          tr: 'يا سيد كل الرؤساء! يا متقبل الدعاء! يا مصعد الرتب! يا سيد الفضائل! يا غافر الذنوب! يا مجيب الطلبات! يا مقتطف التوبة! يا سامع كل الأصوات! يا من يعرف كل الأسرار! يا كاشف البلاء!',
-          r: 'Muslim 4/2091\n\nHisn al-Muslim 106'),
+        t: 'Oh the chief of all chiefs! Oh the acceptor of prayers! Oh the elevator of ranks! Oh the master of virtues! Oh the forgiver of sins! Oh the granter of requests! Oh the excerptor of penance! Oh the hearer of all voices! Oh the one who knows all mysteries! Oh the remover of calamities!',
+        tr: 'يا سيد كل الرؤساء! يا متقبل الدعاء! يا مصعد الرتب! يا سيد الفضائل! يا غافر الذنوب! يا مجيب الطلبات! يا مقتطف التوبة! يا سامع كل الأصوات! يا من يعرف كل الأسرار! يا كاشف البلاء!',
+        r: 'Muslim 4/2091\n\nHisn al-Muslim 106                                                             ',
+      ),
     ];
   }
 
   List<DuaasList> get beforeTravellingDuaas {
     return [
       DuaasList(
-          t: 'Glory unto Him Who created this transportation, for us, though we were unable to create it on our own. And unto our Lord we shall return.',
-          tr: 'سبحان الذي خلق لنا هذا النقل ولم نقدر أن نخلقه بأنفسنا." وإنا إلى ربنا راجعون',
-          r: 'Text of Quran, Sura 43: Zukhruf (Ornaments of Gold, Luxury)\n\nVerse 13- Verse 14'),
+        t: 'Glory unto Him Who created this transportation, for us, though we were unable to create it on our own. And unto our Lord we shall return.',
+        tr: 'سبحان الذي خلق لنا هذا النقل ولم نقدر أن نخلقه بأنفسنا." وإنا إلى ربنا راجعون',
+        r: 'Text of Quran, Sura 43: Zukhruf (Ornaments of Gold, Luxury)\n\nVerse 13- Verse 14                                                             ',
+      ),
       DuaasList(
-          t: 'My Lord! Let my entry be good, and likewise my exit be good. And grant me from You an authority to help me (or a firm sign or a proof).',
-          tr: 'ربي! فليكن دخولي خيراً، وكذلك يكون خروجي خيراً. واجعل لي من عندك سلطانا ينصرني (أو علامة ثابتة أو برهان)',
-          r: 'Text of Quran, Sura 17: Isra (The Journey)\n\nVerse 80'),
+        t: 'My Lord! Let my entry be good, and likewise my exit be good. And grant me from You an authority to help me (or a firm sign or a proof).',
+        tr: 'ربي! فليكن دخولي خيراً، وكذلك يكون خروجي خيراً. واجعل لي من عندك سلطانا ينصرني (أو علامة ثابتة أو برهان)',
+        r: 'Text of Quran, Sura 17: Isra (The Journey)\n\nVerse 80                                                             ',
+      ),
     ];
   }
 
   List<DuaasList> get duringTravellingDuaas {
     return [
       DuaasList(
-          t: 'Glory be to Him Who has subjugated this to us, for we could not have accomplished it, and truly to our Lord we are returning. O Allah, we ask You for piety and fear of Allah and deeds with which You will be pleased on this journey of ours. O Allah make this journey easy for us and fold up for us its distance. O Allah You are the Companion on the journey and the Deputy among the family. O Allah I seek Your protection from discomfort on the journey and from a gloomy outlook, and from any evil befalling my wealth or family.',
-          tr: 'سبحان الذي سخر لنا هذا وما كنا لنقدر عليه وإنا إلى ربنا لراجعون. اللهم إنا نسألك التقوى وتقوى الله والعمل الذي ترضاه في رحلتنا هذه. اللهم هون علينا سفرنا هذا واطو لنا بعده. اللهم أنت الصاحب في السفر والوكيل في الأهل. اللهم إني أعوذ بك من ضيق السفر وسوء المنظر ومن كل شر يصيب مالي أو أهلي.',
-          r: 'Ibn Umar\n\nHisn al-Muslim 85'),
+        t: 'Glory be to Him Who has subjugated this to us, for we could not have accomplished it, and truly to our Lord we are returning. O Allah, we ask You for piety and fear of Allah and deeds with which You will be pleased on this journey of ours. O Allah make this journey easy for us and fold up for us its distance. O Allah You are the Companion on the journey and the Deputy among the family. O Allah I seek Your protection from discomfort on the journey and from a gloomy outlook, and from any evil befalling my wealth or family.',
+        tr: 'سبحان الذي سخر لنا هذا وما كنا لنقدر عليه وإنا إلى ربنا لراجعون. اللهم إنا نسألك التقوى وتقوى الله والعمل الذي ترضاه في رحلتنا هذه. اللهم هون علينا سفرنا هذا واطو لنا بعده. اللهم أنت الصاحب في السفر والوكيل في الأهل. اللهم إني أعوذ بك من ضيق السفر وسوء المنظر ومن كل شر يصيب مالي أو أهلي.',
+        r: 'Ibn Umar\n\nHisn al-Muslim 85                                                             ',
+      ),
       DuaasList(
-          t: 'O Allah, You are the Companion on the journey and the Deputy among the family. O Allah I seek Your protection from difficulties on the journey, sadness on returning, infidelity after faith, beseeching You as an oppressed person, and from evil befalling my wealth or family.',
-          tr: 'اللهم أنت الصاحب في السفر والوكيل في الأهل. اللهم إني أعوذ بك من عسر السفر، وحزن العودة، والكفر بعد الإيمان، وأسألك مظلوماً، ومن شر مالي أو أهلي',
-          r: 'Abdullah ibn Sarjis\n\nHisn al-Muslim 103'),
+        t: 'O Allah, You are the Companion on the journey and the Deputy among the family. O Allah I seek Your protection from difficulties on the journey, sadness on returning, infidelity after faith, beseeching You as an oppressed person, and from evil befalling my wealth or family.',
+        tr: 'اللهم أنت الصاحب في السفر والوكيل في الأهل. اللهم إني أعوذ بك من عسر السفر، وحزن العودة، والكفر بعد الإيمان، وأسألك مظلوماً، ومن شر مالي أو أهلي',
+        r: 'Abdullah ibn Sarjis\n\nHisn al-Muslim 103                                                             ',
+      ),
       DuaasList(
-          t: 'In the name of Allah be its movement and rest. Truly my Lord is Most Forgiving, Most Merciful.',
-          tr: 'بسم الله حركتها وسكونها. إن ربي غفور رحيم',
-          r: 'Husayn ibn Ali\n\nHisn al-Muslim 101'),
+        t: 'In the name of Allah be its movement and rest. Truly my Lord is Most Forgiving, Most Merciful.',
+        tr: 'بسم الله حركتها وسكونها. إن ربي غفور رحيم',
+        r: 'Husayn ibn Ali\n\nHisn al-Muslim 101                                                             ',
+      ),
     ];
   }
 
   List<DuaasList> get afterTravellingDuaas {
     return [
       DuaasList(
-          t: 'O Allah, I seek refuge with Thee from hardships of the journey, the gloominess of the sights, and finding of evil changes in property and family on return.',
-          tr: "اللهم إني أعوذ بك من وعثاء السفر، وكآبة المناظر، وسوء التغير في المال والأهل في الرجوع",
-          r: 'Sahih Muslim 1342\n\nBook 15, Hadith 479'),
+        t: 'O Allah, I seek refuge with Thee from hardships of the journey, the gloominess of the sights, and finding of evil changes in property and family on return.',
+        tr: "اللهم إني أعوذ بك من وعثاء السفر، وكآبة المناظر، وسوء التغير في المال والأهل في الرجوع",
+        r: 'Sahih Muslim 1342\n\nBook 15, Hadith 479                                                             ',
+      ),
       DuaasList(
-          t: 'O Allah, I seek refuge with You from the difficulties of travel, and from having a change of hearts and being in a bad predicament, and I take refuge with You from an ill fated outcome with wealth and family. We return, repent, worship and praise our Lord.',
-          tr: 'اللهم إني أعوذ بك من وعثاء السفر، وتقلب القلوب، وسوء الكربة، وأعوذ بك من سوء العاقبة في المال والأهل. نعود ونتوب ونعبد ونحمد ربنا',
-          r: 'Sahih Muslim 1342\n\nBook 15, Hadith 432'),
+        t: 'O Allah, I seek refuge with You from the difficulties of travel, and from having a change of hearts and being in a bad predicament, and I take refuge with You from an ill fated outcome with wealth and family. We return, repent, worship and praise our Lord.',
+        tr: 'اللهم إني أعوذ بك من وعثاء السفر، وتقلب القلوب، وسوء الكربة، وأعوذ بك من سوء العاقبة في المال والأهل. نعود ونتوب ونعبد ونحمد ربنا',
+        r: 'Sahih Muslim 1342\n\nBook 15, Hadith 432                                                             ',
+      ),
       DuaasList(
-          t: 'Turning turning, to our Lord returning, not leaving behind any sin [unforgiven].',
-          tr: "بِسْمِ اللَّهِ مَجْرَاهَا وَمُرْسَاهَا إِنَّ رَبِّي لَغَفُورٌ رَّحِيمٌ.",
-          r: 'Riyad as-Salihin 422\n\nBook 12, Hadith 422'),
+        t: 'Turning turning, to our Lord returning, not leaving behind any sin [unforgiven].',
+        tr: "بِسْمِ اللَّهِ مَجْرَاهَا وَمُرْسَاهَا إِنَّ رَبِّي لَغَفُورٌ رَّحِيمٌ.",
+        r: 'Riyad as-Salihin 422\n\nBook 12, Hadith 422                                                             ',
+      ),
     ];
   }
 }

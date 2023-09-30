@@ -10,10 +10,11 @@ import '../../../widgets/back_arrow_ar.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import 'daily_page.dart';
+
 class StudyingPage extends GetView<DuaaController> {
   StudyingPage({Key? key}) : super(key: key);
   final RxBool beforeStudyingSelected = true.obs;
-  DuaaController duaaController=Get.put(DuaaController());
+  DuaaController duaaController = Get.put(DuaaController());
 
   @override
   Widget build(BuildContext context) {
@@ -58,27 +59,26 @@ class StudyingPage extends GetView<DuaaController> {
                         GestureDetector(
                           onTap: () {
                             beforeStudyingSelected.value = true;
-                            duaaController.selectedTime=studying.Before;
-
-
+                            duaaController.selectedTime = studying.Before;
                           },
                           child: Obx(() {
                             return RowScrollView(
-                              section: 'Before Studying',
-                              length: changeLanguageController.getSelected()
-                                  ? 160
-                                  : 110,
-                              styles: beforeStudyingSelected.value
-                                  ? TextStyles.body.b_16B
-                                  : TextStyles.body.b_16B.subTextColor,
-                              colour: duaaController.selectedTime==studying.Before?
-                              AppColors.primary:Colors.transparent
-                            );
+                                section: 'Before Studying',
+                                length: changeLanguageController.getSelected()
+                                    ? 160
+                                    : 110,
+                                styles: beforeStudyingSelected.value
+                                    ? TextStyles.body.b_16B
+                                    : TextStyles.body.b_16B.subTextColor,
+                                colour: duaaController.selectedTime ==
+                                        studying.Before
+                                    ? AppColors.primary
+                                    : Colors.transparent);
                           }),
                         ),
                         GestureDetector(
                           onTap: () {
-                            duaaController.selectedTime=studying.After;
+                            duaaController.selectedTime = studying.After;
                             beforeStudyingSelected.value = false;
                           },
                           child: Obx(() {
@@ -90,8 +90,10 @@ class StudyingPage extends GetView<DuaaController> {
                               styles: beforeStudyingSelected.value
                                   ? TextStyles.body.b_16B.subTextColor
                                   : TextStyles.body.b_16B,
-                              colour: duaaController.selectedTime==studying.After?
-                              AppColors.primary:Colors.transparent,
+                              colour:
+                                  duaaController.selectedTime == studying.After
+                                      ? AppColors.primary
+                                      : Colors.transparent,
                             );
                           }),
                         ),
@@ -115,7 +117,9 @@ class StudyingPage extends GetView<DuaaController> {
                                     DuaaBox(
                                       counter: '5',
                                       duaaText: selectedDuaas[i].duaasText,
-                                      category: 'study',
+                                      category: beforeStudyingSelected.value
+                                          ? 'before study'
+                                          : 'after study',
                                       index: i,
                                     ),
                                     SizedBox(
@@ -125,8 +129,7 @@ class StudyingPage extends GetView<DuaaController> {
                                 ),
                             ],
                           );
-                        }
-                        ),
+                        }),
                       ),
                     )
                   ],

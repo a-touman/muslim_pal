@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 
 class DuaaBoxSimple extends StatelessWidget {
-  late final String content;
+  final String Function() getContent;
 
   DuaaBoxSimple({
-    required this.content,
+    required this.getContent,
   });
 
   @override
@@ -25,7 +26,7 @@ class DuaaBoxSimple extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            content,
+            getContent(),
             style: TextStyles.body.b_16R.textColor,
           ),
         ],
