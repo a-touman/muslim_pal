@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:muslim_pal/app/pages/duaa/screens/daily_page.dart';
-import 'package:muslim_pal/app/pages/duaa/screens/evening_page.dart';
-import 'package:muslim_pal/app/pages/duaa/screens/morning_page.dart';
-import 'package:muslim_pal/app/pages/duaa/screens/night_page.dart';
+import 'package:muslim_pal/app/pages/duaa/screens/custom_duaa_page.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/studying_page.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/travelling_page.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
@@ -40,10 +37,11 @@ class DuaaView extends GetView<DuaaController> {
                       child: Row(
                         children: [
                           GestureDetector(
-                              onTap: () {
-                                Get.back();
-                              },
-                              child: BackArrow()),
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: BackArrow(),
+                          ),
                           SizedBox(
                             width: AppStyle.spacing.W.spacingXs,
                           ),
@@ -62,7 +60,7 @@ class DuaaView extends GetView<DuaaController> {
                           ? Alignment.centerLeft
                           : Alignment.centerRight,
                       child: Text(
-                        'Select Duaa Catgeory'.tr,
+                        'Select Duaa Category'.tr,
                         style: TextStyles.heading.h5_22B,
                       ),
                     ),
@@ -77,10 +75,14 @@ class DuaaView extends GetView<DuaaController> {
                             DuaaRow(
                               containerIconLeft: IconPaths.daily,
                               containerNameLeft: 'Daily',
-                              duaaPageLeft: DailyPage(),
+                              duaaPageLeft: CustomDuaaPage(
+                                category: DuaaCategory.Daily,
+                              ),
                               containerIconRight: IconPaths.morning,
                               containerNameRight: 'Morning',
-                              duaaPageRight: MorningPage(),
+                              duaaPageRight: CustomDuaaPage(
+                                category: DuaaCategory.Morning,
+                              ),
                             ),
                             SizedBox(
                               height: AppStyle.spacing.H.spacingMd,
@@ -88,10 +90,14 @@ class DuaaView extends GetView<DuaaController> {
                             DuaaRow(
                               containerIconLeft: IconPaths.evening,
                               containerNameLeft: 'Evening',
-                              duaaPageLeft: EveningPage(),
+                              duaaPageLeft: CustomDuaaPage(
+                                category: DuaaCategory.Evening,
+                              ),
                               containerIconRight: IconPaths.night,
                               containerNameRight: 'Night',
-                              duaaPageRight: NightPage(),
+                              duaaPageRight: CustomDuaaPage(
+                                category: DuaaCategory.Night,
+                              ),
                             ),
                             SizedBox(
                               height: AppStyle.spacing.H.spacingMd,

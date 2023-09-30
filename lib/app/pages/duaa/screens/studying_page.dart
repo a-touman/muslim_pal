@@ -9,7 +9,7 @@ import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
-import 'daily_page.dart';
+import 'custom_duaa_page.dart';
 
 class StudyingPage extends GetView<DuaaController> {
   StudyingPage({Key? key}) : super(key: key);

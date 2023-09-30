@@ -52,8 +52,13 @@ const Map<String, String> en = {
   "Before Travel": "Before Travel",
   "During Travel": "During Travel",
   "After Travel": "After Travel",
-  'Translation:': 'Translation:',
-  'Reference:': 'Reference:',
+  'Before Studying Duaa': 'Before Studying Duaa',
+  'After Studying Duaa': 'After Studying Duaa',
+  "Before Travelling Duaa": "Before Travelling Duaa",
+  "During Travelling Duaa": "During Travelling Duaa",
+  "After Travelling Duaa": "After Travelling Duaa",
+  ' Translation:': ' Translation:',
+  '     Reference:': '     Reference:',
   'O Allah, I ask You for knowledge that is of benefit, a good provision, and deeds that will be accepted.':
       'O Allah, I ask You for knowledge that is of benefit, a good provision, and deeds that will be accepted.',
   'O Allah, I ask You for Paradise and seek Your protection from the Fire.':

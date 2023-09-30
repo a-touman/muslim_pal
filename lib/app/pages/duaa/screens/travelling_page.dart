@@ -9,7 +9,7 @@ import '../../home/repository/remote services.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import '../widgets/row_scroll_view.dart';
-import 'daily_page.dart';
+import 'custom_duaa_page.dart';
 
 enum travelling { Before, During, After }
 

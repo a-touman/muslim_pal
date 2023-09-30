@@ -10,7 +10,7 @@ import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
 import '../widgets/duaa_box_simple.dart';
-import 'daily_page.dart';
+import 'custom_duaa_page.dart';
 
 class DuaaInfo extends GetView<DuaaController> {
   final String duaaText;
@@ -78,7 +78,7 @@ class DuaaInfo extends GetView<DuaaController> {
                                 children: [
                                   Container(
                                     child: Text(
-                                      'Translation:'.tr,
+                                      ' Translation:'.tr,
                                       style: TextStyles.heading.h5_22B,
                                     ),
                                     alignment: isLanguageSelected

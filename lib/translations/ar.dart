@@ -128,7 +128,7 @@ const Map<String, String> ar = {
   "Before Travelling Duaa": "دعاء قبل السفر",
   "During Travelling Duaa": "دعاء وقت السفر",
   "After Travelling Duaa": "دعاء بعد السفر",
-  "Translation:": ' ترجمة:',
+  ' Translation:': '  ترجمة:',
   '     Reference:': '     مرجع:',
   'O Allah, I ask You for knowledge that is of benefit, a good provision, and deeds that will be accepted.':
       "اللهم إني أسألك علماً نافعاً، ورزقاً طيباً، وعملاً متقبلاً                                       ",
