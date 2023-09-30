@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/duaa/controller/duaa_controller.dart';
-import '../../../style/app_colors.dart';
+
 class RowScrollView extends StatelessWidget {
-  DuaaController duaaController=Get.put(DuaaController());
-Color? colour;
+  final DuaaController duaaController = Get.put(DuaaController());
+  final Color? colour;
   final String section;
   final TextStyle styles;
   final double length;
-
 
   RowScrollView({
     required this.colour,
@@ -29,8 +28,8 @@ Color? colour;
           width: length,
           height: 7,
           child: Visibility(
-            child:  Divider(
-              color:colour,
+            child: Divider(
+              color: colour,
               thickness: 1.5,
             ),
           ),

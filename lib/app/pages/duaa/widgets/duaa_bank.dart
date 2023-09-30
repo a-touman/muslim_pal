@@ -258,7 +258,7 @@ class DuaaBank {
       DuaasList(
         t: 'Glory unto Him Who created this transportation, for us, though we were unable to create it on our own. And unto our Lord we shall return.',
         tr: 'سبحان الذي خلق لنا هذا النقل ولم نقدر أن نخلقه بأنفسنا." وإنا إلى ربنا راجعون',
-        r: 'Text of Quran, Sura 43: Zukhruf (Ornaments of Gold, Luxury)\n\nVerse 13- Verse 14                                                             ',
+        r: 'Text of Quran, Sura 43: Zukhruf (Ornaments of Gold, Luxury)\n\nVerse 13 - Verse 14                                                             ',
       ),
       DuaasList(
         t: 'My Lord! Let my entry be good, and likewise my exit be good. And grant me from You an authority to help me (or a firm sign or a proof).',

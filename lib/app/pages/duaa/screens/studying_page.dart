@@ -14,7 +14,7 @@ import 'daily_page.dart';
 class StudyingPage extends GetView<DuaaController> {
   StudyingPage({Key? key}) : super(key: key);
   final RxBool beforeStudyingSelected = true.obs;
-  DuaaController duaaController = Get.put(DuaaController());
+  final DuaaController duaaController = Get.put(DuaaController());
 
   @override
   Widget build(BuildContext context) {
