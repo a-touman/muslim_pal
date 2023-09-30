@@ -109,7 +109,7 @@ class DuaaInfo extends GetView<DuaaController> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Reference:'.tr,
+                                          '     Reference:'.tr,
                                           style: TextStyles
                                               .body.b_16B.subTextColor,
                                         ),
