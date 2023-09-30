@@ -46,7 +46,7 @@ class AppPages {
     ),
     GetPage(
       name: Paths.PRAYER_TIMINGS,
-      page: () => const PrayerTimingsView(),
+      page: () =>  PrayerTimingsView(),
       binding: PrayerTimingsPageBinding(),
     ),
     GetPage(

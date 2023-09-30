@@ -4,7 +4,6 @@ class QuranModel {
   Data? data;
 
   QuranModel({this.code, this.status, this.data});
-
   QuranModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     status = json['status'];

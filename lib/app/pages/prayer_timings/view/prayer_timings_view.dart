@@ -17,8 +17,7 @@ import '../widgets/prayer_timings_icon.dart';
 import '../widgets/reusable_container.dart';
 
 class PrayerTimingsView extends GetView<PrayerTimingsController> {
-  const PrayerTimingsView({Key? key}) : super(key: key);
-
+PrayerTimingsController prayerTimingsController=Get.put(PrayerTimingsController());
   @override
   Widget build(BuildContext context) {
     Get.lazyPut(() => ChangeLanguageController());

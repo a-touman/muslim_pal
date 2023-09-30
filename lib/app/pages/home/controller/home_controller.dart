@@ -14,7 +14,9 @@ class HomeController extends GetxController {
   void onInit() {
     super.onInit();
     fetchData();
+    print('called home');
   }
+
   fetchData() async {
     try {
       isLoading(true);
@@ -27,15 +29,13 @@ class HomeController extends GetxController {
       isLoading(false);
     }
   }
+
   String getAyahText() {
     if (mod.value != null && mod.value.data != null) {
       return mod.value.data?.text ?? 'loading';
     } else {
       return 'Ayah data not available';
     }
-  }
-  RxString retA() {
-    return ayahText;
   }
   int? getVerseNo() {
     if (mod.value != null && mod.value.data != null) {

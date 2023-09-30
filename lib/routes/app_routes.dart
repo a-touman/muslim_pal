@@ -2,7 +2,7 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-  static const FIRST_SCREEN = Paths.HOME;
+  static const FIRST_SCREEN = Paths.PRAYER_TIMINGS;
 }
 
 class Paths {

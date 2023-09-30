@@ -81,7 +81,7 @@ class HomeView extends StatelessWidget {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        Get.to(() => const PrayerTimingsView());
+                        Get.to(() =>  PrayerTimingsView());
                       },
                       child: ReusableContainer(
                         content: IconContent(

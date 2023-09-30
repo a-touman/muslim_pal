@@ -19,18 +19,20 @@ ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageControll
 
   Future<QuranModel> fetchData() async {
   try {
-
     if(changeLanguageController.getCurrentLanguageCode()=="ar"){
       lang='ar';
     }
     else{
       lang='en';
     }
+
    var url = Uri.parse('http://api.alquran.cloud/v1/ayah/${randomInt()}/$lang.asad');
   final response = await http.get(url);
 
+
   if (response.statusCode == 200) {
   final result = jsonDecode(response.body);
+
   return QuranModel.fromJson(result);
   } else {
   throw Exception('Failed to load data');
