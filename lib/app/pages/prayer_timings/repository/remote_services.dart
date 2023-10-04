@@ -1,10 +1,6 @@
 import 'dart:convert';
-
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:http/http.dart' as http;
 import 'package:muslim_pal/app/pages/prayer_timings/model/timings_model.dart';
-import '../../settings/controller/change_language_controller.dart';
 
 class RemoteServices {
   Future<TimingsModel> fetchData() async {

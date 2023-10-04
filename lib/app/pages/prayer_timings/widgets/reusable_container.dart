@@ -13,8 +13,7 @@ class ReusableContainer extends StatelessWidget {
   final String startTime;
   final Gradient bgColor;
   final String smallText;
-  final String endTime;
-  final bool amOrPm;
+  final String secondaryTime;
   final String mosqueColor;
   final String subtractColor;
 
@@ -24,8 +23,7 @@ class ReusableContainer extends StatelessWidget {
     required this.startTime,
     required this.texts,
     required this.smallText,
-    required this.endTime,
-    required this.amOrPm,
+    required this.secondaryTime,
     required this.mosqueColor,
     required this.subtractColor,
   });
@@ -117,18 +115,7 @@ class ReusableContainer extends StatelessWidget {
                               Text(
                                 startTime.tr,
                                 style: TextStyles.heading.h3_28B,
-                              ),
-                              Text(
-                                amOrPm ? "AM".tr : "PM".tr,
-                                textAlign: TextAlign.end,
-                                style: TextStyle(
-                                  color: AppTextColors.subText,
-                                  fontSize: 16.0,
-                                  fontFamily: FontsFamily.effraTrialBlack,
-                                  fontStyle: FontStyle.normal,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
+                              )
                             ],
                           ),
                           Row(
@@ -138,13 +125,10 @@ class ReusableContainer extends StatelessWidget {
                                 style: TextStyles.body.b_12B.subTextColor,
                               ),
                               Text(
-                                endTime.tr,
+                                secondaryTime.tr,
                                 style: TextStyles.body.b_12B,
                               ),
-                              Text(
-                                amOrPm ? "am".tr : "pm".tr,
-                                style: TextStyles.body.b_12B,
-                              ),
+
                             ],
                           ),
                         ],

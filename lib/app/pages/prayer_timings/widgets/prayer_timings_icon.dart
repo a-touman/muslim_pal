@@ -9,7 +9,7 @@ import '../../../style/text_themes.dart';
 class PrayerTimings extends StatelessWidget {
   final String prayerIcon;
   final String prayer;
-  final String prayerTime;
+  final String? prayerTime;
   final String bellActivity;
   late final String amOrPm;
 
@@ -59,7 +59,7 @@ class PrayerTimings extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      prayerTime.tr,
+                      prayerTime!.tr,
                       style: TextStyle(
                         fontFamily: FontsFamily.effraTrialRegular,
                         fontWeight: FontWeight.w500,
