@@ -14,9 +14,9 @@ class TimingsModel {
   Data? data;
 
   TimingsModel({
-    this.code,
-    this.status,
-    this.data,
+    required this.code,
+    required this.status,
+    required this.data,
   });
 
   factory TimingsModel.fromJson(Map<String, dynamic> json) => TimingsModel(
@@ -28,19 +28,19 @@ class TimingsModel {
   Map<String, dynamic> toJson() => {
     "code": code,
     "status": status,
-    "data": data!.toJson(),
+    "data": data?.toJson(),
   };
 }
 
 class Data {
-  Timings? timings;
-  Date? date;
-  Meta? meta;
+  Timings timings;
+  Date date;
+  Meta meta;
 
   Data({
-    this.timings,
-    this.date,
-    this.meta,
+    required this.timings,
+    required this.date,
+    required this.meta,
   });
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
@@ -50,23 +50,23 @@ class Data {
   );
 
   Map<String, dynamic> toJson() => {
-    "timings": timings!.toJson(),
-    "date": date!.toJson(),
-    "meta": meta!.toJson(),
+    "timings": timings.toJson(),
+    "date": date.toJson(),
+    "meta": meta.toJson(),
   };
 }
 
 class Date {
-  String? readable;
-  String? timestamp;
-  Hijri? hijri;
-  Gregorian? gregorian;
+  String readable;
+  String timestamp;
+  Hijri hijri;
+  Gregorian gregorian;
 
   Date({
-    this.readable,
-    this.timestamp,
-    this.hijri,
-    this.gregorian,
+    required this.readable,
+    required this.timestamp,
+    required this.hijri,
+    required this.gregorian,
   });
 
   factory Date.fromJson(Map<String, dynamic> json) => Date(
@@ -79,28 +79,28 @@ class Date {
   Map<String, dynamic> toJson() => {
     "readable": readable,
     "timestamp": timestamp,
-    "hijri": hijri!.toJson(),
-    "gregorian": gregorian!.toJson(),
+    "hijri": hijri.toJson(),
+    "gregorian": gregorian.toJson(),
   };
 }
 
 class Gregorian {
-  String? date;
-  String? format;
-  String? day;
-  GregorianWeekday? weekday;
-  GregorianMonth? month;
-  String? year;
-  Designation? designation;
+  String date;
+  String format;
+  String day;
+  GregorianWeekday weekday;
+  GregorianMonth month;
+  String year;
+  Designation designation;
 
   Gregorian({
-    this.date,
-    this.format,
-    this.day,
-    this.weekday,
-    this.month,
-    this.year,
-    this.designation,
+    required this.date,
+    required this.format,
+    required this.day,
+    required this.weekday,
+    required this.month,
+    required this.year,
+    required this.designation,
   });
 
   factory Gregorian.fromJson(Map<String, dynamic> json) => Gregorian(
@@ -117,20 +117,20 @@ class Gregorian {
     "date": date,
     "format": format,
     "day": day,
-    "weekday": weekday!.toJson(),
-    "month": month!.toJson(),
+    "weekday": weekday.toJson(),
+    "month": month.toJson(),
     "year": year,
-    "designation": designation!.toJson(),
+    "designation": designation.toJson(),
   };
 }
 
 class Designation {
-  String? abbreviated;
-  String? expanded;
+  String abbreviated;
+  String expanded;
 
   Designation({
-    this.abbreviated,
-    this.expanded,
+    required this.abbreviated,
+    required this.expanded,
   });
 
   factory Designation.fromJson(Map<String, dynamic> json) => Designation(
@@ -145,12 +145,12 @@ class Designation {
 }
 
 class GregorianMonth {
-  int? number;
-  String? en;
+  int number;
+  String en;
 
   GregorianMonth({
-    this.number,
-    this.en,
+    required this.number,
+    required this.en,
   });
 
   factory GregorianMonth.fromJson(Map<String, dynamic> json) => GregorianMonth(
@@ -165,10 +165,10 @@ class GregorianMonth {
 }
 
 class GregorianWeekday {
-  String? en;
+  String en;
 
   GregorianWeekday({
-    this.en,
+    required this.en,
   });
 
   factory GregorianWeekday.fromJson(Map<String, dynamic> json) => GregorianWeekday(
@@ -181,24 +181,24 @@ class GregorianWeekday {
 }
 
 class Hijri {
-  String? date;
-  String? format;
-  String? day;
-  HijriWeekday? weekday;
-  HijriMonth? month;
-  String? year;
-  Designation? designation;
-  List<dynamic>? holidays;
+  String date;
+  String format;
+  String day;
+  HijriWeekday weekday;
+  HijriMonth month;
+  String year;
+  Designation designation;
+  List<dynamic> holidays;
 
   Hijri({
-    this.date,
-    this.format,
-    this.day,
-    this.weekday,
-    this.month,
-    this.year,
-    this.designation,
-    this.holidays,
+    required this.date,
+    required this.format,
+    required this.day,
+    required this.weekday,
+    required this.month,
+    required this.year,
+    required this.designation,
+    required this.holidays,
   });
 
   factory Hijri.fromJson(Map<String, dynamic> json) => Hijri(
@@ -216,23 +216,23 @@ class Hijri {
     "date": date,
     "format": format,
     "day": day,
-    "weekday": weekday!.toJson(),
-    "month": month!.toJson(),
+    "weekday": weekday.toJson(),
+    "month": month.toJson(),
     "year": year,
-    "designation": designation!.toJson(),
-    "holidays": List<dynamic>.from(holidays!.map((x) => x)),
+    "designation": designation.toJson(),
+    "holidays": List<dynamic>.from(holidays.map((x) => x)),
   };
 }
 
 class HijriMonth {
-  int? number;
-  String? en;
-  String? ar;
+  int number;
+  String en;
+  String ar;
 
   HijriMonth({
-    this.number,
-    this.en,
-    this.ar,
+    required this.number,
+    required this.en,
+    required this.ar,
   });
 
   factory HijriMonth.fromJson(Map<String, dynamic> json) => HijriMonth(
@@ -249,12 +249,12 @@ class HijriMonth {
 }
 
 class HijriWeekday {
-  String? en;
-  String? ar;
+  String en;
+  String ar;
 
   HijriWeekday({
-    this.en,
-    this.ar,
+    required this.en,
+    required this.ar,
   });
 
   factory HijriWeekday.fromJson(Map<String, dynamic> json) => HijriWeekday(
@@ -269,29 +269,29 @@ class HijriWeekday {
 }
 
 class Meta {
-  double? latitude;
-  double? longitude;
-  String? timezone;
-  Method? method;
-  String? latitudeAdjustmentMethod;
-  String? midnightMode;
-  String? school;
-  Map<String, int>?offset;
+  double latitude;
+  double longitude;
+  String timezone;
+  Method method;
+  String latitudeAdjustmentMethod;
+  String midnightMode;
+  String school;
+  Map<String, int> offset;
 
   Meta({
-    this.latitude,
-    this.longitude,
-    this.timezone,
-    this.method,
-    this.latitudeAdjustmentMethod,
-    this.midnightMode,
-    this.school,
-    this.offset,
+    required this.latitude,
+    required this.longitude,
+    required this.timezone,
+    required this.method,
+    required this.latitudeAdjustmentMethod,
+    required this.midnightMode,
+    required this.school,
+    required this.offset,
   });
 
   factory Meta.fromJson(Map<String, dynamic> json) => Meta(
-    latitude: json["latitude"].toDouble(),
-    longitude: json["longitude"].toDouble(),
+    latitude: json["latitude"]?.toDouble(),
+    longitude: json["longitude"]?.toDouble(),
     timezone: json["timezone"],
     method: Method.fromJson(json["method"]),
     latitudeAdjustmentMethod: json["latitudeAdjustmentMethod"],
@@ -304,25 +304,25 @@ class Meta {
     "latitude": latitude,
     "longitude": longitude,
     "timezone": timezone,
-    "method": method!.toJson(),
+    "method": method.toJson(),
     "latitudeAdjustmentMethod": latitudeAdjustmentMethod,
     "midnightMode": midnightMode,
     "school": school,
-    "offset": Map.from(offset!).map((k, v) => MapEntry<String, dynamic>(k, v)),
+    "offset": Map.from(offset).map((k, v) => MapEntry<String, dynamic>(k, v)),
   };
 }
 
 class Method {
-  int? id;
-  String? name;
-  Params? params;
-  Location? location;
+  int id;
+  String name;
+  Params params;
+  Location location;
 
   Method({
-    this.id,
-    this.name,
-    this.params,
-    this.location,
+    required this.id,
+    required this.name,
+    required this.params,
+    required this.location,
   });
 
   factory Method.fromJson(Map<String, dynamic> json) => Method(
@@ -335,23 +335,23 @@ class Method {
   Map<String, dynamic> toJson() => {
     "id": id,
     "name": name,
-    "params": params!.toJson(),
-    "location": location!.toJson(),
+    "params": params.toJson(),
+    "location": location.toJson(),
   };
 }
 
 class Location {
-  double? latitude;
-  double? longitude;
+  double latitude;
+  double longitude;
 
   Location({
-    this.latitude,
-    this.longitude,
+    required this.latitude,
+    required this.longitude,
   });
 
   factory Location.fromJson(Map<String, dynamic> json) => Location(
-    latitude: json["latitude"].toDouble(),
-    longitude: json["longitude"].toDouble(),
+    latitude: json["latitude"]?.toDouble(),
+    longitude: json["longitude"]?.toDouble(),
   );
 
   Map<String, dynamic> toJson() => {
@@ -361,16 +361,16 @@ class Location {
 }
 
 class Params {
-  double? fajr;
-  String? isha;
+  int fajr;
+  int isha;
 
   Params({
-    this.fajr,
-    this.isha,
+    required this.fajr,
+    required this.isha,
   });
 
   factory Params.fromJson(Map<String, dynamic> json) => Params(
-    fajr: json["Fajr"].toDouble(),
+    fajr: json["Fajr"],
     isha: json["Isha"],
   );
 
@@ -381,30 +381,30 @@ class Params {
 }
 
 class Timings {
-  String? fajr;
-  String? sunrise;
-  String? dhuhr;
-  String? asr;
-  String? sunset;
-  String? maghrib;
-  String? isha;
-  String? imsak;
-  String? midnight;
-  String? firstthird;
-  String? lastthird;
+  String fajr;
+  String sunrise;
+  String dhuhr;
+  String asr;
+  String sunset;
+  String maghrib;
+  String isha;
+  String imsak;
+  String midnight;
+  String firstthird;
+  String lastthird;
 
   Timings({
-    this.fajr,
-    this.sunrise,
-    this.dhuhr,
-    this.asr,
-    this.sunset,
-    this.maghrib,
-    this.isha,
-    this.imsak,
-    this.midnight,
-    this.firstthird,
-    this.lastthird,
+    required this.fajr,
+    required this.sunrise,
+    required this.dhuhr,
+    required this.asr,
+    required this.sunset,
+    required this.maghrib,
+    required this.isha,
+    required this.imsak,
+    required this.midnight,
+    required this.firstthird,
+    required this.lastthird,
   });
 
   factory Timings.fromJson(Map<String, dynamic> json) => Timings(

@@ -8,6 +8,7 @@ import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
 import '../../../utils/constants.dart';
+import '../../calendar/controller/calendar_controller.dart';
 import '../controller/prayer_timings_controller.dart';
 import '../../../widgets/horizontal_line.dart';
 import '../../../widgets/icon_button.dart';
@@ -19,6 +20,7 @@ import '../widgets/reusable_container.dart';
 class PrayerTimingsView extends GetView<PrayerTimingsController> {
   PrayerTimingsController prayerTimingsController = Get.put(
       PrayerTimingsController());
+  CalendarController calendarController = Get.put(CalendarController());
 
   @override
   Widget build(BuildContext context) {
@@ -84,6 +86,9 @@ class Header extends StatelessWidget {
 }
 
 class DateNavigation extends StatelessWidget {
+  PrayerTimingsController prayerTimingsController = Get.find<
+      PrayerTimingsController>();
+
   @override
   Widget build(BuildContext context) {
     ChangeLanguageController controller = Get.find<ChangeLanguageController>();
@@ -91,7 +96,11 @@ class DateNavigation extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            prayerTimingsController.decValue();
+            prayerTimingsController.limitDay();
+            prayerTimingsController.getFajr();
+          },
           icon: SvgPicture.asset(
             controller.getSelected()
                 ? IconPaths.arrow_left
@@ -104,20 +113,31 @@ class DateNavigation extends StatelessWidget {
             child: Container(
               child: Column(
                 children: <Widget>[
-                  Text(
-                    "Safar 12, 1445".tr,
-                    style: TextStyles.heading.h5_22B,
-                  ),
+                  Obx(() {
+                    return Text(
+                      prayerTimingsController.displayHijriDate(),
+                      style: TextStyles.heading.h5_22B,
+                    );
+                  }),
                   SizedBox(height: AppStyle.spacing.H.spacingXxs),
-                  Text(
-                    "Mon, 28 August 2023".tr,
-                    style: TextStyles.body.b_14B.subTextColor,
-                  ),
+                  Obx(() {
+                    return Text(
+                      "${prayerTimingsController
+                          .dayName}, ${prayerTimingsController.day
+                          .toString()
+                          .tr} ${prayerTimingsController.monthName.value.tr} ${prayerTimingsController.year}".tr,
+                      style: TextStyles.body.b_14B.subTextColor,
+                    );
+                  }),
                 ],
               ),
             )),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            prayerTimingsController.fetchData();
+            prayerTimingsController.incValue();
+            prayerTimingsController.limitDay();
+          },
           icon: SvgPicture.asset(
             controller.getSelected()
                 ? IconPaths.arrow_right
@@ -159,7 +179,7 @@ class PrayerTimingsContainer extends StatelessWidget {
             prayer: prayerTimingsController.after.value,
             startTime: prayerTimingsController.nextTime.value,
             texts: "Next prayer is",
-            smallText: 'Iqamah - ',
+            smallText: 'Azan - ',
             secondaryTime: '${prayerTimingsController.nextTime.value} ',
             mosqueColor: IconPaths.background_mosque_light,
             subtractColor: IconPaths.subtract_light,

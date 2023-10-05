@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/home/model/quran_model.dart';
 
-import '../repository/remote services.dart';
+import '../repository/remote_services.dart';
 class HomeController extends GetxController {
   var isLoading = false.obs;
   Rx<QuranModel> mod = QuranModel().obs;

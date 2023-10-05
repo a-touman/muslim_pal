@@ -1,12 +1,23 @@
 import 'dart:convert';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:muslim_pal/app/pages/prayer_timings/controller/prayer_timings_controller.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/model/timings_model.dart';
+import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
+
+import '../../settings/services/location.dart';
+
 
 class RemoteServices {
-  Future<TimingsModel> fetchData() async {
+ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
+ String location = '';
+
+
+  Future<TimingsModel> fetchData(int year, int month, int day, String city, String country) async {
     try {
-      var url = Uri.parse(
-          'http://api.aladhan.com/v1/timingsByCity?city=Dubai&country=United Arab Emirates&method=8');
+
+      var url = Uri.parse('http://api.aladhan.com/v1/timings/$day-$month-$year?latitude=37.4226711&longitude=-122.0849872&method=2');
+
       final response = await http.get(url);
       if (response.statusCode == 200) {
         final result = jsonDecode(response.body);
@@ -22,6 +33,11 @@ class RemoteServices {
 
 
 
+//   if (ChangeLanguageController().locationSelected = false) {
+//       location = 'latitude=${changeLanguageController.lat}&longitude=${changeLanguageController.lon}';
+//   }
+//   else {
+//     location = 'city=$city&country=$country';
+//   }
 
-
-
+// var url = Uri.parse('http://api.aladhan.com/v1/timingsByCity/$day-$month-$year?city=$city&country=$country&method=8');

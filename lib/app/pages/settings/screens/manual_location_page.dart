@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:muslim_pal/app/pages/home/view/home_view.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/widgets/back_arrow_ar.dart';
 import '../../../style/app_colors.dart';
@@ -8,8 +9,13 @@ import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import 'package:country_picker_plus/country_picker_plus.dart';
 
+import '../../../utils/storage_utility.dart';
+
+String newCountryValue = '';
+String newStateValue = '';
+String newCityValue = '';
+
 class ManualLocationPage extends GetView<ChangeLanguageController> {
-  const ManualLocationPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,14 +63,15 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
                         countryLabel: "Country",
                         countrySearchHintText: "Search Country",
                         countryHintText: "Tap to Select Country",
-                        stateLabel: "State",
+                        stateLabel: 'State',
                         stateHintText: "Tap to Select State",
                         cityLabel: "City",
                         cityHintText: "Tap to Select City",
                         bottomSheetDecoration: CPPBSHDecoration(
-                            itemsSpace: EdgeInsets.symmetric(vertical: 5),
-                            itemTextStyle: TextStyles.body.b_16R),
-                        decoration: CPPFDecoration(
+                          itemsSpace: EdgeInsets.symmetric(vertical: 5),
+                          itemTextStyle: TextStyles.body.b_16R,
+                        ),
+                        decoration: const CPPFDecoration(
                           margin: EdgeInsets.symmetric(
                             horizontal: 5,
                             vertical: 5,
@@ -75,12 +82,47 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
                           textStyle: TextStyles.body.b_16R,
                           hintStyle: TextStyles.body.b_16R,
                         ),
-                        onCountrySaved: (value) {},
-                        onCountrySelected: (value) {},
-                        onStateSelected: (value) {},
-                        onCitySelected: (value) {},
+                        onCountrySelected: (value) {
+                          newCountryValue = value;
+                        },
+
+                        onStateSelected: (value) {
+                          newStateValue = value;
+                        },
+
+                        onCitySelected: (value) {
+                          newCityValue = value;
+                        },
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 72, right: 72),
+                      child: SizedBox(
+                        height: AppStyle.spacing.H.spacingXxxxlg,
+                        child: ElevatedButton(
+                          key: null,
+                          onPressed: () {newCountryValue = newCountryValue;
+                          controller.country.value=newCountryValue;
+                            newStateValue = newStateValue;
+                          controller.state.value=newCountryValue;
+                            newCityValue = newCityValue;
+                          controller.city.value=newCountryValue;
+                          controller.locationSelected = true;
+                          Get.to(HomeView());
+                            },
+                          style: ElevatedButton.styleFrom(
+                            shape: const StadiumBorder(),
+                            backgroundColor: AppColors.buttonIconBackground,
+                            side: const BorderSide(
+                                width: 2, color: AppColors.primary),
+                          ),
+                          child: Text(
+                            'Confirm Location'.tr,
+                            style: TextStyles.body.b_16B,
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -91,3 +133,5 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
     );
   }
 }
+
+

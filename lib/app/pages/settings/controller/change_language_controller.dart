@@ -2,10 +2,14 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
 import '../../../utils/storage_utility.dart';
+import '../screens/manual_location_page.dart';
 
 class ChangeLanguageController extends GetxController {
-
   RxString selected = languages.keys.first.obs;
+  RxString country=''.obs;
+  RxString city=''.obs;
+  RxString state=''.obs;
+  bool locationSelected = false;
 
   @override
   void onInit() {
@@ -50,5 +54,15 @@ class ChangeLanguageController extends GetxController {
     } else {
       return false;
     }
+  }
+
+  String? getLatitude() {
+    return StorageUtility.viewKey('latitude');
+
+  }
+
+  String? getLongitude() {
+    return StorageUtility.viewKey('longitude');
+
   }
 }

@@ -5,7 +5,7 @@ import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
-import '../../home/repository/remote services.dart';
+import '../../home/repository/remote_services.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import '../widgets/row_scroll_view.dart';

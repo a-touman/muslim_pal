@@ -1,36 +1,99 @@
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:hijri/hijri_calendar.dart';
+import 'package:muslim_pal/app/pages/calendar/controller/calendar_controller.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/model/timings_model.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/repository/remote_services.dart';
+import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
+import 'package:muslim_pal/app/utils/storage_utility.dart';
+import 'package:intl/intl.dart';
+
 
 class PrayerTimingsController extends GetxController {
+  CalendarController calendarController=Get.put(CalendarController());
+  ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
   var isLoading = false.obs;
-  Rx<TimingsModel> mod = TimingsModel().obs;
+  Rx<TimingsModel> mod = TimingsModel(code: null, status: '', data: null).obs;
   final RemoteServices remoteServices = RemoteServices();
+  final StorageUtility storageUtility=StorageUtility();
   String currentTime = "${DateTime.now().hour}:${DateTime.now().minute}";
+  RxString monthName=DateFormat('MMMM').format(DateTime.now()).obs;
+  RxString dayName=DateFormat('EEE').format(DateTime.now()).obs;
+  RxInt day=DateTime.now().day.obs;
+  RxInt month=DateTime.now().month.obs;
+  int year=DateTime.now().year;
+
   RxString before= ''.obs;
   RxString after = ''.obs;
   RxString beforeTime = ''.obs;
   RxString nextTime = ''.obs;
 
+  String displayHijriDate(){
+    var hDate= HijriCalendar.fromDate(DateTime(year,month.value,day.value));
+  String date="${calendarController.hijrimonthList[hDate.hMonth-1]} ${hDate.hDay}, ${hDate.hYear}";
+  return date;
+  }
+  void updateDayName() {
+    dayName.value = DateFormat('EEE').format(DateTime(year, month.value, day.value));
+  }
+  void updateMonthName() {
+    monthName.value = DateFormat('MMMM').format(DateTime(year, month.value, day.value));
+  }
   @override
   void onInit() {
     super.onInit();
     fetchData();
   }
 
-  fetchData() async {
+  void incValue(){
+    day+=1;
+    updateDayName();
+    updateMonthName();
+    fetchData();
+  }
+  void decValue(){
+    day-=1;
+    updateDayName();
+    updateMonthName();
+    fetchData();
+
+  }
+  void limitDay() {
+    // Determine the maximum days for the current month
+    int maxDaysInMonth = DateTime(year, month.value + 1, 0).day;
+    print(maxDaysInMonth);
+
+    // If the day is below 1, decrease the month and set the day to the maximum for the previous month
+    if (day.value < 1) {
+      month -= 1;
+      day.value = DateTime(year, month.value + 1, 0).day;
+    }
+    else if (day.value > maxDaysInMonth) {
+      month += 1;
+      day.value = 1;
+    }
+  }
+
+
+  void fetchData() async {
     try {
       isLoading(true);
-      final timingsModel = await remoteServices.fetchData();
+      final timingsModel = await remoteServices.fetchData(
+        year,
+        month.value,
+        day.value,
+        getCity() ?? "", // Add your default values or handle nulls
+        getCountry() ?? "",
+      );
       mod.value = timingsModel;
-
     } catch (e) {
-
+      // Handle exceptions
     } finally {
       isLoading(false);
     }
   }
+
+
   int convertTimeStringToInt(String timeString) {
     List<String> parts = timeString.split(':');
 
@@ -44,6 +107,7 @@ class PrayerTimingsController extends GetxController {
 
   String getFajr() {
     if (mod.value != null && mod.value.data != null) {
+
       return mod.value.data?.timings?.fajr ?? 'lOADING';
 
     }
@@ -51,6 +115,7 @@ class PrayerTimingsController extends GetxController {
       return '00:00';
     }
   }
+
   String getDuhur() {
     if (mod.value != null && mod.value.data != null) {
 
@@ -61,8 +126,6 @@ class PrayerTimingsController extends GetxController {
     }
 
   }
-
-
 
   String getAsr() {
     if (mod.value != null && mod.value.data != null) {
@@ -89,7 +152,7 @@ class PrayerTimingsController extends GetxController {
     }
   }
 
-  void displayPrayer (){
+  void displayPrayer () {
 
     if (convertTimeStringToInt(getFajr()) < convertTimeStringToInt(currentTime) && convertTimeStringToInt(currentTime)  < convertTimeStringToInt(getDuhur())) {
 
@@ -132,9 +195,30 @@ class PrayerTimingsController extends GetxController {
     }
   }
 
-  void getLocation() {
+   String? getCountry() {
 
+     String x=changeLanguageController.country.value;
+
+     return x;
 
   }
+
+   String? getState() {
+    String x=changeLanguageController.state.value;
+    return x;
+
+  }
+
+  String? getCity() {
+    return changeLanguageController.city.value;
+
+  }
+
+  String? getCurrentDate() {
+    return StorageUtility.viewKey('date');
+
+  }
+
+
 
 }
