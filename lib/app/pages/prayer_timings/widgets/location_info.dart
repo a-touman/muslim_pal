@@ -9,9 +9,7 @@ import '../../settings/controller/change_language_controller.dart';
 
 class LocationInfo extends StatelessWidget {
   ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
-
   PrayerTimingsController prayerTimingsController = PrayerTimingsController();
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +41,7 @@ class LocationInfo extends StatelessWidget {
                         ? Alignment.centerLeft
                         : Alignment.centerRight,
                     child: Text(
-                     '${changeLanguageController.state.value}, ${changeLanguageController.city.value}',
+                     '${changeLanguageController.city.value}, ${changeLanguageController.state.value}',
                       textAlign: TextAlign.start,
                       style: TextStyles.body.b_16B.subTextColor,
                     ),
