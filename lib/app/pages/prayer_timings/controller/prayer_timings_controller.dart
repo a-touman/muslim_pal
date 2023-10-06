@@ -85,6 +85,7 @@ class PrayerTimingsController extends GetxController {
         changeLanguageController.latt.value,
         changeLanguageController.long.value,
       );
+
       mod.value = timingsModel;
     } catch (e) {
 

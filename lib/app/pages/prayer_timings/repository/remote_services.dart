@@ -13,6 +13,9 @@ ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageControll
  String location = '';
   Future<TimingsModel> fetchData(int year, int month, int day, String latitude, String longitude) async {
     try {
+print('fetched data');
+print("fetched data lat : $latitude");
+
       var url = Uri.parse('http://api.aladhan.com/v1/timings/$day-$month-$year?latitude=${latitude}&longitude=${longitude}&method=2');
       final response = await http.get(url);
       if (response.statusCode == 200) {
@@ -27,13 +30,3 @@ ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageControll
   }
 }
 
-
-
-//   if (ChangeLanguageController().locationSelected = false) {
-//       location = 'latitude=${changeLanguageController.lat}&longitude=${changeLanguageController.lon}';
-//   }
-//   else {
-//     location = 'city=$city&country=$country';
-//   }
-
-// var url = Uri.parse('http://api.aladhan.com/v1/timingsByCity/$day-$month-$year?city=$city&country=$country&method=8');

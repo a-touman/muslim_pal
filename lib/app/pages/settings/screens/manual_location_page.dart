@@ -2,20 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:muslim_pal/app/pages/home/view/home_view.dart';
+import 'package:muslim_pal/app/pages/prayer_timings/controller/prayer_timings_controller.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/widgets/back_arrow_ar.dart';
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import 'package:country_picker_plus/country_picker_plus.dart';
-
-import '../../../utils/storage_utility.dart';
+import '../services/location.dart';
 
 String newCountryValue = '';
 String newStateValue = '';
 String newCityValue = '';
-
+Locationn loca=Locationn();
+PrayerTimingsController prayerTimingsController=Get.find<PrayerTimingsController>();
 class ManualLocationPage extends GetView<ChangeLanguageController> {
+  const ManualLocationPage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
           children: <Widget>[
             Expanded(
               child: Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 30.0,
                   right: 24.0,
                   bottom: 24.0,
@@ -104,10 +107,14 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
                           onPressed: () {newCountryValue = newCountryValue;
                           controller.Mcountry.value=newCountryValue;
                             newStateValue = newStateValue;
-                          controller.Mstate.value=newCountryValue;
+                          controller.Mstate.value=newStateValue;
                             newCityValue = newCityValue;
-                          controller.Mcity.value=newCountryValue;
+                          controller.Mcity.value=newCityValue;
                           controller.locationSelected = true;
+                          loca.getLangLongFromAddress("${controller.Mcountry.value}, ${controller.Mstate.value}, ${controller.Mcity.value}");
+                          controller.country.value=controller.Mcountry.value;
+                          controller.city.value=controller.Mcity.value;
+                          controller.state.value=controller.Mstate.value;
                           Get.to(HomeView());
                             },
                           style: ElevatedButton.styleFrom(

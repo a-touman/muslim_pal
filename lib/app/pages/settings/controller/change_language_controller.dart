@@ -9,6 +9,8 @@ class ChangeLanguageController extends GetxController {
   Locationn loca=Locationn();
   RxString latt="".obs;
   RxString long="".obs;
+  RxString lattt="".obs;
+  RxString longg="".obs;
   RxString selected = languages.keys.first.obs;
   RxString Mcountry=''.obs;
   RxString Mcity=''.obs;
