@@ -102,11 +102,11 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
                         child: ElevatedButton(
                           key: null,
                           onPressed: () {newCountryValue = newCountryValue;
-                          controller.country.value=newCountryValue;
+                          controller.Mcountry.value=newCountryValue;
                             newStateValue = newStateValue;
-                          controller.state.value=newCountryValue;
+                          controller.Mstate.value=newCountryValue;
                             newCityValue = newCityValue;
-                          controller.city.value=newCountryValue;
+                          controller.Mcity.value=newCountryValue;
                           controller.locationSelected = true;
                           Get.to(HomeView());
                             },

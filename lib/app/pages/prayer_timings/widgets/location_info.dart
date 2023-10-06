@@ -8,6 +8,7 @@ import '../../../utils/assets.dart';
 import '../../settings/controller/change_language_controller.dart';
 
 class LocationInfo extends StatelessWidget {
+  ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
 
   PrayerTimingsController prayerTimingsController = PrayerTimingsController();
 
@@ -27,22 +28,22 @@ class LocationInfo extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Container(
-                    alignment: ChangeLanguageController().getSelected()
+                    alignment: changeLanguageController.getSelected()
                         ? Alignment.centerLeft
                         : Alignment.centerRight,
                     child: Text(
-                      "${prayerTimingsController.getCountry()}",
+                      "${changeLanguageController.country.value}",
                       textAlign: TextAlign.start,
                       style: TextStyles.heading.h5_22B,
                     ),
                   ),
                   SizedBox(height: AppStyle.spacing.H.spacingXxs),
                   Container(
-                    alignment: ChangeLanguageController().getSelected()
+                    alignment: changeLanguageController.getSelected()
                         ? Alignment.centerLeft
                         : Alignment.centerRight,
                     child: Text(
-                     '${prayerTimingsController.getState()}, ${prayerTimingsController.getCity()}',
+                     '${changeLanguageController.state.value}, ${changeLanguageController.city.value}',
                       textAlign: TextAlign.start,
                       style: TextStyles.body.b_16B.subTextColor,
                     ),

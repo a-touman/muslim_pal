@@ -88,8 +88,8 @@ class LocationPage extends GetView<ChangeLanguageController> {
                     GestureDetector(
                       onTap: () {
                         Locationn().getCurrentLocation();
-                         StorageUtility.saveInStorage('longitude', Locationn().longitude.toString());
-                         StorageUtility.saveInStorage('latitude', Locationn().latitude.toString());
+                         // StorageUtility.saveInStorage('longitude', Locationn().longitude.toString());
+                         // StorageUtility.saveInStorage('latitude', Locationn().latitude.toString());
                          prayerTimingsController.fetchData();
                         ChangeLanguageController().locationSelected = false;
                       },

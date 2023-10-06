@@ -82,12 +82,12 @@ class PrayerTimingsController extends GetxController {
         year,
         month.value,
         day.value,
-        getCity() ?? "", // Add your default values or handle nulls
-        getCountry() ?? "",
+        changeLanguageController.latt.value,
+        changeLanguageController.long.value,
       );
       mod.value = timingsModel;
     } catch (e) {
-      // Handle exceptions
+
     } finally {
       isLoading(false);
     }
@@ -197,20 +197,20 @@ class PrayerTimingsController extends GetxController {
 
    String? getCountry() {
 
-     String x=changeLanguageController.country.value;
+     String x=changeLanguageController.Mcountry.value;
 
      return x;
 
   }
 
    String? getState() {
-    String x=changeLanguageController.state.value;
+    String x=changeLanguageController.Mstate.value;
     return x;
 
   }
 
   String? getCity() {
-    return changeLanguageController.city.value;
+    return changeLanguageController.Mcity.value;
 
   }
 

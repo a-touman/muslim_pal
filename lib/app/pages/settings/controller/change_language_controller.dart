@@ -3,9 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
 import '../../../utils/storage_utility.dart';
 import '../screens/manual_location_page.dart';
+import '../services/location.dart';
 
 class ChangeLanguageController extends GetxController {
+  Locationn loca=Locationn();
+  RxString latt="".obs;
+  RxString long="".obs;
   RxString selected = languages.keys.first.obs;
+  RxString Mcountry=''.obs;
+  RxString Mcity=''.obs;
+  RxString Mstate=''.obs;
   RxString country=''.obs;
   RxString city=''.obs;
   RxString state=''.obs;
@@ -14,8 +21,7 @@ class ChangeLanguageController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-
-    // find the selected language in full name eg 'English' by using the current langCode and using it to find the key from the languages map
+    loca.getCurrentLocation();
     selected = languages.keys
         .firstWhere((k) => languages[k] == getCurrentLanguageCode(),
             orElse: () => 'English')
@@ -63,6 +69,5 @@ class ChangeLanguageController extends GetxController {
 
   String? getLongitude() {
     return StorageUtility.viewKey('longitude');
-
   }
 }

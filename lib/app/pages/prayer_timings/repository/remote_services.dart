@@ -11,13 +11,9 @@ import '../../settings/services/location.dart';
 class RemoteServices {
 ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
  String location = '';
-
-
-  Future<TimingsModel> fetchData(int year, int month, int day, String city, String country) async {
+  Future<TimingsModel> fetchData(int year, int month, int day, String latitude, String longitude) async {
     try {
-
-      var url = Uri.parse('http://api.aladhan.com/v1/timings/$day-$month-$year?latitude=37.4226711&longitude=-122.0849872&method=2');
-
+      var url = Uri.parse('http://api.aladhan.com/v1/timings/$day-$month-$year?latitude=${latitude}&longitude=${longitude}&method=2');
       final response = await http.get(url);
       if (response.statusCode == 200) {
         final result = jsonDecode(response.body);
