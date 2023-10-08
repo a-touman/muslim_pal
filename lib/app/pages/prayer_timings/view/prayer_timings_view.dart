@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:muslim_pal/app/pages/home/repository/remote_services.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/widgets/back_arrow_ar.dart';
@@ -168,8 +167,8 @@ class PrayerTimingsContainer extends StatelessWidget {
         children: <Widget>[
           ReusableContainer(
             bgColor: kDarkGradient,
-            prayer: prayerTimingsController.before.value,
-            startTime: prayerTimingsController.beforeTime.value,
+            prayerName: prayerTimingsController.before.value,
+            primaryTime: prayerTimingsController.beforeTime.value,
             texts: "Now time is",
             smallText: 'End time - ',
             secondaryTime: prayerTimingsController.nextTime.value,
@@ -179,8 +178,8 @@ class PrayerTimingsContainer extends StatelessWidget {
           SizedBox(width: AppStyle.spacing.W.spacingMd),
           ReusableContainer(
             bgColor: kLightGradient,
-            prayer: prayerTimingsController.after.value,
-            startTime: prayerTimingsController.nextTime.value,
+            prayerName: prayerTimingsController.after.value,
+            primaryTime: prayerTimingsController.nextTime.value,
             texts: "Next prayer is",
             smallText: 'Azan - ',
             secondaryTime: '${prayerTimingsController.nextTime.value} ',
@@ -202,7 +201,7 @@ class NotificationSection extends StatelessWidget {
         borderRadius: AppStyle.corners.lgBorder,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
         child: Row(
           children: [
             IconContent(
@@ -220,7 +219,6 @@ class NotificationSection extends StatelessWidget {
                       alignments: CrossAxisAlignment.end,
                       texts: 'Suhoor',
                       time: PrayerTimingsController().getFajr(),
-                      amOrPm: 'AM'.tr,
                     ),
                     SizedBox(width: AppStyle.spacing.W.spacingSm),
                     const VerticalDivider(
@@ -228,11 +226,10 @@ class NotificationSection extends StatelessWidget {
                       color: AppColors.dividers,
                     ),
                     SizedBox(width: AppStyle.spacing.W.spacingSm),
-                    NotificationItem1(
+                    NotificationItem2(
                       alignments: CrossAxisAlignment.start,
                       texts: 'Iftar',
                       time: PrayerTimingsController().getFajr(),
-                      amOrPm: 'PM'.tr,
                     ),
                     SizedBox(width: 20.0),
                   ],
@@ -265,9 +262,11 @@ class PrayerList extends StatelessWidget {
             borderRadius: AppStyle.corners.xxlgBorder,
             color: AppColors.secondary,
           ),
-          padding: EdgeInsets.symmetric(
-            horizontal: 16.0,
-            vertical: 20.0,
+          padding: EdgeInsets.only(
+            right: 16.0,
+            left: 16.0,
+            top: 15.0,
+            bottom: 5.0,
           ),
           child: Column(
             children: <Widget>[
@@ -275,42 +274,37 @@ class PrayerList extends StatelessWidget {
               SizedBox(height: AppStyle.spacing.H.spacingLg),
               PrayerTimings(
                 prayerIcon: IconPaths.fajr,
-                prayer: "Fajr",
+                prayerName: "Fajr",
                 prayerTime: prayerTimingsController.getFajr()!,
                 bellActivity: IconPaths.bell_off,
-                amOrPm: 'AM',
               ),
               HorizontalLine(),
               PrayerTimings(
                 prayerIcon: IconPaths.duhur,
-                prayer: "Duhur",
+                prayerName: "Duhur",
                 prayerTime: prayerTimingsController.getDuhur()!,
                 bellActivity: IconPaths.bell_off,
-                amOrPm: 'PM',
               ),
               HorizontalLine(),
               PrayerTimings(
                 prayerIcon: IconPaths.asr,
-                prayer: "Asr",
+                prayerName: "Asr",
                 prayerTime: prayerTimingsController.getAsr()!,
                 bellActivity: IconPaths.bell_on,
-                amOrPm: 'PM',
               ),
               HorizontalLine(),
               PrayerTimings(
                 prayerIcon: IconPaths.maghrib,
-                prayer: "Maghrib",
+                prayerName: "Maghrib",
                 prayerTime: prayerTimingsController.getMaghrib()!,
                 bellActivity: IconPaths.bell_on,
-                amOrPm: 'PM',
               ),
               HorizontalLine(),
               PrayerTimings(
                 prayerIcon: IconPaths.isha,
-                prayer: "Isha",
+                prayerName: "Isha",
                 prayerTime: prayerTimingsController.getIsha()!,
                 bellActivity: IconPaths.bell_on,
-                amOrPm: 'PM',
               ),
             ],
           ),

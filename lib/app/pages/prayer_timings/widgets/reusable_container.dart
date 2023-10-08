@@ -9,8 +9,8 @@ import '../../../style/text_themes.dart';
 
 class ReusableContainer extends StatelessWidget {
   final String texts;
-  final String prayer;
-  final String startTime;
+  final String prayerName;
+  final String primaryTime;
   final Gradient bgColor;
   final String smallText;
   final String secondaryTime;
@@ -19,8 +19,8 @@ class ReusableContainer extends StatelessWidget {
 
   ReusableContainer({
     required this.bgColor,
-    required this.prayer,
-    required this.startTime,
+    required this.prayerName,
+    required this.primaryTime,
     required this.texts,
     required this.smallText,
     required this.secondaryTime,
@@ -97,7 +97,7 @@ class ReusableContainer extends StatelessWidget {
                             ? Alignment.centerLeft
                             : Alignment.centerRight,
                         child: Text(
-                          prayer.tr,
+                          prayerName.tr,
                           style: TextStyle(
                             color: AppColors.primary,
                             fontSize: 20.0,
@@ -113,7 +113,7 @@ class ReusableContainer extends StatelessWidget {
                             textBaseline: TextBaseline.alphabetic,
                             children: [
                               Text(
-                                startTime.tr,
+                                primaryTime.tr,
                                 style: TextStyles.heading.h3_28B,
                               )
                             ],

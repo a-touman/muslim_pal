@@ -113,14 +113,7 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
                           controller.country.value=controller.Mcountry.value;
                           controller.city.value=controller.Mcity.value;
                           controller.state.value=controller.Mstate.value;
-
-                          if (controller.Mcountry.value != null && controller.Mstate.value != null && controller.Mcity.value != null) {
-                            Get.to(() => HomeView());
-                          }
-                          else if (controller.Mcountry.value == null && controller.Mstate.value == null && controller.Mcity.value == null){
-                            Get.to(() => ManualLocationPage());
-                          }
-                          print('location: ${controller.country.value}');
+                          Get.to(() => HomeView());
                             },
 
                           style: ElevatedButton.styleFrom(

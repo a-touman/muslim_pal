@@ -8,17 +8,15 @@ import '../../../style/text_themes.dart';
 
 class PrayerTimings extends StatelessWidget {
   final String prayerIcon;
-  final String prayer;
+  final String prayerName;
   final String? prayerTime;
   final String bellActivity;
-  late final String amOrPm;
 
   PrayerTimings({
     required this.prayerIcon,
-    required this.prayer,
+    required this.prayerName,
     required this.prayerTime,
     required this.bellActivity,
-    required this.amOrPm,
   });
 
   @override
@@ -27,30 +25,28 @@ class PrayerTimings extends StatelessWidget {
       child: Container(
         child: Row(
           children: <Widget>[
-            Expanded(
-              child: Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SvgPicture.asset(
-                      prayerIcon.tr,
-                      width: 35.0,
-                      height: 35.0,
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SvgPicture.asset(
+                    prayerIcon.tr,
+                    width: 35.0,
+                    height: 35.0,
+                  ),
+                  SizedBox(
+                    width: AppStyle.spacing.W.spacingXs,
+                  ),
+                  Text(
+                    prayerName.tr,
+                    style: TextStyle(
+                      fontFamily: FontsFamily.effraTrialRegular,
+                      fontWeight: FontWeight.w500,
+                      color: AppTextColors.headlines,
+                      fontSize: 20,
                     ),
-                    SizedBox(
-                      width: AppStyle.spacing.W.spacingXs,
-                    ),
-                    Text(
-                      prayer.tr,
-                      style: TextStyle(
-                        fontFamily: FontsFamily.effraTrialRegular,
-                        fontWeight: FontWeight.w500,
-                        color: AppTextColors.headlines,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             Expanded(
@@ -69,15 +65,6 @@ class PrayerTimings extends StatelessWidget {
                     ),
                     SizedBox(
                       width: AppStyle.spacing.W.spacingXs,
-                    ),
-                    Text(
-                      amOrPm.tr,
-                      style: TextStyle(
-                        fontFamily: FontsFamily.effraTrialRegular,
-                        fontWeight: FontWeight.w500,
-                        color: AppTextColors.headlines,
-                        fontSize: 20,
-                      ),
                     ),
                     SizedBox(
                       width: AppStyle.spacing.W.spacingXs,

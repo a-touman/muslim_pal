@@ -8,6 +8,7 @@ import 'package:muslim_pal/app/pages/settings/controller/change_language_control
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
+import 'package:muslim_pal/app/utils/utils.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/storage_utility.dart';

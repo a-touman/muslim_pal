@@ -9,13 +9,11 @@ class NotificationItem extends StatelessWidget {
   late final CrossAxisAlignment alignments;
   late final String texts;
   late final String time;
-  late final String amOrPm;
 
   NotificationItem({
     required this.alignments,
     required this.texts,
     required this.time,
-    required this.amOrPm,
   });
 
   @override
@@ -28,12 +26,12 @@ class NotificationItem extends StatelessWidget {
           children: <Widget>[
             Text(
               texts.tr,
-              style: TextStyles.body.b_16B.textColor,
+              style: TextStyles.body.b_16R.textColor,
             ),
             Obx(() {
               return Text(
                 prayerTimingsController.getFajr(),
-                style: TextStyles.body.b_16B,
+                style: TextStyles.heading.h4_25B,
               );
             }),
           ],
@@ -43,19 +41,17 @@ class NotificationItem extends StatelessWidget {
   }
 }
 
-class NotificationItem1 extends StatelessWidget {
+class NotificationItem2 extends StatelessWidget {
   PrayerTimingsController prayerTimingsController = Get.find<
       PrayerTimingsController>();
   late final CrossAxisAlignment alignments;
   late final String texts;
   late final String time;
-  late final String amOrPm;
 
-  NotificationItem1({
+  NotificationItem2({
     required this.alignments,
     required this.texts,
     required this.time,
-    required this.amOrPm,
   });
 
   @override
@@ -68,12 +64,12 @@ class NotificationItem1 extends StatelessWidget {
           children: <Widget>[
             Text(
               texts.tr,
-              style: TextStyles.body.b_16B.textColor,
+              style: TextStyles.body.b_16R.textColor,
             ),
             Obx(() {
               return Text(
                 prayerTimingsController.getMaghrib(),
-                style: TextStyles.body.b_16B,
+                style: TextStyles.heading.h4_25B,
               );
             }),
           ],
