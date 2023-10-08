@@ -25,7 +25,7 @@ class DuaaController extends GetxController {
   Color? colour;
   bool travellingClicked=false;
 
-  RxInt _counter = DuaaInfo().counter.obs;
+  RxInt _counter = 0.obs;
 
   RxInt get counterC => _counter;
 
