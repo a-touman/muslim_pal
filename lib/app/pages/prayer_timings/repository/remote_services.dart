@@ -11,6 +11,7 @@ ChangeLanguageController changeLanguageController = Get.put(ChangeLanguageContro
   Future<TimingsModel> fetchData(int year, int month, int day, String latitude, String longitude) async {
     try {
       var url = Uri.parse('http://api.aladhan.com/v1/timings/$day-$month-$year?latitude=${latitude}&longitude=${longitude}&method=2');
+      print("fetched");
       final response = await http.get(url);
       if (response.statusCode == 200) {
         final result = jsonDecode(response.body);
