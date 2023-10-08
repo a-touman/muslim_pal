@@ -118,12 +118,12 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
                                 Get.to(() => HomeView());
                                 Toast.defaultToast(
                                   context,
-                                  'Location Confirmed',
+                                  'Location Confirmed'.tr,
                                 );
                               } else {
                                 Toast.defaultToast(
                                   context,
-                                  'Please select a Country, State, and City.',
+                                  'Please select a Country, State, and City.'.tr,
                                 );
                               }
                             },
