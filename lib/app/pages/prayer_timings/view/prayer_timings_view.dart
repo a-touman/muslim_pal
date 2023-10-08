@@ -257,56 +257,55 @@ class PrayerList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       return Expanded(
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: AppStyle.corners.xxlgBorder,
-            color: AppColors.secondary,
-          ),
-          padding: EdgeInsets.only(
-            right: 16.0,
-            left: 16.0,
-            top: 15.0,
-            bottom: 5.0,
-          ),
-          child: Column(
-            children: <Widget>[
-              LocationInfo(),
-              SizedBox(height: AppStyle.spacing.H.spacingLg),
-              PrayerTimings(
-                prayerIcon: IconPaths.fajr,
-                prayerName: "Fajr",
-                prayerTime: prayerTimingsController.getFajr()!,
-                bellActivity: IconPaths.bell_off,
-              ),
-              HorizontalLine(),
-              PrayerTimings(
-                prayerIcon: IconPaths.duhur,
-                prayerName: "Duhur",
-                prayerTime: prayerTimingsController.getDuhur()!,
-                bellActivity: IconPaths.bell_off,
-              ),
-              HorizontalLine(),
-              PrayerTimings(
-                prayerIcon: IconPaths.asr,
-                prayerName: "Asr",
-                prayerTime: prayerTimingsController.getAsr()!,
-                bellActivity: IconPaths.bell_on,
-              ),
-              HorizontalLine(),
-              PrayerTimings(
-                prayerIcon: IconPaths.maghrib,
-                prayerName: "Maghrib",
-                prayerTime: prayerTimingsController.getMaghrib()!,
-                bellActivity: IconPaths.bell_on,
-              ),
-              HorizontalLine(),
-              PrayerTimings(
-                prayerIcon: IconPaths.isha,
-                prayerName: "Isha",
-                prayerTime: prayerTimingsController.getIsha()!,
-                bellActivity: IconPaths.bell_on,
-              ),
-            ],
+        child: SingleChildScrollView(
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: AppStyle.corners.xxlgBorder,
+              color: AppColors.secondary,
+            ),
+            padding: EdgeInsets.all(
+              16.0
+            ),
+              child: Column(
+                children: <Widget>[
+                  LocationInfo(),
+                  SizedBox(height: AppStyle.spacing.H.spacingLg),
+                  PrayerTimings(
+                    prayerIcon: IconPaths.fajr,
+                    prayerName: "Fajr",
+                    prayerTime: prayerTimingsController.getFajr()!,
+                    bellActivity: IconPaths.bell_off,
+                  ),
+                    HorizontalLine(),
+                    PrayerTimings(
+                      prayerIcon: IconPaths.duhur,
+                      prayerName: "Duhur",
+                      prayerTime: prayerTimingsController.getDuhur()!,
+                      bellActivity: IconPaths.bell_off,
+                    ),
+                    HorizontalLine(),
+                    PrayerTimings(
+                      prayerIcon: IconPaths.asr,
+                      prayerName: "Asr",
+                      prayerTime: prayerTimingsController.getAsr()!,
+                      bellActivity: IconPaths.bell_on,
+                    ),
+                    HorizontalLine(),
+                    PrayerTimings(
+                      prayerIcon: IconPaths.maghrib,
+                      prayerName: "Maghrib",
+                      prayerTime: prayerTimingsController.getMaghrib()!,
+                      bellActivity: IconPaths.bell_on,
+                    ),
+                    HorizontalLine(),
+                    PrayerTimings(
+                      prayerIcon: IconPaths.isha,
+                      prayerName: "Isha",
+                      prayerTime: prayerTimingsController.getIsha()!,
+                      bellActivity: IconPaths.bell_on,
+                    ),
+                ],
+            ),
           ),
         ),
       );

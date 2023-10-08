@@ -21,62 +21,54 @@ class PrayerTimings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        child: Row(
-          children: <Widget>[
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SvgPicture.asset(
-                    prayerIcon.tr,
-                    width: 35.0,
-                    height: 35.0,
-                  ),
-                  SizedBox(
-                    width: AppStyle.spacing.W.spacingXs,
-                  ),
-                  Text(
-                    prayerName.tr,
-                    style: TextStyle(
-                      fontFamily: FontsFamily.effraTrialRegular,
-                      fontWeight: FontWeight.w500,
-                      color: AppTextColors.headlines,
-                      fontSize: 20,
-                    ),
-                  ),
-                ],
-              ),
+    return Row(
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SvgPicture.asset(
+              prayerIcon.tr,
+              width: 35.0,
+              height: 35.0,
             ),
-            Expanded(
-              child: Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      prayerTime!.tr,
-                      style: TextStyle(
-                        fontFamily: FontsFamily.effraTrialRegular,
-                        fontWeight: FontWeight.w500,
-                        color: AppTextColors.headlines,
-                        fontSize: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: AppStyle.spacing.W.spacingXs,
-                    ),
-                    SizedBox(
-                      width: AppStyle.spacing.W.spacingXs,
-                    ),
-                    SvgPicture.asset(bellActivity),
-                  ],
-                ),
+            SizedBox(
+              width: AppStyle.spacing.W.spacingXs,
+            ),
+            Text(
+              prayerName.tr,
+              style: TextStyle(
+                fontFamily: FontsFamily.effraTrialRegular,
+                fontWeight: FontWeight.w500,
+                color: AppTextColors.headlines,
+                fontSize: 20,
               ),
             ),
           ],
         ),
-      ),
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                prayerTime!.tr,
+                style: TextStyle(
+                  fontFamily: FontsFamily.effraTrialRegular,
+                  fontWeight: FontWeight.w500,
+                  color: AppTextColors.headlines,
+                  fontSize: 20,
+                ),
+              ),
+              SizedBox(
+                width: AppStyle.spacing.W.spacingXs,
+              ),
+              SizedBox(
+                width: AppStyle.spacing.W.spacingXs,
+              ),
+              SvgPicture.asset(bellActivity),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

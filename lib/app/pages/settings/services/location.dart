@@ -3,8 +3,10 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/controller/prayer_timings_controller.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
-ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
-PrayerTimingsController prayerTimingsController=Get.put(PrayerTimingsController());
+
+ChangeLanguageController changeLanguageController = Get.put(ChangeLanguageController());
+PrayerTimingsController prayerTimingsController = Get.put(PrayerTimingsController());
+
 class Location {
   Future<void> getCurrentLocation() async {
     bool serviceEnabled;
