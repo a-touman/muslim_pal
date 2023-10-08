@@ -6,17 +6,16 @@ import '../screens/manual_location_page.dart';
 import '../services/location.dart';
 
 class ChangeLanguageController extends GetxController {
-  Location loca=Location();
-  RxString lat="".obs;
-  RxString lon="".obs;
+  Location loca = Location();
+  RxString lat = "".obs;
+  RxString lon = "".obs;
   RxString selected = languages.keys.first.obs;
-  RxString Mcountry=''.obs;
-  RxString Mcity=''.obs;
-  RxString Mstate=''.obs;
-  RxString country=''.obs;
-  RxString city=''.obs;
-  RxString state=''.obs;
-  bool locationSelected = false;
+  RxString Mcountry = ''.obs;
+  RxString Mcity = ''.obs;
+  RxString Mstate = ''.obs;
+  RxString country = ''.obs;
+  RxString city = ''.obs;
+  RxString state = ''.obs;
 
   @override
   void onInit() {
@@ -64,7 +63,6 @@ class ChangeLanguageController extends GetxController {
 
   String? getLatitude() {
     return StorageUtility.viewKey('latitude');
-
   }
 
   String? getLongitude() {

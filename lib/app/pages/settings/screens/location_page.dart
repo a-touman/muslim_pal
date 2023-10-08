@@ -91,7 +91,6 @@ class LocationPage extends GetView<ChangeLanguageController> {
                       onTap: () {
                         Location().getCurrentLocation();
                          prayerTimingsController.fetchData();
-                        ChangeLanguageController().locationSelected = false;
                         Get.to(() => HomeView());
                       },
                       child: Container(

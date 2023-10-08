@@ -31,19 +31,19 @@ class Location {
       changeLanguageController.lat.value = position.latitude.toString();
       changeLanguageController.lon.value = position.longitude.toString();
       print(changeLanguageController.lon.value);
-      getAddressFromLatLang(position);
+      getAddressFromLatLon(position);
     } catch (e) {
       print(e);
     }
   }
-  Future<void> getAddressFromLatLang(Position position) async{
+  Future<void> getAddressFromLatLon(Position position) async{
     List<Placemark>placemark=await placemarkFromCoordinates(position.latitude, position.longitude);
     Placemark place=placemark[0];
     changeLanguageController.country.value=place.country!;
     changeLanguageController.city.value=place.administrativeArea!;
     changeLanguageController.state.value=place.locality!;
   }
-  Future<void> getLangLongFromAddress(String address) async{
+  Future<void> getLatLonFromAddress(String address) async{
     try {
       final addresses = await locationFromAddress(address);
       print(address);

@@ -14,11 +14,11 @@ import '../services/location.dart';
 String newCountryValue = '';
 String newStateValue = '';
 String newCityValue = '';
-Location loca=Location();
-PrayerTimingsController prayerTimingsController=Get.find<PrayerTimingsController>();
+Location loca = Location();
+PrayerTimingsController prayerTimingsController = Get.find<PrayerTimingsController>();
+
 class ManualLocationPage extends GetView<ChangeLanguageController> {
   const ManualLocationPage({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -63,13 +63,13 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
                     Expanded(
                       child: CountryPickerPlus(
                         isRequired: true,
-                        countryLabel: "Country",
-                        countrySearchHintText: "Search Country",
-                        countryHintText: "Tap to Select Country",
-                        stateLabel: 'State',
-                        stateHintText: "Tap to Select State",
-                        cityLabel: "City",
-                        cityHintText: "Tap to Select City",
+                        countryLabel: "Country".tr,
+                        countrySearchHintText: "Search Country".tr,
+                        countryHintText: "Tap to Select Country".tr,
+                        stateLabel: 'State'.tr,
+                        stateHintText: "Tap to Select State".tr,
+                        cityLabel: "City".tr,
+                        cityHintText: "Tap to Select City".tr,
                         bottomSheetDecoration: CPPBSHDecoration(
                           itemsSpace: EdgeInsets.symmetric(vertical: 5),
                           itemTextStyle: TextStyles.body.b_16R,
@@ -108,20 +108,18 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
                           controller.Mstate.value=newStateValue;
                           controller.Mcity.value=newCityValue;
 
-                          loca.getLangLongFromAddress("${controller.Mcountry.value}, ${controller.Mstate.value}, ${controller.Mcity.value}");
+                          loca.getLatLonFromAddress("${controller.Mcountry.value}, ${controller.Mstate.value}, ${controller.Mcity.value}");
 
                           controller.country.value=controller.Mcountry.value;
                           controller.city.value=controller.Mcity.value;
                           controller.state.value=controller.Mstate.value;
                           Get.to(() => HomeView());
-                            },
-
+                          },
                           style: ElevatedButton.styleFrom(
                             shape: const StadiumBorder(),
                             backgroundColor: AppColors.buttonIconBackground,
                             side: const BorderSide(
-                                width: 2, color: AppColors.primary),
-                          ),
+                                width: 2, color: AppColors.primary)),
                           child: Text(
                             'Confirm Location'.tr,
                             style: TextStyles.body.b_16B,
