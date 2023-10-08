@@ -10,6 +10,7 @@ import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import '../widgets/row_scroll_view.dart';
 import 'custom_duaa_page.dart';
+import 'daily_page.dart';
 
 enum travelling { Before, During, After }
 
@@ -165,11 +166,12 @@ class TravellingPage extends GetView<DuaaController> {
                             return Column(
                               children: [
                                 DuaaBox(
-                                  counter: '5',
+                                  counters: [4, 1, 3],
                                   duaaText: selectedDuaas[index].duaasText,
                                   category: category,
                                   index: index,
                                 ),
+
                                 SizedBox(
                                   height: AppStyle.spacing.H.spacingMd,
                                 ),

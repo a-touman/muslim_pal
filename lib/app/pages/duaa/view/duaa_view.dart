@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/custom_duaa_page.dart';
+import 'package:muslim_pal/app/pages/duaa/screens/daily_page.dart';
+import 'package:muslim_pal/app/pages/duaa/screens/evening_page.dart';
+import 'package:muslim_pal/app/pages/duaa/screens/morning_page.dart';
+import 'package:muslim_pal/app/pages/duaa/screens/night_page.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/studying_page.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/travelling_page.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
@@ -75,14 +79,10 @@ class DuaaView extends GetView<DuaaController> {
                               DuaaRow(
                                 containerIconLeft: IconPaths.daily,
                                 containerNameLeft: 'Daily',
-                                duaaPageLeft: CustomDuaaPage(
-                                  category: DuaaCategory.Daily,
-                                ),
+                                duaaPageLeft: DailyPage(),
                                 containerIconRight: IconPaths.morning,
                                 containerNameRight: 'Morning',
-                                duaaPageRight: CustomDuaaPage(
-                                  category: DuaaCategory.Morning,
-                                ),
+                                duaaPageRight: MorningPage(),
                               ),
                               SizedBox(
                                 height: AppStyle.spacing.H.spacingMd,
@@ -90,14 +90,10 @@ class DuaaView extends GetView<DuaaController> {
                               DuaaRow(
                                 containerIconLeft: IconPaths.evening,
                                 containerNameLeft: 'Evening',
-                                duaaPageLeft: CustomDuaaPage(
-                                  category: DuaaCategory.Evening,
-                                ),
+                                duaaPageLeft: EveningPage(),
                                 containerIconRight: IconPaths.night,
                                 containerNameRight: 'Night',
-                                duaaPageRight: CustomDuaaPage(
-                                  category: DuaaCategory.Night,
-                                ),
+                                duaaPageRight: NightPage(),
                               ),
                               SizedBox(
                                 height: AppStyle.spacing.H.spacingMd,

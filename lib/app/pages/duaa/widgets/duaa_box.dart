@@ -6,13 +6,13 @@ import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 
 class DuaaBox extends StatelessWidget {
-  final String counter;
+  final List<int> counters;
   final String duaaText;
   final String category;
   final int index;
 
   DuaaBox({
-    required this.counter,
+    required this.counters,
     required this.duaaText,
     required this.category,
     required this.index,
@@ -27,6 +27,7 @@ class DuaaBox extends StatelessWidget {
             duaaText: duaaText,
             category: category,
             index: index,
+            counter: counters[index],
           ),
         );
       },
@@ -53,14 +54,14 @@ class DuaaBox extends StatelessWidget {
                     color: AppColors.buttonIconBackground,
                   ),
                   child: Text(
-                    counter.tr,
-                    style: TextStyle(
-                      fontFamily: FontsFamily.effraTrialBold,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.primary,
-                      fontSize: 14,
+                      counters[index].toString(),
+                      style: TextStyle(
+                        fontFamily: FontsFamily.effraTrialBold,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.primary,
+                        fontSize: 14,
+                      ),
                     ),
-                  ),
                 )
               ],
             ),
