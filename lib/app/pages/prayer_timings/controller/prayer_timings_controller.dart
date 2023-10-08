@@ -10,8 +10,10 @@ import 'package:intl/intl.dart';
 
 
 class PrayerTimingsController extends GetxController {
-  CalendarController calendarController=Get.put(CalendarController());
-  ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
+
+  CalendarController calendarController = Get.put(CalendarController());
+  ChangeLanguageController changeLanguageController = Get.put(ChangeLanguageController());
+
   var isLoading = false.obs;
   Rx<TimingsModel> mod = TimingsModel(code: null, status: '', data: null).obs;
   final RemoteServices remoteServices = RemoteServices();
@@ -80,8 +82,8 @@ class PrayerTimingsController extends GetxController {
         year,
         month.value,
         day.value,
-        changeLanguageController.latt.value,
-        changeLanguageController.long.value,
+        changeLanguageController.lat.value,
+        changeLanguageController.lon.value,
       );
 
       mod.value = timingsModel;
@@ -107,7 +109,7 @@ class PrayerTimingsController extends GetxController {
   String getFajr() {
     if (mod.value != null && mod.value.data != null) {
 
-      return mod.value.data?.timings?.fajr ?? 'lOADING';
+      return mod.value.data?.timings?.fajr ?? 'Loading';
 
     }
     else {
@@ -118,7 +120,7 @@ class PrayerTimingsController extends GetxController {
   String getDuhur() {
     if (mod.value != null && mod.value.data != null) {
 
-      return mod.value.data!.timings!.dhuhr?? 'lOADING';
+      return mod.value.data!.timings!.dhuhr ?? 'Loading';
     }
     else {
       return '00:00';
@@ -128,7 +130,7 @@ class PrayerTimingsController extends GetxController {
 
   String getAsr() {
     if (mod.value != null && mod.value.data != null) {
-      return mod.value.data!.timings!.asr?? 'lOADING';
+      return mod.value.data!.timings!.asr?? 'Loading';
     }
     else {
       return '00:00';
@@ -136,7 +138,7 @@ class PrayerTimingsController extends GetxController {
   }
   String getMaghrib() {
     if (mod.value != null && mod.value.data != null) {
-      return mod.value.data!.timings!.maghrib?? 'lOADING';
+      return mod.value.data!.timings!.maghrib?? 'Loading';
     }
     else {
       return '00:00';
@@ -144,7 +146,7 @@ class PrayerTimingsController extends GetxController {
   }
   String getIsha() {
     if (mod.value != null && mod.value.data != null) {
-      return mod.value.data!.timings!.isha?? 'lOADING';
+      return mod.value.data!.timings!.isha?? 'Loading';
     }
     else {
       return '00:00';
@@ -152,72 +154,35 @@ class PrayerTimingsController extends GetxController {
   }
 
   void displayPrayer () {
-
     if (convertTimeStringToInt(getFajr()) < convertTimeStringToInt(currentTime) && convertTimeStringToInt(currentTime)  < convertTimeStringToInt(getDuhur())) {
-
       before.value = 'Fajr';
       after.value = 'Duhur';
       beforeTime.value = getFajr();
       nextTime.value = getDuhur();
     }
-
     else if (convertTimeStringToInt(getDuhur()) < convertTimeStringToInt(currentTime) && convertTimeStringToInt(currentTime)  < convertTimeStringToInt(getAsr())) {
-
       before.value = 'Duhur';
       after.value = 'Asr';
       beforeTime.value = getDuhur();
       nextTime.value = getAsr();
     }
-
     else if (convertTimeStringToInt(getAsr()) < convertTimeStringToInt(currentTime) && convertTimeStringToInt(currentTime)  < convertTimeStringToInt(getMaghrib())) {
-
       before.value = 'Asr';
       after.value = 'Maghrib';
       beforeTime.value = getAsr();
       nextTime.value = getMaghrib();
     }
-
     else if (convertTimeStringToInt(getMaghrib()) < convertTimeStringToInt(currentTime) && convertTimeStringToInt(currentTime)  < convertTimeStringToInt(getIsha())) {
-
       before.value = 'Maghrib';
       after.value = 'Isha';
       beforeTime.value = getMaghrib();
       nextTime.value = getIsha();
     }
-
     else if (convertTimeStringToInt(getIsha()) < convertTimeStringToInt(currentTime)) {
-
       before.value = 'Isha';
       after.value = 'Fajr';
       beforeTime.value = getIsha();
       nextTime.value = getFajr();
     }
   }
-
-   String? getCountry() {
-
-     String x=changeLanguageController.Mcountry.value;
-
-     return x;
-
-  }
-
-   String? getState() {
-    String x=changeLanguageController.Mstate.value;
-    return x;
-
-  }
-
-  String? getCity() {
-    return changeLanguageController.Mcity.value;
-
-  }
-
-  String? getCurrentDate() {
-    return StorageUtility.viewKey('date');
-
-  }
-
-
-
 }

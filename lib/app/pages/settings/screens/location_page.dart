@@ -89,7 +89,7 @@ class LocationPage extends GetView<ChangeLanguageController> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Locationn().getCurrentLocation();
+                        Location().getCurrentLocation();
                          prayerTimingsController.fetchData();
                         ChangeLanguageController().locationSelected = false;
                         Get.to(() => HomeView());

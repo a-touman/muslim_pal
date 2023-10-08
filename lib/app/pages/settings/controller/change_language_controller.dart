@@ -6,11 +6,9 @@ import '../screens/manual_location_page.dart';
 import '../services/location.dart';
 
 class ChangeLanguageController extends GetxController {
-  Locationn loca=Locationn();
-  RxString latt="".obs;
-  RxString long="".obs;
-  RxString lattt="".obs;
-  RxString longg="".obs;
+  Location loca=Location();
+  RxString lat="".obs;
+  RxString lon="".obs;
   RxString selected = languages.keys.first.obs;
   RxString Mcountry=''.obs;
   RxString Mcity=''.obs;

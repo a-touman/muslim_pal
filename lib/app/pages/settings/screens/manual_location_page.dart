@@ -14,7 +14,7 @@ import '../services/location.dart';
 String newCountryValue = '';
 String newStateValue = '';
 String newCityValue = '';
-Locationn loca=Locationn();
+Location loca=Location();
 PrayerTimingsController prayerTimingsController=Get.find<PrayerTimingsController>();
 class ManualLocationPage extends GetView<ChangeLanguageController> {
   const ManualLocationPage({super.key});

@@ -5,7 +5,7 @@ import 'package:muslim_pal/app/pages/prayer_timings/controller/prayer_timings_co
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
 PrayerTimingsController prayerTimingsController=Get.put(PrayerTimingsController());
-class Locationn {
+class Location {
   Future<void> getCurrentLocation() async {
     bool serviceEnabled;
     LocationPermission permission;
@@ -28,9 +28,9 @@ class Locationn {
     try {
       Position position = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.low);
-      changeLanguageController.latt.value = position.latitude.toString();
-      changeLanguageController.long.value = position.longitude.toString();
-      print(changeLanguageController.long.value);
+      changeLanguageController.lat.value = position.latitude.toString();
+      changeLanguageController.lon.value = position.longitude.toString();
+      print(changeLanguageController.lon.value);
       getAddressFromLatLang(position);
     } catch (e) {
       print(e);
@@ -49,8 +49,8 @@ class Locationn {
       print(address);
       if (addresses.isNotEmpty) {
         final firstResult = addresses.first;
-        changeLanguageController.latt.value=firstResult.latitude.toString();
-        changeLanguageController.long.value=firstResult.longitude.toString();
+        changeLanguageController.lat.value=firstResult.latitude.toString();
+        changeLanguageController.lon.value=firstResult.longitude.toString();
         prayerTimingsController.fetchData();
       } else {
         print('No coordinates found for the given address.');
