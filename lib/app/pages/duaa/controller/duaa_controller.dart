@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:muslim_pal/app/pages/duaa/screens/duaa_info.dart';
 
 enum studying{
   Before,

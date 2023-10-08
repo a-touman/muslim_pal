@@ -101,7 +101,8 @@ class DuaaBank {
       DuaasList(
           t: "In the name of Allah with whose name nothing is harmed on earth nor in the heavens and He is The All-Hearing, The All-Knowing.",
           tr: "بسم الله الذي لا يضر مع اسمه شيء في الأرض ولا في السماء وهو السميع العليم.",
-          r: 'Ibn Baz, p. 39.\n\nHisn al-Muslim 86                                                                                      '),
+          r: 'Ibn Baz, p. 39.\n\nHisn al-Muslim 86                                                                                      ',
+      ),
       DuaasList(
         t: "I take refuge in Allah's perfect words from the evil He has created.",
         tr: "أعوذ بكلمات الله التامات من شر ما خلق.                                          ",
@@ -205,7 +206,8 @@ class DuaaBank {
       DuaasList(
           t: 'Oh Allah! I ask you for the understanding of the prophets and the memory of the messengers, and those nearest to you.',
           tr: 'يا الله! أسألك فهم الأنبياء وحفظ المرسلين والأقربين منك                          ',
-          r: 'Al-Minnaawi said in Fayd al-Qadeer (2/162)\n\nHisn al-Muslim 202                                                             '),
+          r: 'Al-Minnaawi said in Fayd al-Qadeer (2/162)\n\nHisn al-Muslim 202                                                             ',
+      ),
       DuaasList(
         t: 'Oh Allah! Make my tongue full of your remembrance and my heart with awe of you.',
         tr: 'يا الله! اجعل لساني مليئا بذكرك وقلبي من خشيتك                              ',
@@ -239,7 +241,8 @@ class DuaaBank {
       DuaasList(
           t: 'Oh Allah! Nothing is easy except what You have made easy. If You wish, You can make the difficult easy.',
           tr: 'يا الله! ولا سهل إلا ما جعلته سهلا. إذا شئت جعلت الصعب سهل',
-          r: 'Ibn Hibban in his Sahih (no. 2427)\n\nHisn al-Muslim 139'),
+          r: 'Ibn Hibban in his Sahih (no. 2427)\n\nHisn al-Muslim 139',
+      ),
       DuaasList(
         t: 'Blessings of God be upon Muhammad and his progeny. O God, I ask you, the one who mentions goodness and actualizes it and commands it, remind me of that which the shaytan makes me forget.',
         tr: 'صلى الله على محمد وآل محمد. اللهم إني أسألك يا من ذكر الخير وفعله وأمر به، أن تذكرني بما أنسيني الشيطان',

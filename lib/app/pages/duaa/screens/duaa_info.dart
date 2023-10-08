@@ -121,7 +121,7 @@ class DuaaInfo extends StatelessWidget {
                                         ),
                                         DuaaBoxSimple(
                                           getContent: () => specificDuaas[index]
-                                              .duaasReference,
+                                              .duaasReference.tr,
                                         ),
                                       ],
                                     ),
