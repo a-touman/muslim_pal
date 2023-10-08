@@ -112,6 +112,8 @@ const Map<String, String> ar = {
   "Tap to Select State": "اضغط لتحديد الولاية",
   "City": "مدينة",
   "Tap to Select City": "اضغط لاختيار المدينة",
+  'Location Confirmed': "تم تأكيد الموقع",
+  'Please select a Country, State, and City.': "الرجاء تحديد البلد والولاية والمدينة.",
   "Al Masjid an Nabawi": "المسجد النبوي",
   "Medina, Saudi Arabia": "المدينة المنورة، المملكة العربية السعودية",
   "...see more": "...شاهد المزيد",

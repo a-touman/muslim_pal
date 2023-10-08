@@ -11,16 +11,18 @@ import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
 import '../widgets/duaa_box_simple.dart';
 import 'custom_duaa_page.dart';
+import 'daily_page.dart';
 
 class DuaaInfo extends GetView<DuaaController> {
   final String duaaText;
   final String category;
   final int index;
+  final int counter;
 
   DuaaInfo({
     required this.duaaText,
     required this.category,
-    required this.index,
+    required this.index, required this.counter,
   });
 
   @override
@@ -169,7 +171,7 @@ class DuaaInfo extends GetView<DuaaController> {
                                                   ),
                                                 ),
                                           Text(
-                                            duaaController.counter.value
+                                            duaaController.counterC.value
                                                 .toString()
                                                 .tr,
                                             style: TextStyles.heading.h3_28EB,

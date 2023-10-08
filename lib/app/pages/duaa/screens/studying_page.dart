@@ -10,6 +10,7 @@ import '../../home/repository/remote_services.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import 'custom_duaa_page.dart';
+import 'daily_page.dart';
 
 class StudyingPage extends GetView<DuaaController> {
   StudyingPage({Key? key}) : super(key: key);
@@ -115,13 +116,12 @@ class StudyingPage extends GetView<DuaaController> {
                                 Column(
                                   children: [
                                     DuaaBox(
-                                      counter: '5',
+                                      counters: [2, 4, 5, 3, 1, 7, 3, 4, 3],
                                       duaaText: selectedDuaas[i].duaasText,
-                                      category: beforeStudyingSelected.value
-                                          ? 'before study'
-                                          : 'after study',
+                                      category: beforeStudyingSelected.value ? 'before study' : 'after study',
                                       index: i,
                                     ),
+
                                     SizedBox(
                                       height: AppStyle.spacing.H.spacingMd,
                                     ),
