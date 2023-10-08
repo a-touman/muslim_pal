@@ -95,11 +95,20 @@ const Map<String, String> ar = {
   "Dhu al-Qidah": "ذو القعدة",
   "Dhu al-Hijjah": "ذو الحجة",
   "1410": "١٤٢٠",
+  "1445": "١٤٤٥",
   "2020": "٢٠٢٠",
+  "2023": "٢٠٢٣",
+  'Sun': 'أحد',
+  'Mon': 'اثنين',
+  'Tue': 'ثلاثاء',
+  'Wed': 'أربعاء',
+  'Thu': 'خميس',
+  'Fri': 'جمعة',
+  'Sat': 'سبت',
   "Al Masjid an Nabawi": "المسجد النبوي",
   "Medina, Saudi Arabia": "المدينة المنورة، المملكة العربية السعودية",
   "...see more": "...شاهد المزيد",
-  'Select Duaa Catgeory': "اختر فئة الدعاء",
+  'Select Duaa Category': "اختر فئة الدعاء",
   'Daily': 'يوميًا',
   'Morning': 'صباح',
   'Evening': 'مساء',
@@ -234,4 +243,6 @@ const Map<String, String> ar = {
       'اللهم إني أعوذ بك من وعثاء السفر، وتقلب القلوب، وسوء الكربة، وأعوذ بك من سوء العاقبة في المال والأهل. نعود ونتوب ونعبد ونحمد ربنا',
   'Turning turning, to our Lord returning, not leaving behind any sin [unforgiven].':
       "منقلبون، إلى ربنا منيبون، لا يتركون خلفهم خطيئة [غير مغفورة]",
+  'Confirm Location':'تأكيد الموقع',
+
 };

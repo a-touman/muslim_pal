@@ -69,7 +69,6 @@ class DuaaView extends GetView<DuaaController> {
                     ),
                     Expanded(
                       child: Container(
-                        padding: const EdgeInsets.only(bottom: 157),
                         child: Column(
                           children: <Widget>[
                             DuaaRow(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:muslim_pal/app/pages/home/repository/remote_services.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/widgets/back_arrow_ar.dart';
@@ -97,9 +98,10 @@ class DateNavigation extends StatelessWidget {
       children: <Widget>[
         IconButton(
           onPressed: () {
-            prayerTimingsController.decValue();
+            ChangeLanguageController().getSelected() ?
+            prayerTimingsController.decValue() :
+            prayerTimingsController.incValue();
             prayerTimingsController.limitDay();
-            prayerTimingsController.getFajr();
           },
           icon: SvgPicture.asset(
             controller.getSelected()
@@ -123,9 +125,9 @@ class DateNavigation extends StatelessWidget {
                   Obx(() {
                     return Text(
                       "${prayerTimingsController
-                          .dayName}, ${prayerTimingsController.day
+                          .dayName.toString().tr}, ${prayerTimingsController.day
                           .toString()
-                          .tr} ${prayerTimingsController.monthName.value.tr} ${prayerTimingsController.year}".tr,
+                          .tr} ${prayerTimingsController.monthName.value.tr} ${prayerTimingsController.year.toString().tr}",
                       style: TextStyles.body.b_14B.subTextColor,
                     );
                   }),
@@ -134,8 +136,9 @@ class DateNavigation extends StatelessWidget {
             )),
         IconButton(
           onPressed: () {
-            prayerTimingsController.fetchData();
-            prayerTimingsController.incValue();
+            ChangeLanguageController().getSelected() ?
+            prayerTimingsController.incValue() :
+            prayerTimingsController.decValue();
             prayerTimingsController.limitDay();
           },
           icon: SvgPicture.asset(

@@ -103,20 +103,26 @@ class ManualLocationPage extends GetView<ChangeLanguageController> {
                       child: SizedBox(
                         height: AppStyle.spacing.H.spacingXxxxlg,
                         child: ElevatedButton(
-                          key: null,
-                          onPressed: () {newCountryValue = newCountryValue;
+                          onPressed: () {
                           controller.Mcountry.value=newCountryValue;
-                            newStateValue = newStateValue;
                           controller.Mstate.value=newStateValue;
-                            newCityValue = newCityValue;
                           controller.Mcity.value=newCityValue;
-                          controller.locationSelected = true;
+
                           loca.getLangLongFromAddress("${controller.Mcountry.value}, ${controller.Mstate.value}, ${controller.Mcity.value}");
+
                           controller.country.value=controller.Mcountry.value;
                           controller.city.value=controller.Mcity.value;
                           controller.state.value=controller.Mstate.value;
-                          Get.to(HomeView());
+
+                          if (controller.Mcountry.value != null && controller.Mstate.value != null && controller.Mcity.value != null) {
+                            Get.to(() => HomeView());
+                          }
+                          else if (controller.Mcountry.value == null && controller.Mstate.value == null && controller.Mcity.value == null){
+                            Get.to(() => ManualLocationPage());
+                          }
+                          print('location: ${controller.country.value}');
                             },
+
                           style: ElevatedButton.styleFrom(
                             shape: const StadiumBorder(),
                             backgroundColor: AppColors.buttonIconBackground,

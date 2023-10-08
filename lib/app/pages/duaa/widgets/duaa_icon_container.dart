@@ -19,41 +19,37 @@ class DuaaIconContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: GestureDetector(
-        onTap: () {
-          Get.to(() => duaPage);
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors.secondary,
-            borderRadius: AppStyle.corners.xxlgBorder,
-          ),
-          child: Column(
-            children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 40,
-                  ),
-                  child: Container(
-                    child: Column(
-                      children: [
-                        SvgPicture.asset(iconPicture),
-                        SizedBox(
-                          height: AppStyle.spacing.H.spacingXs,
-                        ),
-                        Text(
-                          iconName.tr,
-                          style: TextStyles.heading.h5_22B,
-                        ),
-                      ],
+    return GestureDetector(
+      onTap: () {
+        Get.to(() => duaPage);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.secondary,
+          borderRadius: AppStyle.corners.xxlgBorder,
+        ),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 40,
+              ),
+              child: Container(
+                child: Column(
+                  children: [
+                    SvgPicture.asset(iconPicture),
+                    SizedBox(
+                      height: AppStyle.spacing.H.spacingXs,
                     ),
-                  ),
+                    Text(
+                      iconName.tr,
+                      style: TextStyles.heading.h5_22B,
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

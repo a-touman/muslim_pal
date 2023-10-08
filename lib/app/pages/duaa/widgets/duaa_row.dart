@@ -21,24 +21,26 @@ class DuaaRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-        children: [
-          DuaaIconContainer(
+    return Row(
+      children: [
+        Expanded(
+          child: DuaaIconContainer(
             iconPicture: containerIconLeft,
             iconName: containerNameLeft,
             duaPage: duaaPageLeft,
           ),
-          SizedBox(
-            width: AppStyle.spacing.W.spacingMd,
-          ),
-          DuaaIconContainer(
+        ),
+        SizedBox(
+          width: AppStyle.spacing.W.spacingMd,
+        ),
+        Expanded(
+          child: DuaaIconContainer(
             iconPicture: containerIconRight,
             iconName: containerNameRight,
             duaPage: duaaPageRight,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

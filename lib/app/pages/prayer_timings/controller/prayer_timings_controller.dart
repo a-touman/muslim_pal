@@ -30,7 +30,7 @@ class PrayerTimingsController extends GetxController {
 
   String displayHijriDate(){
     var hDate= HijriCalendar.fromDate(DateTime(year,month.value,day.value));
-  String date="${calendarController.hijrimonthList[hDate.hMonth-1]} ${hDate.hDay}, ${hDate.hYear}";
+  String date="${calendarController.hijrimonthList[hDate.hMonth-1].tr} ${hDate.hDay.toString().tr}, ${hDate.hYear.toString().tr}";
   return date;
   }
   void updateDayName() {
@@ -59,11 +59,9 @@ class PrayerTimingsController extends GetxController {
 
   }
   void limitDay() {
-    // Determine the maximum days for the current month
     int maxDaysInMonth = DateTime(year, month.value + 1, 0).day;
     print(maxDaysInMonth);
 
-    // If the day is below 1, decrease the month and set the day to the maximum for the previous month
     if (day.value < 1) {
       month -= 1;
       day.value = DateTime(year, month.value + 1, 0).day;
