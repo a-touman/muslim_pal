@@ -22,7 +22,7 @@ class HomeController extends GetxController {
       isLoading(true);
       final quranModel = await remoteServices.fetchData();
       mod.value = quranModel;
-      ayahText.value = mod.value.data?.text ?? 'loading';
+      ayahText.value = mod.value.data?.text ?? 'Loading';
     } catch (e) {
 
     } finally {
@@ -32,7 +32,7 @@ class HomeController extends GetxController {
 
   String getAyahText() {
     if (mod.value != null && mod.value.data != null) {
-      return mod.value.data?.text ?? 'loading';
+      return mod.value.data?.text ?? 'Loading';
     } else {
       return 'Ayah data not available';
     }

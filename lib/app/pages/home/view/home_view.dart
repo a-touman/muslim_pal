@@ -22,7 +22,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0, 149),
+        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0, 50),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -33,12 +33,13 @@ class HomeView extends StatelessWidget {
               style: TextStyles.heading.h3_28SB,
             ),
             const SizedBox(height: 24.0),
-            Expanded(
+            Flexible(
+              flex: 2,
               child: SingleChildScrollView(
                 child: Container(
                   decoration: kDetailDecoration,
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.only(top: 16.0, right: 16.0, left: 16.0, bottom: 70.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [

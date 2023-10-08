@@ -10,13 +10,12 @@ import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
 import '../widgets/duaa_box_simple.dart';
-import 'custom_duaa_page.dart';
 import 'daily_page.dart';
 
 class DuaaInfo extends StatelessWidget {
   final String duaaText;
   final String category;
-  final int index;
+  final int? index;
   final int counter;
 
   DuaaInfo({
@@ -71,7 +70,7 @@ class DuaaInfo extends StatelessWidget {
                           children: [
                             DuaaBoxSimple(
                               getContent: () =>
-                              specificDuaas[index].duaasText.tr,
+                              specificDuaas[index!].duaasText.tr,
                             ),
                             SizedBox(
                               height: AppStyle.spacing.H.spacingMd,
@@ -92,9 +91,10 @@ class DuaaInfo extends StatelessWidget {
                                     height: AppStyle.spacing.H.spacingSm,
                                   ),
                                   DuaaBoxSimple(
-                                    getContent: () => isLanguageSelected
-                                        ? specificDuaas[index].duaasTextTr
-                                        : specificDuaas[index].duaasText,
+                                    getContent: () =>
+                                    isLanguageSelected
+                                        ? specificDuaas[index!].duaasTextTr
+                                        : specificDuaas[index!].duaasText,
                                   ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingXlg,
@@ -120,7 +120,8 @@ class DuaaInfo extends StatelessWidget {
                                           height: AppStyle.spacing.H.spacingLg,
                                         ),
                                         DuaaBoxSimple(
-                                          getContent: () => specificDuaas[index]
+                                          getContent: () =>
+                                          specificDuaas[index!]
                                               .duaasReference.tr,
                                         ),
                                       ],

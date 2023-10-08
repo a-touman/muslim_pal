@@ -24,36 +24,34 @@ class DuaaController extends GetxController {
   Color? colour;
   bool travellingClicked=false;
 
-  RxInt _counter = 0.obs;
-
-  RxInt get counterC => _counter;
+  RxInt counter = 0.obs;
 
   void increaseCounter() {
-    _counter++;
+    counter++;
     update();
   }
 
   void increaseCounterBy5() {
-    _counter = _counter + 5;
+    counter = counter + 5;
     update();
   }
 
   void decreaseCounter() {
-    if (_counter > 0) {
-      _counter--;
+    if (counter > 0) {
+      counter--;
       update();
     }
   }
 
   void decreaseCounterBy5() {
-    if (_counter > 4) {
-      _counter = _counter - 5;
+    if (counter > 4) {
+      counter = counter - 5;
       update();
     }
   }
 
   void resetCounter() {
-    _counter.value = 0;
+    counter.value = 0;
     update();
   }
 }
