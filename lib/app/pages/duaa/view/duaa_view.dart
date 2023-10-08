@@ -68,48 +68,50 @@ class DuaaView extends GetView<DuaaController> {
                       height: AppStyle.spacing.H.spacingMd,
                     ),
                     Expanded(
-                      child: Container(
-                        child: Column(
-                          children: <Widget>[
-                            DuaaRow(
-                              containerIconLeft: IconPaths.daily,
-                              containerNameLeft: 'Daily',
-                              duaaPageLeft: CustomDuaaPage(
-                                category: DuaaCategory.Daily,
+                      child: SingleChildScrollView(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              DuaaRow(
+                                containerIconLeft: IconPaths.daily,
+                                containerNameLeft: 'Daily',
+                                duaaPageLeft: CustomDuaaPage(
+                                  category: DuaaCategory.Daily,
+                                ),
+                                containerIconRight: IconPaths.morning,
+                                containerNameRight: 'Morning',
+                                duaaPageRight: CustomDuaaPage(
+                                  category: DuaaCategory.Morning,
+                                ),
                               ),
-                              containerIconRight: IconPaths.morning,
-                              containerNameRight: 'Morning',
-                              duaaPageRight: CustomDuaaPage(
-                                category: DuaaCategory.Morning,
+                              SizedBox(
+                                height: AppStyle.spacing.H.spacingMd,
                               ),
-                            ),
-                            SizedBox(
-                              height: AppStyle.spacing.H.spacingMd,
-                            ),
-                            DuaaRow(
-                              containerIconLeft: IconPaths.evening,
-                              containerNameLeft: 'Evening',
-                              duaaPageLeft: CustomDuaaPage(
-                                category: DuaaCategory.Evening,
+                              DuaaRow(
+                                containerIconLeft: IconPaths.evening,
+                                containerNameLeft: 'Evening',
+                                duaaPageLeft: CustomDuaaPage(
+                                  category: DuaaCategory.Evening,
+                                ),
+                                containerIconRight: IconPaths.night,
+                                containerNameRight: 'Night',
+                                duaaPageRight: CustomDuaaPage(
+                                  category: DuaaCategory.Night,
+                                ),
                               ),
-                              containerIconRight: IconPaths.night,
-                              containerNameRight: 'Night',
-                              duaaPageRight: CustomDuaaPage(
-                                category: DuaaCategory.Night,
+                              SizedBox(
+                                height: AppStyle.spacing.H.spacingMd,
                               ),
-                            ),
-                            SizedBox(
-                              height: AppStyle.spacing.H.spacingMd,
-                            ),
-                            DuaaRow(
-                              containerIconLeft: IconPaths.studying,
-                              containerNameLeft: 'Studying',
-                              duaaPageLeft: StudyingPage(),
-                              containerIconRight: IconPaths.travelling,
-                              containerNameRight: 'Travelling',
-                              duaaPageRight: TravellingPage(),
-                            ),
-                          ],
+                              DuaaRow(
+                                containerIconLeft: IconPaths.studying,
+                                containerNameLeft: 'Studying',
+                                duaaPageLeft: StudyingPage(),
+                                containerIconRight: IconPaths.travelling,
+                                containerNameRight: 'Travelling',
+                                duaaPageRight: TravellingPage(),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

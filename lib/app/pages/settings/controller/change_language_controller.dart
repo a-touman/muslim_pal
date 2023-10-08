@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
 import '../../../utils/storage_utility.dart';
-import '../screens/manual_location_page.dart';
 import '../services/location.dart';
 
 class ChangeLanguageController extends GetxController {
