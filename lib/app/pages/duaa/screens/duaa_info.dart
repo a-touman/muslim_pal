@@ -10,9 +10,10 @@ import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
 import '../widgets/duaa_box_simple.dart';
+import 'custom_duaa_page.dart';
 import 'daily_page.dart';
 
-class DuaaInfo extends StatelessWidget {
+class DuaaInfo extends GetView<DuaaController> {
   final String duaaText;
   final String category;
   final int index;
@@ -21,8 +22,7 @@ class DuaaInfo extends StatelessWidget {
   DuaaInfo({
     required this.duaaText,
     required this.category,
-    required this.index,
-    required this.counter,
+    required this.index, required this.counter,
   });
 
   @override
@@ -70,7 +70,7 @@ class DuaaInfo extends StatelessWidget {
                           children: [
                             DuaaBoxSimple(
                               getContent: () =>
-                              specificDuaas[index].duaasText.tr,
+                                  specificDuaas[index].duaasText.tr,
                             ),
                             SizedBox(
                               height: AppStyle.spacing.H.spacingMd,
@@ -108,7 +108,7 @@ class DuaaInfo extends StatelessWidget {
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           '     Reference:'.tr,
@@ -130,85 +130,89 @@ class DuaaInfo extends StatelessWidget {
                                   ),
                                   Container(
                                     padding:
-                                    EdgeInsets.symmetric(horizontal: 70),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        ChangeLanguageController()
-                                            .getSelected()
-                                            ? GestureDetector(
-                                          onTap: () {
-                                            duaaController
-                                                .decreaseCounter();
-                                          },
-                                          onDoubleTap: () {
-                                            duaaController
-                                                .decreaseCounterBy5();
-                                          },
-                                          onLongPress: () {
-                                            duaaController
-                                                .resetCounter();
-                                          },
-                                          child: SvgPicture.asset(
-                                            IconPaths.sign_minus,
-                                            height: 50,
-                                          ),
-                                        )
-                                            : GestureDetector(
-                                          onTap: () {
-                                            duaaController
-                                                .increaseCounter();
-                                          },
-                                          onDoubleTap: () {
-                                            duaaController
-                                                .increaseCounterBy5();
-                                          },
-                                          child: SvgPicture.asset(
-                                            IconPaths.sign_plus,
-                                            height: 50,
-                                          ),
-                                        ),
-                                         Text(
-                                            counter.toString().tr,
+                                        EdgeInsets.symmetric(horizontal: 70),
+                                    child: Obx(() {
+                                      return Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          ChangeLanguageController()
+                                                  .getSelected()
+                                              ? GestureDetector(
+                                                  onTap: () {
+                                                    duaaController
+                                                        .decreaseCounter();
+                                                  },
+                                                  onDoubleTap: () {
+                                                    duaaController
+                                                        .decreaseCounterBy5();
+                                                  },
+                                                  onLongPress: () {
+                                                    duaaController
+                                                        .resetCounter();
+                                                  },
+                                                  child: SvgPicture.asset(
+                                                    IconPaths.sign_minus,
+                                                    height: 50,
+                                                  ),
+                                                )
+                                              : GestureDetector(
+                                                  onTap: () {
+                                                    duaaController
+                                                        .increaseCounter();
+                                                  },
+                                                  onDoubleTap: () {
+                                                    duaaController
+                                                        .increaseCounterBy5();
+                                                  },
+                                                  child: SvgPicture.asset(
+                                                    IconPaths.sign_plus,
+                                                    height: 50,
+                                                  ),
+                                                ),
+                                          Text(
+                                            duaaController.counterC.value
+                                                .toString()
+                                                .tr,
                                             style: TextStyles.heading.h3_28EB,
                                           ),
-                                        ChangeLanguageController()
-                                            .getSelected()
-                                            ? GestureDetector(
-                                          onTap: () {
-                                            duaaController
-                                                .increaseCounter();
-                                          },
-                                          onDoubleTap: () {
-                                            duaaController
-                                                .increaseCounterBy5();
-                                          },
-                                          child: SvgPicture.asset(
-                                            IconPaths.sign_plus,
-                                            height: 50,
-                                          ),
-                                        )
-                                            : GestureDetector(
-                                          onTap: () {
-                                            duaaController
-                                                .decreaseCounter();
-                                          },
-                                          onDoubleTap: () {
-                                            duaaController
-                                                .decreaseCounterBy5();
-                                          },
-                                          onLongPress: () {
-                                            duaaController
-                                                .resetCounter();
-                                          },
-                                          child: SvgPicture.asset(
-                                            IconPaths.sign_minus,
-                                            height: 50,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
+                                          ChangeLanguageController()
+                                                  .getSelected()
+                                              ? GestureDetector(
+                                                  onTap: () {
+                                                    duaaController
+                                                        .increaseCounter();
+                                                  },
+                                                  onDoubleTap: () {
+                                                    duaaController
+                                                        .increaseCounterBy5();
+                                                  },
+                                                  child: SvgPicture.asset(
+                                                    IconPaths.sign_plus,
+                                                    height: 50,
+                                                  ),
+                                                )
+                                              : GestureDetector(
+                                                  onTap: () {
+                                                    duaaController
+                                                        .decreaseCounter();
+                                                  },
+                                                  onDoubleTap: () {
+                                                    duaaController
+                                                        .decreaseCounterBy5();
+                                                  },
+                                                  onLongPress: () {
+                                                    duaaController
+                                                        .resetCounter();
+                                                  },
+                                                  child: SvgPicture.asset(
+                                                    IconPaths.sign_minus,
+                                                    height: 50,
+                                                  ),
+                                                ),
+                                        ],
+                                      );
+                                    }),
                                   ),
                                 ],
                               ),

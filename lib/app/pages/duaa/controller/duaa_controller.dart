@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:muslim_pal/app/pages/duaa/screens/duaa_info.dart';
 
 enum studying{
   Before,
@@ -24,9 +25,9 @@ class DuaaController extends GetxController {
   Color? colour;
   bool travellingClicked=false;
 
-  RxInt _counter = 0.obs;
+  RxInt _counter = DuaaInfo().counter.obs;
 
-  RxInt get counter => _counter;
+  RxInt get counterC => _counter;
 
   void increaseCounter() {
     _counter++;
