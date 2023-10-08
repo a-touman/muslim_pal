@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:muslim_pal/app/pages/AyahDetail/controller/ayah_controller.dart';
 import 'package:muslim_pal/app/pages/home/view/home_view.dart';
-import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
 
