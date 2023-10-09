@@ -162,15 +162,14 @@ class TravellingPage extends GetView<DuaaController> {
                                 'After Travel') {
                               category = 'After Travel';
                             }
-
                             return Column(
                               children: [
-                                DuaaBox(
-                                  counters: [4, 1, 3],
-                                  duaaText: selectedDuaas[index].duaasText,
-                                  category: category,
-                                  index: index,
-                                ),
+                                // DuaaBox(
+                                //   counters: [4, 1, 3],
+                                //   duaaText: selectedDuaas[index].duaasText,
+                                //   category: category,
+                                //   index: index,
+                                // ),
 
                                 SizedBox(
                                   height: AppStyle.spacing.H.spacingMd,

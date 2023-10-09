@@ -116,7 +116,8 @@ class StudyingPage extends GetView<DuaaController> {
                                 Column(
                                   children: [
                                     DuaaBox(
-                                      counters: [2, 4, 5, 3, 1, 7, 3, 4, 3],
+                                      counter: duaaController.createCounter(i.toString(),"S"),
+                                      id:i,
                                       duaaText: selectedDuaas[i].duaasText,
                                       category: beforeStudyingSelected.value ? 'before study' : 'after study',
                                       index: i,

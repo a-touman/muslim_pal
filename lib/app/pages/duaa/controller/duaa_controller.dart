@@ -4,57 +4,53 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/duaa_info.dart';
 
-enum studying{
-  Before,
-  After
-}
-enum travelling{
-  Before,
-  During,
-  After
-}
+enum studying { Before, After }
+
+enum travelling { Before, During, After }
 
 class DuaaController extends GetxController {
   studying? selectedTime;
-
-  bool dailyClicked=false;
-  bool morningClicked=false;
-  bool eveningClicked=false;
-  bool nightClicked=false;
-  bool studyingClicked=false;
+  bool dailyClicked = false;
+  bool morningClicked = false;
+  bool eveningClicked = false;
+  bool nightClicked = false;
+  bool studyingClicked = false;
   Color? colour;
-  bool travellingClicked=false;
+  bool travellingClicked = false;
+  List<RxInt> whip=[];
+  late String name;
 
-  RxInt _counter = 0.obs;
-
-  RxInt get counterC => _counter;
-
-  void increaseCounter() {
-    _counter++;
+RxInt createCounter(String i,String name){
+  RxInt $namecounter$i=0.obs;
+  whip.add($namecounter$i);
+  return $namecounter$i;
+}
+  void increaseCounter(RxInt counter,int i) {
+  whip[i].value++;
     update();
   }
 
-  void increaseCounterBy5() {
-    _counter = _counter + 5;
+  void increaseCounterBy5(RxInt counter) {
+    counter = counter + 5;
     update();
   }
 
-  void decreaseCounter() {
-    if (_counter > 0) {
-      _counter--;
+  void decreaseCounter(RxInt counter) {
+    if (counter > 0) {
+      counter--;
       update();
     }
   }
 
-  void decreaseCounterBy5() {
-    if (_counter > 4) {
-      _counter = _counter - 5;
+  void decreaseCounterBy5(RxInt counter) {
+    if (counter > 4) {
+      counter = counter - 5;
       update();
     }
   }
 
-  void resetCounter() {
-    _counter.value = 0;
+  void resetCounter(RxInt counter) {
+    counter.value = 0;
     update();
   }
 }

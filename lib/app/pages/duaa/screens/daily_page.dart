@@ -12,6 +12,7 @@ DuaaBank duaas = DuaaBank();
 
 class DailyPage extends GetView<DuaaController> {
   const DailyPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,11 +58,13 @@ class DailyPage extends GetView<DuaaController> {
                               Column(
                                 children: [
                                   DuaaBox(
-                                    counters: [5, 3, 8, 2, 4, 1, 6, 5, 3, 8, 2, 4, 1, 3, 2],
                                     duaaText: duaas.dailyDuaas[i].duaasText,
                                     category: 'daily',
                                     index: i,
+                                    id: i,
+                                    counter: duaaController.createCounter(i.toString(),"D"),
                                   ),
+
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,
                                   ),

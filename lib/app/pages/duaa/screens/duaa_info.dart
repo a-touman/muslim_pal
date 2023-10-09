@@ -17,7 +17,7 @@ class DuaaInfo extends StatelessWidget {
   final String duaaText;
   final String category;
   final int index;
-  final int counter;
+  final RxInt counter;
 
   DuaaInfo({
     required this.duaaText,
@@ -92,7 +92,8 @@ class DuaaInfo extends StatelessWidget {
                                     height: AppStyle.spacing.H.spacingSm,
                                   ),
                                   DuaaBoxSimple(
-                                    getContent: () => isLanguageSelected
+                                    getContent: () =>
+                                    isLanguageSelected
                                         ? specificDuaas[index].duaasTextTr
                                         : specificDuaas[index].duaasText,
                                   ),
@@ -120,7 +121,8 @@ class DuaaInfo extends StatelessWidget {
                                           height: AppStyle.spacing.H.spacingLg,
                                         ),
                                         DuaaBoxSimple(
-                                          getContent: () => specificDuaas[index]
+                                          getContent: () =>
+                                          specificDuaas[index]
                                               .duaasReference,
                                         ),
                                       ],
@@ -141,15 +143,15 @@ class DuaaInfo extends StatelessWidget {
                                             ? GestureDetector(
                                           onTap: () {
                                             duaaController
-                                                .decreaseCounter();
+                                                .decreaseCounter(counter);
                                           },
                                           onDoubleTap: () {
                                             duaaController
-                                                .decreaseCounterBy5();
+                                                .decreaseCounterBy5(counter);
                                           },
                                           onLongPress: () {
                                             duaaController
-                                                .resetCounter();
+                                                .resetCounter(counter);
                                           },
                                           child: SvgPicture.asset(
                                             IconPaths.sign_minus,
@@ -159,31 +161,35 @@ class DuaaInfo extends StatelessWidget {
                                             : GestureDetector(
                                           onTap: () {
                                             duaaController
-                                                .increaseCounter();
+                                                .increaseCounter(
+                                                counter, index);
                                           },
                                           onDoubleTap: () {
                                             duaaController
-                                                .increaseCounterBy5();
+                                                .increaseCounterBy5(counter);
                                           },
                                           child: SvgPicture.asset(
                                             IconPaths.sign_plus,
                                             height: 50,
                                           ),
                                         ),
-                                        Text(
-                                            counter.toString().tr,
+                                        Obx(() {
+                                          return Text(
+                                            duaaController.whip[index].value.toString(),
                                             style: TextStyles.heading.h3_28EB,
-                                          ),
+                                          );
+                                        }),
                                         ChangeLanguageController()
                                             .getSelected()
                                             ? GestureDetector(
                                           onTap: () {
                                             duaaController
-                                                .increaseCounter();
+                                                .increaseCounter(
+                                                counter, index);
                                           },
                                           onDoubleTap: () {
                                             duaaController
-                                                .increaseCounterBy5();
+                                                .increaseCounterBy5(counter);
                                           },
                                           child: SvgPicture.asset(
                                             IconPaths.sign_plus,
@@ -193,15 +199,15 @@ class DuaaInfo extends StatelessWidget {
                                             : GestureDetector(
                                           onTap: () {
                                             duaaController
-                                                .decreaseCounter();
+                                                .decreaseCounter(counter);
                                           },
                                           onDoubleTap: () {
                                             duaaController
-                                                .decreaseCounterBy5();
+                                                .decreaseCounterBy5(counter);
                                           },
                                           onLongPress: () {
                                             duaaController
-                                                .resetCounter();
+                                                .resetCounter(counter);
                                           },
                                           child: SvgPicture.asset(
                                             IconPaths.sign_minus,

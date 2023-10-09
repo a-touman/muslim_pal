@@ -55,7 +55,8 @@ class NightPage extends GetView<DuaaController> {
                               Column(
                                 children: [
                                   DuaaBox(
-                                    counters: [3, 4, 33,33, 33, 5, 1, 2, 6],
+                                    counter: duaaController.createCounter(i.toString(),"N"),
+                                    id:i,
                                     duaaText: duaas.nightDuaas[i].duaasText,
                                     category: 'night',
                                     index: i,

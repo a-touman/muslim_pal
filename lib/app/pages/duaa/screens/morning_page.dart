@@ -8,7 +8,7 @@ import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import 'daily_page.dart';
 
-class MorningPage extends GetView<DuaaController> {
+class MorningPage extends StatelessWidget {
   const MorningPage({Key? key}) : super(key: key);
 
   @override
@@ -31,10 +31,11 @@ class MorningPage extends GetView<DuaaController> {
                     Row(
                       children: [
                         GestureDetector(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: BackArrow()),
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: BackArrow(),
+                        ),
                         SizedBox(
                           width: AppStyle.spacing.W.spacingXs,
                         ),
@@ -55,10 +56,10 @@ class MorningPage extends GetView<DuaaController> {
                               Column(
                                 children: [
                                   DuaaBox(
-                                    counters: [5, 1, 2, 6, 4, 3],
                                     duaaText: duaas.morningDuaas[i].duaasText,
                                     category: 'morning',
-                                    index: i,
+                                    index: i,  counter: duaaController.createCounter(i.toString(),'M'),
+                                    id:i,
                                   ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,

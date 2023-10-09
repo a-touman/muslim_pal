@@ -31,10 +31,11 @@
                       Row(
                         children: [
                           GestureDetector(
-                              onTap: () {
-                                Get.back();
-                              },
-                              child: BackArrow()),
+                            onTap: () {
+                              Get.back();
+                            },
+                            child: BackArrow(),
+                          ),
                           SizedBox(
                             width: AppStyle.spacing.W.spacingXs,
                           ),
@@ -55,10 +56,14 @@
                                 Column(
                                   children: [
                                     DuaaBox(
-                                      counters: [1, 2, 3, 4, 5],
                                       duaaText: duaas.eveningDuaas[i].duaasText,
                                       category: 'evening',
                                       index: i,
+                                      counter: duaaController.createCounter(i.toString(),'E'),
+                                      id:i,
+
+
+                                      // Create a new instance of RxInt
                                     ),
                                     SizedBox(
                                       height: AppStyle.spacing.H.spacingMd,
@@ -79,3 +84,4 @@
       );
     }
   }
+
