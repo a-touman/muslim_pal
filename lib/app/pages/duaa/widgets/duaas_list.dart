@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 class DuaasList {
   late String duaasText;
   late String duaasTextTr;
