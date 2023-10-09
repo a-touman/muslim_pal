@@ -15,6 +15,7 @@ import 'daily_page.dart';
 
 class DuaaInfo extends StatelessWidget {
   final String duaaText;
+  late String name;
   final String category;
   final int index;
   final RxInt counter;
@@ -162,7 +163,7 @@ class DuaaInfo extends StatelessWidget {
                                           onTap: () {
                                             duaaController
                                                 .increaseCounter(
-                                                counter, index);
+                                                counter);
                                           },
                                           onDoubleTap: () {
                                             duaaController
@@ -174,8 +175,24 @@ class DuaaInfo extends StatelessWidget {
                                           ),
                                         ),
                                         Obx(() {
+                                          name="";
+                                          if(category=="daily"){
+                                            name="daily";
+                                          }
+                                         else if(category=="morning"){
+                                            name="morning";
+                                          }
+                                         else if(category=="evening"){
+                                            name="evening";
+                                          }
+                                          else if(category=="studying"){
+                                            name="studying";
+                                          }
+                                          else if(category=="night"){
+                                            name="night";
+                                          }
                                           return Text(
-                                            duaaController.whip[index].value.toString(),
+                                            duaaController.chooseCounter(name)[index].value.toString(),
                                             style: TextStyles.heading.h3_28EB,
                                           );
                                         }),
@@ -185,7 +202,7 @@ class DuaaInfo extends StatelessWidget {
                                           onTap: () {
                                             duaaController
                                                 .increaseCounter(
-                                                counter, index);
+                                                    counter);
                                           },
                                           onDoubleTap: () {
                                             duaaController

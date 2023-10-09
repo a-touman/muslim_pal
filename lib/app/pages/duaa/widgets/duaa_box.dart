@@ -14,6 +14,7 @@ class DuaaBox extends StatelessWidget {
   final int index;
   final int id;
   final RxInt counter;
+  late String name;
 
   DuaaBox({
     required this.duaaText,
@@ -61,8 +62,24 @@ class DuaaBox extends StatelessWidget {
                     color: AppColors.buttonIconBackground,
                   ),
                   child: Obx(() {
+                    name="";
+                    if(category=="daily"){
+                      name="daily";
+                    }
+                    else if(category=="morning"){
+                      name="morning";
+                    }
+                    else if(category=="evening"){
+                      name="evening";
+                    }
+                    else if(category=="studying"){
+                      name="studying";
+                    }
+                    else if(category=="night"){
+                      name="night";
+                    }
                     return Text(
-                      duaaController.whip[index].value.toString(),
+                       duaaController.chooseCounter(name)[index].value.toString(),
                       style: TextStyle(
                         fontFamily: FontsFamily.effraTrialBold,
                         fontWeight: FontWeight.w700,

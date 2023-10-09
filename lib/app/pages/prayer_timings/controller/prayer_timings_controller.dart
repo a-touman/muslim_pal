@@ -62,8 +62,6 @@ class PrayerTimingsController extends GetxController {
   }
   void limitDay() {
     int maxDaysInMonth = DateTime(year, month.value + 1, 0).day;
-    print(maxDaysInMonth);
-
     if (day.value < 1) {
       month -= 1;
       day.value = DateTime(year, month.value + 1, 0).day;
@@ -73,8 +71,6 @@ class PrayerTimingsController extends GetxController {
       day.value = 1;
     }
   }
-
-
   void fetchData() async {
     try {
       isLoading(true);
