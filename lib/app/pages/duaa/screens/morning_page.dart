@@ -55,12 +55,12 @@ class MorningPage extends StatelessWidget {
                             for (int i = 0; i < duaas.morningDuaas.length; i++)
                               Column(
                                 children: [
-                                  // DuaaBox(
-                                  //   duaaText: duaas.morningDuaas[i].duaasText,
-                                  //   category: 'morning',
-                                  //   index: i,  counter: duaaController.createCounter(i.toString(),'M'),
-                                  //   id:i,
-                                  // ),
+                                  DuaaBox(
+                                    duaaText: duaas.morningDuaas[i].duaasText,
+                                    category: 'morning',
+                                    index: i,
+                                    id:i,
+                                  ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,
                                   ),

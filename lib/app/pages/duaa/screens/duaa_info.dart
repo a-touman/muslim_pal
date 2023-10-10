@@ -15,16 +15,13 @@ import 'daily_page.dart';
 
 class DuaaInfo extends StatelessWidget {
   final String duaaText;
-  late String name;
   final String category;
   final int index;
-  final RxInt counter;
 
   DuaaInfo({
     required this.duaaText,
     required this.category,
     required this.index,
-    required this.counter,
   });
 
   @override
@@ -114,7 +111,7 @@ class DuaaInfo extends StatelessWidget {
                                       CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          '     Reference:'.tr,
+                                          '   Reference:'.tr,
                                           style: TextStyles
                                               .body.b_16B.subTextColor,
                                         ),
@@ -139,42 +136,6 @@ class DuaaInfo extends StatelessWidget {
                                       mainAxisAlignment:
                                       MainAxisAlignment.center,
                                       children: [
-                                        // ChangeLanguageController()
-                                        //     .getSelected()
-                                        //     ? GestureDetector(
-                                        //   onTap: () {
-                                        //     duaaController
-                                        //         .decreaseCounter(counter);
-                                        //   },
-                                        //   onDoubleTap: () {
-                                        //     duaaController
-                                        //         .decreaseCounterBy5(counter);
-                                        //   },
-                                        //   onLongPress: () {
-                                        //     duaaController
-                                        //         .resetCounter(counter);
-                                        //   },
-                                        //   child: SvgPicture.asset(
-                                        //     IconPaths.sign_minus,
-                                        //     height: 50,
-                                        //   ),
-                                        // )
-                                        //     : GestureDetector(
-                                        //   onTap: () {
-                                        //     duaaController
-                                        //         .increaseCounter(
-                                        //         counter);
-                                        //   },
-                                        //   onDoubleTap: () {
-                                        //     duaaController
-                                        //         .increaseCounterBy5(counter);
-                                        //   },
-                                        //   child: SvgPicture.asset(
-                                        //     IconPaths.sign_plus,
-                                        //     height: 50,
-                                        //   ),
-                                        // ),
-                                        // Use the CounterWidget here
                                         CounterWidget(
                                           initialValue: 0,
                                         ),
@@ -212,11 +173,11 @@ class DuaaInfo extends StatelessWidget {
         return 'Before Studying Duaa'.tr;
       case 'after study':
         return 'After Studying Duaa'.tr;
-      case 'Before Travel':
+      case 'before Travel':
         return 'Before Travelling Duaa'.tr;
-      case 'During Travel':
+      case 'during Travel':
         return 'During Travelling Duaa'.tr;
-      case 'After Travel':
+      case 'after Travel':
         return 'After Travelling Duaa'.tr;
       default:
         return 'Unknown Category';
@@ -237,11 +198,11 @@ class DuaaInfo extends StatelessWidget {
         return duaas.beforeStudyingDuaas;
       case 'after study':
         return duaas.afterStudyingDuaas;
-      case 'Before Travel':
+      case 'before Travel':
         return duaas.beforeTravellingDuaas;
-      case 'During Travel':
+      case 'during Travel':
         return duaas.duringTravellingDuaas;
-      case 'After Travel':
+      case 'after Travel':
         return duaas.afterTravellingDuaas;
       default:
         return [];

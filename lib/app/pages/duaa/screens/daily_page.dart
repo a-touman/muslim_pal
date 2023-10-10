@@ -62,7 +62,7 @@ class DailyPage extends GetView<DuaaController> {
                                     category: 'daily',
                                     index: i,
                                     id: i,
-                                    counter: duaaController.createCounter(i.toString(),"D"),
+
                                   ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,

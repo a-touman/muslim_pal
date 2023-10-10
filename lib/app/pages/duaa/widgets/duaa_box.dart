@@ -13,7 +13,6 @@ class DuaaBox extends StatelessWidget {
   final String category;
   final int index;
   final int id;
-  final RxInt counter;
   late String name;
 
   DuaaBox({
@@ -21,8 +20,6 @@ class DuaaBox extends StatelessWidget {
     required this.category,
     required this.index,
     required this.id,
-    required this.counter,
-
 
   });
 
@@ -35,7 +32,6 @@ class DuaaBox extends StatelessWidget {
             duaaText: duaaText,
             category: category,
             index: index,
-            counter: counter,
           ),
         );
       },
@@ -61,45 +57,16 @@ class DuaaBox extends StatelessWidget {
                     borderRadius: AppStyle.corners.xxlgBorder,
                     color: AppColors.buttonIconBackground,
                   ),
-                  child: Obx(() {
-                    name="";
-                    if(category=="daily"){
-                      name="daily";
-                    }
-                    else if(category=="morning"){
-                      name="morning";
-                    }
-                    else if(category=="evening"){
-                      name="evening";
-                    }
-                    else if(category=="before study"){
-                      name="before study";
-                    }
-                    else if(category=="after study"){
-                      name="after study";
-                    }
-                    else if(category=="night"){
-                      name="night";
-                    }
-                    else if(category=="Before Travel"){
-                      name="before travel";
-                    }
-                    else if(category=="during Travel"){
-                      name="during travel";
-                    }
-                    else if(category=="after Travel"){
-                      name="after travel";
-                    }
-                    return Text(
-                       duaaController.chooseCounter(name)[index].value.toString(),
+                  child:
+                   Text(
+                       "5",
                       style: TextStyle(
                         fontFamily: FontsFamily.effraTrialBold,
                         fontWeight: FontWeight.w700,
                         color: AppColors.primary,
                         fontSize: 14,
                       ),
-                    );
-                  }),
+                  ),
                 )
               ],
             ),

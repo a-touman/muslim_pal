@@ -55,16 +55,16 @@
                               for (int i = 0; i < duaas.eveningDuaas.length; i++)
                                 Column(
                                   children: [
-                                    // DuaaBox(
-                                    //   duaaText: duaas.eveningDuaas[i].duaasText,
-                                    //   category: 'evening',
-                                    //   index: i,
-                                    //   counter: duaaController.createCounter(i.toString(),'E'),
-                                    //   id:i,
-                                    //
-                                    //
-                                    //   // Create a new instance of RxInt
-                                    // ),
+                                    DuaaBox(
+                                      duaaText: duaas.eveningDuaas[i].duaasText,
+                                      category: 'evening',
+                                      index: i,
+
+                                      id:i,
+
+
+                                      // Create a new instance of RxInt
+                                    ),
                                     SizedBox(
                                       height: AppStyle.spacing.H.spacingMd,
                                     ),

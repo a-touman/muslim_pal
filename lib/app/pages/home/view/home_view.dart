@@ -22,7 +22,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0, 50),
+        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0, 162),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -33,45 +33,46 @@ class HomeView extends StatelessWidget {
               style: TextStyles.heading.h3_28SB,
             ),
             const SizedBox(height: 24.0),
-            Flexible(
-              flex: 2,
-              child: SingleChildScrollView(
-                child: Container(
-                  decoration: kDetailDecoration,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 16.0, right: 16.0, left: 16.0, bottom: 70.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          'Verse of the day'.tr,
-                          style: TextStyles.heading.h5_22B,
-                        ),
-                        const SizedBox(height: 8.0),
-                        Obx(() {
-                          final ayahText = homeController.getAyahText();
-                          final Surahnum = homeController.getSurahno();
-                          final Versenum = homeController.getVerseNo();
-                          final lineCount = homeController.countLines(
-                            ayahText,
-                            TextStyles.body.b_16R,
-                            MediaQuery.of(context).size.width,
-                          );
-                          return Seemore(
-                              ayahText: ayahText,
-                              lineCount: lineCount,
-                              homeController: homeController,
-                              Surahnum: Surahnum,
-                              Versenum: Versenum);
-                        }),
-                        Obx(() {
-                          return Text(
+            Expanded(
+              child: Container(
+                decoration: kDetailDecoration,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 16.0, right: 16.0, left: 16.0, bottom: 0.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        'Verse of the day'.tr,
+                        style: TextStyles.heading.h5_22B,
+                      ),
+                      const SizedBox(height: 8.0),
+                      Obx(() {
+                        final ayahText = homeController.getAyahText();
+                        final Surahnum = homeController.getSurahno();
+                        final Versenum = homeController.getVerseNo();
+                        final lineCount = homeController.countLines(
+                          ayahText,
+                          TextStyles.body.b_16R,
+                          MediaQuery.of(context).size.width,
+                        );
+                        return Seemore(
+                            ayahText: ayahText,
+                            lineCount: lineCount,
+                            homeController: homeController,
+                            Surahnum: Surahnum,
+                            Versenum: Versenum);
+                      }),
+                      SizedBox(height: 8,),
+                      Obx(() {
+                        return Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Text(
                             '${"Surah".tr} ${homeController.getSurahno()}, ${"Verse".tr} ${homeController.getVerseNo()}',
                             style: TextStyles.body.b_12B.subTextColor,
-                          );
-                        })
-                      ],
-                    ),
+                          ),
+                        );
+                      })
+                    ],
                   ),
                 ),
               ),

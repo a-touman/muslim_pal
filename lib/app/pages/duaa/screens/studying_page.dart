@@ -115,13 +115,12 @@ class StudyingPage extends GetView<DuaaController> {
                               for (int i = 0; i < selectedDuaas.length; i++)
                                 Column(
                                   children: [
-                                    // DuaaBox(
-                                    //   counter: duaaController.createCounter(i.toString(),beforeStudyingSelected.value ? 'bf' : 'af'),
-                                    //   id:i,
-                                    //   duaaText: selectedDuaas[i].duaasText,
-                                    //   category: beforeStudyingSelected.value ? 'before study' : 'after study',
-                                    //   index: i,
-                                    // ),
+                                    DuaaBox(
+                                      id:i,
+                                      duaaText: selectedDuaas[i].duaasText,
+                                      category: beforeStudyingSelected.value ? 'before study' : 'after study',
+                                      index: i,
+                                    ),
 
                                     SizedBox(
                                       height: AppStyle.spacing.H.spacingMd,

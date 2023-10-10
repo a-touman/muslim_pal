@@ -54,13 +54,12 @@ class NightPage extends GetView<DuaaController> {
                             for (int i = 0; i < duaas.nightDuaas.length; i++)
                               Column(
                                 children: [
-                                  // DuaaBox(
-                                  //   counter: duaaController.createCounter(i.toString(),"N"),
-                                  //   id:i,
-                                  //   duaaText: duaas.nightDuaas[i].duaasText,
-                                  //   category: 'night',
-                                  //   index: i,
-                                  // ),
+                                  DuaaBox(
+                                    id:i,
+                                    duaaText: duaas.nightDuaas[i].duaasText,
+                                    category: 'night',
+                                    index: i,
+                                  ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,
                                   ),

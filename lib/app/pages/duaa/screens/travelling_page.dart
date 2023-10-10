@@ -164,13 +164,12 @@ class TravellingPage extends GetView<DuaaController> {
                             }
                             return Column(
                               children: [
-                                // DuaaBox(
-                                //   duaaText: selectedDuaas[index].duaasText,
-                                //   category: category,
-                                //    index: index,
-                                //   id: index,
-                                //   counter: duaaController.createCounter(index.toString(),"dt"),
-                                //  ),
+                                DuaaBox(
+                                  duaaText: selectedDuaas[index].duaasText,
+                                  category: category,
+                                   index: index,
+                                  id: index,
+                                 ),
 
                                 SizedBox(
                                   height: AppStyle.spacing.H.spacingMd,
