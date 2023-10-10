@@ -18,7 +18,7 @@ class TravellingPage extends GetView<DuaaController> {
   TravellingPage({Key? key}) : super(key: key);
   travelling? travellingTime;
 
-  final RxString selectedSection = 'Before Travel'.obs;
+  final RxString selectedSection = 'before Travel'.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class TravellingPage extends GetView<DuaaController> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              selectedSection.value = 'Before Travel';
+                              selectedSection.value = 'before Travel';
                               travellingTime = travelling.Before;
                             },
                             child: Obx(() {
@@ -73,7 +73,7 @@ class TravellingPage extends GetView<DuaaController> {
                                 length: changeLanguageController.getSelected()
                                     ? 120
                                     : 90,
-                                styles: selectedSection.value == 'Before Travel'
+                                styles: selectedSection.value == 'before Travel'
                                     ? TextStyles.body.b_16B
                                     : TextStyles.body.b_16B.subTextColor,
                                 colour: travellingTime == travelling.Before
@@ -87,7 +87,7 @@ class TravellingPage extends GetView<DuaaController> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              selectedSection.value = 'During Travel';
+                              selectedSection.value = 'during Travel';
                               travellingTime = travelling.During;
                             },
                             child: Obx(() {
@@ -96,7 +96,7 @@ class TravellingPage extends GetView<DuaaController> {
                                 length: changeLanguageController.getSelected()
                                     ? 120
                                     : 100,
-                                styles: selectedSection.value == 'During Travel'
+                                styles: selectedSection.value == 'during Travel'
                                     ? TextStyles.body.b_16B
                                     : TextStyles.body.b_16B.subTextColor,
                                 colour: travellingTime == travelling.During
@@ -112,15 +112,15 @@ class TravellingPage extends GetView<DuaaController> {
                           GestureDetector(
                             onTap: () {
                               travellingTime = travelling.After;
-                              selectedSection.value = 'After Travel';
+                              selectedSection.value = 'after Travel';
                             },
                             child: Obx(() {
                               return RowScrollView(
-                                section: 'After Travel',
+                                section: 'after Travel',
                                 length: changeLanguageController.getSelected()
                                     ? 120
                                     : 90,
-                                styles: selectedSection.value == 'After Travel'
+                                styles: selectedSection.value == 'after Travel'
                                     ? TextStyles.body.b_16B
                                     : TextStyles.body.b_16B.subTextColor,
                                 colour: travellingTime == travelling.After
@@ -142,34 +142,35 @@ class TravellingPage extends GetView<DuaaController> {
                         String category =
                             selectedSection.value; // Initialize category
 
-                        if (selectedSection.value == 'Before Travel') {
+                        if (selectedSection.value == 'before Travel') {
                           selectedDuaas = duaas.beforeTravellingDuaas;
-                        } else if (selectedSection.value == 'During Travel') {
+                        } else if (selectedSection.value == 'during Travel') {
                           selectedDuaas = duaas.duringTravellingDuaas;
-                        } else if (selectedSection.value == 'After Travel') {
+                        } else if (selectedSection.value == 'after Travel') {
                           selectedDuaas = duaas.afterTravellingDuaas;
                         }
 
                         return ListView.builder(
                           itemCount: selectedDuaas.length,
                           itemBuilder: (context, index) {
-                            if (selectedSection.value == 'Before Travel') {
-                              category = 'Before Travel';
+                            if (selectedSection.value == 'before Travel') {
+                              category = 'before Travel';
                             } else if (selectedSection.value ==
-                                'During Travel') {
-                              category = 'During Travel';
+                                'during Travel') {
+                              category = 'during Travel';
                             } else if (selectedSection.value ==
-                                'After Travel') {
-                              category = 'After Travel';
+                                'after Travel') {
+                              category = 'after Travel';
                             }
                             return Column(
                               children: [
                                 // DuaaBox(
-                                //   counters: [4, 1, 3],
                                 //   duaaText: selectedDuaas[index].duaasText,
                                 //   category: category,
-                                //   index: index,
-                                // ),
+                                //    index: index,
+                                //   id: index,
+                                //   counter: duaaController.createCounter(index.toString(),"dt"),
+                                //  ),
 
                                 SizedBox(
                                   height: AppStyle.spacing.H.spacingMd,

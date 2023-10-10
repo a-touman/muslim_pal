@@ -179,17 +179,29 @@ class DuaaInfo extends StatelessWidget {
                                           if(category=="daily"){
                                             name="daily";
                                           }
-                                         else if(category=="morning"){
+                                          else if(category=="morning"){
                                             name="morning";
                                           }
-                                         else if(category=="evening"){
+                                          else if(category=="evening"){
                                             name="evening";
                                           }
-                                          else if(category=="studying"){
-                                            name="studying";
+                                          else if(category=="before study"){
+                                            name="before study";
+                                          }
+                                          else if(category=="after study"){
+                                            name="after study";
                                           }
                                           else if(category=="night"){
                                             name="night";
+                                          }
+                                          else if(category=="before Travel"){
+                                            name="before travel";
+                                          }
+                                          else if(category=="during Travel"){
+                                            name="dt";
+                                          }
+                                          else if(category=="after Travel"){
+                                            name="after travel";
                                           }
                                           return Text(
                                             duaaController.chooseCounter(name)[index].value.toString(),

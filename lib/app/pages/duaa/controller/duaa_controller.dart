@@ -17,26 +17,24 @@ class DuaaController extends GetxController {
   bool studyingClicked = false;
   Color? colour;
   bool travellingClicked = false;
-  List<RxInt> whip=[];
   List<RxInt> daily=[];
   List<RxInt> evening=[];
   List<RxInt> morning=[];
   List<RxInt> night=[];
-  List<RxInt> study=[];
+  List<RxInt> afstudy=[];
+  List<RxInt> bfstudy=[];
+  List<RxInt> beforeTravel=[];
+  List<RxInt> duringTravel=[];
+  List<RxInt> afterTravel=[];
   List<int> initDaily=[5,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
   late String name;
-void fillData(List<RxInt> toFill,List<int> fill){
-  int i=0;
-  while(i<toFill.length){
-    toFill[i].value=fill[i];
-    i++;
-  }
-}
+  @override
+
 RxInt createCounter(String i,String name){
-  RxInt $namecounter$i=0.obs;
+  RxInt $namecounter$i=5.obs;
+
   if(name=="D"){
     daily.add($namecounter$i);
-    fillData(daily, initDaily);
   }
   else if(name=="E"){
     evening.add($namecounter$i);
@@ -44,12 +42,24 @@ RxInt createCounter(String i,String name){
   else if(name=="M"){
     morning.add($namecounter$i);
   }
-  else if(name=="S"){
-    study.add($namecounter$i);
+  else if(name=="bf"){
+    bfstudy.add($namecounter$i);
+  }  else if(name=="af"){
+    afstudy.add($namecounter$i);
   }
   else if(name=="N"){
     night.add($namecounter$i);
   }
+  else if(name=="before Travel"){
+    beforeTravel.add($namecounter$i);
+  }
+  else if(name=="dt"){
+    duringTravel.add($namecounter$i);
+  }
+  else if(name=="after Travel"){
+    afterTravel.add($namecounter$i);
+  }
+
   return $namecounter$i;
 }
   void increaseCounter(RxInt counter){
@@ -69,8 +79,22 @@ RxInt createCounter(String i,String name){
   else if(choose=="night"){
     return night;
   }
-  else if(choose=="studying"){
-    return study;
+  else if(choose=="before study"){
+    return bfstudy;
+  }
+  else if(choose=="after study"){
+    return afstudy;
+  }
+  //here bbg
+  else if(choose=="before Travel"){
+    return beforeTravel;
+  }
+  else if(choose=="dt"){
+    print("called dt");
+    return duringTravel;
+  }
+  else if(choose=="after Travel"){
+    return afterTravel;
   }
   return null!;
   }

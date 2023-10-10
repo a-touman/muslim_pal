@@ -72,11 +72,23 @@ class DuaaBox extends StatelessWidget {
                     else if(category=="evening"){
                       name="evening";
                     }
-                    else if(category=="studying"){
-                      name="studying";
+                    else if(category=="before study"){
+                      name="before study";
+                    }
+                    else if(category=="after study"){
+                      name="after study";
                     }
                     else if(category=="night"){
                       name="night";
+                    }
+                    else if(category=="Before Travel"){
+                      name="before travel";
+                    }
+                    else if(category=="during Travel"){
+                      name="during travel";
+                    }
+                    else if(category=="after Travel"){
+                      name="after travel";
                     }
                     return Text(
                        duaaController.chooseCounter(name)[index].value.toString(),

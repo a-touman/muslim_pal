@@ -54,7 +54,7 @@ class DailyPage extends GetView<DuaaController> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                            for (int i = 0; i < duaas.dailyDuaas.length; i++)
+                            for (int i = 0; i < (duaas.dailyDuaas.length); i++)
                               Column(
                                 children: [
                                   DuaaBox(
@@ -63,6 +63,7 @@ class DailyPage extends GetView<DuaaController> {
                                     index: i,
                                     id: i,
                                     counter: duaaController.createCounter(i.toString(),"D"),
+
                                   ),
 
                                   SizedBox(
