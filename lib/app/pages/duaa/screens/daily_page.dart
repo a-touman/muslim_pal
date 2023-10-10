@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
+
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
@@ -51,28 +51,25 @@ class DailyPage extends GetView<DuaaController> {
                       height: AppStyle.spacing.H.spacingXlg,
                     ),
                     Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            for (int i = 0; i < (duaas.dailyDuaas.length); i++)
-                              Column(
-                                children: [
-                                  DuaaBox(
-                                    duaaText: duaas.dailyDuaas[i].duaasText,
-                                    category: 'daily',
-                                    index: i,
-                                    id: i,
-                                    counter: duaaController.createCounter(i.toString(),"D"),
-
-                                  ),
-
-                                  SizedBox(
-                                    height: AppStyle.spacing.H.spacingMd,
-                                  ),
-                                ],
+                      child: ListView.builder(
+                        itemCount: duaas.dailyDuaas.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            children: [
+                              DuaaBox(
+                                duaaText: duaas.dailyDuaas[index].duaasText,
+                                category: 'daily',
+                                index: index,
+                                id: index,
+                                counter: duaaController.createCounter(
+                                    index.toString(), "D"),
                               ),
-                          ],
-                        ),
+                              SizedBox(
+                                height: AppStyle.spacing.H.spacingMd,
+                              ),
+                            ],
+                          );
+                        },
                       ),
                     ),
                   ],
