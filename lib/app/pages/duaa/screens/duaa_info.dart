@@ -10,8 +10,8 @@ import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
 import '../widgets/duaa_box_simple.dart';
-
 import 'daily_page.dart';
+ // Import the CounterWidget
 
 class DuaaInfo extends StatelessWidget {
   final String duaaText;
@@ -137,111 +137,46 @@ class DuaaInfo extends StatelessWidget {
                                     EdgeInsets.symmetric(horizontal: 70),
                                     child: Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.center,
                                       children: [
-                                        ChangeLanguageController()
-                                            .getSelected()
-                                            ? GestureDetector(
-                                          onTap: () {
-                                            duaaController
-                                                .decreaseCounter(counter);
-                                          },
-                                          onDoubleTap: () {
-                                            duaaController
-                                                .decreaseCounterBy5(counter);
-                                          },
-                                          onLongPress: () {
-                                            duaaController
-                                                .resetCounter(counter);
-                                          },
-                                          child: SvgPicture.asset(
-                                            IconPaths.sign_minus,
-                                            height: 50,
-                                          ),
-                                        )
-                                            : GestureDetector(
-                                          onTap: () {
-                                            duaaController
-                                                .increaseCounter(
-                                                counter);
-                                          },
-                                          onDoubleTap: () {
-                                            duaaController
-                                                .increaseCounterBy5(counter);
-                                          },
-                                          child: SvgPicture.asset(
-                                            IconPaths.sign_plus,
-                                            height: 50,
-                                          ),
-                                        ),
-                                        Obx(() {
-                                          name="";
-                                          if(category=="daily"){
-                                            name="daily";
-                                          }
-                                          else if(category=="morning"){
-                                            name="morning";
-                                          }
-                                          else if(category=="evening"){
-                                            name="evening";
-                                          }
-                                          else if(category=="before study"){
-                                            name="before study";
-                                          }
-                                          else if(category=="after study"){
-                                            name="after study";
-                                          }
-                                          else if(category=="night"){
-                                            name="night";
-                                          }
-                                          else if(category=="before Travel"){
-                                            name="before travel";
-                                          }
-                                          else if(category=="during Travel"){
-                                            name="dt";
-                                          }
-                                          else if(category=="after Travel"){
-                                            name="after travel";
-                                          }
-                                          return Text(
-                                            duaaController.chooseCounter(name)[index].value.toString(),
-                                            style: TextStyles.heading.h3_28EB,
-                                          );
-                                        }),
-                                        ChangeLanguageController()
-                                            .getSelected()
-                                            ? GestureDetector(
-                                          onTap: () {
-                                            duaaController
-                                                .increaseCounter(
-                                                    counter);
-                                          },
-                                          onDoubleTap: () {
-                                            duaaController
-                                                .increaseCounterBy5(counter);
-                                          },
-                                          child: SvgPicture.asset(
-                                            IconPaths.sign_plus,
-                                            height: 50,
-                                          ),
-                                        )
-                                            : GestureDetector(
-                                          onTap: () {
-                                            duaaController
-                                                .decreaseCounter(counter);
-                                          },
-                                          onDoubleTap: () {
-                                            duaaController
-                                                .decreaseCounterBy5(counter);
-                                          },
-                                          onLongPress: () {
-                                            duaaController
-                                                .resetCounter(counter);
-                                          },
-                                          child: SvgPicture.asset(
-                                            IconPaths.sign_minus,
-                                            height: 50,
-                                          ),
+                                        // ChangeLanguageController()
+                                        //     .getSelected()
+                                        //     ? GestureDetector(
+                                        //   onTap: () {
+                                        //     duaaController
+                                        //         .decreaseCounter(counter);
+                                        //   },
+                                        //   onDoubleTap: () {
+                                        //     duaaController
+                                        //         .decreaseCounterBy5(counter);
+                                        //   },
+                                        //   onLongPress: () {
+                                        //     duaaController
+                                        //         .resetCounter(counter);
+                                        //   },
+                                        //   child: SvgPicture.asset(
+                                        //     IconPaths.sign_minus,
+                                        //     height: 50,
+                                        //   ),
+                                        // )
+                                        //     : GestureDetector(
+                                        //   onTap: () {
+                                        //     duaaController
+                                        //         .increaseCounter(
+                                        //         counter);
+                                        //   },
+                                        //   onDoubleTap: () {
+                                        //     duaaController
+                                        //         .increaseCounterBy5(counter);
+                                        //   },
+                                        //   child: SvgPicture.asset(
+                                        //     IconPaths.sign_plus,
+                                        //     height: 50,
+                                        //   ),
+                                        // ),
+                                        // Use the CounterWidget here
+                                        CounterWidget(
+                                          initialValue: 0,
                                         ),
                                       ],
                                     ),
@@ -313,3 +248,74 @@ class DuaaInfo extends StatelessWidget {
     }
   }
 }
+
+
+class CounterWidget extends StatefulWidget {
+  final int initialValue;
+
+  CounterWidget({Key? key, required this.initialValue}) : super(key: key);
+
+  @override
+  _CounterWidgetState createState() => _CounterWidgetState();
+}
+
+class _CounterWidgetState extends State<CounterWidget> {
+  late int _counter;
+
+  @override
+  void initState() {
+    super.initState();
+    _counter = widget.initialValue;
+  }
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _decrementCounter() {
+    if (_counter > 0) {
+      setState(() {
+        _counter--;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    bool isCounterFive = _counter == 5;
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        GestureDetector(
+          onTap: () {
+            _decrementCounter();
+          },
+          child: SvgPicture.asset(
+            IconPaths.sign_minus,
+            height: 50,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Text(
+            '$_counter',
+            style: TextStyle(fontSize: 20, color: isCounterFive ? Colors.green : null),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            _incrementCounter();
+          },
+          child: SvgPicture.asset(
+            IconPaths.sign_plus,
+            height: 50,
+          ),
+        )
+      ],
+    );
+  }
+}
+
