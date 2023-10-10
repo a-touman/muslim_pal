@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/duaa_info.dart';
+import 'package:muslim_pal/app/pages/duaa/widgets/duaa_box.dart';
 
 enum studying { Before, After }
 
 enum travelling { Before, During, After }
 
 class DuaaController extends GetxController {
+  bool calledDaily = false;
   studying? selectedTime;
   bool dailyClicked = false;
   bool morningClicked = false;
@@ -26,15 +28,21 @@ class DuaaController extends GetxController {
   List<RxInt> beforeTravel=[];
   List<RxInt> duringTravel=[];
   List<RxInt> afterTravel=[];
-  List<int> initDaily=[5,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
   late String name;
-  @override
+  int maxL=15;
+  bool calleddDaily = false;
+
 
 RxInt createCounter(String i,String name){
   RxInt $namecounter$i=5.obs;
 
   if(name=="D"){
-    daily.add($namecounter$i);
+    if (daily.length < maxL) {
+      daily.add($namecounter$i);
+      print(daily.length);
+    }
+
+
   }
   else if(name=="E"){
     evening.add($namecounter$i);

@@ -23,8 +23,8 @@ class DuaaIconContainer extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Get.to(() => duaPage);
-
-
+      duaaController.calledDaily=true;
+      print(duaaController.calledDaily);
 
       },
       child: Container(

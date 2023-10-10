@@ -10,7 +10,7 @@ import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
 import '../widgets/duaa_box_simple.dart';
-import 'custom_duaa_page.dart';
+
 import 'daily_page.dart';
 
 class DuaaInfo extends StatelessWidget {

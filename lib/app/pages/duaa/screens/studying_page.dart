@@ -9,7 +9,7 @@ import '../../../widgets/back_arrow_ar.dart';
 import '../../home/repository/remote_services.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
-import 'custom_duaa_page.dart';
+
 import 'daily_page.dart';
 
 class StudyingPage extends GetView<DuaaController> {
@@ -115,13 +115,13 @@ class StudyingPage extends GetView<DuaaController> {
                               for (int i = 0; i < selectedDuaas.length; i++)
                                 Column(
                                   children: [
-                                    DuaaBox(
-                                      counter: duaaController.createCounter(i.toString(),beforeStudyingSelected.value ? 'bf' : 'af'),
-                                      id:i,
-                                      duaaText: selectedDuaas[i].duaasText,
-                                      category: beforeStudyingSelected.value ? 'before study' : 'after study',
-                                      index: i,
-                                    ),
+                                    // DuaaBox(
+                                    //   counter: duaaController.createCounter(i.toString(),beforeStudyingSelected.value ? 'bf' : 'af'),
+                                    //   id:i,
+                                    //   duaaText: selectedDuaas[i].duaasText,
+                                    //   category: beforeStudyingSelected.value ? 'before study' : 'after study',
+                                    //   index: i,
+                                    // ),
 
                                     SizedBox(
                                       height: AppStyle.spacing.H.spacingMd,

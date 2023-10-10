@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:muslim_pal/app/pages/duaa/screens/custom_duaa_page.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/daily_page.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/evening_page.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/morning_page.dart';
@@ -14,7 +13,7 @@ import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_row.dart';
-
+bool calledDaily=false;
 class DuaaView extends GetView<DuaaController> {
   const DuaaView({Key? key}) : super(key: key);
 
