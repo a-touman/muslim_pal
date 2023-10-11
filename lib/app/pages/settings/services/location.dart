@@ -4,8 +4,10 @@ import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/controller/prayer_timings_controller.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 
-ChangeLanguageController changeLanguageController = Get.put(ChangeLanguageController());
-PrayerTimingsController prayerTimingsController = Get.put(PrayerTimingsController());
+ChangeLanguageController changeLanguageController =
+    Get.put(ChangeLanguageController());
+PrayerTimingsController prayerTimingsController =
+    Get.put(PrayerTimingsController());
 
 class Location {
   Future<void> getCurrentLocation() async {
@@ -38,21 +40,23 @@ class Location {
       print(e);
     }
   }
-  Future<void> getAddressFromLatLon(Position position) async{
-    List<Placemark>placemark=await placemarkFromCoordinates(position.latitude, position.longitude);
-    Placemark place=placemark[0];
-    changeLanguageController.country.value=place.country!;
-    changeLanguageController.city.value=place.administrativeArea!;
-    changeLanguageController.state.value=place.locality!;
+
+  Future<void> getAddressFromLatLon(Position position) async {
+    List<Placemark> placemark =
+        await placemarkFromCoordinates(position.latitude, position.longitude);
+    Placemark place = placemark[0];
+    changeLanguageController.country.value = place.country!;
+    changeLanguageController.city.value = place.administrativeArea!;
+    changeLanguageController.state.value = place.locality!;
   }
-  Future<void> getLatLonFromAddress(String address) async{
+
+  Future<void> getLatLonFromAddress(String address) async {
     try {
       final addresses = await locationFromAddress(address);
-      print(address);
       if (addresses.isNotEmpty) {
         final firstResult = addresses.first;
-        changeLanguageController.lat.value=firstResult.latitude.toString();
-        changeLanguageController.lon.value=firstResult.longitude.toString();
+        changeLanguageController.lat.value = firstResult.latitude.toString();
+        changeLanguageController.lon.value = firstResult.longitude.toString();
         prayerTimingsController.fetchData();
       } else {
         print('No coordinates found for the given address.');
@@ -61,4 +65,4 @@ class Location {
       print('Error: $e');
     }
   }
-  }
+}

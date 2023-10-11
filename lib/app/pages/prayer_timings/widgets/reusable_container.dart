@@ -128,7 +128,6 @@ class ReusableContainer extends StatelessWidget {
                                 secondaryTime.tr,
                                 style: TextStyles.body.b_12B,
                               ),
-
                             ],
                           ),
                         ],

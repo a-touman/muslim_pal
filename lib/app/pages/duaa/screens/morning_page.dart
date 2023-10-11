@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
+
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
-import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import 'daily_page.dart';
 
@@ -59,7 +58,6 @@ class MorningPage extends StatelessWidget {
                                     duaaText: duaas.morningDuaas[i].duaasText,
                                     category: 'morning',
                                     index: i,
-                                    id:i,
                                   ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,

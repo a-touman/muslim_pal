@@ -4,22 +4,23 @@ import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/widgets/back_arrow_ar.dart';
+
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
 import '../../../utils/constants.dart';
-import '../../calendar/controller/calendar_controller.dart';
-import '../controller/prayer_timings_controller.dart';
 import '../../../widgets/horizontal_line.dart';
 import '../../../widgets/icon_button.dart';
+import '../../calendar/controller/calendar_controller.dart';
+import '../controller/prayer_timings_controller.dart';
 import '../widgets/location_info.dart';
 import '../widgets/notification_item.dart';
 import '../widgets/prayer_timings_icon.dart';
 import '../widgets/reusable_container.dart';
 
 class PrayerTimingsView extends GetView<PrayerTimingsController> {
-  PrayerTimingsController prayerTimingsController = Get.put(
-      PrayerTimingsController());
+  PrayerTimingsController prayerTimingsController =
+      Get.put(PrayerTimingsController());
   CalendarController calendarController = Get.put(CalendarController());
 
   @override
@@ -86,8 +87,8 @@ class Header extends StatelessWidget {
 }
 
 class DateNavigation extends StatelessWidget {
-  PrayerTimingsController prayerTimingsController = Get.find<
-      PrayerTimingsController>();
+  PrayerTimingsController prayerTimingsController =
+      Get.find<PrayerTimingsController>();
 
   @override
   Widget build(BuildContext context) {
@@ -97,9 +98,9 @@ class DateNavigation extends StatelessWidget {
       children: <Widget>[
         IconButton(
           onPressed: () {
-            ChangeLanguageController().getSelected() ?
-            prayerTimingsController.decValue() :
-            prayerTimingsController.incValue();
+            ChangeLanguageController().getSelected()
+                ? prayerTimingsController.decValue()
+                : prayerTimingsController.incValue();
             prayerTimingsController.limitDay();
           },
           icon: SvgPicture.asset(
@@ -112,32 +113,29 @@ class DateNavigation extends StatelessWidget {
         ),
         Expanded(
             child: Container(
-              child: Column(
-                children: <Widget>[
-                  Obx(() {
-                    return Text(
-                      prayerTimingsController.displayHijriDate(),
-                      style: TextStyles.heading.h5_22B,
-                    );
-                  }),
-                  SizedBox(height: AppStyle.spacing.H.spacingXxs),
-                  Obx(() {
-                    return Text(
-                      "${prayerTimingsController
-                          .dayName.toString().tr}, ${prayerTimingsController.day
-                          .toString()
-                          .tr} ${prayerTimingsController.monthName.value.tr} ${prayerTimingsController.year.toString().tr}",
-                      style: TextStyles.body.b_14B.subTextColor,
-                    );
-                  }),
-                ],
-              ),
-            )),
+          child: Column(
+            children: <Widget>[
+              Obx(() {
+                return Text(
+                  prayerTimingsController.displayHijriDate(),
+                  style: TextStyles.heading.h5_22B,
+                );
+              }),
+              SizedBox(height: AppStyle.spacing.H.spacingXxs),
+              Obx(() {
+                return Text(
+                  "${prayerTimingsController.dayName.toString().tr}, ${prayerTimingsController.day.toString().tr} ${prayerTimingsController.monthName.value.tr} ${prayerTimingsController.year.toString().tr}",
+                  style: TextStyles.body.b_14B.subTextColor,
+                );
+              }),
+            ],
+          ),
+        )),
         IconButton(
           onPressed: () {
-            ChangeLanguageController().getSelected() ?
-            prayerTimingsController.incValue() :
-            prayerTimingsController.decValue();
+            ChangeLanguageController().getSelected()
+                ? prayerTimingsController.incValue()
+                : prayerTimingsController.decValue();
             prayerTimingsController.limitDay();
           },
           icon: SvgPicture.asset(
@@ -154,9 +152,8 @@ class DateNavigation extends StatelessWidget {
 }
 
 class PrayerTimingsContainer extends StatelessWidget {
-
-  PrayerTimingsController prayerTimingsController = Get.find<
-      PrayerTimingsController>();
+  PrayerTimingsController prayerTimingsController =
+      Get.find<PrayerTimingsController>();
 
   @override
   Widget build(BuildContext context) {
@@ -250,8 +247,8 @@ class NotificationSection extends StatelessWidget {
 }
 
 class PrayerList extends StatelessWidget {
-  PrayerTimingsController prayerTimingsController = Get.put(
-      PrayerTimingsController());
+  PrayerTimingsController prayerTimingsController =
+      Get.put(PrayerTimingsController());
 
   @override
   Widget build(BuildContext context) {
@@ -263,48 +260,46 @@ class PrayerList extends StatelessWidget {
               borderRadius: AppStyle.corners.xxlgBorder,
               color: AppColors.secondary,
             ),
-            padding: EdgeInsets.all(
-              16.0
-            ),
-              child: Column(
-                children: <Widget>[
-                  LocationInfo(),
-                  SizedBox(height: AppStyle.spacing.H.spacingLg),
-                  PrayerTimings(
-                    prayerIcon: IconPaths.fajr,
-                    prayerName: "Fajr",
-                    prayerTime: prayerTimingsController.getFajr()!,
-                    bellActivity: IconPaths.bell_off,
-                  ),
-                    HorizontalLine(),
-                    PrayerTimings(
-                      prayerIcon: IconPaths.duhur,
-                      prayerName: "Duhur",
-                      prayerTime: prayerTimingsController.getDuhur()!,
-                      bellActivity: IconPaths.bell_off,
-                    ),
-                    HorizontalLine(),
-                    PrayerTimings(
-                      prayerIcon: IconPaths.asr,
-                      prayerName: "Asr",
-                      prayerTime: prayerTimingsController.getAsr()!,
-                      bellActivity: IconPaths.bell_on,
-                    ),
-                    HorizontalLine(),
-                    PrayerTimings(
-                      prayerIcon: IconPaths.maghrib,
-                      prayerName: "Maghrib",
-                      prayerTime: prayerTimingsController.getMaghrib()!,
-                      bellActivity: IconPaths.bell_on,
-                    ),
-                    HorizontalLine(),
-                    PrayerTimings(
-                      prayerIcon: IconPaths.isha,
-                      prayerName: "Isha",
-                      prayerTime: prayerTimingsController.getIsha()!,
-                      bellActivity: IconPaths.bell_on,
-                    ),
-                ],
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              children: <Widget>[
+                LocationInfo(),
+                SizedBox(height: AppStyle.spacing.H.spacingLg),
+                PrayerTimings(
+                  prayerIcon: IconPaths.fajr,
+                  prayerName: "Fajr",
+                  prayerTime: prayerTimingsController.getFajr()!,
+                  bellActivity: IconPaths.bell_off,
+                ),
+                HorizontalLine(),
+                PrayerTimings(
+                  prayerIcon: IconPaths.duhur,
+                  prayerName: "Duhur",
+                  prayerTime: prayerTimingsController.getDuhur()!,
+                  bellActivity: IconPaths.bell_off,
+                ),
+                HorizontalLine(),
+                PrayerTimings(
+                  prayerIcon: IconPaths.asr,
+                  prayerName: "Asr",
+                  prayerTime: prayerTimingsController.getAsr()!,
+                  bellActivity: IconPaths.bell_on,
+                ),
+                HorizontalLine(),
+                PrayerTimings(
+                  prayerIcon: IconPaths.maghrib,
+                  prayerName: "Maghrib",
+                  prayerTime: prayerTimingsController.getMaghrib()!,
+                  bellActivity: IconPaths.bell_on,
+                ),
+                HorizontalLine(),
+                PrayerTimings(
+                  prayerIcon: IconPaths.isha,
+                  prayerName: "Isha",
+                  prayerTime: prayerTimingsController.getIsha()!,
+                  bellActivity: IconPaths.bell_on,
+                ),
+              ],
             ),
           ),
         ),

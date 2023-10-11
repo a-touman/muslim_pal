@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:muslim_pal/app/pages/home/view/home_view.dart';
 import 'package:muslim_pal/app/pages/prayer_timings/controller/prayer_timings_controller.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
+import 'package:muslim_pal/app/pages/settings/services/location.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
-import 'package:muslim_pal/app/utils/utils.dart';
+
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
-import '../../../utils/storage_utility.dart';
 import '../../../widgets/back_arrow_ar.dart';
 import 'manual_location_page.dart';
-import 'package:muslim_pal/app/pages/settings/services/location.dart';
 
 class LocationPage extends GetView<ChangeLanguageController> {
-   LocationPage({Key? key}) : super(key: key);
-  PrayerTimingsController prayerTimingsController=Get.put(PrayerTimingsController());
+  LocationPage({Key? key}) : super(key: key);
+  PrayerTimingsController prayerTimingsController =
+      Get.put(PrayerTimingsController());
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +89,7 @@ class LocationPage extends GetView<ChangeLanguageController> {
                     GestureDetector(
                       onTap: () {
                         Location().getCurrentLocation();
-                         prayerTimingsController.fetchData();
+                        prayerTimingsController.fetchData();
                         Get.to(() => HomeView());
                       },
                       child: Container(

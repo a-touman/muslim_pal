@@ -55,7 +55,7 @@ class _CounterWidgetState extends State<CounterWidget> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50.0),
+          padding: const EdgeInsets.symmetric(horizontal: 45.0),
           child: Text(
             '$_counter'.tr,
             style: TextStyle(

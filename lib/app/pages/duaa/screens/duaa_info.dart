@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:muslim_pal/app/pages/duaa/controller/duaa_controller.dart';
 import 'package:muslim_pal/app/pages/duaa/widgets/duaas_list.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
@@ -11,7 +10,6 @@ import '../../../widgets/back_arrow_ar.dart';
 import '../widgets/counter_widget.dart';
 import '../widgets/duaa_box_simple.dart';
 import 'daily_page.dart';
-// Import the CounterWidget
 
 class DuaaInfo extends StatelessWidget {
   final String duaaText;
@@ -26,7 +24,6 @@ class DuaaInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final duaaController = Get.put(DuaaController());
     final isLanguageSelected = ChangeLanguageController().getSelected();
     final specificDuaas = getSpecificDuaas(category);
 

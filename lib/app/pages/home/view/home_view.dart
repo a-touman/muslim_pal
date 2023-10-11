@@ -11,13 +11,15 @@ import 'package:muslim_pal/app/pages/settings/view/settings_view.dart';
 import 'package:muslim_pal/app/style/style.dart';
 import 'package:muslim_pal/app/utils/assets.dart';
 import 'package:muslim_pal/app/utils/constants.dart';
+
 import '../../../style/text_themes.dart';
 import '../widgets/home_page_widget.dart';
 
 class HomeView extends StatelessWidget {
   HomeController homeController = Get.find<HomeController>();
   CalendarController calendarController = Get.put(CalendarController());
-  PrayerTimingsController prayerTimingsController=Get.put(PrayerTimingsController());
+  PrayerTimingsController prayerTimingsController =
+      Get.put(PrayerTimingsController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +39,8 @@ class HomeView extends StatelessWidget {
               child: Container(
                 decoration: kDetailDecoration,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 16.0, right: 16.0, left: 16.0, bottom: 0.0),
+                  padding: const EdgeInsets.only(
+                      top: 16.0, right: 16.0, left: 16.0, bottom: 0.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -48,8 +51,8 @@ class HomeView extends StatelessWidget {
                       const SizedBox(height: 8.0),
                       Obx(() {
                         final ayahText = homeController.getAyahText();
-                        final Surahnum = homeController.getSurahno();
-                        final Versenum = homeController.getVerseNo();
+                        final surahNo = homeController.getSurahNo();
+                        final verseNo = homeController.getVerseNo();
                         final lineCount = homeController.countLines(
                           ayahText,
                           TextStyles.body.b_16R,
@@ -59,15 +62,17 @@ class HomeView extends StatelessWidget {
                             ayahText: ayahText,
                             lineCount: lineCount,
                             homeController: homeController,
-                            Surahnum: Surahnum,
-                            Versenum: Versenum);
+                            Surahnum: surahNo,
+                            Versenum: verseNo);
                       }),
-                      SizedBox(height: 8,),
+                      SizedBox(
+                        height: 8,
+                      ),
                       Obx(() {
                         return Align(
                           alignment: Alignment.bottomLeft,
                           child: Text(
-                            '${"Surah".tr} ${homeController.getSurahno()}, ${"Verse".tr} ${homeController.getVerseNo()}',
+                            '${"Surah".tr} ${homeController.getSurahNo()}, ${"Verse".tr} ${homeController.getVerseNo()}',
                             style: TextStyles.body.b_12B.subTextColor,
                           ),
                         );
@@ -88,7 +93,7 @@ class HomeView extends StatelessWidget {
                     child: GestureDetector(
                       onTap: () {
                         prayerTimingsController.fetchData();
-                        Get.to(() =>  PrayerTimingsView());
+                        Get.to(() => PrayerTimingsView());
                       },
                       child: ReusableContainer(
                         content: IconContent(

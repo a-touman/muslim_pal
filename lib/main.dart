@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:muslim_pal/routes/app_pages.dart';
 import 'package:muslim_pal/translations/translation.dart';
+
 import 'app/style/style.dart';
 import 'app/utils/storage_utility.dart';
 
@@ -16,7 +17,7 @@ void main() async {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ],
-  ); // To turn off landscape mode
+  );
   runApp(ScreenUtilInit(
     designSize: const Size(390, 844),
     minTextAdapt: true,

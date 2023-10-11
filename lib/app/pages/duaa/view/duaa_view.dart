@@ -8,12 +8,13 @@ import 'package:muslim_pal/app/pages/duaa/screens/studying_page.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/travelling_page.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/widgets/back_arrow_ar.dart';
+
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../utils/assets.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_row.dart';
-bool calledDaily=false;
+
 class DuaaView extends GetView<DuaaController> {
   const DuaaView({Key? key}) : super(key: key);
 

@@ -31,7 +31,7 @@ class PrayerTimingsController extends GetxController {
   String displayHijriDate() {
     var hDate = HijriCalendar.fromDate(DateTime(year, month.value, day.value));
     String date =
-        "${calendarController.hijrimonthList[hDate.hMonth - 1].tr} ${hDate.hDay.toString().tr}, ${hDate.hYear.toString().tr}";
+        "${calendarController.hijriMonthList[hDate.hMonth - 1].tr} ${hDate.hDay.toString().tr}, ${hDate.hYear.toString().tr}";
     return date;
   }
 

@@ -137,8 +137,7 @@ class TravellingPage extends GetView<DuaaController> {
                     Expanded(
                       child: Obx(() {
                         List<DuaasList> selectedDuaas = [];
-                        String category =
-                            selectedSection.value; // Initialize category
+                        String category = selectedSection.value;
 
                         if (selectedSection.value == 'before Travel') {
                           selectedDuaas = duaas.beforeTravellingDuaas;
@@ -166,7 +165,6 @@ class TravellingPage extends GetView<DuaaController> {
                                   duaaText: selectedDuaas[index].duaasText,
                                   category: category,
                                   index: index,
-                                  id: index,
                                 ),
                                 SizedBox(
                                   height: AppStyle.spacing.H.spacingMd,

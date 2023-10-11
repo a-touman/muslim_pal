@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../style/app_colors.dart';
-import '../style/text_themes.dart';
 
 class IconContent extends StatelessWidget {
   final SvgPicture icon;

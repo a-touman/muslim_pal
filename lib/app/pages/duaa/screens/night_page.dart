@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
+
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
@@ -55,7 +55,6 @@ class NightPage extends GetView<DuaaController> {
                               Column(
                                 children: [
                                   DuaaBox(
-                                    id:i,
                                     duaaText: duaas.nightDuaas[i].duaasText,
                                     category: 'night',
                                     index: i,

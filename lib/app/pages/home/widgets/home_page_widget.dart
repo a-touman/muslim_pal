@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
@@ -64,8 +62,8 @@ class Seemore extends StatelessWidget {
             onTap: () {
               Get.to(AyahDetailView(
                 ayahText: ayahText,
-                SurahNum: Surahnum,
-                VerseNum: Versenum,
+                surahNum: Surahnum,
+                verseNum: Versenum,
               ));
             },
             child: Text(

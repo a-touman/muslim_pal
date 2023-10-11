@@ -10,4 +10,3 @@ class SettingsPageBinding implements Bindings {
     Get.lazyPut(() => ChangeLanguageController());
   }
 }
-

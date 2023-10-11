@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/duaa/controller/duaa_controller.dart';
 import 'package:muslim_pal/app/pages/duaa/screens/duaa_info.dart';
+
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
@@ -12,15 +13,11 @@ class DuaaBox extends StatelessWidget {
   final String duaaText;
   final String category;
   final int index;
-  final int id;
-  late String name;
 
   DuaaBox({
     required this.duaaText,
     required this.category,
     required this.index,
-    required this.id,
-
   });
 
   @override
@@ -57,15 +54,14 @@ class DuaaBox extends StatelessWidget {
                     borderRadius: AppStyle.corners.xxlgBorder,
                     color: AppColors.buttonIconBackground,
                   ),
-                  child:
-                   Text(
-                       "5",
-                      style: TextStyle(
-                        fontFamily: FontsFamily.effraTrialBold,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.primary,
-                        fontSize: 14,
-                      ),
+                  child: Text(
+                    "5",
+                    style: TextStyle(
+                      fontFamily: FontsFamily.effraTrialBold,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.primary,
+                      fontSize: 14,
+                    ),
                   ),
                 )
               ],
@@ -83,4 +79,3 @@ class DuaaBox extends StatelessWidget {
     );
   }
 }
-

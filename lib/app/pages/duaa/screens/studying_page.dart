@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:muslim_pal/app/pages/duaa/widgets/row_scroll_view.dart';
+
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
@@ -9,7 +9,6 @@ import '../../../widgets/back_arrow_ar.dart';
 import '../../home/repository/remote_services.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
-
 import 'daily_page.dart';
 
 class StudyingPage extends GetView<DuaaController> {
@@ -106,7 +105,6 @@ class StudyingPage extends GetView<DuaaController> {
                     Expanded(
                       child: SingleChildScrollView(
                         child: Obx(() {
-                          // selected =true
                           final selectedDuaas = beforeStudyingSelected.value
                               ? duaas.beforeStudyingDuaas
                               : duaas.afterStudyingDuaas;
@@ -116,12 +114,12 @@ class StudyingPage extends GetView<DuaaController> {
                                 Column(
                                   children: [
                                     DuaaBox(
-                                      id:i,
                                       duaaText: selectedDuaas[i].duaasText,
-                                      category: beforeStudyingSelected.value ? 'before study' : 'after study',
+                                      category: beforeStudyingSelected.value
+                                          ? 'before study'
+                                          : 'after study',
                                       index: i,
                                     ),
-
                                     SizedBox(
                                       height: AppStyle.spacing.H.spacingMd,
                                     ),

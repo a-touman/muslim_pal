@@ -6,8 +6,7 @@ abstract class Routes {
 }
 
 class Paths {
-  static const LAUNCH = "/";
-  static const HOME = "/home";
+  static const HOME = "/";
   static const CALENDAR = "/calendar";
   static const AYAHDETAIL = "/ayahdetail";
   static const PRAYER_TIMINGS = "/prayer_timings";

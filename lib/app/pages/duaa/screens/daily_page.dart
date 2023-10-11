@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
+
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
@@ -9,7 +9,7 @@ import '../widgets/duaa_bank.dart';
 import '../widgets/duaa_box.dart';
 
 DuaaBank duaas = DuaaBank();
-bool calledDaily=false;
+
 class DailyPage extends GetView<DuaaController> {
   const DailyPage({Key? key}) : super(key: key);
 
@@ -61,8 +61,6 @@ class DailyPage extends GetView<DuaaController> {
                                     duaaText: duaas.dailyDuaas[i].duaasText,
                                     category: 'daily',
                                     index: i,
-                                    id: i,
-
                                   ),
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingMd,
