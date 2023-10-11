@@ -34,7 +34,6 @@ class Location {
           desiredAccuracy: LocationAccuracy.low);
       changeLanguageController.lat.value = position.latitude.toString();
       changeLanguageController.lon.value = position.longitude.toString();
-      print(changeLanguageController.lon.value);
       getAddressFromLatLon(position);
     } catch (e) {
       print(e);
