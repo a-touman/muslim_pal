@@ -7,7 +7,7 @@ import 'package:muslim_pal/app/pages/settings/controller/change_language_control
 ChangeLanguageController changeLanguageController =
     Get.put(ChangeLanguageController());
 PrayerTimingsController prayerTimingsController =
-    Get.put(PrayerTimingsController());
+    Get.find<PrayerTimingsController>();
 
 class Location {
   Future<void> getCurrentLocation() async {
@@ -34,7 +34,6 @@ class Location {
           desiredAccuracy: LocationAccuracy.low);
       changeLanguageController.lat.value = position.latitude.toString();
       changeLanguageController.lon.value = position.longitude.toString();
-      print(changeLanguageController.lon.value);
       getAddressFromLatLon(position);
     } catch (e) {
       print(e);

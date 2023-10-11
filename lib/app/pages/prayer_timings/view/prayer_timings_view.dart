@@ -20,8 +20,8 @@ import '../widgets/reusable_container.dart';
 
 class PrayerTimingsView extends GetView<PrayerTimingsController> {
   PrayerTimingsController prayerTimingsController =
-      Get.put(PrayerTimingsController());
-  CalendarController calendarController = Get.put(CalendarController());
+      Get.find<PrayerTimingsController>();
+  CalendarController calendarController = Get.find<CalendarController>();
 
   @override
   Widget build(BuildContext context) {
@@ -248,7 +248,7 @@ class NotificationSection extends StatelessWidget {
 
 class PrayerList extends StatelessWidget {
   PrayerTimingsController prayerTimingsController =
-      Get.put(PrayerTimingsController());
+      Get.find<PrayerTimingsController>();
 
   @override
   Widget build(BuildContext context) {

@@ -7,7 +7,7 @@ import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 
-DuaaController duaaController = Get.put(DuaaController());
+
 
 class DuaaBox extends StatelessWidget {
   final String duaaText;

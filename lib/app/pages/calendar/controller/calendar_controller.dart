@@ -4,8 +4,7 @@ import 'package:hijri/hijri_calendar.dart';
 import '../../settings/controller/change_language_controller.dart';
 
 class CalendarController extends GetxController {
-  ChangeLanguageController changeLanguageController =
-      Get.put(ChangeLanguageController());
+ChangeLanguageController changeLanguageController=Get.find<ChangeLanguageController>();
 
   final GselectedDay = 1.obs;
   final GselectedMonth = "January".obs;

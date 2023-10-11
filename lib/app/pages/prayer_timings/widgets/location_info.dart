@@ -8,8 +8,7 @@ import '../../../utils/assets.dart';
 import '../../settings/controller/change_language_controller.dart';
 
 class LocationInfo extends StatelessWidget {
-  ChangeLanguageController changeLanguageController=Get.put(ChangeLanguageController());
-  PrayerTimingsController prayerTimingsController = PrayerTimingsController();
+  ChangeLanguageController changeLanguageController=Get.find<ChangeLanguageController>();
   @override
   Widget build(BuildContext context) {
     return Container(

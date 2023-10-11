@@ -11,11 +11,10 @@ import '../../settings/controller/change_language_controller.dart';
 import '../controller/calendar_controller.dart';
 
 class CalendarView extends GetView<CalendarController> {
-  CalendarController calendarController = Get.put(CalendarController());
+  CalendarController calendarController = Get.find<CalendarController>();
   final TextEditingController _controller = TextEditingController();
   final TextEditingController _controller1 = TextEditingController();
-  ChangeLanguageController changeLanguageController =
-      Get.find<ChangeLanguageController>();
+  ChangeLanguageController changeLanguageController = Get.find<ChangeLanguageController>();
 
   @override
   Widget build(BuildContext context) {

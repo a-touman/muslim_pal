@@ -5,6 +5,7 @@ import '../controller/duaa_controller.dart';
 class DuaaPageBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => DuaaController());
+    //Get.lazyPut(() => DuaaController());
+    Get.put(() => DuaaController());
   }
 }

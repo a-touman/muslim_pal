@@ -17,7 +17,6 @@ import '../widgets/home_page_widget.dart';
 
 class HomeView extends StatelessWidget {
   HomeController homeController = Get.find<HomeController>();
-  CalendarController calendarController = Get.put(CalendarController());
   PrayerTimingsController prayerTimingsController =
       Get.put(PrayerTimingsController());
   @override
