@@ -67,7 +67,9 @@ class _CounterWidgetState extends State<CounterWidget> {
                 fontFamily: FontsFamily.effraTrialBold,
                 fontWeight: FontWeight.w700,
                 fontSize: 28,
-                color: isCounterFive ? Colors.green : AppTextColors.headlines),
+                color: isCounterFive
+                    ? Colors.deepOrange
+                    : AppTextColors.headlines),
           ),
         ),
         GestureDetector(
