@@ -55,7 +55,7 @@ class DuaaBox extends StatelessWidget {
                     color: AppColors.buttonIconBackground,
                   ),
                   child: Text(
-                    "5",
+                    "5".tr,
                     style: TextStyle(
                       fontFamily: FontsFamily.effraTrialBold,
                       fontWeight: FontWeight.w700,

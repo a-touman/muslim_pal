@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 
 import '../../../style/app_colors.dart';
 import '../../../style/text_themes.dart';
@@ -47,10 +48,14 @@ class _CounterWidgetState extends State<CounterWidget> {
       children: [
         GestureDetector(
           onTap: () {
-            _decrementCounter();
+            ChangeLanguageController().getSelected()
+                ? _decrementCounter()
+                : _incrementCounter();
           },
           child: SvgPicture.asset(
-            IconPaths.sign_minus,
+            ChangeLanguageController().getSelected()
+                ? IconPaths.sign_minus
+                : IconPaths.sign_plus,
             height: 50,
           ),
         ),
@@ -67,10 +72,14 @@ class _CounterWidgetState extends State<CounterWidget> {
         ),
         GestureDetector(
           onTap: () {
-            _incrementCounter();
+            ChangeLanguageController().getSelected()
+                ? _incrementCounter()
+                : _decrementCounter();
           },
           child: SvgPicture.asset(
-            IconPaths.sign_plus,
+            ChangeLanguageController().getSelected()
+                ? IconPaths.sign_plus
+                : IconPaths.sign_minus,
             height: 50,
           ),
         )
