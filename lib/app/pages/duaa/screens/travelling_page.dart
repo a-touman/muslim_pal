@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/duaa/widgets/duaas_list.dart';
+
 import '../../../style/app_colors.dart';
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
@@ -9,7 +10,6 @@ import '../../home/repository/remote_services.dart';
 import '../controller/duaa_controller.dart';
 import '../widgets/duaa_box.dart';
 import '../widgets/row_scroll_view.dart';
-
 import 'daily_page.dart';
 
 enum travelling { Before, During, After }
@@ -101,8 +101,7 @@ class TravellingPage extends GetView<DuaaController> {
                                     : TextStyles.body.b_16B.subTextColor,
                                 colour: travellingTime == travelling.During
                                     ? AppColors.primary
-                                    : Colors
-                                        .transparent, //isDividerVisible: false,
+                                    : Colors.transparent,
                               );
                             }),
                           ),
@@ -116,7 +115,7 @@ class TravellingPage extends GetView<DuaaController> {
                             },
                             child: Obx(() {
                               return RowScrollView(
-                                section: 'after Travel',
+                                section: 'After Travel',
                                 length: changeLanguageController.getSelected()
                                     ? 120
                                     : 90,
@@ -126,7 +125,6 @@ class TravellingPage extends GetView<DuaaController> {
                                 colour: travellingTime == travelling.After
                                     ? AppColors.primary
                                     : Colors.transparent,
-                                // isDividerVisible: false,
                               );
                             }),
                           ),
@@ -167,10 +165,9 @@ class TravellingPage extends GetView<DuaaController> {
                                 DuaaBox(
                                   duaaText: selectedDuaas[index].duaasText,
                                   category: category,
-                                   index: index,
+                                  index: index,
                                   id: index,
-                                 ),
-
+                                ),
                                 SizedBox(
                                   height: AppStyle.spacing.H.spacingMd,
                                 ),

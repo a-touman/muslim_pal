@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:muslim_pal/app/pages/duaa/controller/duaa_controller.dart';
 import 'package:muslim_pal/app/pages/duaa/widgets/duaas_list.dart';
 import 'package:muslim_pal/app/pages/settings/controller/change_language_controller.dart';
 import 'package:muslim_pal/app/style/app_colors.dart';
-import 'package:muslim_pal/app/utils/assets.dart';
+
 import '../../../style/style.dart';
 import '../../../style/text_themes.dart';
 import '../../../widgets/back_arrow_ar.dart';
+import '../widgets/counter_widget.dart';
 import '../widgets/duaa_box_simple.dart';
 import 'daily_page.dart';
- // Import the CounterWidget
+// Import the CounterWidget
 
 class DuaaInfo extends StatelessWidget {
   final String duaaText;
@@ -69,7 +69,7 @@ class DuaaInfo extends StatelessWidget {
                           children: [
                             DuaaBoxSimple(
                               getContent: () =>
-                              specificDuaas[index].duaasText.tr,
+                                  specificDuaas[index].duaasText.tr,
                             ),
                             SizedBox(
                               height: AppStyle.spacing.H.spacingMd,
@@ -90,8 +90,7 @@ class DuaaInfo extends StatelessWidget {
                                     height: AppStyle.spacing.H.spacingSm,
                                   ),
                                   DuaaBoxSimple(
-                                    getContent: () =>
-                                    isLanguageSelected
+                                    getContent: () => isLanguageSelected
                                         ? specificDuaas[index].duaasTextTr
                                         : specificDuaas[index].duaasText,
                                   ),
@@ -108,10 +107,10 @@ class DuaaInfo extends StatelessWidget {
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          '   Reference:'.tr,
+                                          '     Reference:'.tr,
                                           style: TextStyles
                                               .body.b_16B.subTextColor,
                                         ),
@@ -119,9 +118,9 @@ class DuaaInfo extends StatelessWidget {
                                           height: AppStyle.spacing.H.spacingLg,
                                         ),
                                         DuaaBoxSimple(
-                                          getContent: () =>
-                                          specificDuaas[index]
-                                              .duaasReference,
+                                          getContent: () => specificDuaas[index]
+                                              .duaasReference
+                                              .tr,
                                         ),
                                       ],
                                     ),
@@ -131,10 +130,10 @@ class DuaaInfo extends StatelessWidget {
                                   ),
                                   Container(
                                     padding:
-                                    EdgeInsets.symmetric(horizontal: 70),
+                                        EdgeInsets.symmetric(horizontal: 70),
                                     child: Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                       children: [
                                         CounterWidget(
                                           initialValue: 0,
@@ -209,74 +208,3 @@ class DuaaInfo extends StatelessWidget {
     }
   }
 }
-
-
-class CounterWidget extends StatefulWidget {
-  final int initialValue;
-
-  CounterWidget({Key? key, required this.initialValue}) : super(key: key);
-
-  @override
-  _CounterWidgetState createState() => _CounterWidgetState();
-}
-
-class _CounterWidgetState extends State<CounterWidget> {
-  late int _counter;
-
-  @override
-  void initState() {
-    super.initState();
-    _counter = widget.initialValue;
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _decrementCounter() {
-    if (_counter > 0) {
-      setState(() {
-        _counter--;
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    bool isCounterFive = _counter == 5;
-
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        GestureDetector(
-          onTap: () {
-            _decrementCounter();
-          },
-          child: SvgPicture.asset(
-            IconPaths.sign_minus,
-            height: 50,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Text(
-            '$_counter',
-            style: TextStyle(fontSize: 20, color: isCounterFive ? Colors.green : null),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            _incrementCounter();
-          },
-          child: SvgPicture.asset(
-            IconPaths.sign_plus,
-            height: 50,
-          ),
-        )
-      ],
-    );
-  }
-}
-
