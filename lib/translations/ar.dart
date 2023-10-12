@@ -1,4 +1,5 @@
 const Map<String, String> ar = {
+  ' Muslim Pal': " مسلم بال",
   'Language': 'اللغة',
   'Quran': 'قران',
   "Prayer Times": "مواقيت الصلاة",
@@ -113,7 +114,8 @@ const Map<String, String> ar = {
   "City": "مدينة",
   "Tap to Select City": "اضغط لاختيار المدينة",
   'Location Confirmed': "تم تأكيد الموقع",
-  'Please select a Country, State, and City.': "الرجاء تحديد البلد والولاية والمدينة.",
+  'Please select a Country, State, and City.':
+      "الرجاء تحديد البلد والولاية والمدينة.",
   "Al Masjid an Nabawi": "المسجد النبوي",
   "Medina, Saudi Arabia": "المدينة المنورة، المملكة العربية السعودية",
   "...see more": "...شاهد المزيد",
@@ -252,57 +254,109 @@ const Map<String, String> ar = {
       'اللهم إني أعوذ بك من وعثاء السفر، وتقلب القلوب، وسوء الكربة، وأعوذ بك من سوء العاقبة في المال والأهل. نعود ونتوب ونعبد ونحمد ربنا',
   'Turning turning, to our Lord returning, not leaving behind any sin [unforgiven].':
       "منقلبون، إلى ربنا منيبون، لا يتركون خلفهم خطيئة [غير مغفورة]",
-  'Confirm Location':'تأكيد الموقع',
-  'Ibn As-Sunni, no. 54, Ibn Majah no. 925. Its chain of transmission is good (Hasan), Ibn Al-Qayyim 2/375.\n\nHisn al-Muslim 95': 'ابن السني، رقم. 54، ابن ماجه رقم. 925. إسناده جيد (حسن) ابن القيم 2/375.\n\nحصن المسلم 95',
-  'Abu Dawud. See also Al-Albani, Sahih Ibn Majah 2/328.\n\nHisn al-Muslim 61': 'أبو داود. وانظر أيضا الألباني ، صحيح ابن ماجه 2/328.\n\nحصن المسلم 61',
-  'Abu Dawud 3/34, At-Tirmidhi 5/501. See also Al-Albani, Sahih At-Tirmidhi3/156.\n\nHisn al-Muslim 206': 'أبو داود 3/34 والترمذي 5/501. وانظر أيضاً الألباني ، صحيح الترمذي3/156.\n\nحصن المسلم 206',
-  'Text of Quran, Sura 2: Baqara (Cow)\n\nVerse 201 - Verse 211                                                 ': 'نص القرآن الكريم، سورة 2: البقرة\n\nالآية 201 - الآية 211                                             ',
-  'Text of Quran, Sura 14: Ibrahim (Abraham)\n\nVerse 40 - Verse 49                                           ': 'نص القرآن، سورة ١٤: إبراهيم (إبراهيم)\n\nالآية ٤٠ - الآية ٤٩                                                                ',
-  'Al-Bukhari 1/45, Muslim 1/283. The addition of Bismillah at its beginning was reported by Said bin Mansur.\n\nHisn al-Muslim 10': 'البخاري 1/45، ومسلم 1/283". "وزيادة البسملة في أولها رواه سعيد بن منصور."\n\nحصن المسلم 10',
-  'Jami` at-Tirmidhi 3397\n\nBook 48, Hadith 28                                                                   ': 'جامع الترمذي ٣٣٩٧\n\nالكتاب ٤٨ الحديث ٢٨                                                       ',
-  'Text of Quran, Sura 35: Saffat (Those who rank themselves in Order)\n\nVerse 35                                           ': 'نص القرآن، سورة 35: الصافات\n\nالآية 35                                                                                 ',
-  "At-Tirmidhi 5/473. See Al-Albani's Sahih Tirmidhi 3/144.\n\nHisn al-Muslim 3": "الترمذي 5/473. انظر صحيح الترمذي للألباني 3/144.\n\nحصن المسلم 3",
-  'Al-Bukhari 1/152, and the addition between brackets is from Al-Bayhaqi 1/410 with a good (Hasan) chain of narration.\n\nHisn al-Muslim 25': "البخاري 1/152 والزيادة بين القوسين من البيهقي 1/410 بإسناد جيد.\n\nحصن المسلم 25",
-  "Abu Dawud and Al-Albani, Sahihul-Jdmi' As-Saghir (Hadith no. 4591).\n\nHisn al-Muslim 20": "أبو داود والألباني، صحيح الجدمي الصغير (حديث رقم: 4591).\n\nحصن المسلم 20",
-  "Abu Dawud and Al-Albani, Sahihul-Jdmi' As-Saghir (Hadithno. 4591).\n\n Hisn al-Muslim 20": "أبو داود والألباني، صحيح الجدمي الصغير (حديث ٤٥٩١).\n\n حصن المسلم 20",
-  "Jami` at-Tirmidhi 3377\n\nBook 48, Hadith 8                                                        ": "جامع الترمذي 3377\n\nالكتاب 48 الحديث 8                                                                                              ",
-  'Abu Dawud 4/325. Muslim {Hadith no. 2018)\n\nHisn al-Muslim 18': ' أبو داود 4 / 325 . مسلم {حديث رقم . 2018)\n\nحصن المسلم 18                                                                                                          ',
-  'Jami` at-Tirmidhi 3251\n\nBook 5, Hadith 57                                                            ': 'جامع الترمذي ٣٢٥١\n\nالكتاب ٥ الحديث ٥٧                                               ',
-  'Sahih al-Bukhari 6324\n\nBook 80, Hadith 21                                                                           ': 'صحيح البخاري ٦٣٢٤\n\nالكتاب ٨٠ الحديث ٢١                                                                  ',
-  'Abu Dawud 4/319\n\nHisn al-Muslim 92                                                                                      ': 'أبو داود 4/319\n\nحصن المسلم 92                                                                      ',
-  'At-Tirmidhi 5/473\n\nHisn al-Muslim 3                                                                                      ': 'الترمذي 5/473\n\nحصن المسلم 3                                                                       ',
-  'Ibn Baz, p. 39.\n\nHisn al-Muslim 86                                                                                      ': 'ابن باز، ص. 39.\n\nحصن المسلم 86                                                                     ',
-      'At-Tirmidhi 3/187\n\nHisn al-Muslim 97                                                                                      ': 'الترمذي 3/187\n\nحصن المسلم 97                                                      ',
-  "Sunan an-Nasa'i 5522\n\nBook 50, Hadith 95                                                                                      ": "سنن النسائي 5522\n\nالكتاب 50 الحديث 95                                                      ",
-  'Sunan Ibn Majah 3870\n\nBook 34, Hadith 44                                                                                      ': 'سنن ابن ماجه 3870\n\nالكتاب 34 الحديث 44                                                                  ',
-  'Riyad as-Salihin 1433\n\nBook 15, Hadith 26                                                                                      ': 'رياض الصالحين ١٤٣٣\n\nالكتاب ١٥ الحديث ٢٦                                                    ',
-  'Abu Dawud 4/323\n\nHisn al-Muslim 86                                                                                      ': 'أبو داود 4/323\n\nحصن المسلم 86                                                                         ',
-  'Abu Dawud 4/317\n\nHisn al-Muslim 80                                                                                      ': 'أبو داود 4/317\n\nحصن المسلم 80                                                                     ',
-  'Al-Hafiz Ibn Hajar in Fath al-Bari (11/119)\n\nHisn al-Muslim 23                                                                                      ': 'الحافظ ابن حجر في فتح الباري (١١/ ١١٩)\n\nحصن المسلم ٢٣                                                                                ',
-  'Muslim 4/ 2083\n\nHisn al-Muslim 105                                                                                      ': 'مسلم 4/ 2083\n\nحصن المسلم 105                                                                       ',
-  'Sahih al-Bukhari 6405\n\nBook 80, Hadith 100                                                                                      ': 'صحيح البخاري ٦٤٠٥\n\nالكتاب ٨٠ الحديث ١٠٠                                                                                             ',
-  "Sahihul-Jami' As-Saghir 4/201\n\nHisn al-Muslim 218                                                                                      ": "صحيح الجامع الصغير 4/201\n\nحصن المسلم 218                                                                                      ",
-  'Abu Dawud 3/34\n\nHisn al-Muslim 206                                                                                      ': 'أبو داود 3/34\n\nحصن المسلم 206                                                                             ',
-  'Text of Quran, Sura 14: Baqara (Cow)\n\nVerse 255                                                                                      ': 'نص القرآن، السورة ١٤: البقرة\n\nالآية ٢٥٥                                                      ',
-  'Text of Quran, Sura 112: Ikhlas (Sincerity)\n\nComplete Sura': 'نص القرآن، السورة ١١٢: الإخلاص\n\nالسورة كاملة                                                                   ',
-  'Text of Quran, Sura 113: Falaq (The Dawn)\n\nComplete Sura': 'نص القرآن، السورة 113: الفلق\n\nالسورة كاملة                                                                   ',
-  'Text of Quran, Sura 114: Nas (People)\n\nComplete Sura': 'نص القرآن، السورة 114: الناس\n\nالسورة كاملة                                                                  ',
-  'Sunan Ibn Majah 3833\n\nBook 34, Hadith 7                                                               ': 'سنن ابن ماجه 3833\n\nالكتاب 34 الحديث 7                                                                                           ',
-  'Al-Minnaawi said in Fayd al-Qadeer (2/162)\n\nHisn al-Muslim 202                                                             ': 'قال المناوي في فيض القدير (2/162)\n\nحصن المسلم 202                                                                                             ',
-  'At-Tirmidhi 5/473\n\nHisn al-Muslim 3                                                             ': 'الترمذي 5/473\n\nحصن المسلم 3                                                                                               ',
-  'Muslim 1/209.\n\nHisn al-Muslim 13                                                             ': "مسلم 1/209.\n\nحصن المسلم 13                                                                                                  ",
-  'Al-Bukhari 7/162.\n\nHisn al-Muslim 74                                                             ': "البخاري 7/162.\n\nحصن المسلم 74                                                                                             ",
-  'At-Tirmidhi 3/187\n\nHisn al-Muslim 97                                                             ': 'الترمذي 3/187\n\nحصن المسلم 97                                                                                               ',
-  'Al-Bukhari4/119\n\nHisn al-Muslim 146                                                             ': 'البخاري4/119\n\nحصن المسلم 146                                                                                                 ',
-  'Ibn Hibban in his Sahih (no. 2427)\n\nHisn al-Muslim 139': '                                                                                      ابن حبان في صحيحه (رقم: ٢٤٢٧)\n\nحصن المسلم ١٣٩',
-  'Abu Dawud 4/324\n\nHisn al-Muslim 82                                                             ': 'أبو داود 4/324\n\nحصن المسلم 82                                                                                               ',
-  'Muslim 4/2091\n\nHisn al-Muslim 106                                                             ': 'مسلم 4/2091\n\nحصن المسلم 106                                                                                                  ',
-  'Text of Quran, Sura 43: Zukhruf (Ornaments of Gold, Luxury)\n\nVerse 13 - Verse 14                                                             ': 'نص القرآن، السورة 43:                                                                       الزخرف\n\nالآية 13 - الآية 14',
-  'Text of Quran, Sura 17: Isra (The Journey)\n\nVerse 80                                                             ': 'نص القرآن، السورة ١٧: الإسراء\n\nالآية ٨٠                                                                              ',
-  'Ibn Umar\n\nHisn al-Muslim 85                                                             ': 'ابن عمر\n\nحصن المسلم 85                                                                                                                   ',
-  'Abdullah ibn Sarjis\n\nHisn al-Muslim 103                                                             ': 'عبد الله بن سرجيس\n\nحصن المسلم ١٠٣                                                                                            ',
-  'Husayn ibn Ali\n\nHisn al-Muslim 101                                                             ': 'الحسين بن علي\n\nحصن المسلم ١٠١                                                                                                              ',
-  'Sahih Muslim 1342\n\nBook 15, Hadith 479                                                             ': 'صحيح مسلم 1342\n\nالكتاب 15، الحديث 479                                                                                          ',
-  'Sahih Muslim 1342\n\nBook 15, Hadith 432                                                             ': 'صحيح مسلم 1342\n\nالكتاب 15، الحديث 432                                                                                                     ',
-  'Riyad as-Salihin 422\n\nBook 12, Hadith 422                                                             ': 'رياض الصالحين ٤٢٢\n\nالكتاب ١٢، الحديث ٤٢٢                                                                                             ',
+  'Confirm Location': 'تأكيد الموقع',
+  'Ibn As-Sunni, no. 54, Ibn Majah no. 925. Its chain of transmission is good (Hasan), Ibn Al-Qayyim 2/375.\n\nHisn al-Muslim 95':
+      'ابن السني، رقم. 54، ابن ماجه رقم. 925. إسناده جيد (حسن) ابن القيم 2/375.\n\nحصن المسلم 95',
+  'Abu Dawud. See also Al-Albani, Sahih Ibn Majah 2/328.\n\nHisn al-Muslim 61':
+      'أبو داود. وانظر أيضا الألباني ، صحيح ابن ماجه 2/328.\n\nحصن المسلم 61',
+  'Abu Dawud 3/34, At-Tirmidhi 5/501. See also Al-Albani, Sahih At-Tirmidhi3/156.\n\nHisn al-Muslim 206':
+      'أبو داود 3/34 والترمذي 5/501. وانظر أيضاً الألباني ، صحيح الترمذي3/156.\n\nحصن المسلم 206',
+  'Text of Quran, Sura 2: Baqara (Cow)\n\nVerse 201 - Verse 211                                                 ':
+      'نص القرآن الكريم، سورة 2: البقرة\n\nالآية 201 - الآية 211                                             ',
+  'Text of Quran, Sura 14: Ibrahim (Abraham)\n\nVerse 40 - Verse 49                                           ':
+      'نص القرآن، سورة ١٤: إبراهيم (إبراهيم)\n\nالآية ٤٠ - الآية ٤٩                                                                ',
+  'Al-Bukhari 1/45, Muslim 1/283. The addition of Bismillah at its beginning was reported by Said bin Mansur.\n\nHisn al-Muslim 10':
+      'البخاري 1/45، ومسلم 1/283". "وزيادة البسملة في أولها رواه سعيد بن منصور."\n\nحصن المسلم 10',
+  'Jami` at-Tirmidhi 3397\n\nBook 48, Hadith 28                                                                   ':
+      'جامع الترمذي ٣٣٩٧\n\nالكتاب ٤٨ الحديث ٢٨                                                       ',
+  'Text of Quran, Sura 35: Saffat (Those who rank themselves in Order)\n\nVerse 35                                           ':
+      'نص القرآن، سورة 35: الصافات\n\nالآية 35                                                                                 ',
+  "At-Tirmidhi 5/473. See Al-Albani's Sahih Tirmidhi 3/144.\n\nHisn al-Muslim 3":
+      "الترمذي 5/473. انظر صحيح الترمذي للألباني 3/144.\n\nحصن المسلم 3",
+  'Al-Bukhari 1/152, and the addition between brackets is from Al-Bayhaqi 1/410 with a good (Hasan) chain of narration.\n\nHisn al-Muslim 25':
+      "البخاري 1/152 والزيادة بين القوسين من البيهقي 1/410 بإسناد جيد.\n\nحصن المسلم 25",
+  "Abu Dawud and Al-Albani, Sahihul-Jdmi' As-Saghir (Hadith no. 4591).\n\nHisn al-Muslim 20":
+      "أبو داود والألباني، صحيح الجدمي الصغير (حديث رقم: 4591).\n\nحصن المسلم 20",
+  "Abu Dawud and Al-Albani, Sahihul-Jdmi' As-Saghir (Hadithno. 4591).\n\n Hisn al-Muslim 20":
+      "أبو داود والألباني، صحيح الجدمي الصغير (حديث ٤٥٩١).\n\n حصن المسلم 20",
+  "Jami` at-Tirmidhi 3377\n\nBook 48, Hadith 8                                                        ":
+      "جامع الترمذي 3377\n\nالكتاب 48 الحديث 8                                                                                              ",
+  'Abu Dawud 4/325. Muslim {Hadith no. 2018)\n\nHisn al-Muslim 18':
+      ' أبو داود 4 / 325 . مسلم {حديث رقم . 2018)\n\nحصن المسلم 18                                                                                                          ',
+  'Jami` at-Tirmidhi 3251\n\nBook 5, Hadith 57                                                            ':
+      'جامع الترمذي ٣٢٥١\n\nالكتاب ٥ الحديث ٥٧                                               ',
+  'Sahih al-Bukhari 6324\n\nBook 80, Hadith 21                                                                           ':
+      'صحيح البخاري ٦٣٢٤\n\nالكتاب ٨٠ الحديث ٢١                                                                  ',
+  'Abu Dawud 4/319\n\nHisn al-Muslim 92                                                                                      ':
+      'أبو داود 4/319\n\nحصن المسلم 92                                                                      ',
+  'At-Tirmidhi 5/473\n\nHisn al-Muslim 3                                                                                      ':
+      'الترمذي 5/473\n\nحصن المسلم 3                                                                       ',
+  'Ibn Baz, p. 39.\n\nHisn al-Muslim 86                                                                                      ':
+      'ابن باز، ص. 39.\n\nحصن المسلم 86                                                                     ',
+  'At-Tirmidhi 3/187\n\nHisn al-Muslim 97                                                                                      ':
+      'الترمذي 3/187\n\nحصن المسلم 97                                                      ',
+  "Sunan an-Nasa'i 5522\n\nBook 50, Hadith 95                                                                                      ":
+      "سنن النسائي 5522\n\nالكتاب 50 الحديث 95                                                      ",
+  'Sunan Ibn Majah 3870\n\nBook 34, Hadith 44                                                                                      ':
+      'سنن ابن ماجه 3870\n\nالكتاب 34 الحديث 44                                                                  ',
+  'Riyad as-Salihin 1433\n\nBook 15, Hadith 26                                                                                      ':
+      'رياض الصالحين ١٤٣٣\n\nالكتاب ١٥ الحديث ٢٦                                                    ',
+  'Abu Dawud 4/323\n\nHisn al-Muslim 86                                                                                      ':
+      'أبو داود 4/323\n\nحصن المسلم 86                                                                         ',
+  'Abu Dawud 4/317\n\nHisn al-Muslim 80                                                                                      ':
+      'أبو داود 4/317\n\nحصن المسلم 80                                                                     ',
+  'Al-Hafiz Ibn Hajar in Fath al-Bari (11/119)\n\nHisn al-Muslim 23                                                                                      ':
+      'الحافظ ابن حجر في فتح الباري (١١/ ١١٩)\n\nحصن المسلم ٢٣                                                                                ',
+  'Muslim 4/ 2083\n\nHisn al-Muslim 105                                                                                      ':
+      'مسلم 4/ 2083\n\nحصن المسلم 105                                                                       ',
+  'Sahih al-Bukhari 6405\n\nBook 80, Hadith 100                                                                                      ':
+      'صحيح البخاري ٦٤٠٥\n\nالكتاب ٨٠ الحديث ١٠٠                                                                                             ',
+  "Sahihul-Jami' As-Saghir 4/201\n\nHisn al-Muslim 218                                                                                      ":
+      "صحيح الجامع الصغير 4/201\n\nحصن المسلم 218                                                                                      ",
+  'Abu Dawud 3/34\n\nHisn al-Muslim 206                                                                                      ':
+      'أبو داود 3/34\n\nحصن المسلم 206                                                                             ',
+  'Text of Quran, Sura 14: Baqara (Cow)\n\nVerse 255                                                                                      ':
+      'نص القرآن، السورة ١٤: البقرة\n\nالآية ٢٥٥                                                      ',
+  'Text of Quran, Sura 112: Ikhlas (Sincerity)\n\nComplete Sura':
+      'نص القرآن، السورة ١١٢: الإخلاص\n\nالسورة كاملة                                                                   ',
+  'Text of Quran, Sura 113: Falaq (The Dawn)\n\nComplete Sura':
+      'نص القرآن، السورة 113: الفلق\n\nالسورة كاملة                                                                   ',
+  'Text of Quran, Sura 114: Nas (People)\n\nComplete Sura':
+      'نص القرآن، السورة 114: الناس\n\nالسورة كاملة                                                                  ',
+  'Sunan Ibn Majah 3833\n\nBook 34, Hadith 7                                                               ':
+      'سنن ابن ماجه 3833\n\nالكتاب 34 الحديث 7                                                                                           ',
+  'Al-Minnaawi said in Fayd al-Qadeer (2/162)\n\nHisn al-Muslim 202                                                             ':
+      'قال المناوي في فيض القدير (2/162)\n\nحصن المسلم 202                                                                                             ',
+  'At-Tirmidhi 5/473\n\nHisn al-Muslim 3                                                             ':
+      'الترمذي 5/473\n\nحصن المسلم 3                                                                                               ',
+  'Muslim 1/209.\n\nHisn al-Muslim 13                                                             ':
+      "مسلم 1/209.\n\nحصن المسلم 13                                                                                                  ",
+  'Al-Bukhari 7/162.\n\nHisn al-Muslim 74                                                             ':
+      "البخاري 7/162.\n\nحصن المسلم 74                                                                                             ",
+  'At-Tirmidhi 3/187\n\nHisn al-Muslim 97                                                             ':
+      'الترمذي 3/187\n\nحصن المسلم 97                                                                                               ',
+  'Al-Bukhari4/119\n\nHisn al-Muslim 146                                                             ':
+      'البخاري4/119\n\nحصن المسلم 146                                                                                                 ',
+  'Ibn Hibban in his Sahih (no. 2427)\n\nHisn al-Muslim 139':
+      '                                                                                      ابن حبان في صحيحه (رقم: ٢٤٢٧)\n\nحصن المسلم ١٣٩',
+  'Abu Dawud 4/324\n\nHisn al-Muslim 82                                                             ':
+      'أبو داود 4/324\n\nحصن المسلم 82                                                                                               ',
+  'Muslim 4/2091\n\nHisn al-Muslim 106                                                             ':
+      'مسلم 4/2091\n\nحصن المسلم 106                                                                                                  ',
+  'Text of Quran, Sura 43: Zukhruf (Ornaments of Gold, Luxury)\n\nVerse 13 - Verse 14                                                             ':
+      'نص القرآن، السورة 43:                                                                       الزخرف\n\nالآية 13 - الآية 14',
+  'Text of Quran, Sura 17: Isra (The Journey)\n\nVerse 80                                                             ':
+      'نص القرآن، السورة ١٧: الإسراء\n\nالآية ٨٠                                                                              ',
+  'Ibn Umar\n\nHisn al-Muslim 85                                                             ':
+      'ابن عمر\n\nحصن المسلم 85                                                                                                                   ',
+  'Abdullah ibn Sarjis\n\nHisn al-Muslim 103                                                             ':
+      'عبد الله بن سرجيس\n\nحصن المسلم ١٠٣                                                                                            ',
+  'Husayn ibn Ali\n\nHisn al-Muslim 101                                                             ':
+      'الحسين بن علي\n\nحصن المسلم ١٠١                                                                                                              ',
+  'Sahih Muslim 1342\n\nBook 15, Hadith 479                                                             ':
+      'صحيح مسلم 1342\n\nالكتاب 15، الحديث 479                                                                                          ',
+  'Sahih Muslim 1342\n\nBook 15, Hadith 432                                                             ':
+      'صحيح مسلم 1342\n\nالكتاب 15، الحديث 432                                                                                                     ',
+  'Riyad as-Salihin 422\n\nBook 12, Hadith 422                                                             ':
+      'رياض الصالحين ٤٢٢\n\nالكتاب ١٢، الحديث ٤٢٢                                                                                             ',
 };

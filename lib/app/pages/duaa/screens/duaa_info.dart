@@ -125,18 +125,8 @@ class DuaaInfo extends StatelessWidget {
                                   SizedBox(
                                     height: AppStyle.spacing.H.spacingXxlg,
                                   ),
-                                  Container(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 70),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        CounterWidget(
-                                          initialValue: 0,
-                                        ),
-                                      ],
-                                    ),
+                                  CounterWidget(
+                                    initialValue: 0,
                                   ),
                                 ],
                               ),

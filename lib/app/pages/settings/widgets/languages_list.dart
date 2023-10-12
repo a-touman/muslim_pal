@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:muslim_pal/app/pages/home/view/home_view.dart';
 
 import '../../../style/app_colors.dart';
 import '../controller/change_language_controller.dart';
@@ -36,6 +35,7 @@ List<Widget> languagesList(BuildContext context) {
             String langCode =
                 ChangeLanguageController.languages[languageKey] ?? 'en';
             controller.changeLang(langCode);
+            Get.to(() => HomeView());
           },
         ),
       ),

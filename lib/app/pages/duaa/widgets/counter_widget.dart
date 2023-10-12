@@ -43,25 +43,25 @@ class _CounterWidgetState extends State<CounterWidget> {
   Widget build(BuildContext context) {
     bool isCounterFive = _counter == 5;
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        GestureDetector(
-          onTap: () {
-            ChangeLanguageController().getSelected()
-                ? _decrementCounter()
-                : _incrementCounter();
-          },
-          child: SvgPicture.asset(
-            ChangeLanguageController().getSelected()
-                ? IconPaths.sign_minus
-                : IconPaths.sign_plus,
-            height: 50,
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 70),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          GestureDetector(
+            onTap: () {
+              ChangeLanguageController().getSelected()
+                  ? _decrementCounter()
+                  : _incrementCounter();
+            },
+            child: SvgPicture.asset(
+              ChangeLanguageController().getSelected()
+                  ? IconPaths.sign_minus
+                  : IconPaths.sign_plus,
+              height: 50,
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 45.0),
-          child: Text(
+          Text(
             '$_counter'.tr,
             style: TextStyle(
                 fontFamily: FontsFamily.effraTrialBold,
@@ -71,21 +71,21 @@ class _CounterWidgetState extends State<CounterWidget> {
                     ? Colors.deepOrange
                     : AppTextColors.headlines),
           ),
-        ),
-        GestureDetector(
-          onTap: () {
-            ChangeLanguageController().getSelected()
-                ? _incrementCounter()
-                : _decrementCounter();
-          },
-          child: SvgPicture.asset(
-            ChangeLanguageController().getSelected()
-                ? IconPaths.sign_plus
-                : IconPaths.sign_minus,
-            height: 50,
-          ),
-        )
-      ],
+          GestureDetector(
+            onTap: () {
+              ChangeLanguageController().getSelected()
+                  ? _incrementCounter()
+                  : _decrementCounter();
+            },
+            child: SvgPicture.asset(
+              ChangeLanguageController().getSelected()
+                  ? IconPaths.sign_plus
+                  : IconPaths.sign_minus,
+              height: 50,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

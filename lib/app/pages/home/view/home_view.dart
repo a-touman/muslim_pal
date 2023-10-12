@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:muslim_pal/app/pages/calendar/controller/calendar_controller.dart';
 import 'package:muslim_pal/app/pages/calendar/view/calendar_view.dart';
 import 'package:muslim_pal/app/pages/duaa/view/duaa_view.dart';
 import 'package:muslim_pal/app/pages/home/controller/home_controller.dart';
@@ -23,14 +22,13 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0, 162),
+        padding: const EdgeInsets.fromLTRB(24.0, 72.0, 24.0, 95),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Muslim Pal',
-              textDirection: TextDirection.ltr,
+              ' Muslim Pal'.tr,
               style: TextStyles.heading.h3_28SB,
             ),
             const SizedBox(height: 24.0),
@@ -39,7 +37,10 @@ class HomeView extends StatelessWidget {
                 decoration: kDetailDecoration,
                 child: Padding(
                   padding: const EdgeInsets.only(
-                      top: 16.0, right: 16.0, left: 16.0, bottom: 0.0),
+                    top: 16.0,
+                    right: 16.0,
+                    left: 16.0,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
